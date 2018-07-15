@@ -1,0 +1,2 @@
+
+python -m grpc_tools.protoc -I../proto/ngapi --python_out=./netograph --grpc_python_out=./netograph ../proto/ngapi/*
