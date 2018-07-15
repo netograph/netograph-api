@@ -1,0 +1,16 @@
+keys
+node_modules
+build
+tmp
+venv
+*.pyo
+*.pyc
+*.egg-info
+*.map
+.DS_Store
+
+secrets
+.secrets.tmp
+.sass-cache
+.tmp
+.cache

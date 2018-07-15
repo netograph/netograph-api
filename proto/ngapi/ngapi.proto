@@ -1,0 +1,307 @@
+syntax = "proto3";
+import "google/protobuf/timestamp.proto";
+
+option go_package = "ngapi";
+
+message DatasetsRequest {}
+
+message Dataset {
+    string name = 1;
+    string description = 2;
+    string urlbase = 3;
+    google.protobuf.Timestamp deleted = 4;
+    bool readonly = 5;
+}
+
+message CapSummary {
+    message Plan {
+        repeated string urls = 1;
+    }
+    message Root {
+        repeated string urls = 1;
+    }
+    message Stats {
+        int32 flows = 1;
+        int32 websockets = 2;
+        int32 hosts = 3;
+    }
+    string id = 1;
+    string assets = 2;
+    repeated Root roots = 3;
+    google.protobuf.Timestamp time = 4;
+    Plan plan = 5;
+    Stats stats = 6;
+}
+
+message Metadata {
+    string key = 1;
+    string value = 2;
+}
+
+
+
+/* Query API message types */
+
+message CaptureInfoRequest {
+    string dataset = 1;
+    string id = 2;
+}
+message CaptureInfoResult {
+    CapSummary capsummary = 1;
+}
+
+message CaptureLogRequest {
+    string dataset = 1;
+    int64 limit = 2;
+    string resume = 3;
+}
+message CaptureLogResult {
+    CapSummary capsummary = 1;
+    string resume = 2;
+}
+
+message DomainHistoryRequest {
+    string dataset = 1;
+    string domain = 2;
+    int64 limit = 3;
+}
+message DomainHistoryResult {
+    CapSummary capsummary = 1;
+}
+
+message DomainSearchRequest {
+    string dataset = 1;
+    string query = 2;
+    int64 limit = 3;
+    string resume = 4;
+}
+message DomainSearchResult {
+    string domain = 1;
+    string resume = 2;
+    CapSummary latestcapture = 3;
+}
+
+message DomainsForIPRequest {
+    string dataset = 1;
+    string ip = 2;
+    int64 limit = 3;
+    string resume = 4;
+}
+message DomainsForIPResult {
+    string domain = 1;
+    string ip = 2;
+    CapSummary latestcapture = 3;
+    repeated string associations = 4;
+    string resume = 5;
+}
+
+message IPHistoryRequest {
+    string dataset = 1;
+    string ip = 2;
+    int64 limit = 3;
+}
+message IPHistoryResult {
+    CapSummary capsummary = 1;
+}
+
+message IPLogSearchRequest {
+    string dataset = 1;
+    string ip = 2;
+    int64 limit = 3;
+    string resume = 4;
+}
+message IPLogSearchResult {
+    CapSummary capsummary = 1;
+    string ip = 2;
+    string resume = 3;
+}
+
+message IPSearchResult {
+    string ip = 1;
+    string resume = 2;
+    CapSummary latestcapture = 3;
+}
+message IPSearchRequest {
+    string dataset = 1;
+    string ip = 2;
+    int32 mask = 3;
+    int64 limit = 4;
+    string resume = 5;
+}
+
+message IPsForDomainRequest {
+    string dataset = 1;
+    string query = 2;
+    int64 limit = 3;
+    string resume = 4;
+}
+message IPsForDomainResult {
+    string domain = 1;
+    string ip = 2;
+    CapSummary latestcapture = 3;
+    repeated string associations = 4;
+    string resume = 5;
+}
+
+message MetaForCaptureRequest {
+    string dataset = 1;
+    string id = 2;
+    int64 limit = 3;
+    string resume = 4;
+}
+message MetaForCaptureResult {
+    Metadata meta = 1;
+    google.protobuf.Timestamp time = 2;
+    string resume = 3;
+}
+
+message MetaSearchRequest {
+    string dataset = 1;
+    string query = 2;
+    int64 limit = 3;
+    string resume = 4;
+}
+message MetaSearchResult {
+    Metadata meta = 1;
+    string resume = 3;
+    CapSummary capsummary = 4;
+}
+
+message SubmitCaptureRequest {
+    string dataset = 1;
+    string notification = 2;
+    repeated string urls = 3;
+    repeated Metadata meta = 4;
+    int64 skiprecent = 5;
+}
+message SubmitCaptureResult {
+    string assets = 1;
+    bool skipped = 2;
+}
+
+message RootLogSearchRequest {
+    string dataset = 1;
+    string query = 2;
+    int64 limit = 3;
+    string resume = 4;
+}
+message RootLogSearchResult {
+    string root = 1;
+    string resume = 2;
+    CapSummary capsummary = 3;
+}
+
+message RootsForSatelliteRequest {
+    string dataset = 1;
+    string query = 2;
+    int64 limit = 3;
+    string resume = 4;
+}
+message RootsForSatelliteResult {
+    string root = 1;
+    string satellite = 2;
+    CapSummary capsummary = 3;
+    repeated string associations = 4;
+    string resume = 5;
+}
+
+message SatelliteLogSearchRequest {
+    string dataset = 1;
+    string query = 2;
+    int64 limit = 3;
+    string resume = 4;
+}
+message SatelliteLogSearchResult {
+    string satellite = 1;
+    string resume = 2;
+    CapSummary capsummary = 3;
+}
+
+message SatellitesForRootRequest {
+    string dataset = 1;
+    string query = 2;
+    int64 limit = 3;
+    string resume = 4;
+}
+message SatellitesForRootResult {
+    string root = 1;
+    string satellite = 2;
+    CapSummary capsummary = 3;
+    repeated string associations = 4;
+    string resume = 5;
+}
+
+message URLLogSearchRequest {
+    string dataset = 1;
+    string query = 2;
+    int64 limit = 3;
+    string resume = 4;
+}
+message URLLogSearchResult {
+    string url = 1;
+    string resume = 2;
+    CapSummary capsummary = 3;
+}
+
+
+service Netograph {
+    // List all datasets to which the authorizing account has access. This
+    // includes public datasets, which will be marked readonly.
+    rpc Datasets (DatasetsRequest) returns (stream Dataset);
+
+    // Submit a capture request to the queue.
+    rpc SubmitCapture (SubmitCaptureRequest) returns (SubmitCaptureResult);
+
+
+    // Retrieve info for a specified capture by ID.
+    rpc CaptureInfo(CaptureInfoRequest) returns (CaptureInfoResult);
+
+    // Retrieve the capture log for a dataset, in reverse chronological order.
+    rpc CaptureLog(CaptureLogRequest) returns (stream CaptureLogResult);
+
+    // Retrieve the capture history for a specified domain. The length of this
+    // history is capped at ~100.
+    rpc DomainHistory(DomainHistoryRequest) returns (stream DomainHistoryResult);
+
+    // Retrieve the capture log for a dataset, in reverse chronological order.
+    rpc DomainSearch(DomainSearchRequest) returns (stream DomainSearchResult);
+
+    // Find all domains associated with a given IP address.
+    rpc DomainsForIP(DomainsForIPRequest) returns (stream DomainsForIPResult);
+
+    // Retrieve the capture history for a specified IP. The length of this
+    // history is capped at ~100.
+    rpc IPHistory(IPHistoryRequest) returns (stream IPHistoryResult);
+
+    // Search the log for captures that contain a given IP.
+    rpc IPLogSearch(IPLogSearchRequest) returns (stream IPLogSearchResult);
+
+    // Find all IPs in the dataset that match an address and integer netmask.
+    rpc IPSearch(IPSearchRequest) returns (stream IPSearchResult);
+
+    // Find all IPs associated with a given domain.
+    rpc IPsForDomain(IPsForDomainRequest) returns (stream IPsForDomainResult);
+
+    // Get metadata associated with a specified capture.
+    rpc MetaForCapture(MetaForCaptureRequest) returns (stream MetaForCaptureResult);
+
+    // Search log for captures matching a metadata query.
+    rpc MetaSearch(MetaSearchRequest) returns (stream MetaSearchResult);
+
+    // Search the log for captures where any root domain matches a given query.
+    rpc RootLogSearch(RootLogSearchRequest) returns (stream RootLogSearchResult);
+
+    // Find all roots we've seen for a given satellite query.
+    rpc RootsForSatellite(RootsForSatelliteRequest) returns (stream RootsForSatelliteResult);
+
+    // Search the log for captures where any satellite domain matches a given query.
+    rpc SatelliteLogSearch(SatelliteLogSearchRequest) returns (stream SatelliteLogSearchResult);
+
+    // Find all satellites we've seen for a given root query.
+    rpc SatellitesForRoot(SatellitesForRootRequest) returns (stream SatellitesForRootResult);
+
+    // Search the log for captures where any root URL matches a given URL query.
+    rpc URLLogSearch(URLLogSearchRequest) returns (stream URLLogSearchResult);
+}
+
+
