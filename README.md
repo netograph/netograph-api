@@ -7,7 +7,7 @@ with the Netograph API.
 
 # ngc: Netograph command-line interface
 
-**ngc** is a command-line tool that exposes the complete Netograph interace for
+**ngc** is a command-line tool that exposes the complete Netograph interface for
 interactive use. If you have a Go development environment set up, you can
 install it as follows:
 
@@ -34,8 +34,8 @@ After installation, try running `ngc` for a high-level overview of the API, and
 
 ## Output formats
 
-By defult **ngc** outputs data in an easy-to-read text format. There are two
-other formats available - intendted JSON (the `--json` flag) and compact JSON
+By default **ngc** outputs data in an easy-to-read text format. There are two
+other formats available - indented JSON (the `--json` flag) and compact JSON
 (the `--cjson` flag). Compact JSON consists of one record per line with no
 newlines, and so is suitable for programmatic use.
 
@@ -60,7 +60,7 @@ see the `ngc submitcapture` command for capture submission.
 
 The default dataset is the `netograph:social` dataset, which aggregates a
 sizeable fraction of all URLs passing through social media in real time. As a
-first step, let's list al the satellites we've ever seen for a domain query.
+first step, let's list all the satellites we've ever seen for a domain query.
 
 ```sh
 ngc satellitesforroot rt.com
@@ -97,7 +97,7 @@ domains for `rt.com`.
 
 ## Go
 
-You may install the Netograhp Go library with the following command:
+You may install the Netograph Go library with the following command:
 
 ```sh
 go get -u github.com/netograph/netograph-api/go
@@ -124,8 +124,8 @@ Python directory for usage.
 ## Domain queries
 
 When dealing with domains, the Netograph API usually accepts domain queries
-rather than specific domains. This means that a query for *rt.com* will also
-return results for *www.rt.com*, *social.rt.com* and so forth. You can restict a
+rather than specific domains. This means that a query for `rt.com` will also
+return results for `www.rt.com`, `social.rt.com` and so forth. You can restrict a
 query strictly to a specified domain by prefixing it with "$". So, a query for
 "$rt.com" will match no subdomains.
 
