@@ -1,14 +1,26 @@
 package cli
 
 import (
+	"fmt"
+
 	"github.com/spf13/cobra"
 	"github.com/spf13/viper"
 )
+
+const VERSION = "0.1"
 
 var RootCmd = &cobra.Command{
 	Use:          "ngc",
 	Short:        "A client for the Netograph API",
 	SilenceUsage: true,
+}
+
+var versionCommand = &cobra.Command{
+	Use:   "version",
+	Short: "Print the version number",
+	Run: func(cmd *cobra.Command, args []string) {
+		fmt.Printf("%s\n", VERSION)
+	},
 }
 
 func init() {
@@ -32,6 +44,7 @@ func init() {
 		satellitesForRoot(),
 		submitCaptureCommand(),
 		urlLogSearchCommand(),
+		versionCommand,
 	)
 	viper.AutomaticEnv()
 	viper.SetEnvPrefix("NGC")
