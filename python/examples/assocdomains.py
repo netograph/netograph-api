@@ -1,18 +1,32 @@
+"""
+    This example uses Netograph's social dataset to discover domains associated
+    with a parent domain. It begins by enumerating all subdomains for a given
+    parent domain. For each subdomain, it retrieves all IP addresses that we
+    have seen serve up data for that domain. Finally, we do a reverse query to
+    find all domains associated with each of these IP addresses. This gives us a
+    list of all domains that were served from the same IPs as any of the parent
+    domains.
+
+    In many cases, this simply reveals CDNs. However, this often also turns up
+    domains that are deeply associated with a parent domain through shared
+    infrastructure.
+"""
 import os
 
 import netograph
 from netograph import ngapi_pb2
 
 DSET = "netograph:social"
+# Limit response size - CNDs mean that very large numbers of domains can be
+# associated with a single IP.
 LIMIT = 50
-
-conn = netograph.channel(os.environ["NGC_TOKEN"])
 
 seen = set([])
 domains = set([])
 
+conn = netograph.channel(os.environ["NGC_TOKEN"])
 satq = ngapi_pb2.DomainSearchRequest(
-    query="twitter.com",
+    query="kaspersky.com",
     dataset=DSET,
     limit=LIMIT
 )
