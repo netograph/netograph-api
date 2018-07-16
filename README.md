@@ -15,6 +15,10 @@ install it as follows:
 go get -u github.com/netograph/netograph-api/go/cmd/ngc
 ```
 
+Alternatively, binaries for all major platforms can be downloaded from [the
+latest release
+page](https://github.com/netograph/netograph-api/releases/latest).
+
 After installation, try running `ngc` for a high-level overview of the API, and
 `ngc help command` for help on any specific command.
 
