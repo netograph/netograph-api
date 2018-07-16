@@ -90,11 +90,29 @@ domains for `rt.com`.
 
 # Language packs
 
+
 ## Go
+
+You may install the Netograhp Go library with the following command:
+
+```sh
+go get -u github.com/netograph/netograph-api/go
+```
+
+Please see the source for the **ngc** tool in this repo for a comprehensive
+usage example.
 
 
 ## Python
 
+To install the Python library, check out this repo, and type:
+
+```sh
+pip install ./python
+```
+
+This will install the `netograph` Python module. See the examples within the
+Python directory for usage.
 
 
 # API Notes
@@ -108,7 +126,7 @@ query strictly to a specified domain by prefixing it with "$". So, a query for
 "$rt.com" will match no subdomains.
 
 Note that "$" is syntactically significant to most shells, even within quoted
-strings. You'll need to escape it for a query to act as expected, e.g.:
+strings. You'll need to escape it when using **ngc**, e.g.:
 
 ```sh
 ngc ipsfordomain "\$rt.com"
