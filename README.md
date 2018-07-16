@@ -1,7 +1,6 @@
 
 ![Netograph API](assets/netograph-logo.png)
 
-# Netograph API
 
 This repository contains a command-line tool and language packs for interacting
 with the Netograph API.
@@ -89,12 +88,7 @@ At the time of writing, this command cleanly lists about 3600 third-party
 domains for `rt.com`.
 
 
-
-
-
-
 # Language packs
-
 
 ## Go
 
@@ -102,8 +96,31 @@ domains for `rt.com`.
 ## Python
 
 
+
 # API Notes
 
 ## Domain queries
 
-## Resumption tokens
+When dealing with domains, the Netograph API usually accepts domain queries
+rather than specific domains. This means that a query for *rt.com* will also
+return results for *www.rt.com*, *social.rt.com* and so forth. You can restict a
+query strictly to a specified domain by prefixing it with "$". So, a query for
+"$rt.com" will match no subdomains.
+
+Note that "$" is syntactically significant to most shells, even within quoted
+strings. You'll need to escape it for a query to act as expected, e.g.:
+
+```sh
+ngc ipsfordomain "\$rt.com"
+```
+
+
+## Resume tokens
+
+Netograph has an efficient streaming API - queries that return thousands or
+hundreds of thousands of records are permitted and common. In most cases, each
+record comes with a **resume token**, which can be passed in queries to resume
+streaming if a connection was lost, or to provide functionality like paging.
+Resume tokens are only valid when passed to the exact same query that originated
+it, and should not be stored persistently.
+
