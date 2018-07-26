@@ -177,6 +177,7 @@ message SubmitCaptureRequest {
 message SubmitCaptureResult {
     string assets = 1;
     bool skipped = 2;
+    string id = 3;
 }
 
 message RootLogSearchRequest {
