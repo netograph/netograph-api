@@ -4,9 +4,9 @@ import (
 	"fmt"
 	"strings"
 
+	"github.com/netograph/netograph-api/go/proto/ngapi"
 	"github.com/spf13/cobra"
 	"github.com/spf13/viper"
-	"github.com/netograph/netograph-api/go/proto/ngapi"
 )
 
 func submitCaptureCommand() *cobra.Command {
@@ -39,6 +39,10 @@ func submitCaptureCommand() *cobra.Command {
 					Key:   vals[0],
 					Value: vals[1],
 				}
+			}
+
+			for i, v := range args {
+				args[i] = strings.TrimSpace(v)
 			}
 
 			cap := ngapi.SubmitCaptureRequest{
