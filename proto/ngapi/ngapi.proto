@@ -167,6 +167,17 @@ message MetaSearchResult {
     CapSummary capsummary = 4;
 }
 
+message TempCaptureRequest {
+    string notification = 1;
+    repeated string urls = 2;
+    repeated Metadata meta = 3;
+}
+message TempCaptureResult {
+    string assets = 1;
+    string id = 3;
+}
+
+
 message SubmitCaptureRequest {
     string dataset = 1;
     string notification = 2;
@@ -246,62 +257,66 @@ message URLLogSearchResult {
 
 
 service Netograph {
+    // Request a temporary capture. Temporary captures are not stored in a
+    // dataset, and the capture assets will be available for download for 24
+    // hours before being deleted.
+    rpc TempCapture (TempCaptureRequest) returns (TempCaptureResult);
+
     // List all datasets to which the authorizing account has access. This
     // includes public datasets, which will be marked readonly.
     rpc Datasets (DatasetsRequest) returns (stream Dataset);
 
-    // Submit a capture request to the queue.
+    // Submit a capture request to a dataset.
     rpc SubmitCapture (SubmitCaptureRequest) returns (SubmitCaptureResult);
 
-
-    // Retrieve info for a specified capture by ID.
+    // Retrieve info for a specified capture by ID within a dataset.
     rpc CaptureInfo(CaptureInfoRequest) returns (CaptureInfoResult);
 
     // Retrieve the capture log for a dataset, in reverse chronological order.
     rpc CaptureLog(CaptureLogRequest) returns (stream CaptureLogResult);
 
-    // Retrieve the capture history for a specified domain. The length of this
-    // history is capped at ~100.
+    // Retrieve the capture history for a specified domain in a dataset. The
+    // length of this history is capped at ~100.
     rpc DomainHistory(DomainHistoryRequest) returns (stream DomainHistoryResult);
 
     // Retrieve the capture log for a dataset, in reverse chronological order.
     rpc DomainSearch(DomainSearchRequest) returns (stream DomainSearchResult);
 
-    // Find all domains associated with a given IP address.
+    // Find all domains in the dataset associated with a given IP address.
     rpc DomainsForIP(DomainsForIPRequest) returns (stream DomainsForIPResult);
 
-    // Retrieve the capture history for a specified IP. The length of this
-    // history is capped at ~100.
+    // Retrieve the capture history for a specified IP in a dataset. The
+    // length of this history is capped at ~100.
     rpc IPHistory(IPHistoryRequest) returns (stream IPHistoryResult);
 
-    // Search the log for captures that contain a given IP.
+    // Search the dataset log for captures that contain a given IP.
     rpc IPLogSearch(IPLogSearchRequest) returns (stream IPLogSearchResult);
 
     // Find all IPs in the dataset that match an address and integer netmask.
     rpc IPSearch(IPSearchRequest) returns (stream IPSearchResult);
 
-    // Find all IPs associated with a given domain.
+    // Find all IPs in a dataset associated with a given domain.
     rpc IPsForDomain(IPsForDomainRequest) returns (stream IPsForDomainResult);
 
-    // Get metadata associated with a specified capture.
+    // Get metadata associated with a specified capture within a dataset.
     rpc MetaForCapture(MetaForCaptureRequest) returns (stream MetaForCaptureResult);
 
-    // Search log for captures matching a metadata query.
+    // Search the dataset log for captures matching a metadata query.
     rpc MetaSearch(MetaSearchRequest) returns (stream MetaSearchResult);
 
-    // Search the log for captures where any root domain matches a given query.
+    // Search the dataset log for captures where any root domain matches a given query.
     rpc RootLogSearch(RootLogSearchRequest) returns (stream RootLogSearchResult);
 
-    // Find all roots we've seen for a given satellite query.
+    // Find all roots in a dataset that are associated with a given satellite query.
     rpc RootsForSatellite(RootsForSatelliteRequest) returns (stream RootsForSatelliteResult);
 
-    // Search the log for captures where any satellite domain matches a given query.
+    // Search the dataset log for captures where any satellite domain matches a given query.
     rpc SatelliteLogSearch(SatelliteLogSearchRequest) returns (stream SatelliteLogSearchResult);
 
-    // Find all satellites we've seen for a given root query.
+    // Find all satellites in the dataset that are associated with a given root query.
     rpc SatellitesForRoot(SatellitesForRootRequest) returns (stream SatellitesForRootResult);
 
-    // Search the log for captures where any root URL matches a given URL query.
+    // Search the dataset log for captures where any root URL matches a given URL query.
     rpc URLLogSearch(URLLogSearchRequest) returns (stream URLLogSearchResult);
 }
 

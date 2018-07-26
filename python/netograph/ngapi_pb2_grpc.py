@@ -14,6 +14,11 @@ class NetographStub(object):
     Args:
       channel: A grpc.Channel.
     """
+    self.TempCapture = channel.unary_unary(
+        '/Netograph/TempCapture',
+        request_serializer=ngapi__pb2.TempCaptureRequest.SerializeToString,
+        response_deserializer=ngapi__pb2.TempCaptureResult.FromString,
+        )
     self.Datasets = channel.unary_stream(
         '/Netograph/Datasets',
         request_serializer=ngapi__pb2.DatasetsRequest.SerializeToString,
@@ -110,6 +115,15 @@ class NetographServicer(object):
   # missing associated documentation comment in .proto file
   pass
 
+  def TempCapture(self, request, context):
+    """Request a temporary capture. Temporary captures are not stored in a
+    dataset, and the capture assets will be available for download for 24
+    hours before being deleted.
+    """
+    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+    context.set_details('Method not implemented!')
+    raise NotImplementedError('Method not implemented!')
+
   def Datasets(self, request, context):
     """List all datasets to which the authorizing account has access. This
     includes public datasets, which will be marked readonly.
@@ -119,14 +133,14 @@ class NetographServicer(object):
     raise NotImplementedError('Method not implemented!')
 
   def SubmitCapture(self, request, context):
-    """Submit a capture request to the queue.
+    """Submit a capture request to a dataset.
     """
     context.set_code(grpc.StatusCode.UNIMPLEMENTED)
     context.set_details('Method not implemented!')
     raise NotImplementedError('Method not implemented!')
 
   def CaptureInfo(self, request, context):
-    """Retrieve info for a specified capture by ID.
+    """Retrieve info for a specified capture by ID within a dataset.
     """
     context.set_code(grpc.StatusCode.UNIMPLEMENTED)
     context.set_details('Method not implemented!')
@@ -140,8 +154,8 @@ class NetographServicer(object):
     raise NotImplementedError('Method not implemented!')
 
   def DomainHistory(self, request, context):
-    """Retrieve the capture history for a specified domain. The length of this
-    history is capped at ~100.
+    """Retrieve the capture history for a specified domain in a dataset. The
+    length of this history is capped at ~100.
     """
     context.set_code(grpc.StatusCode.UNIMPLEMENTED)
     context.set_details('Method not implemented!')
@@ -155,22 +169,22 @@ class NetographServicer(object):
     raise NotImplementedError('Method not implemented!')
 
   def DomainsForIP(self, request, context):
-    """Find all domains associated with a given IP address.
+    """Find all domains in the dataset associated with a given IP address.
     """
     context.set_code(grpc.StatusCode.UNIMPLEMENTED)
     context.set_details('Method not implemented!')
     raise NotImplementedError('Method not implemented!')
 
   def IPHistory(self, request, context):
-    """Retrieve the capture history for a specified IP. The length of this
-    history is capped at ~100.
+    """Retrieve the capture history for a specified IP in a dataset. The
+    length of this history is capped at ~100.
     """
     context.set_code(grpc.StatusCode.UNIMPLEMENTED)
     context.set_details('Method not implemented!')
     raise NotImplementedError('Method not implemented!')
 
   def IPLogSearch(self, request, context):
-    """Search the log for captures that contain a given IP.
+    """Search the dataset log for captures that contain a given IP.
     """
     context.set_code(grpc.StatusCode.UNIMPLEMENTED)
     context.set_details('Method not implemented!')
@@ -184,56 +198,56 @@ class NetographServicer(object):
     raise NotImplementedError('Method not implemented!')
 
   def IPsForDomain(self, request, context):
-    """Find all IPs associated with a given domain.
+    """Find all IPs in a dataset associated with a given domain.
     """
     context.set_code(grpc.StatusCode.UNIMPLEMENTED)
     context.set_details('Method not implemented!')
     raise NotImplementedError('Method not implemented!')
 
   def MetaForCapture(self, request, context):
-    """Get metadata associated with a specified capture.
+    """Get metadata associated with a specified capture within a dataset.
     """
     context.set_code(grpc.StatusCode.UNIMPLEMENTED)
     context.set_details('Method not implemented!')
     raise NotImplementedError('Method not implemented!')
 
   def MetaSearch(self, request, context):
-    """Search log for captures matching a metadata query.
+    """Search the dataset log for captures matching a metadata query.
     """
     context.set_code(grpc.StatusCode.UNIMPLEMENTED)
     context.set_details('Method not implemented!')
     raise NotImplementedError('Method not implemented!')
 
   def RootLogSearch(self, request, context):
-    """Search the log for captures where any root domain matches a given query.
+    """Search the dataset log for captures where any root domain matches a given query.
     """
     context.set_code(grpc.StatusCode.UNIMPLEMENTED)
     context.set_details('Method not implemented!')
     raise NotImplementedError('Method not implemented!')
 
   def RootsForSatellite(self, request, context):
-    """Find all roots we've seen for a given satellite query.
+    """Find all roots in a dataset that are associated with a given satellite query.
     """
     context.set_code(grpc.StatusCode.UNIMPLEMENTED)
     context.set_details('Method not implemented!')
     raise NotImplementedError('Method not implemented!')
 
   def SatelliteLogSearch(self, request, context):
-    """Search the log for captures where any satellite domain matches a given query.
+    """Search the dataset log for captures where any satellite domain matches a given query.
     """
     context.set_code(grpc.StatusCode.UNIMPLEMENTED)
     context.set_details('Method not implemented!')
     raise NotImplementedError('Method not implemented!')
 
   def SatellitesForRoot(self, request, context):
-    """Find all satellites we've seen for a given root query.
+    """Find all satellites in the dataset that are associated with a given root query.
     """
     context.set_code(grpc.StatusCode.UNIMPLEMENTED)
     context.set_details('Method not implemented!')
     raise NotImplementedError('Method not implemented!')
 
   def URLLogSearch(self, request, context):
-    """Search the log for captures where any root URL matches a given URL query.
+    """Search the dataset log for captures where any root URL matches a given URL query.
     """
     context.set_code(grpc.StatusCode.UNIMPLEMENTED)
     context.set_details('Method not implemented!')
@@ -242,6 +256,11 @@ class NetographServicer(object):
 
 def add_NetographServicer_to_server(servicer, server):
   rpc_method_handlers = {
+      'TempCapture': grpc.unary_unary_rpc_method_handler(
+          servicer.TempCapture,
+          request_deserializer=ngapi__pb2.TempCaptureRequest.FromString,
+          response_serializer=ngapi__pb2.TempCaptureResult.SerializeToString,
+      ),
       'Datasets': grpc.unary_stream_rpc_method_handler(
           servicer.Datasets,
           request_deserializer=ngapi__pb2.DatasetsRequest.FromString,

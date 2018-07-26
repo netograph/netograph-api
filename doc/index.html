@@ -335,6 +335,14 @@
                 </li>
               
                 <li>
+                  <a href="#.TempCaptureRequest"><span class="badge">M</span>TempCaptureRequest</a>
+                </li>
+              
+                <li>
+                  <a href="#.TempCaptureResult"><span class="badge">M</span>TempCaptureResult</a>
+                </li>
+              
+                <li>
                   <a href="#.URLLogSearchRequest"><span class="badge">M</span>URLLogSearchRequest</a>
                 </li>
               
@@ -1875,6 +1883,73 @@
 
         
       
+        <h3 id=".TempCaptureRequest">TempCaptureRequest</h3>
+        <p></p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>notification</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>urls</td>
+                  <td><a href="#string">string</a></td>
+                  <td>repeated</td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>meta</td>
+                  <td><a href="#Metadata">Metadata</a></td>
+                  <td>repeated</td>
+                  <td><p> </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+        
+
+        
+      
+        <h3 id=".TempCaptureResult">TempCaptureResult</h3>
+        <p></p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>assets</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>id</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+        
+
+        
+      
         <h3 id=".URLLogSearchRequest">URLLogSearchRequest</h3>
         <p></p>
 
@@ -1971,6 +2046,15 @@
           <tbody>
             
               <tr>
+                <td>TempCapture</td>
+                <td><a href="#TempCaptureRequest">.TempCaptureRequest</a></td>
+                <td><a href="#TempCaptureResult">.TempCaptureResult</a></td>
+                <td><p>Request a temporary capture. Temporary captures are not stored in a
+dataset, and the capture assets will be available for download for 24
+hours before being deleted.</p></td>
+              </tr>
+            
+              <tr>
                 <td>Datasets</td>
                 <td><a href="#DatasetsRequest">.DatasetsRequest</a></td>
                 <td><a href="#Dataset">.Dataset</a></td>
@@ -1982,14 +2066,14 @@ includes public datasets, which will be marked readonly.</p></td>
                 <td>SubmitCapture</td>
                 <td><a href="#SubmitCaptureRequest">.SubmitCaptureRequest</a></td>
                 <td><a href="#SubmitCaptureResult">.SubmitCaptureResult</a></td>
-                <td><p>Submit a capture request to the queue.</p></td>
+                <td><p>Submit a capture request to a dataset.</p></td>
               </tr>
             
               <tr>
                 <td>CaptureInfo</td>
                 <td><a href="#CaptureInfoRequest">.CaptureInfoRequest</a></td>
                 <td><a href="#CaptureInfoResult">.CaptureInfoResult</a></td>
-                <td><p>Retrieve info for a specified capture by ID.</p></td>
+                <td><p>Retrieve info for a specified capture by ID within a dataset.</p></td>
               </tr>
             
               <tr>
@@ -2003,8 +2087,8 @@ includes public datasets, which will be marked readonly.</p></td>
                 <td>DomainHistory</td>
                 <td><a href="#DomainHistoryRequest">.DomainHistoryRequest</a></td>
                 <td><a href="#DomainHistoryResult">.DomainHistoryResult</a></td>
-                <td><p>Retrieve the capture history for a specified domain. The length of this
-history is capped at ~100.</p></td>
+                <td><p>Retrieve the capture history for a specified domain in a dataset. The
+length of this history is capped at ~100.</p></td>
               </tr>
             
               <tr>
@@ -2018,22 +2102,22 @@ history is capped at ~100.</p></td>
                 <td>DomainsForIP</td>
                 <td><a href="#DomainsForIPRequest">.DomainsForIPRequest</a></td>
                 <td><a href="#DomainsForIPResult">.DomainsForIPResult</a></td>
-                <td><p>Find all domains associated with a given IP address.</p></td>
+                <td><p>Find all domains in the dataset associated with a given IP address.</p></td>
               </tr>
             
               <tr>
                 <td>IPHistory</td>
                 <td><a href="#IPHistoryRequest">.IPHistoryRequest</a></td>
                 <td><a href="#IPHistoryResult">.IPHistoryResult</a></td>
-                <td><p>Retrieve the capture history for a specified IP. The length of this
-history is capped at ~100.</p></td>
+                <td><p>Retrieve the capture history for a specified IP in a dataset. The
+length of this history is capped at ~100.</p></td>
               </tr>
             
               <tr>
                 <td>IPLogSearch</td>
                 <td><a href="#IPLogSearchRequest">.IPLogSearchRequest</a></td>
                 <td><a href="#IPLogSearchResult">.IPLogSearchResult</a></td>
-                <td><p>Search the log for captures that contain a given IP.</p></td>
+                <td><p>Search the dataset log for captures that contain a given IP.</p></td>
               </tr>
             
               <tr>
@@ -2047,56 +2131,56 @@ history is capped at ~100.</p></td>
                 <td>IPsForDomain</td>
                 <td><a href="#IPsForDomainRequest">.IPsForDomainRequest</a></td>
                 <td><a href="#IPsForDomainResult">.IPsForDomainResult</a></td>
-                <td><p>Find all IPs associated with a given domain.</p></td>
+                <td><p>Find all IPs in a dataset associated with a given domain.</p></td>
               </tr>
             
               <tr>
                 <td>MetaForCapture</td>
                 <td><a href="#MetaForCaptureRequest">.MetaForCaptureRequest</a></td>
                 <td><a href="#MetaForCaptureResult">.MetaForCaptureResult</a></td>
-                <td><p>Get metadata associated with a specified capture.</p></td>
+                <td><p>Get metadata associated with a specified capture within a dataset.</p></td>
               </tr>
             
               <tr>
                 <td>MetaSearch</td>
                 <td><a href="#MetaSearchRequest">.MetaSearchRequest</a></td>
                 <td><a href="#MetaSearchResult">.MetaSearchResult</a></td>
-                <td><p>Search log for captures matching a metadata query.</p></td>
+                <td><p>Search the dataset log for captures matching a metadata query.</p></td>
               </tr>
             
               <tr>
                 <td>RootLogSearch</td>
                 <td><a href="#RootLogSearchRequest">.RootLogSearchRequest</a></td>
                 <td><a href="#RootLogSearchResult">.RootLogSearchResult</a></td>
-                <td><p>Search the log for captures where any root domain matches a given query.</p></td>
+                <td><p>Search the dataset log for captures where any root domain matches a given query.</p></td>
               </tr>
             
               <tr>
                 <td>RootsForSatellite</td>
                 <td><a href="#RootsForSatelliteRequest">.RootsForSatelliteRequest</a></td>
                 <td><a href="#RootsForSatelliteResult">.RootsForSatelliteResult</a></td>
-                <td><p>Find all roots we&#39;ve seen for a given satellite query.</p></td>
+                <td><p>Find all roots in a dataset that are associated with a given satellite query.</p></td>
               </tr>
             
               <tr>
                 <td>SatelliteLogSearch</td>
                 <td><a href="#SatelliteLogSearchRequest">.SatelliteLogSearchRequest</a></td>
                 <td><a href="#SatelliteLogSearchResult">.SatelliteLogSearchResult</a></td>
-                <td><p>Search the log for captures where any satellite domain matches a given query.</p></td>
+                <td><p>Search the dataset log for captures where any satellite domain matches a given query.</p></td>
               </tr>
             
               <tr>
                 <td>SatellitesForRoot</td>
                 <td><a href="#SatellitesForRootRequest">.SatellitesForRootRequest</a></td>
                 <td><a href="#SatellitesForRootResult">.SatellitesForRootResult</a></td>
-                <td><p>Find all satellites we&#39;ve seen for a given root query.</p></td>
+                <td><p>Find all satellites in the dataset that are associated with a given root query.</p></td>
               </tr>
             
               <tr>
                 <td>URLLogSearch</td>
                 <td><a href="#URLLogSearchRequest">.URLLogSearchRequest</a></td>
                 <td><a href="#URLLogSearchResult">.URLLogSearchResult</a></td>
-                <td><p>Search the log for captures where any root URL matches a given URL query.</p></td>
+                <td><p>Search the dataset log for captures where any root URL matches a given URL query.</p></td>
               </tr>
             
           </tbody>

@@ -43,6 +43,7 @@ func init() {
 		satelliteLogSearchCommand(),
 		satellitesForRoot(),
 		submitCaptureCommand(),
+		tempCaptureCommand(),
 		urlLogSearchCommand(),
 		versionCommand,
 	)

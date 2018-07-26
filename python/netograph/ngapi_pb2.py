@@ -20,7 +20,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   name='ngapi.proto',
   package='',
   syntax='proto3',
-  serialized_pb=_b('\n\x0bngapi.proto\x1a\x1fgoogle/protobuf/timestamp.proto\"\x11\n\x0f\x44\x61tasetsRequest\"|\n\x07\x44\x61taset\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x02 \x01(\t\x12\x0f\n\x07urlbase\x18\x03 \x01(\t\x12+\n\x07\x64\x65leted\x18\x04 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x10\n\x08readonly\x18\x05 \x01(\x08\"\x9c\x02\n\nCapSummary\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0e\n\x06\x61ssets\x18\x02 \x01(\t\x12\x1f\n\x05roots\x18\x03 \x03(\x0b\x32\x10.CapSummary.Root\x12(\n\x04time\x18\x04 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x1e\n\x04plan\x18\x05 \x01(\x0b\x32\x10.CapSummary.Plan\x12 \n\x05stats\x18\x06 \x01(\x0b\x32\x11.CapSummary.Stats\x1a\x14\n\x04Plan\x12\x0c\n\x04urls\x18\x01 \x03(\t\x1a\x14\n\x04Root\x12\x0c\n\x04urls\x18\x01 \x03(\t\x1a\x39\n\x05Stats\x12\r\n\x05\x66lows\x18\x01 \x01(\x05\x12\x12\n\nwebsockets\x18\x02 \x01(\x05\x12\r\n\x05hosts\x18\x03 \x01(\x05\"&\n\x08Metadata\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t\"1\n\x12\x43\x61ptureInfoRequest\x12\x0f\n\x07\x64\x61taset\x18\x01 \x01(\t\x12\n\n\x02id\x18\x02 \x01(\t\"4\n\x11\x43\x61ptureInfoResult\x12\x1f\n\ncapsummary\x18\x01 \x01(\x0b\x32\x0b.CapSummary\"C\n\x11\x43\x61ptureLogRequest\x12\x0f\n\x07\x64\x61taset\x18\x01 \x01(\t\x12\r\n\x05limit\x18\x02 \x01(\x03\x12\x0e\n\x06resume\x18\x03 \x01(\t\"C\n\x10\x43\x61ptureLogResult\x12\x1f\n\ncapsummary\x18\x01 \x01(\x0b\x32\x0b.CapSummary\x12\x0e\n\x06resume\x18\x02 \x01(\t\"F\n\x14\x44omainHistoryRequest\x12\x0f\n\x07\x64\x61taset\x18\x01 \x01(\t\x12\x0e\n\x06\x64omain\x18\x02 \x01(\t\x12\r\n\x05limit\x18\x03 \x01(\x03\"6\n\x13\x44omainHistoryResult\x12\x1f\n\ncapsummary\x18\x01 \x01(\x0b\x32\x0b.CapSummary\"T\n\x13\x44omainSearchRequest\x12\x0f\n\x07\x64\x61taset\x18\x01 \x01(\t\x12\r\n\x05query\x18\x02 \x01(\t\x12\r\n\x05limit\x18\x03 \x01(\x03\x12\x0e\n\x06resume\x18\x04 \x01(\t\"X\n\x12\x44omainSearchResult\x12\x0e\n\x06\x64omain\x18\x01 \x01(\t\x12\x0e\n\x06resume\x18\x02 \x01(\t\x12\"\n\rlatestcapture\x18\x03 \x01(\x0b\x32\x0b.CapSummary\"Q\n\x13\x44omainsForIPRequest\x12\x0f\n\x07\x64\x61taset\x18\x01 \x01(\t\x12\n\n\x02ip\x18\x02 \x01(\t\x12\r\n\x05limit\x18\x03 \x01(\x03\x12\x0e\n\x06resume\x18\x04 \x01(\t\"z\n\x12\x44omainsForIPResult\x12\x0e\n\x06\x64omain\x18\x01 \x01(\t\x12\n\n\x02ip\x18\x02 \x01(\t\x12\"\n\rlatestcapture\x18\x03 \x01(\x0b\x32\x0b.CapSummary\x12\x14\n\x0c\x61ssociations\x18\x04 \x03(\t\x12\x0e\n\x06resume\x18\x05 \x01(\t\">\n\x10IPHistoryRequest\x12\x0f\n\x07\x64\x61taset\x18\x01 \x01(\t\x12\n\n\x02ip\x18\x02 \x01(\t\x12\r\n\x05limit\x18\x03 \x01(\x03\"2\n\x0fIPHistoryResult\x12\x1f\n\ncapsummary\x18\x01 \x01(\x0b\x32\x0b.CapSummary\"P\n\x12IPLogSearchRequest\x12\x0f\n\x07\x64\x61taset\x18\x01 \x01(\t\x12\n\n\x02ip\x18\x02 \x01(\t\x12\r\n\x05limit\x18\x03 \x01(\x03\x12\x0e\n\x06resume\x18\x04 \x01(\t\"P\n\x11IPLogSearchResult\x12\x1f\n\ncapsummary\x18\x01 \x01(\x0b\x32\x0b.CapSummary\x12\n\n\x02ip\x18\x02 \x01(\t\x12\x0e\n\x06resume\x18\x03 \x01(\t\"P\n\x0eIPSearchResult\x12\n\n\x02ip\x18\x01 \x01(\t\x12\x0e\n\x06resume\x18\x02 \x01(\t\x12\"\n\rlatestcapture\x18\x03 \x01(\x0b\x32\x0b.CapSummary\"[\n\x0fIPSearchRequest\x12\x0f\n\x07\x64\x61taset\x18\x01 \x01(\t\x12\n\n\x02ip\x18\x02 \x01(\t\x12\x0c\n\x04mask\x18\x03 \x01(\x05\x12\r\n\x05limit\x18\x04 \x01(\x03\x12\x0e\n\x06resume\x18\x05 \x01(\t\"T\n\x13IPsForDomainRequest\x12\x0f\n\x07\x64\x61taset\x18\x01 \x01(\t\x12\r\n\x05query\x18\x02 \x01(\t\x12\r\n\x05limit\x18\x03 \x01(\x03\x12\x0e\n\x06resume\x18\x04 \x01(\t\"z\n\x12IPsForDomainResult\x12\x0e\n\x06\x64omain\x18\x01 \x01(\t\x12\n\n\x02ip\x18\x02 \x01(\t\x12\"\n\rlatestcapture\x18\x03 \x01(\x0b\x32\x0b.CapSummary\x12\x14\n\x0c\x61ssociations\x18\x04 \x03(\t\x12\x0e\n\x06resume\x18\x05 \x01(\t\"S\n\x15MetaForCaptureRequest\x12\x0f\n\x07\x64\x61taset\x18\x01 \x01(\t\x12\n\n\x02id\x18\x02 \x01(\t\x12\r\n\x05limit\x18\x03 \x01(\x03\x12\x0e\n\x06resume\x18\x04 \x01(\t\"i\n\x14MetaForCaptureResult\x12\x17\n\x04meta\x18\x01 \x01(\x0b\x32\t.Metadata\x12(\n\x04time\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x0e\n\x06resume\x18\x03 \x01(\t\"R\n\x11MetaSearchRequest\x12\x0f\n\x07\x64\x61taset\x18\x01 \x01(\t\x12\r\n\x05query\x18\x02 \x01(\t\x12\r\n\x05limit\x18\x03 \x01(\x03\x12\x0e\n\x06resume\x18\x04 \x01(\t\"\\\n\x10MetaSearchResult\x12\x17\n\x04meta\x18\x01 \x01(\x0b\x32\t.Metadata\x12\x0e\n\x06resume\x18\x03 \x01(\t\x12\x1f\n\ncapsummary\x18\x04 \x01(\x0b\x32\x0b.CapSummary\"x\n\x14SubmitCaptureRequest\x12\x0f\n\x07\x64\x61taset\x18\x01 \x01(\t\x12\x14\n\x0cnotification\x18\x02 \x01(\t\x12\x0c\n\x04urls\x18\x03 \x03(\t\x12\x17\n\x04meta\x18\x04 \x03(\x0b\x32\t.Metadata\x12\x12\n\nskiprecent\x18\x05 \x01(\x03\"B\n\x13SubmitCaptureResult\x12\x0e\n\x06\x61ssets\x18\x01 \x01(\t\x12\x0f\n\x07skipped\x18\x02 \x01(\x08\x12\n\n\x02id\x18\x03 \x01(\t\"U\n\x14RootLogSearchRequest\x12\x0f\n\x07\x64\x61taset\x18\x01 \x01(\t\x12\r\n\x05query\x18\x02 \x01(\t\x12\r\n\x05limit\x18\x03 \x01(\x03\x12\x0e\n\x06resume\x18\x04 \x01(\t\"T\n\x13RootLogSearchResult\x12\x0c\n\x04root\x18\x01 \x01(\t\x12\x0e\n\x06resume\x18\x02 \x01(\t\x12\x1f\n\ncapsummary\x18\x03 \x01(\x0b\x32\x0b.CapSummary\"Y\n\x18RootsForSatelliteRequest\x12\x0f\n\x07\x64\x61taset\x18\x01 \x01(\t\x12\r\n\x05query\x18\x02 \x01(\t\x12\r\n\x05limit\x18\x03 \x01(\x03\x12\x0e\n\x06resume\x18\x04 \x01(\t\"\x81\x01\n\x17RootsForSatelliteResult\x12\x0c\n\x04root\x18\x01 \x01(\t\x12\x11\n\tsatellite\x18\x02 \x01(\t\x12\x1f\n\ncapsummary\x18\x03 \x01(\x0b\x32\x0b.CapSummary\x12\x14\n\x0c\x61ssociations\x18\x04 \x03(\t\x12\x0e\n\x06resume\x18\x05 \x01(\t\"Z\n\x19SatelliteLogSearchRequest\x12\x0f\n\x07\x64\x61taset\x18\x01 \x01(\t\x12\r\n\x05query\x18\x02 \x01(\t\x12\r\n\x05limit\x18\x03 \x01(\x03\x12\x0e\n\x06resume\x18\x04 \x01(\t\"^\n\x18SatelliteLogSearchResult\x12\x11\n\tsatellite\x18\x01 \x01(\t\x12\x0e\n\x06resume\x18\x02 \x01(\t\x12\x1f\n\ncapsummary\x18\x03 \x01(\x0b\x32\x0b.CapSummary\"Y\n\x18SatellitesForRootRequest\x12\x0f\n\x07\x64\x61taset\x18\x01 \x01(\t\x12\r\n\x05query\x18\x02 \x01(\t\x12\r\n\x05limit\x18\x03 \x01(\x03\x12\x0e\n\x06resume\x18\x04 \x01(\t\"\x81\x01\n\x17SatellitesForRootResult\x12\x0c\n\x04root\x18\x01 \x01(\t\x12\x11\n\tsatellite\x18\x02 \x01(\t\x12\x1f\n\ncapsummary\x18\x03 \x01(\x0b\x32\x0b.CapSummary\x12\x14\n\x0c\x61ssociations\x18\x04 \x03(\t\x12\x0e\n\x06resume\x18\x05 \x01(\t\"T\n\x13URLLogSearchRequest\x12\x0f\n\x07\x64\x61taset\x18\x01 \x01(\t\x12\r\n\x05query\x18\x02 \x01(\t\x12\r\n\x05limit\x18\x03 \x01(\x03\x12\x0e\n\x06resume\x18\x04 \x01(\t\"R\n\x12URLLogSearchResult\x12\x0b\n\x03url\x18\x01 \x01(\t\x12\x0e\n\x06resume\x18\x02 \x01(\t\x12\x1f\n\ncapsummary\x18\x03 \x01(\x0b\x32\x0b.CapSummary2\xd6\x08\n\tNetograph\x12(\n\x08\x44\x61tasets\x12\x10.DatasetsRequest\x1a\x08.Dataset0\x01\x12<\n\rSubmitCapture\x12\x15.SubmitCaptureRequest\x1a\x14.SubmitCaptureResult\x12\x36\n\x0b\x43\x61ptureInfo\x12\x13.CaptureInfoRequest\x1a\x12.CaptureInfoResult\x12\x35\n\nCaptureLog\x12\x12.CaptureLogRequest\x1a\x11.CaptureLogResult0\x01\x12>\n\rDomainHistory\x12\x15.DomainHistoryRequest\x1a\x14.DomainHistoryResult0\x01\x12;\n\x0c\x44omainSearch\x12\x14.DomainSearchRequest\x1a\x13.DomainSearchResult0\x01\x12;\n\x0c\x44omainsForIP\x12\x14.DomainsForIPRequest\x1a\x13.DomainsForIPResult0\x01\x12\x32\n\tIPHistory\x12\x11.IPHistoryRequest\x1a\x10.IPHistoryResult0\x01\x12\x38\n\x0bIPLogSearch\x12\x13.IPLogSearchRequest\x1a\x12.IPLogSearchResult0\x01\x12/\n\x08IPSearch\x12\x10.IPSearchRequest\x1a\x0f.IPSearchResult0\x01\x12;\n\x0cIPsForDomain\x12\x14.IPsForDomainRequest\x1a\x13.IPsForDomainResult0\x01\x12\x41\n\x0eMetaForCapture\x12\x16.MetaForCaptureRequest\x1a\x15.MetaForCaptureResult0\x01\x12\x35\n\nMetaSearch\x12\x12.MetaSearchRequest\x1a\x11.MetaSearchResult0\x01\x12>\n\rRootLogSearch\x12\x15.RootLogSearchRequest\x1a\x14.RootLogSearchResult0\x01\x12J\n\x11RootsForSatellite\x12\x19.RootsForSatelliteRequest\x1a\x18.RootsForSatelliteResult0\x01\x12M\n\x12SatelliteLogSearch\x12\x1a.SatelliteLogSearchRequest\x1a\x19.SatelliteLogSearchResult0\x01\x12J\n\x11SatellitesForRoot\x12\x19.SatellitesForRootRequest\x1a\x18.SatellitesForRootResult0\x01\x12;\n\x0cURLLogSearch\x12\x14.URLLogSearchRequest\x1a\x13.URLLogSearchResult0\x01\x42\x07Z\x05ngapib\x06proto3')
+  serialized_pb=_b('\n\x0bngapi.proto\x1a\x1fgoogle/protobuf/timestamp.proto\"\x11\n\x0f\x44\x61tasetsRequest\"|\n\x07\x44\x61taset\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x02 \x01(\t\x12\x0f\n\x07urlbase\x18\x03 \x01(\t\x12+\n\x07\x64\x65leted\x18\x04 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x10\n\x08readonly\x18\x05 \x01(\x08\"\x9c\x02\n\nCapSummary\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0e\n\x06\x61ssets\x18\x02 \x01(\t\x12\x1f\n\x05roots\x18\x03 \x03(\x0b\x32\x10.CapSummary.Root\x12(\n\x04time\x18\x04 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x1e\n\x04plan\x18\x05 \x01(\x0b\x32\x10.CapSummary.Plan\x12 \n\x05stats\x18\x06 \x01(\x0b\x32\x11.CapSummary.Stats\x1a\x14\n\x04Plan\x12\x0c\n\x04urls\x18\x01 \x03(\t\x1a\x14\n\x04Root\x12\x0c\n\x04urls\x18\x01 \x03(\t\x1a\x39\n\x05Stats\x12\r\n\x05\x66lows\x18\x01 \x01(\x05\x12\x12\n\nwebsockets\x18\x02 \x01(\x05\x12\r\n\x05hosts\x18\x03 \x01(\x05\"&\n\x08Metadata\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t\"1\n\x12\x43\x61ptureInfoRequest\x12\x0f\n\x07\x64\x61taset\x18\x01 \x01(\t\x12\n\n\x02id\x18\x02 \x01(\t\"4\n\x11\x43\x61ptureInfoResult\x12\x1f\n\ncapsummary\x18\x01 \x01(\x0b\x32\x0b.CapSummary\"C\n\x11\x43\x61ptureLogRequest\x12\x0f\n\x07\x64\x61taset\x18\x01 \x01(\t\x12\r\n\x05limit\x18\x02 \x01(\x03\x12\x0e\n\x06resume\x18\x03 \x01(\t\"C\n\x10\x43\x61ptureLogResult\x12\x1f\n\ncapsummary\x18\x01 \x01(\x0b\x32\x0b.CapSummary\x12\x0e\n\x06resume\x18\x02 \x01(\t\"F\n\x14\x44omainHistoryRequest\x12\x0f\n\x07\x64\x61taset\x18\x01 \x01(\t\x12\x0e\n\x06\x64omain\x18\x02 \x01(\t\x12\r\n\x05limit\x18\x03 \x01(\x03\"6\n\x13\x44omainHistoryResult\x12\x1f\n\ncapsummary\x18\x01 \x01(\x0b\x32\x0b.CapSummary\"T\n\x13\x44omainSearchRequest\x12\x0f\n\x07\x64\x61taset\x18\x01 \x01(\t\x12\r\n\x05query\x18\x02 \x01(\t\x12\r\n\x05limit\x18\x03 \x01(\x03\x12\x0e\n\x06resume\x18\x04 \x01(\t\"X\n\x12\x44omainSearchResult\x12\x0e\n\x06\x64omain\x18\x01 \x01(\t\x12\x0e\n\x06resume\x18\x02 \x01(\t\x12\"\n\rlatestcapture\x18\x03 \x01(\x0b\x32\x0b.CapSummary\"Q\n\x13\x44omainsForIPRequest\x12\x0f\n\x07\x64\x61taset\x18\x01 \x01(\t\x12\n\n\x02ip\x18\x02 \x01(\t\x12\r\n\x05limit\x18\x03 \x01(\x03\x12\x0e\n\x06resume\x18\x04 \x01(\t\"z\n\x12\x44omainsForIPResult\x12\x0e\n\x06\x64omain\x18\x01 \x01(\t\x12\n\n\x02ip\x18\x02 \x01(\t\x12\"\n\rlatestcapture\x18\x03 \x01(\x0b\x32\x0b.CapSummary\x12\x14\n\x0c\x61ssociations\x18\x04 \x03(\t\x12\x0e\n\x06resume\x18\x05 \x01(\t\">\n\x10IPHistoryRequest\x12\x0f\n\x07\x64\x61taset\x18\x01 \x01(\t\x12\n\n\x02ip\x18\x02 \x01(\t\x12\r\n\x05limit\x18\x03 \x01(\x03\"2\n\x0fIPHistoryResult\x12\x1f\n\ncapsummary\x18\x01 \x01(\x0b\x32\x0b.CapSummary\"P\n\x12IPLogSearchRequest\x12\x0f\n\x07\x64\x61taset\x18\x01 \x01(\t\x12\n\n\x02ip\x18\x02 \x01(\t\x12\r\n\x05limit\x18\x03 \x01(\x03\x12\x0e\n\x06resume\x18\x04 \x01(\t\"P\n\x11IPLogSearchResult\x12\x1f\n\ncapsummary\x18\x01 \x01(\x0b\x32\x0b.CapSummary\x12\n\n\x02ip\x18\x02 \x01(\t\x12\x0e\n\x06resume\x18\x03 \x01(\t\"P\n\x0eIPSearchResult\x12\n\n\x02ip\x18\x01 \x01(\t\x12\x0e\n\x06resume\x18\x02 \x01(\t\x12\"\n\rlatestcapture\x18\x03 \x01(\x0b\x32\x0b.CapSummary\"[\n\x0fIPSearchRequest\x12\x0f\n\x07\x64\x61taset\x18\x01 \x01(\t\x12\n\n\x02ip\x18\x02 \x01(\t\x12\x0c\n\x04mask\x18\x03 \x01(\x05\x12\r\n\x05limit\x18\x04 \x01(\x03\x12\x0e\n\x06resume\x18\x05 \x01(\t\"T\n\x13IPsForDomainRequest\x12\x0f\n\x07\x64\x61taset\x18\x01 \x01(\t\x12\r\n\x05query\x18\x02 \x01(\t\x12\r\n\x05limit\x18\x03 \x01(\x03\x12\x0e\n\x06resume\x18\x04 \x01(\t\"z\n\x12IPsForDomainResult\x12\x0e\n\x06\x64omain\x18\x01 \x01(\t\x12\n\n\x02ip\x18\x02 \x01(\t\x12\"\n\rlatestcapture\x18\x03 \x01(\x0b\x32\x0b.CapSummary\x12\x14\n\x0c\x61ssociations\x18\x04 \x03(\t\x12\x0e\n\x06resume\x18\x05 \x01(\t\"S\n\x15MetaForCaptureRequest\x12\x0f\n\x07\x64\x61taset\x18\x01 \x01(\t\x12\n\n\x02id\x18\x02 \x01(\t\x12\r\n\x05limit\x18\x03 \x01(\x03\x12\x0e\n\x06resume\x18\x04 \x01(\t\"i\n\x14MetaForCaptureResult\x12\x17\n\x04meta\x18\x01 \x01(\x0b\x32\t.Metadata\x12(\n\x04time\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x0e\n\x06resume\x18\x03 \x01(\t\"R\n\x11MetaSearchRequest\x12\x0f\n\x07\x64\x61taset\x18\x01 \x01(\t\x12\r\n\x05query\x18\x02 \x01(\t\x12\r\n\x05limit\x18\x03 \x01(\x03\x12\x0e\n\x06resume\x18\x04 \x01(\t\"\\\n\x10MetaSearchResult\x12\x17\n\x04meta\x18\x01 \x01(\x0b\x32\t.Metadata\x12\x0e\n\x06resume\x18\x03 \x01(\t\x12\x1f\n\ncapsummary\x18\x04 \x01(\x0b\x32\x0b.CapSummary\"Q\n\x12TempCaptureRequest\x12\x14\n\x0cnotification\x18\x01 \x01(\t\x12\x0c\n\x04urls\x18\x02 \x03(\t\x12\x17\n\x04meta\x18\x03 \x03(\x0b\x32\t.Metadata\"/\n\x11TempCaptureResult\x12\x0e\n\x06\x61ssets\x18\x01 \x01(\t\x12\n\n\x02id\x18\x03 \x01(\t\"x\n\x14SubmitCaptureRequest\x12\x0f\n\x07\x64\x61taset\x18\x01 \x01(\t\x12\x14\n\x0cnotification\x18\x02 \x01(\t\x12\x0c\n\x04urls\x18\x03 \x03(\t\x12\x17\n\x04meta\x18\x04 \x03(\x0b\x32\t.Metadata\x12\x12\n\nskiprecent\x18\x05 \x01(\x03\"B\n\x13SubmitCaptureResult\x12\x0e\n\x06\x61ssets\x18\x01 \x01(\t\x12\x0f\n\x07skipped\x18\x02 \x01(\x08\x12\n\n\x02id\x18\x03 \x01(\t\"U\n\x14RootLogSearchRequest\x12\x0f\n\x07\x64\x61taset\x18\x01 \x01(\t\x12\r\n\x05query\x18\x02 \x01(\t\x12\r\n\x05limit\x18\x03 \x01(\x03\x12\x0e\n\x06resume\x18\x04 \x01(\t\"T\n\x13RootLogSearchResult\x12\x0c\n\x04root\x18\x01 \x01(\t\x12\x0e\n\x06resume\x18\x02 \x01(\t\x12\x1f\n\ncapsummary\x18\x03 \x01(\x0b\x32\x0b.CapSummary\"Y\n\x18RootsForSatelliteRequest\x12\x0f\n\x07\x64\x61taset\x18\x01 \x01(\t\x12\r\n\x05query\x18\x02 \x01(\t\x12\r\n\x05limit\x18\x03 \x01(\x03\x12\x0e\n\x06resume\x18\x04 \x01(\t\"\x81\x01\n\x17RootsForSatelliteResult\x12\x0c\n\x04root\x18\x01 \x01(\t\x12\x11\n\tsatellite\x18\x02 \x01(\t\x12\x1f\n\ncapsummary\x18\x03 \x01(\x0b\x32\x0b.CapSummary\x12\x14\n\x0c\x61ssociations\x18\x04 \x03(\t\x12\x0e\n\x06resume\x18\x05 \x01(\t\"Z\n\x19SatelliteLogSearchRequest\x12\x0f\n\x07\x64\x61taset\x18\x01 \x01(\t\x12\r\n\x05query\x18\x02 \x01(\t\x12\r\n\x05limit\x18\x03 \x01(\x03\x12\x0e\n\x06resume\x18\x04 \x01(\t\"^\n\x18SatelliteLogSearchResult\x12\x11\n\tsatellite\x18\x01 \x01(\t\x12\x0e\n\x06resume\x18\x02 \x01(\t\x12\x1f\n\ncapsummary\x18\x03 \x01(\x0b\x32\x0b.CapSummary\"Y\n\x18SatellitesForRootRequest\x12\x0f\n\x07\x64\x61taset\x18\x01 \x01(\t\x12\r\n\x05query\x18\x02 \x01(\t\x12\r\n\x05limit\x18\x03 \x01(\x03\x12\x0e\n\x06resume\x18\x04 \x01(\t\"\x81\x01\n\x17SatellitesForRootResult\x12\x0c\n\x04root\x18\x01 \x01(\t\x12\x11\n\tsatellite\x18\x02 \x01(\t\x12\x1f\n\ncapsummary\x18\x03 \x01(\x0b\x32\x0b.CapSummary\x12\x14\n\x0c\x61ssociations\x18\x04 \x03(\t\x12\x0e\n\x06resume\x18\x05 \x01(\t\"T\n\x13URLLogSearchRequest\x12\x0f\n\x07\x64\x61taset\x18\x01 \x01(\t\x12\r\n\x05query\x18\x02 \x01(\t\x12\r\n\x05limit\x18\x03 \x01(\x03\x12\x0e\n\x06resume\x18\x04 \x01(\t\"R\n\x12URLLogSearchResult\x12\x0b\n\x03url\x18\x01 \x01(\t\x12\x0e\n\x06resume\x18\x02 \x01(\t\x12\x1f\n\ncapsummary\x18\x03 \x01(\x0b\x32\x0b.CapSummary2\x8e\t\n\tNetograph\x12\x36\n\x0bTempCapture\x12\x13.TempCaptureRequest\x1a\x12.TempCaptureResult\x12(\n\x08\x44\x61tasets\x12\x10.DatasetsRequest\x1a\x08.Dataset0\x01\x12<\n\rSubmitCapture\x12\x15.SubmitCaptureRequest\x1a\x14.SubmitCaptureResult\x12\x36\n\x0b\x43\x61ptureInfo\x12\x13.CaptureInfoRequest\x1a\x12.CaptureInfoResult\x12\x35\n\nCaptureLog\x12\x12.CaptureLogRequest\x1a\x11.CaptureLogResult0\x01\x12>\n\rDomainHistory\x12\x15.DomainHistoryRequest\x1a\x14.DomainHistoryResult0\x01\x12;\n\x0c\x44omainSearch\x12\x14.DomainSearchRequest\x1a\x13.DomainSearchResult0\x01\x12;\n\x0c\x44omainsForIP\x12\x14.DomainsForIPRequest\x1a\x13.DomainsForIPResult0\x01\x12\x32\n\tIPHistory\x12\x11.IPHistoryRequest\x1a\x10.IPHistoryResult0\x01\x12\x38\n\x0bIPLogSearch\x12\x13.IPLogSearchRequest\x1a\x12.IPLogSearchResult0\x01\x12/\n\x08IPSearch\x12\x10.IPSearchRequest\x1a\x0f.IPSearchResult0\x01\x12;\n\x0cIPsForDomain\x12\x14.IPsForDomainRequest\x1a\x13.IPsForDomainResult0\x01\x12\x41\n\x0eMetaForCapture\x12\x16.MetaForCaptureRequest\x1a\x15.MetaForCaptureResult0\x01\x12\x35\n\nMetaSearch\x12\x12.MetaSearchRequest\x1a\x11.MetaSearchResult0\x01\x12>\n\rRootLogSearch\x12\x15.RootLogSearchRequest\x1a\x14.RootLogSearchResult0\x01\x12J\n\x11RootsForSatellite\x12\x19.RootsForSatelliteRequest\x1a\x18.RootsForSatelliteResult0\x01\x12M\n\x12SatelliteLogSearch\x12\x1a.SatelliteLogSearchRequest\x1a\x19.SatelliteLogSearchResult0\x01\x12J\n\x11SatellitesForRoot\x12\x19.SatellitesForRootRequest\x1a\x18.SatellitesForRootResult0\x01\x12;\n\x0cURLLogSearch\x12\x14.URLLogSearchRequest\x1a\x13.URLLogSearchResult0\x01\x42\x07Z\x05ngapib\x06proto3')
   ,
   dependencies=[google_dot_protobuf_dot_timestamp__pb2.DESCRIPTOR,])
 
@@ -1336,6 +1336,89 @@ _METASEARCHRESULT = _descriptor.Descriptor(
 )
 
 
+_TEMPCAPTUREREQUEST = _descriptor.Descriptor(
+  name='TempCaptureRequest',
+  full_name='TempCaptureRequest',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='notification', full_name='TempCaptureRequest.notification', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='urls', full_name='TempCaptureRequest.urls', index=1,
+      number=2, type=9, cpp_type=9, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='meta', full_name='TempCaptureRequest.meta', index=2,
+      number=3, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=2309,
+  serialized_end=2390,
+)
+
+
+_TEMPCAPTURERESULT = _descriptor.Descriptor(
+  name='TempCaptureResult',
+  full_name='TempCaptureResult',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='assets', full_name='TempCaptureResult.assets', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='id', full_name='TempCaptureResult.id', index=1,
+      number=3, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=2392,
+  serialized_end=2439,
+)
+
+
 _SUBMITCAPTUREREQUEST = _descriptor.Descriptor(
   name='SubmitCaptureRequest',
   full_name='SubmitCaptureRequest',
@@ -1390,8 +1473,8 @@ _SUBMITCAPTUREREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2309,
-  serialized_end=2429,
+  serialized_start=2441,
+  serialized_end=2561,
 )
 
 
@@ -1435,8 +1518,8 @@ _SUBMITCAPTURERESULT = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2431,
-  serialized_end=2497,
+  serialized_start=2563,
+  serialized_end=2629,
 )
 
 
@@ -1487,8 +1570,8 @@ _ROOTLOGSEARCHREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2499,
-  serialized_end=2584,
+  serialized_start=2631,
+  serialized_end=2716,
 )
 
 
@@ -1532,8 +1615,8 @@ _ROOTLOGSEARCHRESULT = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2586,
-  serialized_end=2670,
+  serialized_start=2718,
+  serialized_end=2802,
 )
 
 
@@ -1584,8 +1667,8 @@ _ROOTSFORSATELLITEREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2672,
-  serialized_end=2761,
+  serialized_start=2804,
+  serialized_end=2893,
 )
 
 
@@ -1643,8 +1726,8 @@ _ROOTSFORSATELLITERESULT = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2764,
-  serialized_end=2893,
+  serialized_start=2896,
+  serialized_end=3025,
 )
 
 
@@ -1695,8 +1778,8 @@ _SATELLITELOGSEARCHREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2895,
-  serialized_end=2985,
+  serialized_start=3027,
+  serialized_end=3117,
 )
 
 
@@ -1740,8 +1823,8 @@ _SATELLITELOGSEARCHRESULT = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2987,
-  serialized_end=3081,
+  serialized_start=3119,
+  serialized_end=3213,
 )
 
 
@@ -1792,8 +1875,8 @@ _SATELLITESFORROOTREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3083,
-  serialized_end=3172,
+  serialized_start=3215,
+  serialized_end=3304,
 )
 
 
@@ -1851,8 +1934,8 @@ _SATELLITESFORROOTRESULT = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3175,
-  serialized_end=3304,
+  serialized_start=3307,
+  serialized_end=3436,
 )
 
 
@@ -1903,8 +1986,8 @@ _URLLOGSEARCHREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3306,
-  serialized_end=3390,
+  serialized_start=3438,
+  serialized_end=3522,
 )
 
 
@@ -1948,8 +2031,8 @@ _URLLOGSEARCHRESULT = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3392,
-  serialized_end=3474,
+  serialized_start=3524,
+  serialized_end=3606,
 )
 
 _DATASET.fields_by_name['deleted'].message_type = google_dot_protobuf_dot_timestamp__pb2._TIMESTAMP
@@ -1973,6 +2056,7 @@ _METAFORCAPTURERESULT.fields_by_name['meta'].message_type = _METADATA
 _METAFORCAPTURERESULT.fields_by_name['time'].message_type = google_dot_protobuf_dot_timestamp__pb2._TIMESTAMP
 _METASEARCHRESULT.fields_by_name['meta'].message_type = _METADATA
 _METASEARCHRESULT.fields_by_name['capsummary'].message_type = _CAPSUMMARY
+_TEMPCAPTUREREQUEST.fields_by_name['meta'].message_type = _METADATA
 _SUBMITCAPTUREREQUEST.fields_by_name['meta'].message_type = _METADATA
 _ROOTLOGSEARCHRESULT.fields_by_name['capsummary'].message_type = _CAPSUMMARY
 _ROOTSFORSATELLITERESULT.fields_by_name['capsummary'].message_type = _CAPSUMMARY
@@ -2005,6 +2089,8 @@ DESCRIPTOR.message_types_by_name['MetaForCaptureRequest'] = _METAFORCAPTUREREQUE
 DESCRIPTOR.message_types_by_name['MetaForCaptureResult'] = _METAFORCAPTURERESULT
 DESCRIPTOR.message_types_by_name['MetaSearchRequest'] = _METASEARCHREQUEST
 DESCRIPTOR.message_types_by_name['MetaSearchResult'] = _METASEARCHRESULT
+DESCRIPTOR.message_types_by_name['TempCaptureRequest'] = _TEMPCAPTUREREQUEST
+DESCRIPTOR.message_types_by_name['TempCaptureResult'] = _TEMPCAPTURERESULT
 DESCRIPTOR.message_types_by_name['SubmitCaptureRequest'] = _SUBMITCAPTUREREQUEST
 DESCRIPTOR.message_types_by_name['SubmitCaptureResult'] = _SUBMITCAPTURERESULT
 DESCRIPTOR.message_types_by_name['RootLogSearchRequest'] = _ROOTLOGSEARCHREQUEST
@@ -2225,6 +2311,20 @@ MetaSearchResult = _reflection.GeneratedProtocolMessageType('MetaSearchResult', 
   ))
 _sym_db.RegisterMessage(MetaSearchResult)
 
+TempCaptureRequest = _reflection.GeneratedProtocolMessageType('TempCaptureRequest', (_message.Message,), dict(
+  DESCRIPTOR = _TEMPCAPTUREREQUEST,
+  __module__ = 'ngapi_pb2'
+  # @@protoc_insertion_point(class_scope:TempCaptureRequest)
+  ))
+_sym_db.RegisterMessage(TempCaptureRequest)
+
+TempCaptureResult = _reflection.GeneratedProtocolMessageType('TempCaptureResult', (_message.Message,), dict(
+  DESCRIPTOR = _TEMPCAPTURERESULT,
+  __module__ = 'ngapi_pb2'
+  # @@protoc_insertion_point(class_scope:TempCaptureResult)
+  ))
+_sym_db.RegisterMessage(TempCaptureResult)
+
 SubmitCaptureRequest = _reflection.GeneratedProtocolMessageType('SubmitCaptureRequest', (_message.Message,), dict(
   DESCRIPTOR = _SUBMITCAPTUREREQUEST,
   __module__ = 'ngapi_pb2'
@@ -2319,13 +2419,22 @@ _NETOGRAPH = _descriptor.ServiceDescriptor(
   file=DESCRIPTOR,
   index=0,
   options=None,
-  serialized_start=3477,
-  serialized_end=4587,
+  serialized_start=3609,
+  serialized_end=4775,
   methods=[
+  _descriptor.MethodDescriptor(
+    name='TempCapture',
+    full_name='Netograph.TempCapture',
+    index=0,
+    containing_service=None,
+    input_type=_TEMPCAPTUREREQUEST,
+    output_type=_TEMPCAPTURERESULT,
+    options=None,
+  ),
   _descriptor.MethodDescriptor(
     name='Datasets',
     full_name='Netograph.Datasets',
-    index=0,
+    index=1,
     containing_service=None,
     input_type=_DATASETSREQUEST,
     output_type=_DATASET,
@@ -2334,7 +2443,7 @@ _NETOGRAPH = _descriptor.ServiceDescriptor(
   _descriptor.MethodDescriptor(
     name='SubmitCapture',
     full_name='Netograph.SubmitCapture',
-    index=1,
+    index=2,
     containing_service=None,
     input_type=_SUBMITCAPTUREREQUEST,
     output_type=_SUBMITCAPTURERESULT,
@@ -2343,7 +2452,7 @@ _NETOGRAPH = _descriptor.ServiceDescriptor(
   _descriptor.MethodDescriptor(
     name='CaptureInfo',
     full_name='Netograph.CaptureInfo',
-    index=2,
+    index=3,
     containing_service=None,
     input_type=_CAPTUREINFOREQUEST,
     output_type=_CAPTUREINFORESULT,
@@ -2352,7 +2461,7 @@ _NETOGRAPH = _descriptor.ServiceDescriptor(
   _descriptor.MethodDescriptor(
     name='CaptureLog',
     full_name='Netograph.CaptureLog',
-    index=3,
+    index=4,
     containing_service=None,
     input_type=_CAPTURELOGREQUEST,
     output_type=_CAPTURELOGRESULT,
@@ -2361,7 +2470,7 @@ _NETOGRAPH = _descriptor.ServiceDescriptor(
   _descriptor.MethodDescriptor(
     name='DomainHistory',
     full_name='Netograph.DomainHistory',
-    index=4,
+    index=5,
     containing_service=None,
     input_type=_DOMAINHISTORYREQUEST,
     output_type=_DOMAINHISTORYRESULT,
@@ -2370,7 +2479,7 @@ _NETOGRAPH = _descriptor.ServiceDescriptor(
   _descriptor.MethodDescriptor(
     name='DomainSearch',
     full_name='Netograph.DomainSearch',
-    index=5,
+    index=6,
     containing_service=None,
     input_type=_DOMAINSEARCHREQUEST,
     output_type=_DOMAINSEARCHRESULT,
@@ -2379,7 +2488,7 @@ _NETOGRAPH = _descriptor.ServiceDescriptor(
   _descriptor.MethodDescriptor(
     name='DomainsForIP',
     full_name='Netograph.DomainsForIP',
-    index=6,
+    index=7,
     containing_service=None,
     input_type=_DOMAINSFORIPREQUEST,
     output_type=_DOMAINSFORIPRESULT,
@@ -2388,7 +2497,7 @@ _NETOGRAPH = _descriptor.ServiceDescriptor(
   _descriptor.MethodDescriptor(
     name='IPHistory',
     full_name='Netograph.IPHistory',
-    index=7,
+    index=8,
     containing_service=None,
     input_type=_IPHISTORYREQUEST,
     output_type=_IPHISTORYRESULT,
@@ -2397,7 +2506,7 @@ _NETOGRAPH = _descriptor.ServiceDescriptor(
   _descriptor.MethodDescriptor(
     name='IPLogSearch',
     full_name='Netograph.IPLogSearch',
-    index=8,
+    index=9,
     containing_service=None,
     input_type=_IPLOGSEARCHREQUEST,
     output_type=_IPLOGSEARCHRESULT,
@@ -2406,7 +2515,7 @@ _NETOGRAPH = _descriptor.ServiceDescriptor(
   _descriptor.MethodDescriptor(
     name='IPSearch',
     full_name='Netograph.IPSearch',
-    index=9,
+    index=10,
     containing_service=None,
     input_type=_IPSEARCHREQUEST,
     output_type=_IPSEARCHRESULT,
@@ -2415,7 +2524,7 @@ _NETOGRAPH = _descriptor.ServiceDescriptor(
   _descriptor.MethodDescriptor(
     name='IPsForDomain',
     full_name='Netograph.IPsForDomain',
-    index=10,
+    index=11,
     containing_service=None,
     input_type=_IPSFORDOMAINREQUEST,
     output_type=_IPSFORDOMAINRESULT,
@@ -2424,7 +2533,7 @@ _NETOGRAPH = _descriptor.ServiceDescriptor(
   _descriptor.MethodDescriptor(
     name='MetaForCapture',
     full_name='Netograph.MetaForCapture',
-    index=11,
+    index=12,
     containing_service=None,
     input_type=_METAFORCAPTUREREQUEST,
     output_type=_METAFORCAPTURERESULT,
@@ -2433,7 +2542,7 @@ _NETOGRAPH = _descriptor.ServiceDescriptor(
   _descriptor.MethodDescriptor(
     name='MetaSearch',
     full_name='Netograph.MetaSearch',
-    index=12,
+    index=13,
     containing_service=None,
     input_type=_METASEARCHREQUEST,
     output_type=_METASEARCHRESULT,
@@ -2442,7 +2551,7 @@ _NETOGRAPH = _descriptor.ServiceDescriptor(
   _descriptor.MethodDescriptor(
     name='RootLogSearch',
     full_name='Netograph.RootLogSearch',
-    index=13,
+    index=14,
     containing_service=None,
     input_type=_ROOTLOGSEARCHREQUEST,
     output_type=_ROOTLOGSEARCHRESULT,
@@ -2451,7 +2560,7 @@ _NETOGRAPH = _descriptor.ServiceDescriptor(
   _descriptor.MethodDescriptor(
     name='RootsForSatellite',
     full_name='Netograph.RootsForSatellite',
-    index=14,
+    index=15,
     containing_service=None,
     input_type=_ROOTSFORSATELLITEREQUEST,
     output_type=_ROOTSFORSATELLITERESULT,
@@ -2460,7 +2569,7 @@ _NETOGRAPH = _descriptor.ServiceDescriptor(
   _descriptor.MethodDescriptor(
     name='SatelliteLogSearch',
     full_name='Netograph.SatelliteLogSearch',
-    index=15,
+    index=16,
     containing_service=None,
     input_type=_SATELLITELOGSEARCHREQUEST,
     output_type=_SATELLITELOGSEARCHRESULT,
@@ -2469,7 +2578,7 @@ _NETOGRAPH = _descriptor.ServiceDescriptor(
   _descriptor.MethodDescriptor(
     name='SatellitesForRoot',
     full_name='Netograph.SatellitesForRoot',
-    index=16,
+    index=17,
     containing_service=None,
     input_type=_SATELLITESFORROOTREQUEST,
     output_type=_SATELLITESFORROOTRESULT,
@@ -2478,7 +2587,7 @@ _NETOGRAPH = _descriptor.ServiceDescriptor(
   _descriptor.MethodDescriptor(
     name='URLLogSearch',
     full_name='Netograph.URLLogSearch',
-    index=17,
+    index=18,
     containing_service=None,
     input_type=_URLLOGSEARCHREQUEST,
     output_type=_URLLOGSEARCHRESULT,
