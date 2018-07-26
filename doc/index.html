@@ -295,6 +295,22 @@
                 </li>
               
                 <li>
+                  <a href="#.RedirsByDestinationRequest"><span class="badge">M</span>RedirsByDestinationRequest</a>
+                </li>
+              
+                <li>
+                  <a href="#.RedirsByDestinationResponse"><span class="badge">M</span>RedirsByDestinationResponse</a>
+                </li>
+              
+                <li>
+                  <a href="#.RedirsBySourceRequest"><span class="badge">M</span>RedirsBySourceRequest</a>
+                </li>
+              
+                <li>
+                  <a href="#.RedirsBySourceResponse"><span class="badge">M</span>RedirsBySourceResponse</a>
+                </li>
+              
+                <li>
                   <a href="#.RootLogSearchRequest"><span class="badge">M</span>RootLogSearchRequest</a>
                 </li>
               
@@ -1443,6 +1459,182 @@
 
         
       
+        <h3 id=".RedirsByDestinationRequest">RedirsByDestinationRequest</h3>
+        <p></p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>dataset</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>query</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>limit</td>
+                  <td><a href="#int64">int64</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>resume</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+        
+
+        
+      
+        <h3 id=".RedirsByDestinationResponse">RedirsByDestinationResponse</h3>
+        <p></p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>source</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>destination</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>latestcapture</td>
+                  <td><a href="#CapSummary">CapSummary</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>resume</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+        
+
+        
+      
+        <h3 id=".RedirsBySourceRequest">RedirsBySourceRequest</h3>
+        <p></p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>dataset</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>query</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>limit</td>
+                  <td><a href="#int64">int64</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>resume</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+        
+
+        
+      
+        <h3 id=".RedirsBySourceResponse">RedirsBySourceResponse</h3>
+        <p></p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>source</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>destination</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>latestcapture</td>
+                  <td><a href="#CapSummary">CapSummary</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>resume</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+        
+
+        
+      
         <h3 id=".RootLogSearchRequest">RootLogSearchRequest</h3>
         <p></p>
 
@@ -2146,6 +2338,20 @@ length of this history is capped at ~100.</p></td>
                 <td><a href="#MetaSearchRequest">.MetaSearchRequest</a></td>
                 <td><a href="#MetaSearchResult">.MetaSearchResult</a></td>
                 <td><p>Search the dataset log for captures matching a metadata query.</p></td>
+              </tr>
+            
+              <tr>
+                <td>RedirsByDestination</td>
+                <td><a href="#RedirsByDestinationRequest">.RedirsByDestinationRequest</a></td>
+                <td><a href="#RedirsByDestinationResponse">.RedirsByDestinationResponse</a></td>
+                <td><p>Find all redirections in the dataset for a given destination domain query.</p></td>
+              </tr>
+            
+              <tr>
+                <td>RedirsBySource</td>
+                <td><a href="#RedirsBySourceRequest">.RedirsBySourceRequest</a></td>
+                <td><a href="#RedirsBySourceResponse">.RedirsBySourceResponse</a></td>
+                <td><p>Find all redirections in the dataset for a given source domain query.</p></td>
               </tr>
             
               <tr>

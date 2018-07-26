@@ -167,28 +167,30 @@ message MetaSearchResult {
     CapSummary capsummary = 4;
 }
 
-message TempCaptureRequest {
-    string notification = 1;
-    repeated string urls = 2;
-    repeated Metadata meta = 3;
-}
-message TempCaptureResult {
-    string assets = 1;
-    string id = 3;
-}
-
-
-message SubmitCaptureRequest {
+message RedirsByDestinationRequest {
     string dataset = 1;
-    string notification = 2;
-    repeated string urls = 3;
-    repeated Metadata meta = 4;
-    int64 skiprecent = 5;
+    string query = 2;
+    int64 limit = 3;
+    string resume = 4;
 }
-message SubmitCaptureResult {
-    string assets = 1;
-    bool skipped = 2;
-    string id = 3;
+message RedirsByDestinationResponse {
+    string source = 1;
+    string destination = 2;
+    CapSummary latestcapture = 3;
+    string resume = 4;
+}
+
+message RedirsBySourceRequest {
+    string dataset = 1;
+    string query = 2;
+    int64 limit = 3;
+    string resume = 4;
+}
+message RedirsBySourceResponse {
+    string source = 1;
+    string destination = 2;
+    CapSummary latestcapture = 3;
+    string resume = 4;
 }
 
 message RootLogSearchRequest {
@@ -217,6 +219,19 @@ message RootsForSatelliteResult {
     string resume = 5;
 }
 
+message SubmitCaptureRequest {
+    string dataset = 1;
+    string notification = 2;
+    repeated string urls = 3;
+    repeated Metadata meta = 4;
+    int64 skiprecent = 5;
+}
+message SubmitCaptureResult {
+    string assets = 1;
+    bool skipped = 2;
+    string id = 3;
+}
+
 message SatelliteLogSearchRequest {
     string dataset = 1;
     string query = 2;
@@ -241,6 +256,16 @@ message SatellitesForRootResult {
     CapSummary capsummary = 3;
     repeated string associations = 4;
     string resume = 5;
+}
+
+message TempCaptureRequest {
+    string notification = 1;
+    repeated string urls = 2;
+    repeated Metadata meta = 3;
+}
+message TempCaptureResult {
+    string assets = 1;
+    string id = 3;
 }
 
 message URLLogSearchRequest {
@@ -303,6 +328,12 @@ service Netograph {
 
     // Search the dataset log for captures matching a metadata query.
     rpc MetaSearch(MetaSearchRequest) returns (stream MetaSearchResult);
+
+    // Find all redirections in the dataset for a given destination domain query.
+    rpc RedirsByDestination(RedirsByDestinationRequest) returns (stream RedirsByDestinationResponse);
+
+    // Find all redirections in the dataset for a given source domain query.
+    rpc RedirsBySource(RedirsBySourceRequest) returns (stream RedirsBySourceResponse);
 
     // Search the dataset log for captures where any root domain matches a given query.
     rpc RootLogSearch(RootLogSearchRequest) returns (stream RootLogSearchResult);

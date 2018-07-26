@@ -84,6 +84,16 @@ class NetographStub(object):
         request_serializer=ngapi__pb2.MetaSearchRequest.SerializeToString,
         response_deserializer=ngapi__pb2.MetaSearchResult.FromString,
         )
+    self.RedirsByDestination = channel.unary_stream(
+        '/Netograph/RedirsByDestination',
+        request_serializer=ngapi__pb2.RedirsByDestinationRequest.SerializeToString,
+        response_deserializer=ngapi__pb2.RedirsByDestinationResponse.FromString,
+        )
+    self.RedirsBySource = channel.unary_stream(
+        '/Netograph/RedirsBySource',
+        request_serializer=ngapi__pb2.RedirsBySourceRequest.SerializeToString,
+        response_deserializer=ngapi__pb2.RedirsBySourceResponse.FromString,
+        )
     self.RootLogSearch = channel.unary_stream(
         '/Netograph/RootLogSearch',
         request_serializer=ngapi__pb2.RootLogSearchRequest.SerializeToString,
@@ -218,6 +228,20 @@ class NetographServicer(object):
     context.set_details('Method not implemented!')
     raise NotImplementedError('Method not implemented!')
 
+  def RedirsByDestination(self, request, context):
+    """Find all redirections in the dataset for a given destination domain query.
+    """
+    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+    context.set_details('Method not implemented!')
+    raise NotImplementedError('Method not implemented!')
+
+  def RedirsBySource(self, request, context):
+    """Find all redirections in the dataset for a given source domain query.
+    """
+    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+    context.set_details('Method not implemented!')
+    raise NotImplementedError('Method not implemented!')
+
   def RootLogSearch(self, request, context):
     """Search the dataset log for captures where any root domain matches a given query.
     """
@@ -325,6 +349,16 @@ def add_NetographServicer_to_server(servicer, server):
           servicer.MetaSearch,
           request_deserializer=ngapi__pb2.MetaSearchRequest.FromString,
           response_serializer=ngapi__pb2.MetaSearchResult.SerializeToString,
+      ),
+      'RedirsByDestination': grpc.unary_stream_rpc_method_handler(
+          servicer.RedirsByDestination,
+          request_deserializer=ngapi__pb2.RedirsByDestinationRequest.FromString,
+          response_serializer=ngapi__pb2.RedirsByDestinationResponse.SerializeToString,
+      ),
+      'RedirsBySource': grpc.unary_stream_rpc_method_handler(
+          servicer.RedirsBySource,
+          request_deserializer=ngapi__pb2.RedirsBySourceRequest.FromString,
+          response_serializer=ngapi__pb2.RedirsBySourceResponse.SerializeToString,
       ),
       'RootLogSearch': grpc.unary_stream_rpc_method_handler(
           servicer.RootLogSearch,

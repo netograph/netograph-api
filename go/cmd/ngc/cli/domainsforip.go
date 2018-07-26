@@ -4,12 +4,12 @@ import (
 	"fmt"
 	"io"
 
+	"github.com/netograph/netograph-api/go/proto/ngapi"
 	"github.com/spf13/cobra"
 	"github.com/spf13/viper"
-	"github.com/netograph/netograph-api/go/proto/ngapi"
 )
 
-func domainsForIP() *cobra.Command {
+func domainsForIPCommand() *cobra.Command {
 	var resume *string
 	cmd := &cobra.Command{
 		Use:     "domainsforip ip",

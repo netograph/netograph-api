@@ -9,14 +9,14 @@ import (
 	"github.com/spf13/viper"
 )
 
-func satellitesForRootCommand() *cobra.Command {
+func redirsBySourceCommand() *cobra.Command {
 	var resume *string
 	cmd := &cobra.Command{
-		Use:     "satellitesforroot query",
-		Aliases: []string{"satsforroot"},
-		Short:   "Retrieve all satellites for a given root domain query",
+		Use:     "redirsbysource address",
+		Aliases: []string{"rsrc"},
+		Short:   "Retrieve redirections from a given source domain query",
 		Args: func(cmd *cobra.Command, args []string) error {
-			if len(args) < 1 {
+			if len(args) != 1 {
 				return fmt.Errorf("Usage: %s", cmd.Use)
 			}
 			return nil
@@ -26,12 +26,13 @@ func satellitesForRootCommand() *cobra.Command {
 			if err != nil {
 				return err
 			}
+
 			limit, err := cmd.Parent().PersistentFlags().GetInt64("limit")
 			if err != nil {
 				return err
 			}
 
-			r, err := c.SatellitesForRoot(ctx, &ngapi.SatellitesForRootRequest{
+			r, err := c.RedirsBySource(ctx, &ngapi.RedirsBySourceRequest{
 				Dataset: viper.GetString("dset"),
 				Query:   args[0],
 				Limit:   limit,
@@ -41,12 +42,15 @@ func satellitesForRootCommand() *cobra.Command {
 				return err
 			}
 			for {
-				if v, err := r.Recv(); err != nil {
+				v, err := r.Recv()
+				if err != nil {
 					if err == io.EOF {
 						return nil
 					}
 					return err
-				} else if err := Output(cmd, v); err != nil {
+				}
+				err = Output(cmd, v)
+				if err != nil {
 					return err
 				}
 			}
