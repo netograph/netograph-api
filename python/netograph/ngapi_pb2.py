@@ -20,7 +20,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   name='ngapi.proto',
   package='',
   syntax='proto3',
-  serialized_pb=_b('\n\x0bngapi.proto\x1a\x1fgoogle/protobuf/timestamp.proto\"\x11\n\x0f\x44\x61tasetsRequest\"|\n\x07\x44\x61taset\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x02 \x01(\t\x12\x0f\n\x07urlbase\x18\x03 \x01(\t\x12+\n\x07\x64\x65leted\x18\x04 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x10\n\x08readonly\x18\x05 \x01(\x08\"\x9c\x02\n\nCapSummary\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0e\n\x06\x61ssets\x18\x02 \x01(\t\x12\x1f\n\x05roots\x18\x03 \x03(\x0b\x32\x10.CapSummary.Root\x12(\n\x04time\x18\x04 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x1e\n\x04plan\x18\x05 \x01(\x0b\x32\x10.CapSummary.Plan\x12 \n\x05stats\x18\x06 \x01(\x0b\x32\x11.CapSummary.Stats\x1a\x14\n\x04Plan\x12\x0c\n\x04urls\x18\x01 \x03(\t\x1a\x14\n\x04Root\x12\x0c\n\x04urls\x18\x01 \x03(\t\x1a\x39\n\x05Stats\x12\r\n\x05\x66lows\x18\x01 \x01(\x05\x12\x12\n\nwebsockets\x18\x02 \x01(\x05\x12\r\n\x05hosts\x18\x03 \x01(\x05\"&\n\x08Metadata\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t\"1\n\x12\x43\x61ptureInfoRequest\x12\x0f\n\x07\x64\x61taset\x18\x01 \x01(\t\x12\n\n\x02id\x18\x02 \x01(\t\"4\n\x11\x43\x61ptureInfoResult\x12\x1f\n\ncapsummary\x18\x01 \x01(\x0b\x32\x0b.CapSummary\"C\n\x11\x43\x61ptureLogRequest\x12\x0f\n\x07\x64\x61taset\x18\x01 \x01(\t\x12\r\n\x05limit\x18\x02 \x01(\x03\x12\x0e\n\x06resume\x18\x03 \x01(\t\"C\n\x10\x43\x61ptureLogResult\x12\x1f\n\ncapsummary\x18\x01 \x01(\x0b\x32\x0b.CapSummary\x12\x0e\n\x06resume\x18\x02 \x01(\t\"F\n\x14\x44omainHistoryRequest\x12\x0f\n\x07\x64\x61taset\x18\x01 \x01(\t\x12\x0e\n\x06\x64omain\x18\x02 \x01(\t\x12\r\n\x05limit\x18\x03 \x01(\x03\"6\n\x13\x44omainHistoryResult\x12\x1f\n\ncapsummary\x18\x01 \x01(\x0b\x32\x0b.CapSummary\"T\n\x13\x44omainSearchRequest\x12\x0f\n\x07\x64\x61taset\x18\x01 \x01(\t\x12\r\n\x05query\x18\x02 \x01(\t\x12\r\n\x05limit\x18\x03 \x01(\x03\x12\x0e\n\x06resume\x18\x04 \x01(\t\"X\n\x12\x44omainSearchResult\x12\x0e\n\x06\x64omain\x18\x01 \x01(\t\x12\x0e\n\x06resume\x18\x02 \x01(\t\x12\"\n\rlatestcapture\x18\x03 \x01(\x0b\x32\x0b.CapSummary\"Q\n\x13\x44omainsForIPRequest\x12\x0f\n\x07\x64\x61taset\x18\x01 \x01(\t\x12\n\n\x02ip\x18\x02 \x01(\t\x12\r\n\x05limit\x18\x03 \x01(\x03\x12\x0e\n\x06resume\x18\x04 \x01(\t\"z\n\x12\x44omainsForIPResult\x12\x0e\n\x06\x64omain\x18\x01 \x01(\t\x12\n\n\x02ip\x18\x02 \x01(\t\x12\"\n\rlatestcapture\x18\x03 \x01(\x0b\x32\x0b.CapSummary\x12\x14\n\x0c\x61ssociations\x18\x04 \x03(\t\x12\x0e\n\x06resume\x18\x05 \x01(\t\">\n\x10IPHistoryRequest\x12\x0f\n\x07\x64\x61taset\x18\x01 \x01(\t\x12\n\n\x02ip\x18\x02 \x01(\t\x12\r\n\x05limit\x18\x03 \x01(\x03\"2\n\x0fIPHistoryResult\x12\x1f\n\ncapsummary\x18\x01 \x01(\x0b\x32\x0b.CapSummary\"P\n\x12IPLogSearchRequest\x12\x0f\n\x07\x64\x61taset\x18\x01 \x01(\t\x12\n\n\x02ip\x18\x02 \x01(\t\x12\r\n\x05limit\x18\x03 \x01(\x03\x12\x0e\n\x06resume\x18\x04 \x01(\t\"P\n\x11IPLogSearchResult\x12\x1f\n\ncapsummary\x18\x01 \x01(\x0b\x32\x0b.CapSummary\x12\n\n\x02ip\x18\x02 \x01(\t\x12\x0e\n\x06resume\x18\x03 \x01(\t\"P\n\x0eIPSearchResult\x12\n\n\x02ip\x18\x01 \x01(\t\x12\x0e\n\x06resume\x18\x02 \x01(\t\x12\"\n\rlatestcapture\x18\x03 \x01(\x0b\x32\x0b.CapSummary\"[\n\x0fIPSearchRequest\x12\x0f\n\x07\x64\x61taset\x18\x01 \x01(\t\x12\n\n\x02ip\x18\x02 \x01(\t\x12\x0c\n\x04mask\x18\x03 \x01(\x05\x12\r\n\x05limit\x18\x04 \x01(\x03\x12\x0e\n\x06resume\x18\x05 \x01(\t\"T\n\x13IPsForDomainRequest\x12\x0f\n\x07\x64\x61taset\x18\x01 \x01(\t\x12\r\n\x05query\x18\x02 \x01(\t\x12\r\n\x05limit\x18\x03 \x01(\x03\x12\x0e\n\x06resume\x18\x04 \x01(\t\"z\n\x12IPsForDomainResult\x12\x0e\n\x06\x64omain\x18\x01 \x01(\t\x12\n\n\x02ip\x18\x02 \x01(\t\x12\"\n\rlatestcapture\x18\x03 \x01(\x0b\x32\x0b.CapSummary\x12\x14\n\x0c\x61ssociations\x18\x04 \x03(\t\x12\x0e\n\x06resume\x18\x05 \x01(\t\"S\n\x15MetaForCaptureRequest\x12\x0f\n\x07\x64\x61taset\x18\x01 \x01(\t\x12\n\n\x02id\x18\x02 \x01(\t\x12\r\n\x05limit\x18\x03 \x01(\x03\x12\x0e\n\x06resume\x18\x04 \x01(\t\"i\n\x14MetaForCaptureResult\x12\x17\n\x04meta\x18\x01 \x01(\x0b\x32\t.Metadata\x12(\n\x04time\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x0e\n\x06resume\x18\x03 \x01(\t\"R\n\x11MetaSearchRequest\x12\x0f\n\x07\x64\x61taset\x18\x01 \x01(\t\x12\r\n\x05query\x18\x02 \x01(\t\x12\r\n\x05limit\x18\x03 \x01(\x03\x12\x0e\n\x06resume\x18\x04 \x01(\t\"\\\n\x10MetaSearchResult\x12\x17\n\x04meta\x18\x01 \x01(\x0b\x32\t.Metadata\x12\x0e\n\x06resume\x18\x03 \x01(\t\x12\x1f\n\ncapsummary\x18\x04 \x01(\x0b\x32\x0b.CapSummary\"[\n\x1aRedirsByDestinationRequest\x12\x0f\n\x07\x64\x61taset\x18\x01 \x01(\t\x12\r\n\x05query\x18\x02 \x01(\t\x12\r\n\x05limit\x18\x03 \x01(\x03\x12\x0e\n\x06resume\x18\x04 \x01(\t\"v\n\x1bRedirsByDestinationResponse\x12\x0e\n\x06source\x18\x01 \x01(\t\x12\x13\n\x0b\x64\x65stination\x18\x02 \x01(\t\x12\"\n\rlatestcapture\x18\x03 \x01(\x0b\x32\x0b.CapSummary\x12\x0e\n\x06resume\x18\x04 \x01(\t\"V\n\x15RedirsBySourceRequest\x12\x0f\n\x07\x64\x61taset\x18\x01 \x01(\t\x12\r\n\x05query\x18\x02 \x01(\t\x12\r\n\x05limit\x18\x03 \x01(\x03\x12\x0e\n\x06resume\x18\x04 \x01(\t\"q\n\x16RedirsBySourceResponse\x12\x0e\n\x06source\x18\x01 \x01(\t\x12\x13\n\x0b\x64\x65stination\x18\x02 \x01(\t\x12\"\n\rlatestcapture\x18\x03 \x01(\x0b\x32\x0b.CapSummary\x12\x0e\n\x06resume\x18\x04 \x01(\t\"U\n\x14RootLogSearchRequest\x12\x0f\n\x07\x64\x61taset\x18\x01 \x01(\t\x12\r\n\x05query\x18\x02 \x01(\t\x12\r\n\x05limit\x18\x03 \x01(\x03\x12\x0e\n\x06resume\x18\x04 \x01(\t\"T\n\x13RootLogSearchResult\x12\x0c\n\x04root\x18\x01 \x01(\t\x12\x0e\n\x06resume\x18\x02 \x01(\t\x12\x1f\n\ncapsummary\x18\x03 \x01(\x0b\x32\x0b.CapSummary\"Y\n\x18RootsForSatelliteRequest\x12\x0f\n\x07\x64\x61taset\x18\x01 \x01(\t\x12\r\n\x05query\x18\x02 \x01(\t\x12\r\n\x05limit\x18\x03 \x01(\x03\x12\x0e\n\x06resume\x18\x04 \x01(\t\"\x81\x01\n\x17RootsForSatelliteResult\x12\x0c\n\x04root\x18\x01 \x01(\t\x12\x11\n\tsatellite\x18\x02 \x01(\t\x12\x1f\n\ncapsummary\x18\x03 \x01(\x0b\x32\x0b.CapSummary\x12\x14\n\x0c\x61ssociations\x18\x04 \x03(\t\x12\x0e\n\x06resume\x18\x05 \x01(\t\"x\n\x14SubmitCaptureRequest\x12\x0f\n\x07\x64\x61taset\x18\x01 \x01(\t\x12\x14\n\x0cnotification\x18\x02 \x01(\t\x12\x0c\n\x04urls\x18\x03 \x03(\t\x12\x17\n\x04meta\x18\x04 \x03(\x0b\x32\t.Metadata\x12\x12\n\nskiprecent\x18\x05 \x01(\x03\"B\n\x13SubmitCaptureResult\x12\x0e\n\x06\x61ssets\x18\x01 \x01(\t\x12\x0f\n\x07skipped\x18\x02 \x01(\x08\x12\n\n\x02id\x18\x03 \x01(\t\"Z\n\x19SatelliteLogSearchRequest\x12\x0f\n\x07\x64\x61taset\x18\x01 \x01(\t\x12\r\n\x05query\x18\x02 \x01(\t\x12\r\n\x05limit\x18\x03 \x01(\x03\x12\x0e\n\x06resume\x18\x04 \x01(\t\"^\n\x18SatelliteLogSearchResult\x12\x11\n\tsatellite\x18\x01 \x01(\t\x12\x0e\n\x06resume\x18\x02 \x01(\t\x12\x1f\n\ncapsummary\x18\x03 \x01(\x0b\x32\x0b.CapSummary\"Y\n\x18SatellitesForRootRequest\x12\x0f\n\x07\x64\x61taset\x18\x01 \x01(\t\x12\r\n\x05query\x18\x02 \x01(\t\x12\r\n\x05limit\x18\x03 \x01(\x03\x12\x0e\n\x06resume\x18\x04 \x01(\t\"\x81\x01\n\x17SatellitesForRootResult\x12\x0c\n\x04root\x18\x01 \x01(\t\x12\x11\n\tsatellite\x18\x02 \x01(\t\x12\x1f\n\ncapsummary\x18\x03 \x01(\x0b\x32\x0b.CapSummary\x12\x14\n\x0c\x61ssociations\x18\x04 \x03(\t\x12\x0e\n\x06resume\x18\x05 \x01(\t\"Q\n\x12TempCaptureRequest\x12\x14\n\x0cnotification\x18\x01 \x01(\t\x12\x0c\n\x04urls\x18\x02 \x03(\t\x12\x17\n\x04meta\x18\x03 \x03(\x0b\x32\t.Metadata\"/\n\x11TempCaptureResult\x12\x0e\n\x06\x61ssets\x18\x01 \x01(\t\x12\n\n\x02id\x18\x03 \x01(\t\"T\n\x13URLLogSearchRequest\x12\x0f\n\x07\x64\x61taset\x18\x01 \x01(\t\x12\r\n\x05query\x18\x02 \x01(\t\x12\r\n\x05limit\x18\x03 \x01(\x03\x12\x0e\n\x06resume\x18\x04 \x01(\t\"R\n\x12URLLogSearchResult\x12\x0b\n\x03url\x18\x01 \x01(\t\x12\x0e\n\x06resume\x18\x02 \x01(\t\x12\x1f\n\ncapsummary\x18\x03 \x01(\x0b\x32\x0b.CapSummary2\xa7\n\n\tNetograph\x12\x36\n\x0bTempCapture\x12\x13.TempCaptureRequest\x1a\x12.TempCaptureResult\x12(\n\x08\x44\x61tasets\x12\x10.DatasetsRequest\x1a\x08.Dataset0\x01\x12<\n\rSubmitCapture\x12\x15.SubmitCaptureRequest\x1a\x14.SubmitCaptureResult\x12\x36\n\x0b\x43\x61ptureInfo\x12\x13.CaptureInfoRequest\x1a\x12.CaptureInfoResult\x12\x35\n\nCaptureLog\x12\x12.CaptureLogRequest\x1a\x11.CaptureLogResult0\x01\x12>\n\rDomainHistory\x12\x15.DomainHistoryRequest\x1a\x14.DomainHistoryResult0\x01\x12;\n\x0c\x44omainSearch\x12\x14.DomainSearchRequest\x1a\x13.DomainSearchResult0\x01\x12;\n\x0c\x44omainsForIP\x12\x14.DomainsForIPRequest\x1a\x13.DomainsForIPResult0\x01\x12\x32\n\tIPHistory\x12\x11.IPHistoryRequest\x1a\x10.IPHistoryResult0\x01\x12\x38\n\x0bIPLogSearch\x12\x13.IPLogSearchRequest\x1a\x12.IPLogSearchResult0\x01\x12/\n\x08IPSearch\x12\x10.IPSearchRequest\x1a\x0f.IPSearchResult0\x01\x12;\n\x0cIPsForDomain\x12\x14.IPsForDomainRequest\x1a\x13.IPsForDomainResult0\x01\x12\x41\n\x0eMetaForCapture\x12\x16.MetaForCaptureRequest\x1a\x15.MetaForCaptureResult0\x01\x12\x35\n\nMetaSearch\x12\x12.MetaSearchRequest\x1a\x11.MetaSearchResult0\x01\x12R\n\x13RedirsByDestination\x12\x1b.RedirsByDestinationRequest\x1a\x1c.RedirsByDestinationResponse0\x01\x12\x43\n\x0eRedirsBySource\x12\x16.RedirsBySourceRequest\x1a\x17.RedirsBySourceResponse0\x01\x12>\n\rRootLogSearch\x12\x15.RootLogSearchRequest\x1a\x14.RootLogSearchResult0\x01\x12J\n\x11RootsForSatellite\x12\x19.RootsForSatelliteRequest\x1a\x18.RootsForSatelliteResult0\x01\x12M\n\x12SatelliteLogSearch\x12\x1a.SatelliteLogSearchRequest\x1a\x19.SatelliteLogSearchResult0\x01\x12J\n\x11SatellitesForRoot\x12\x19.SatellitesForRootRequest\x1a\x18.SatellitesForRootResult0\x01\x12;\n\x0cURLLogSearch\x12\x14.URLLogSearchRequest\x1a\x13.URLLogSearchResult0\x01\x42\x07Z\x05ngapib\x06proto3')
+  serialized_pb=_b('\n\x0bngapi.proto\x1a\x1fgoogle/protobuf/timestamp.proto\"\x11\n\x0f\x44\x61tasetsRequest\"|\n\x07\x44\x61taset\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x02 \x01(\t\x12\x0f\n\x07urlbase\x18\x03 \x01(\t\x12+\n\x07\x64\x65leted\x18\x04 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x10\n\x08readonly\x18\x05 \x01(\x08\"\x9c\x02\n\nCapSummary\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0e\n\x06\x61ssets\x18\x02 \x01(\t\x12\x1f\n\x05roots\x18\x03 \x03(\x0b\x32\x10.CapSummary.Root\x12(\n\x04time\x18\x04 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x1e\n\x04plan\x18\x05 \x01(\x0b\x32\x10.CapSummary.Plan\x12 \n\x05stats\x18\x06 \x01(\x0b\x32\x11.CapSummary.Stats\x1a\x14\n\x04Plan\x12\x0c\n\x04urls\x18\x01 \x03(\t\x1a\x14\n\x04Root\x12\x0c\n\x04urls\x18\x01 \x03(\t\x1a\x39\n\x05Stats\x12\r\n\x05\x66lows\x18\x01 \x01(\x05\x12\x12\n\nwebsockets\x18\x02 \x01(\x05\x12\r\n\x05hosts\x18\x03 \x01(\x05\"&\n\x08Metadata\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t\"1\n\x12\x43\x61ptureInfoRequest\x12\x0f\n\x07\x64\x61taset\x18\x01 \x01(\t\x12\n\n\x02id\x18\x02 \x01(\t\"4\n\x11\x43\x61ptureInfoResult\x12\x1f\n\ncapsummary\x18\x01 \x01(\x0b\x32\x0b.CapSummary\"\x97\x01\n\x11\x43\x61ptureLogRequest\x12\x0f\n\x07\x64\x61taset\x18\x01 \x01(\t\x12\r\n\x05limit\x18\x02 \x01(\x03\x12\x0e\n\x06resume\x18\x03 \x01(\t\x12)\n\x05start\x18\x04 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\'\n\x03\x65nd\x18\x05 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\"C\n\x10\x43\x61ptureLogResult\x12\x1f\n\ncapsummary\x18\x01 \x01(\x0b\x32\x0b.CapSummary\x12\x0e\n\x06resume\x18\x02 \x01(\t\"F\n\x14\x44omainHistoryRequest\x12\x0f\n\x07\x64\x61taset\x18\x01 \x01(\t\x12\x0e\n\x06\x64omain\x18\x02 \x01(\t\x12\r\n\x05limit\x18\x03 \x01(\x03\"6\n\x13\x44omainHistoryResult\x12\x1f\n\ncapsummary\x18\x01 \x01(\x0b\x32\x0b.CapSummary\"T\n\x13\x44omainSearchRequest\x12\x0f\n\x07\x64\x61taset\x18\x01 \x01(\t\x12\r\n\x05query\x18\x02 \x01(\t\x12\r\n\x05limit\x18\x03 \x01(\x03\x12\x0e\n\x06resume\x18\x04 \x01(\t\"X\n\x12\x44omainSearchResult\x12\x0e\n\x06\x64omain\x18\x01 \x01(\t\x12\x0e\n\x06resume\x18\x02 \x01(\t\x12\"\n\rlatestcapture\x18\x03 \x01(\x0b\x32\x0b.CapSummary\"Q\n\x13\x44omainsForIPRequest\x12\x0f\n\x07\x64\x61taset\x18\x01 \x01(\t\x12\n\n\x02ip\x18\x02 \x01(\t\x12\r\n\x05limit\x18\x03 \x01(\x03\x12\x0e\n\x06resume\x18\x04 \x01(\t\"z\n\x12\x44omainsForIPResult\x12\x0e\n\x06\x64omain\x18\x01 \x01(\t\x12\n\n\x02ip\x18\x02 \x01(\t\x12\"\n\rlatestcapture\x18\x03 \x01(\x0b\x32\x0b.CapSummary\x12\x14\n\x0c\x61ssociations\x18\x04 \x03(\t\x12\x0e\n\x06resume\x18\x05 \x01(\t\">\n\x10IPHistoryRequest\x12\x0f\n\x07\x64\x61taset\x18\x01 \x01(\t\x12\n\n\x02ip\x18\x02 \x01(\t\x12\r\n\x05limit\x18\x03 \x01(\x03\"2\n\x0fIPHistoryResult\x12\x1f\n\ncapsummary\x18\x01 \x01(\x0b\x32\x0b.CapSummary\"P\n\x12IPLogSearchRequest\x12\x0f\n\x07\x64\x61taset\x18\x01 \x01(\t\x12\n\n\x02ip\x18\x02 \x01(\t\x12\r\n\x05limit\x18\x03 \x01(\x03\x12\x0e\n\x06resume\x18\x04 \x01(\t\"P\n\x11IPLogSearchResult\x12\x1f\n\ncapsummary\x18\x01 \x01(\x0b\x32\x0b.CapSummary\x12\n\n\x02ip\x18\x02 \x01(\t\x12\x0e\n\x06resume\x18\x03 \x01(\t\"P\n\x0eIPSearchResult\x12\n\n\x02ip\x18\x01 \x01(\t\x12\x0e\n\x06resume\x18\x02 \x01(\t\x12\"\n\rlatestcapture\x18\x03 \x01(\x0b\x32\x0b.CapSummary\"[\n\x0fIPSearchRequest\x12\x0f\n\x07\x64\x61taset\x18\x01 \x01(\t\x12\n\n\x02ip\x18\x02 \x01(\t\x12\x0c\n\x04mask\x18\x03 \x01(\x05\x12\r\n\x05limit\x18\x04 \x01(\x03\x12\x0e\n\x06resume\x18\x05 \x01(\t\"T\n\x13IPsForDomainRequest\x12\x0f\n\x07\x64\x61taset\x18\x01 \x01(\t\x12\r\n\x05query\x18\x02 \x01(\t\x12\r\n\x05limit\x18\x03 \x01(\x03\x12\x0e\n\x06resume\x18\x04 \x01(\t\"z\n\x12IPsForDomainResult\x12\x0e\n\x06\x64omain\x18\x01 \x01(\t\x12\n\n\x02ip\x18\x02 \x01(\t\x12\"\n\rlatestcapture\x18\x03 \x01(\x0b\x32\x0b.CapSummary\x12\x14\n\x0c\x61ssociations\x18\x04 \x03(\t\x12\x0e\n\x06resume\x18\x05 \x01(\t\"S\n\x15MetaForCaptureRequest\x12\x0f\n\x07\x64\x61taset\x18\x01 \x01(\t\x12\n\n\x02id\x18\x02 \x01(\t\x12\r\n\x05limit\x18\x03 \x01(\x03\x12\x0e\n\x06resume\x18\x04 \x01(\t\"i\n\x14MetaForCaptureResult\x12\x17\n\x04meta\x18\x01 \x01(\x0b\x32\t.Metadata\x12(\n\x04time\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x0e\n\x06resume\x18\x03 \x01(\t\"R\n\x11MetaSearchRequest\x12\x0f\n\x07\x64\x61taset\x18\x01 \x01(\t\x12\r\n\x05query\x18\x02 \x01(\t\x12\r\n\x05limit\x18\x03 \x01(\x03\x12\x0e\n\x06resume\x18\x04 \x01(\t\"\\\n\x10MetaSearchResult\x12\x17\n\x04meta\x18\x01 \x01(\x0b\x32\t.Metadata\x12\x0e\n\x06resume\x18\x03 \x01(\t\x12\x1f\n\ncapsummary\x18\x04 \x01(\x0b\x32\x0b.CapSummary\"[\n\x1aRedirsByDestinationRequest\x12\x0f\n\x07\x64\x61taset\x18\x01 \x01(\t\x12\r\n\x05query\x18\x02 \x01(\t\x12\r\n\x05limit\x18\x03 \x01(\x03\x12\x0e\n\x06resume\x18\x04 \x01(\t\"v\n\x1bRedirsByDestinationResponse\x12\x0e\n\x06source\x18\x01 \x01(\t\x12\x13\n\x0b\x64\x65stination\x18\x02 \x01(\t\x12\"\n\rlatestcapture\x18\x03 \x01(\x0b\x32\x0b.CapSummary\x12\x0e\n\x06resume\x18\x04 \x01(\t\"V\n\x15RedirsBySourceRequest\x12\x0f\n\x07\x64\x61taset\x18\x01 \x01(\t\x12\r\n\x05query\x18\x02 \x01(\t\x12\r\n\x05limit\x18\x03 \x01(\x03\x12\x0e\n\x06resume\x18\x04 \x01(\t\"q\n\x16RedirsBySourceResponse\x12\x0e\n\x06source\x18\x01 \x01(\t\x12\x13\n\x0b\x64\x65stination\x18\x02 \x01(\t\x12\"\n\rlatestcapture\x18\x03 \x01(\x0b\x32\x0b.CapSummary\x12\x0e\n\x06resume\x18\x04 \x01(\t\"U\n\x14RootLogSearchRequest\x12\x0f\n\x07\x64\x61taset\x18\x01 \x01(\t\x12\r\n\x05query\x18\x02 \x01(\t\x12\r\n\x05limit\x18\x03 \x01(\x03\x12\x0e\n\x06resume\x18\x04 \x01(\t\"T\n\x13RootLogSearchResult\x12\x0c\n\x04root\x18\x01 \x01(\t\x12\x0e\n\x06resume\x18\x02 \x01(\t\x12\x1f\n\ncapsummary\x18\x03 \x01(\x0b\x32\x0b.CapSummary\"Y\n\x18RootsForSatelliteRequest\x12\x0f\n\x07\x64\x61taset\x18\x01 \x01(\t\x12\r\n\x05query\x18\x02 \x01(\t\x12\r\n\x05limit\x18\x03 \x01(\x03\x12\x0e\n\x06resume\x18\x04 \x01(\t\"\x81\x01\n\x17RootsForSatelliteResult\x12\x0c\n\x04root\x18\x01 \x01(\t\x12\x11\n\tsatellite\x18\x02 \x01(\t\x12\x1f\n\ncapsummary\x18\x03 \x01(\x0b\x32\x0b.CapSummary\x12\x14\n\x0c\x61ssociations\x18\x04 \x03(\t\x12\x0e\n\x06resume\x18\x05 \x01(\t\"x\n\x14SubmitCaptureRequest\x12\x0f\n\x07\x64\x61taset\x18\x01 \x01(\t\x12\x14\n\x0cnotification\x18\x02 \x01(\t\x12\x0c\n\x04urls\x18\x03 \x03(\t\x12\x17\n\x04meta\x18\x04 \x03(\x0b\x32\t.Metadata\x12\x12\n\nskiprecent\x18\x05 \x01(\x03\"B\n\x13SubmitCaptureResult\x12\x0e\n\x06\x61ssets\x18\x01 \x01(\t\x12\x0f\n\x07skipped\x18\x02 \x01(\x08\x12\n\n\x02id\x18\x03 \x01(\t\"Z\n\x19SatelliteLogSearchRequest\x12\x0f\n\x07\x64\x61taset\x18\x01 \x01(\t\x12\r\n\x05query\x18\x02 \x01(\t\x12\r\n\x05limit\x18\x03 \x01(\x03\x12\x0e\n\x06resume\x18\x04 \x01(\t\"^\n\x18SatelliteLogSearchResult\x12\x11\n\tsatellite\x18\x01 \x01(\t\x12\x0e\n\x06resume\x18\x02 \x01(\t\x12\x1f\n\ncapsummary\x18\x03 \x01(\x0b\x32\x0b.CapSummary\"Y\n\x18SatellitesForRootRequest\x12\x0f\n\x07\x64\x61taset\x18\x01 \x01(\t\x12\r\n\x05query\x18\x02 \x01(\t\x12\r\n\x05limit\x18\x03 \x01(\x03\x12\x0e\n\x06resume\x18\x04 \x01(\t\"\x81\x01\n\x17SatellitesForRootResult\x12\x0c\n\x04root\x18\x01 \x01(\t\x12\x11\n\tsatellite\x18\x02 \x01(\t\x12\x1f\n\ncapsummary\x18\x03 \x01(\x0b\x32\x0b.CapSummary\x12\x14\n\x0c\x61ssociations\x18\x04 \x03(\t\x12\x0e\n\x06resume\x18\x05 \x01(\t\"Q\n\x12TempCaptureRequest\x12\x14\n\x0cnotification\x18\x01 \x01(\t\x12\x0c\n\x04urls\x18\x02 \x03(\t\x12\x17\n\x04meta\x18\x03 \x03(\x0b\x32\t.Metadata\"/\n\x11TempCaptureResult\x12\x0e\n\x06\x61ssets\x18\x01 \x01(\t\x12\n\n\x02id\x18\x03 \x01(\t\"T\n\x13URLLogSearchRequest\x12\x0f\n\x07\x64\x61taset\x18\x01 \x01(\t\x12\r\n\x05query\x18\x02 \x01(\t\x12\r\n\x05limit\x18\x03 \x01(\x03\x12\x0e\n\x06resume\x18\x04 \x01(\t\"R\n\x12URLLogSearchResult\x12\x0b\n\x03url\x18\x01 \x01(\t\x12\x0e\n\x06resume\x18\x02 \x01(\t\x12\x1f\n\ncapsummary\x18\x03 \x01(\x0b\x32\x0b.CapSummary2\xa7\n\n\tNetograph\x12\x36\n\x0bTempCapture\x12\x13.TempCaptureRequest\x1a\x12.TempCaptureResult\x12(\n\x08\x44\x61tasets\x12\x10.DatasetsRequest\x1a\x08.Dataset0\x01\x12<\n\rSubmitCapture\x12\x15.SubmitCaptureRequest\x1a\x14.SubmitCaptureResult\x12\x36\n\x0b\x43\x61ptureInfo\x12\x13.CaptureInfoRequest\x1a\x12.CaptureInfoResult\x12\x35\n\nCaptureLog\x12\x12.CaptureLogRequest\x1a\x11.CaptureLogResult0\x01\x12>\n\rDomainHistory\x12\x15.DomainHistoryRequest\x1a\x14.DomainHistoryResult0\x01\x12;\n\x0c\x44omainSearch\x12\x14.DomainSearchRequest\x1a\x13.DomainSearchResult0\x01\x12;\n\x0c\x44omainsForIP\x12\x14.DomainsForIPRequest\x1a\x13.DomainsForIPResult0\x01\x12\x32\n\tIPHistory\x12\x11.IPHistoryRequest\x1a\x10.IPHistoryResult0\x01\x12\x38\n\x0bIPLogSearch\x12\x13.IPLogSearchRequest\x1a\x12.IPLogSearchResult0\x01\x12/\n\x08IPSearch\x12\x10.IPSearchRequest\x1a\x0f.IPSearchResult0\x01\x12;\n\x0cIPsForDomain\x12\x14.IPsForDomainRequest\x1a\x13.IPsForDomainResult0\x01\x12\x41\n\x0eMetaForCapture\x12\x16.MetaForCaptureRequest\x1a\x15.MetaForCaptureResult0\x01\x12\x35\n\nMetaSearch\x12\x12.MetaSearchRequest\x1a\x11.MetaSearchResult0\x01\x12R\n\x13RedirsByDestination\x12\x1b.RedirsByDestinationRequest\x1a\x1c.RedirsByDestinationResponse0\x01\x12\x43\n\x0eRedirsBySource\x12\x16.RedirsBySourceRequest\x1a\x17.RedirsBySourceResponse0\x01\x12>\n\rRootLogSearch\x12\x15.RootLogSearchRequest\x1a\x14.RootLogSearchResult0\x01\x12J\n\x11RootsForSatellite\x12\x19.RootsForSatelliteRequest\x1a\x18.RootsForSatelliteResult0\x01\x12M\n\x12SatelliteLogSearch\x12\x1a.SatelliteLogSearchRequest\x1a\x19.SatelliteLogSearchResult0\x01\x12J\n\x11SatellitesForRoot\x12\x19.SatellitesForRootRequest\x1a\x18.SatellitesForRootResult0\x01\x12;\n\x0cURLLogSearch\x12\x14.URLLogSearchRequest\x1a\x13.URLLogSearchResult0\x01\x42\x07Z\x05ngapib\x06proto3')
   ,
   dependencies=[google_dot_protobuf_dot_timestamp__pb2.DESCRIPTOR,])
 
@@ -415,6 +415,20 @@ _CAPTURELOGREQUEST = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='start', full_name='CaptureLogRequest.start', index=3,
+      number=4, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='end', full_name='CaptureLogRequest.end', index=4,
+      number=5, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -427,8 +441,8 @@ _CAPTURELOGREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=625,
-  serialized_end=692,
+  serialized_start=626,
+  serialized_end=777,
 )
 
 
@@ -465,8 +479,8 @@ _CAPTURELOGRESULT = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=694,
-  serialized_end=761,
+  serialized_start=779,
+  serialized_end=846,
 )
 
 
@@ -510,8 +524,8 @@ _DOMAINHISTORYREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=763,
-  serialized_end=833,
+  serialized_start=848,
+  serialized_end=918,
 )
 
 
@@ -541,8 +555,8 @@ _DOMAINHISTORYRESULT = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=835,
-  serialized_end=889,
+  serialized_start=920,
+  serialized_end=974,
 )
 
 
@@ -593,8 +607,8 @@ _DOMAINSEARCHREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=891,
-  serialized_end=975,
+  serialized_start=976,
+  serialized_end=1060,
 )
 
 
@@ -638,8 +652,8 @@ _DOMAINSEARCHRESULT = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=977,
-  serialized_end=1065,
+  serialized_start=1062,
+  serialized_end=1150,
 )
 
 
@@ -690,8 +704,8 @@ _DOMAINSFORIPREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1067,
-  serialized_end=1148,
+  serialized_start=1152,
+  serialized_end=1233,
 )
 
 
@@ -749,8 +763,8 @@ _DOMAINSFORIPRESULT = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1150,
-  serialized_end=1272,
+  serialized_start=1235,
+  serialized_end=1357,
 )
 
 
@@ -794,8 +808,8 @@ _IPHISTORYREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1274,
-  serialized_end=1336,
+  serialized_start=1359,
+  serialized_end=1421,
 )
 
 
@@ -825,8 +839,8 @@ _IPHISTORYRESULT = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1338,
-  serialized_end=1388,
+  serialized_start=1423,
+  serialized_end=1473,
 )
 
 
@@ -877,8 +891,8 @@ _IPLOGSEARCHREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1390,
-  serialized_end=1470,
+  serialized_start=1475,
+  serialized_end=1555,
 )
 
 
@@ -922,8 +936,8 @@ _IPLOGSEARCHRESULT = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1472,
-  serialized_end=1552,
+  serialized_start=1557,
+  serialized_end=1637,
 )
 
 
@@ -967,8 +981,8 @@ _IPSEARCHRESULT = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1554,
-  serialized_end=1634,
+  serialized_start=1639,
+  serialized_end=1719,
 )
 
 
@@ -1026,8 +1040,8 @@ _IPSEARCHREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1636,
-  serialized_end=1727,
+  serialized_start=1721,
+  serialized_end=1812,
 )
 
 
@@ -1078,8 +1092,8 @@ _IPSFORDOMAINREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1729,
-  serialized_end=1813,
+  serialized_start=1814,
+  serialized_end=1898,
 )
 
 
@@ -1137,8 +1151,8 @@ _IPSFORDOMAINRESULT = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1815,
-  serialized_end=1937,
+  serialized_start=1900,
+  serialized_end=2022,
 )
 
 
@@ -1189,8 +1203,8 @@ _METAFORCAPTUREREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1939,
-  serialized_end=2022,
+  serialized_start=2024,
+  serialized_end=2107,
 )
 
 
@@ -1234,8 +1248,8 @@ _METAFORCAPTURERESULT = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2024,
-  serialized_end=2129,
+  serialized_start=2109,
+  serialized_end=2214,
 )
 
 
@@ -1286,8 +1300,8 @@ _METASEARCHREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2131,
-  serialized_end=2213,
+  serialized_start=2216,
+  serialized_end=2298,
 )
 
 
@@ -1331,8 +1345,8 @@ _METASEARCHRESULT = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2215,
-  serialized_end=2307,
+  serialized_start=2300,
+  serialized_end=2392,
 )
 
 
@@ -1383,8 +1397,8 @@ _REDIRSBYDESTINATIONREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2309,
-  serialized_end=2400,
+  serialized_start=2394,
+  serialized_end=2485,
 )
 
 
@@ -1435,8 +1449,8 @@ _REDIRSBYDESTINATIONRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2402,
-  serialized_end=2520,
+  serialized_start=2487,
+  serialized_end=2605,
 )
 
 
@@ -1487,8 +1501,8 @@ _REDIRSBYSOURCEREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2522,
-  serialized_end=2608,
+  serialized_start=2607,
+  serialized_end=2693,
 )
 
 
@@ -1539,8 +1553,8 @@ _REDIRSBYSOURCERESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2610,
-  serialized_end=2723,
+  serialized_start=2695,
+  serialized_end=2808,
 )
 
 
@@ -1591,8 +1605,8 @@ _ROOTLOGSEARCHREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2725,
-  serialized_end=2810,
+  serialized_start=2810,
+  serialized_end=2895,
 )
 
 
@@ -1636,8 +1650,8 @@ _ROOTLOGSEARCHRESULT = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2812,
-  serialized_end=2896,
+  serialized_start=2897,
+  serialized_end=2981,
 )
 
 
@@ -1688,8 +1702,8 @@ _ROOTSFORSATELLITEREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2898,
-  serialized_end=2987,
+  serialized_start=2983,
+  serialized_end=3072,
 )
 
 
@@ -1747,8 +1761,8 @@ _ROOTSFORSATELLITERESULT = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2990,
-  serialized_end=3119,
+  serialized_start=3075,
+  serialized_end=3204,
 )
 
 
@@ -1806,8 +1820,8 @@ _SUBMITCAPTUREREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3121,
-  serialized_end=3241,
+  serialized_start=3206,
+  serialized_end=3326,
 )
 
 
@@ -1851,8 +1865,8 @@ _SUBMITCAPTURERESULT = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3243,
-  serialized_end=3309,
+  serialized_start=3328,
+  serialized_end=3394,
 )
 
 
@@ -1903,8 +1917,8 @@ _SATELLITELOGSEARCHREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3311,
-  serialized_end=3401,
+  serialized_start=3396,
+  serialized_end=3486,
 )
 
 
@@ -1948,8 +1962,8 @@ _SATELLITELOGSEARCHRESULT = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3403,
-  serialized_end=3497,
+  serialized_start=3488,
+  serialized_end=3582,
 )
 
 
@@ -2000,8 +2014,8 @@ _SATELLITESFORROOTREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3499,
-  serialized_end=3588,
+  serialized_start=3584,
+  serialized_end=3673,
 )
 
 
@@ -2059,8 +2073,8 @@ _SATELLITESFORROOTRESULT = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3591,
-  serialized_end=3720,
+  serialized_start=3676,
+  serialized_end=3805,
 )
 
 
@@ -2104,8 +2118,8 @@ _TEMPCAPTUREREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3722,
-  serialized_end=3803,
+  serialized_start=3807,
+  serialized_end=3888,
 )
 
 
@@ -2142,8 +2156,8 @@ _TEMPCAPTURERESULT = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3805,
-  serialized_end=3852,
+  serialized_start=3890,
+  serialized_end=3937,
 )
 
 
@@ -2194,8 +2208,8 @@ _URLLOGSEARCHREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3854,
-  serialized_end=3938,
+  serialized_start=3939,
+  serialized_end=4023,
 )
 
 
@@ -2239,8 +2253,8 @@ _URLLOGSEARCHRESULT = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3940,
-  serialized_end=4022,
+  serialized_start=4025,
+  serialized_end=4107,
 )
 
 _DATASET.fields_by_name['deleted'].message_type = google_dot_protobuf_dot_timestamp__pb2._TIMESTAMP
@@ -2252,6 +2266,8 @@ _CAPSUMMARY.fields_by_name['time'].message_type = google_dot_protobuf_dot_timest
 _CAPSUMMARY.fields_by_name['plan'].message_type = _CAPSUMMARY_PLAN
 _CAPSUMMARY.fields_by_name['stats'].message_type = _CAPSUMMARY_STATS
 _CAPTUREINFORESULT.fields_by_name['capsummary'].message_type = _CAPSUMMARY
+_CAPTURELOGREQUEST.fields_by_name['start'].message_type = google_dot_protobuf_dot_timestamp__pb2._TIMESTAMP
+_CAPTURELOGREQUEST.fields_by_name['end'].message_type = google_dot_protobuf_dot_timestamp__pb2._TIMESTAMP
 _CAPTURELOGRESULT.fields_by_name['capsummary'].message_type = _CAPSUMMARY
 _DOMAINHISTORYRESULT.fields_by_name['capsummary'].message_type = _CAPSUMMARY
 _DOMAINSEARCHRESULT.fields_by_name['latestcapture'].message_type = _CAPSUMMARY
@@ -2661,8 +2677,8 @@ _NETOGRAPH = _descriptor.ServiceDescriptor(
   file=DESCRIPTOR,
   index=0,
   options=None,
-  serialized_start=4025,
-  serialized_end=5344,
+  serialized_start=4110,
+  serialized_end=5429,
   methods=[
   _descriptor.MethodDescriptor(
     name='TempCapture',

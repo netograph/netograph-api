@@ -3,9 +3,10 @@ package cli
 import (
 	"io"
 
+	"github.com/golang/protobuf/ptypes/timestamp"
+	"github.com/netograph/netograph-api/go/proto/ngapi"
 	"github.com/spf13/cobra"
 	"github.com/spf13/viper"
-	"github.com/netograph/netograph-api/go/proto/ngapi"
 )
 
 func captureLogCommand() *cobra.Command {
@@ -27,6 +28,8 @@ func captureLogCommand() *cobra.Command {
 				Dataset: viper.GetString("dset"),
 				Limit:   limit,
 				Resume:  *resume,
+				Start:   &timestamp.Timestamp{},
+				End:     &timestamp.Timestamp{},
 			})
 			if err != nil {
 				return err

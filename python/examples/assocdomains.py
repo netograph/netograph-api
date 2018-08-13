@@ -17,7 +17,7 @@ import netograph
 from netograph import ngapi_pb2
 
 DSET = "netograph:social"
-# Limit response size - CNDs mean that very large numbers of domains can be
+# Limit response size - CDNs mean that very large numbers of domains can be
 # associated with a single IP.
 LIMIT = 50
 
