@@ -2,44 +2,15 @@ package cli
 
 import (
 	"fmt"
-	"io"
-	"net/http"
 	"os"
 	"path"
 	"time"
 
 	"github.com/briandowns/spinner"
+	"github.com/netograph/netograph-api/go/proto/ngapi"
 	"github.com/spf13/cobra"
 	"github.com/spf13/viper"
-	"github.com/netograph/netograph-api/go/proto/ngapi"
 )
-
-var coreAssets = []string{
-	"starmap.json",
-	"details.json",
-	"starmap.jpg",
-}
-
-func downloadFile(filepath string, url string) (err error) {
-	out, err := os.Create(filepath)
-	if err != nil {
-		return err
-	}
-	defer out.Close()
-	resp, err := http.Get(url)
-	if err != nil {
-		return err
-	}
-	defer resp.Body.Close()
-	if resp.StatusCode != http.StatusOK {
-		return fmt.Errorf("bad status: %s", resp.Status)
-	}
-	_, err = io.Copy(out, resp.Body)
-	if err != nil {
-		return err
-	}
-	return nil
-}
 
 func downloadCommand() *cobra.Command {
 	var direct *bool

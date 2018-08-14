@@ -14,7 +14,7 @@ func tempCaptureCommand() *cobra.Command {
 	cmd := &cobra.Command{
 		Use:     "tempcapture url [url...]",
 		Aliases: []string{"submit"},
-		Short:   "Submit a temporary capture request (no dataset, assets expire in 24 hours)",
+		Short:   "Submit a capture request for a temp capture (no dataset, assets expire in 24 hours)",
 		Args: func(cmd *cobra.Command, args []string) error {
 			if len(args) < 1 {
 				return fmt.Errorf("Usage: %s", cmd.Use)

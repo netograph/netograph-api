@@ -46,6 +46,7 @@ func init() {
 		satellitesForRootCommand(),
 		submitCaptureCommand(),
 		tempCaptureCommand(),
+		tempDownloadCommand(),
 		urlLogSearchCommand(),
 		versionCommand,
 	)

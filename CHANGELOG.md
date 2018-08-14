@@ -3,6 +3,8 @@
 - CapturLog now takes a start and end timestamp. Please note that since the
   order here is reverse chronological, the start timestamp is the most recent
   time, and the end timestamp is the least recent time.
+- Add the tempdownload command, which downloads a temporary capture's assets to
+  a local directory.
 
 # v0.2: 27 July 2018
 
