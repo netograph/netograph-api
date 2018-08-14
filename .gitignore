@@ -8,6 +8,7 @@ venv
 *.egg-info
 *.map
 .DS_Store
+python/dist
 
 secrets
 .secrets.tmp

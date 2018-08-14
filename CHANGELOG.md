@@ -5,6 +5,8 @@
   time, and the end timestamp is the least recent time.
 - Add the tempdownload command, which downloads a temporary capture's assets to
   a local directory.
+- The netograph library is now available on the official PyPi registry. You can
+  install it with `pip install netograph` without checking out this repo.
 
 # v0.2: 27 July 2018
 

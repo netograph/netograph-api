@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 setup(
     name="netograph",
-    version="0.2",
+    version="0.3",
     description="A Python interface to netograph.io.",
     url="https://netograph.io",
     author="Netograph Ltd",

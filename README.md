@@ -1,7 +1,6 @@
 
 ![Netograph API](assets/netograph-logo.png)
 
-
 This repository contains a command-line tool and language packs for interacting
 with the Netograph API.
 
@@ -109,14 +108,21 @@ usage example.
 
 ## Python
 
-To install the Python library, check out this repo, and type:
+You can install the current release from the PyPi registry as follows:
+
+```sh
+pip install netograph
+```
+
+To install the development version of the library, check out this repo, and type:
 
 ```sh
 pip install ./python
 ```
 
-This will install the `netograph` Python module. See the examples within the
-Python directory for usage.
+Both of these commans will install the `netograph` Python module. See the
+examples within the Python directory for usage.
+
 
 
 # API Notes
@@ -144,5 +150,5 @@ hundreds of thousands of records are permitted and common. In most cases, each
 record comes with a **resume token**, which can be passed in queries to resume
 streaming if a connection was lost, or to provide functionality like paging.
 Resume tokens are only valid when passed to the exact same query that originated
-it, and should not be stored persistently.
+them, and should not be stored persistently.
 
