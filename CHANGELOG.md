@@ -1,3 +1,9 @@
+# v0.3: 14 August 2018
+
+- CapturLog now takes a start and end timestamp. Please note that since the
+  order here is reverse chronological, the start timestamp is the most recent
+  time, and the end timestamp is the least recent time.
+
 # v0.2: 27 July 2018
 
 - RedirsBySource/RedirsByDestination: search redirections by source and
