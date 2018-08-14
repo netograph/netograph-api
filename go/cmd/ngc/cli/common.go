@@ -5,6 +5,7 @@ import (
 	"io"
 	"net/http"
 	"os"
+	"strings"
 	"time"
 
 	"github.com/briandowns/spinner"
@@ -38,20 +39,26 @@ func downloadFile(filepath string, url string) (err error) {
 }
 
 func downloadProgress(filepath string, url string, quiet bool) error {
+	parts := strings.Split(url, "/")
+	name := url
+	if len(parts) > 0 {
+		name = parts[len(parts)-1]
+	}
+
 	s := spinner.New(spinner.CharSets[9], 100*time.Millisecond)
 	if !quiet {
 		s.FinalMSG = " "
-		s.Suffix = fmt.Sprintf("\t%s  ", url)
+		s.Suffix = fmt.Sprintf("\t%s  ", name)
 		s.Color("green")
 		s.Start()
 	}
 	err := downloadFile(filepath, url)
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "error: %s", err)
-	}
 	if !quiet {
 		s.Stop()
 		fmt.Println()
+	}
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "error: %s", err)
 	}
 	return err
 }

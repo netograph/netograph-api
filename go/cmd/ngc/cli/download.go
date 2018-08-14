@@ -76,23 +76,13 @@ func downloadCommand() *cobra.Command {
 					ca = append(ca, screenshot)
 				}
 				for _, a := range ca {
-					s := spinner.New(spinner.CharSets[9], 100*time.Millisecond)
-					if !*quiet {
-						s.FinalMSG = " "
-						s.Suffix = fmt.Sprintf("\t%s  ", a)
-						s.Color("green")
-						s.Start()
-					}
-					err := downloadFile(
+					err := downloadProgress(
 						path.Join(outdir, a),
 						fmt.Sprintf("%s/%s", r.Capsummary.Assets, a),
+						*quiet,
 					)
 					if err != nil {
-						fmt.Fprintf(os.Stderr, "error: %s", err)
-					}
-					if !*quiet {
-						s.Stop()
-						fmt.Println()
+						return err
 					}
 				}
 			}
