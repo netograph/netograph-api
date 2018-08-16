@@ -21,6 +21,9 @@ page](https://github.com/netograph/netograph-api/releases/latest).
 After installation, try running `ngc` for a high-level overview of the API, and
 `ngc help command` for help on any specific command.
 
+You can find rendered documentation for the full API
+[here](https://github.com/netograph/netograph-api/tree/master/doc).
+
 ## Configuration
 
 **ngc** is configured through environment variables.
@@ -151,4 +154,18 @@ record comes with a **resume token**, which can be passed in queries to resume
 streaming if a connection was lost, or to provide functionality like paging.
 Resume tokens are only valid when passed to the exact same query that originated
 them, and should not be stored persistently.
+
+
+## Capture IDs
+
+Each capture has a unique ID. IDs can contain dashes ("-"), which means they
+need to be treated specially on the command line. In particular, since the first
+character of an ID can be a dash, an ID can be confused with a flag. To avoid
+this, you may need to use the rarely-used [double-dash shell
+idiom](https://www.gnu.org/software/bash/manual/html_node/Shell-Builtin-Commands.html)
+to indicate the end of flag arguments:
+
+```sh
+ngc download ./dst -- -IDWITHINITIALDASH
+```
 
