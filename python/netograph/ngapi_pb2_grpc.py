@@ -15,107 +15,107 @@ class NetographStub(object):
       channel: A grpc.Channel.
     """
     self.TempCapture = channel.unary_unary(
-        '/Netograph/TempCapture',
+        '/io.netograph.Netograph/TempCapture',
         request_serializer=ngapi__pb2.TempCaptureRequest.SerializeToString,
         response_deserializer=ngapi__pb2.TempCaptureResult.FromString,
         )
     self.Datasets = channel.unary_stream(
-        '/Netograph/Datasets',
+        '/io.netograph.Netograph/Datasets',
         request_serializer=ngapi__pb2.DatasetsRequest.SerializeToString,
         response_deserializer=ngapi__pb2.Dataset.FromString,
         )
     self.SubmitCapture = channel.unary_unary(
-        '/Netograph/SubmitCapture',
+        '/io.netograph.Netograph/SubmitCapture',
         request_serializer=ngapi__pb2.SubmitCaptureRequest.SerializeToString,
         response_deserializer=ngapi__pb2.SubmitCaptureResult.FromString,
         )
     self.CaptureInfo = channel.unary_unary(
-        '/Netograph/CaptureInfo',
+        '/io.netograph.Netograph/CaptureInfo',
         request_serializer=ngapi__pb2.CaptureInfoRequest.SerializeToString,
         response_deserializer=ngapi__pb2.CaptureInfoResult.FromString,
         )
     self.CaptureLog = channel.unary_stream(
-        '/Netograph/CaptureLog',
+        '/io.netograph.Netograph/CaptureLog',
         request_serializer=ngapi__pb2.CaptureLogRequest.SerializeToString,
         response_deserializer=ngapi__pb2.CaptureLogResult.FromString,
         )
     self.DomainHistory = channel.unary_stream(
-        '/Netograph/DomainHistory',
+        '/io.netograph.Netograph/DomainHistory',
         request_serializer=ngapi__pb2.DomainHistoryRequest.SerializeToString,
         response_deserializer=ngapi__pb2.DomainHistoryResult.FromString,
         )
     self.DomainSearch = channel.unary_stream(
-        '/Netograph/DomainSearch',
+        '/io.netograph.Netograph/DomainSearch',
         request_serializer=ngapi__pb2.DomainSearchRequest.SerializeToString,
         response_deserializer=ngapi__pb2.DomainSearchResult.FromString,
         )
     self.DomainsForIP = channel.unary_stream(
-        '/Netograph/DomainsForIP',
+        '/io.netograph.Netograph/DomainsForIP',
         request_serializer=ngapi__pb2.DomainsForIPRequest.SerializeToString,
         response_deserializer=ngapi__pb2.DomainsForIPResult.FromString,
         )
     self.IPHistory = channel.unary_stream(
-        '/Netograph/IPHistory',
+        '/io.netograph.Netograph/IPHistory',
         request_serializer=ngapi__pb2.IPHistoryRequest.SerializeToString,
         response_deserializer=ngapi__pb2.IPHistoryResult.FromString,
         )
     self.IPLogSearch = channel.unary_stream(
-        '/Netograph/IPLogSearch',
+        '/io.netograph.Netograph/IPLogSearch',
         request_serializer=ngapi__pb2.IPLogSearchRequest.SerializeToString,
         response_deserializer=ngapi__pb2.IPLogSearchResult.FromString,
         )
     self.IPSearch = channel.unary_stream(
-        '/Netograph/IPSearch',
+        '/io.netograph.Netograph/IPSearch',
         request_serializer=ngapi__pb2.IPSearchRequest.SerializeToString,
         response_deserializer=ngapi__pb2.IPSearchResult.FromString,
         )
     self.IPsForDomain = channel.unary_stream(
-        '/Netograph/IPsForDomain',
+        '/io.netograph.Netograph/IPsForDomain',
         request_serializer=ngapi__pb2.IPsForDomainRequest.SerializeToString,
         response_deserializer=ngapi__pb2.IPsForDomainResult.FromString,
         )
     self.MetaForCapture = channel.unary_stream(
-        '/Netograph/MetaForCapture',
+        '/io.netograph.Netograph/MetaForCapture',
         request_serializer=ngapi__pb2.MetaForCaptureRequest.SerializeToString,
         response_deserializer=ngapi__pb2.MetaForCaptureResult.FromString,
         )
     self.MetaSearch = channel.unary_stream(
-        '/Netograph/MetaSearch',
+        '/io.netograph.Netograph/MetaSearch',
         request_serializer=ngapi__pb2.MetaSearchRequest.SerializeToString,
         response_deserializer=ngapi__pb2.MetaSearchResult.FromString,
         )
     self.RedirsByDestination = channel.unary_stream(
-        '/Netograph/RedirsByDestination',
+        '/io.netograph.Netograph/RedirsByDestination',
         request_serializer=ngapi__pb2.RedirsByDestinationRequest.SerializeToString,
         response_deserializer=ngapi__pb2.RedirsByDestinationResponse.FromString,
         )
     self.RedirsBySource = channel.unary_stream(
-        '/Netograph/RedirsBySource',
+        '/io.netograph.Netograph/RedirsBySource',
         request_serializer=ngapi__pb2.RedirsBySourceRequest.SerializeToString,
         response_deserializer=ngapi__pb2.RedirsBySourceResponse.FromString,
         )
     self.RootLogSearch = channel.unary_stream(
-        '/Netograph/RootLogSearch',
+        '/io.netograph.Netograph/RootLogSearch',
         request_serializer=ngapi__pb2.RootLogSearchRequest.SerializeToString,
         response_deserializer=ngapi__pb2.RootLogSearchResult.FromString,
         )
     self.RootsForSatellite = channel.unary_stream(
-        '/Netograph/RootsForSatellite',
+        '/io.netograph.Netograph/RootsForSatellite',
         request_serializer=ngapi__pb2.RootsForSatelliteRequest.SerializeToString,
         response_deserializer=ngapi__pb2.RootsForSatelliteResult.FromString,
         )
     self.SatelliteLogSearch = channel.unary_stream(
-        '/Netograph/SatelliteLogSearch',
+        '/io.netograph.Netograph/SatelliteLogSearch',
         request_serializer=ngapi__pb2.SatelliteLogSearchRequest.SerializeToString,
         response_deserializer=ngapi__pb2.SatelliteLogSearchResult.FromString,
         )
     self.SatellitesForRoot = channel.unary_stream(
-        '/Netograph/SatellitesForRoot',
+        '/io.netograph.Netograph/SatellitesForRoot',
         request_serializer=ngapi__pb2.SatellitesForRootRequest.SerializeToString,
         response_deserializer=ngapi__pb2.SatellitesForRootResult.FromString,
         )
     self.URLLogSearch = channel.unary_stream(
-        '/Netograph/URLLogSearch',
+        '/io.netograph.Netograph/URLLogSearch',
         request_serializer=ngapi__pb2.URLLogSearchRequest.SerializeToString,
         response_deserializer=ngapi__pb2.URLLogSearchResult.FromString,
         )
@@ -387,5 +387,5 @@ def add_NetographServicer_to_server(servicer, server):
       ),
   }
   generic_handler = grpc.method_handlers_generic_handler(
-      'Netograph', rpc_method_handlers)
+      'io.netograph.Netograph', rpc_method_handlers)
   server.add_generic_rpc_handlers((generic_handler,))
