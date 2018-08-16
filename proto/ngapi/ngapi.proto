@@ -1,7 +1,7 @@
 syntax = "proto3";
 import "google/protobuf/timestamp.proto";
 
-package io.netograph;
+// package io.netograph;
 option go_package = "ngapi";
 
 message DatasetsRequest {}

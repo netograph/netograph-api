@@ -18,9 +18,9 @@ from google.protobuf import timestamp_pb2 as google_dot_protobuf_dot_timestamp__
 
 DESCRIPTOR = _descriptor.FileDescriptor(
   name='ngapi.proto',
-  package='io.netograph',
+  package='',
   syntax='proto3',
-  serialized_pb=_b('\n\x0bngapi.proto\x12\x0cio.netograph\x1a\x1fgoogle/protobuf/timestamp.proto\"\x11\n\x0f\x44\x61tasetsRequest\"|\n\x07\x44\x61taset\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x02 \x01(\t\x12\x0f\n\x07urlbase\x18\x03 \x01(\t\x12+\n\x07\x64\x65leted\x18\x04 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x10\n\x08readonly\x18\x05 \x01(\x08\"\xc3\x02\n\nCapSummary\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0e\n\x06\x61ssets\x18\x02 \x01(\t\x12,\n\x05roots\x18\x03 \x03(\x0b\x32\x1d.io.netograph.CapSummary.Root\x12(\n\x04time\x18\x04 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12+\n\x04plan\x18\x05 \x01(\x0b\x32\x1d.io.netograph.CapSummary.Plan\x12-\n\x05stats\x18\x06 \x01(\x0b\x32\x1e.io.netograph.CapSummary.Stats\x1a\x14\n\x04Plan\x12\x0c\n\x04urls\x18\x01 \x03(\t\x1a\x14\n\x04Root\x12\x0c\n\x04urls\x18\x01 \x03(\t\x1a\x39\n\x05Stats\x12\r\n\x05\x66lows\x18\x01 \x01(\x05\x12\x12\n\nwebsockets\x18\x02 \x01(\x05\x12\r\n\x05hosts\x18\x03 \x01(\x05\"&\n\x08Metadata\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t\"1\n\x12\x43\x61ptureInfoRequest\x12\x0f\n\x07\x64\x61taset\x18\x01 \x01(\t\x12\n\n\x02id\x18\x02 \x01(\t\"A\n\x11\x43\x61ptureInfoResult\x12,\n\ncapsummary\x18\x01 \x01(\x0b\x32\x18.io.netograph.CapSummary\"\x97\x01\n\x11\x43\x61ptureLogRequest\x12\x0f\n\x07\x64\x61taset\x18\x01 \x01(\t\x12\r\n\x05limit\x18\x02 \x01(\x03\x12\x0e\n\x06resume\x18\x03 \x01(\t\x12)\n\x05start\x18\x04 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\'\n\x03\x65nd\x18\x05 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\"P\n\x10\x43\x61ptureLogResult\x12,\n\ncapsummary\x18\x01 \x01(\x0b\x32\x18.io.netograph.CapSummary\x12\x0e\n\x06resume\x18\x02 \x01(\t\"F\n\x14\x44omainHistoryRequest\x12\x0f\n\x07\x64\x61taset\x18\x01 \x01(\t\x12\x0e\n\x06\x64omain\x18\x02 \x01(\t\x12\r\n\x05limit\x18\x03 \x01(\x03\"C\n\x13\x44omainHistoryResult\x12,\n\ncapsummary\x18\x01 \x01(\x0b\x32\x18.io.netograph.CapSummary\"T\n\x13\x44omainSearchRequest\x12\x0f\n\x07\x64\x61taset\x18\x01 \x01(\t\x12\r\n\x05query\x18\x02 \x01(\t\x12\r\n\x05limit\x18\x03 \x01(\x03\x12\x0e\n\x06resume\x18\x04 \x01(\t\"e\n\x12\x44omainSearchResult\x12\x0e\n\x06\x64omain\x18\x01 \x01(\t\x12\x0e\n\x06resume\x18\x02 \x01(\t\x12/\n\rlatestcapture\x18\x03 \x01(\x0b\x32\x18.io.netograph.CapSummary\"Q\n\x13\x44omainsForIPRequest\x12\x0f\n\x07\x64\x61taset\x18\x01 \x01(\t\x12\n\n\x02ip\x18\x02 \x01(\t\x12\r\n\x05limit\x18\x03 \x01(\x03\x12\x0e\n\x06resume\x18\x04 \x01(\t\"\x87\x01\n\x12\x44omainsForIPResult\x12\x0e\n\x06\x64omain\x18\x01 \x01(\t\x12\n\n\x02ip\x18\x02 \x01(\t\x12/\n\rlatestcapture\x18\x03 \x01(\x0b\x32\x18.io.netograph.CapSummary\x12\x14\n\x0c\x61ssociations\x18\x04 \x03(\t\x12\x0e\n\x06resume\x18\x05 \x01(\t\">\n\x10IPHistoryRequest\x12\x0f\n\x07\x64\x61taset\x18\x01 \x01(\t\x12\n\n\x02ip\x18\x02 \x01(\t\x12\r\n\x05limit\x18\x03 \x01(\x03\"?\n\x0fIPHistoryResult\x12,\n\ncapsummary\x18\x01 \x01(\x0b\x32\x18.io.netograph.CapSummary\"P\n\x12IPLogSearchRequest\x12\x0f\n\x07\x64\x61taset\x18\x01 \x01(\t\x12\n\n\x02ip\x18\x02 \x01(\t\x12\r\n\x05limit\x18\x03 \x01(\x03\x12\x0e\n\x06resume\x18\x04 \x01(\t\"]\n\x11IPLogSearchResult\x12,\n\ncapsummary\x18\x01 \x01(\x0b\x32\x18.io.netograph.CapSummary\x12\n\n\x02ip\x18\x02 \x01(\t\x12\x0e\n\x06resume\x18\x03 \x01(\t\"]\n\x0eIPSearchResult\x12\n\n\x02ip\x18\x01 \x01(\t\x12\x0e\n\x06resume\x18\x02 \x01(\t\x12/\n\rlatestcapture\x18\x03 \x01(\x0b\x32\x18.io.netograph.CapSummary\"[\n\x0fIPSearchRequest\x12\x0f\n\x07\x64\x61taset\x18\x01 \x01(\t\x12\n\n\x02ip\x18\x02 \x01(\t\x12\x0c\n\x04mask\x18\x03 \x01(\x05\x12\r\n\x05limit\x18\x04 \x01(\x03\x12\x0e\n\x06resume\x18\x05 \x01(\t\"T\n\x13IPsForDomainRequest\x12\x0f\n\x07\x64\x61taset\x18\x01 \x01(\t\x12\r\n\x05query\x18\x02 \x01(\t\x12\r\n\x05limit\x18\x03 \x01(\x03\x12\x0e\n\x06resume\x18\x04 \x01(\t\"\x87\x01\n\x12IPsForDomainResult\x12\x0e\n\x06\x64omain\x18\x01 \x01(\t\x12\n\n\x02ip\x18\x02 \x01(\t\x12/\n\rlatestcapture\x18\x03 \x01(\x0b\x32\x18.io.netograph.CapSummary\x12\x14\n\x0c\x61ssociations\x18\x04 \x03(\t\x12\x0e\n\x06resume\x18\x05 \x01(\t\"S\n\x15MetaForCaptureRequest\x12\x0f\n\x07\x64\x61taset\x18\x01 \x01(\t\x12\n\n\x02id\x18\x02 \x01(\t\x12\r\n\x05limit\x18\x03 \x01(\x03\x12\x0e\n\x06resume\x18\x04 \x01(\t\"v\n\x14MetaForCaptureResult\x12$\n\x04meta\x18\x01 \x01(\x0b\x32\x16.io.netograph.Metadata\x12(\n\x04time\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x0e\n\x06resume\x18\x03 \x01(\t\"R\n\x11MetaSearchRequest\x12\x0f\n\x07\x64\x61taset\x18\x01 \x01(\t\x12\r\n\x05query\x18\x02 \x01(\t\x12\r\n\x05limit\x18\x03 \x01(\x03\x12\x0e\n\x06resume\x18\x04 \x01(\t\"v\n\x10MetaSearchResult\x12$\n\x04meta\x18\x01 \x01(\x0b\x32\x16.io.netograph.Metadata\x12\x0e\n\x06resume\x18\x03 \x01(\t\x12,\n\ncapsummary\x18\x04 \x01(\x0b\x32\x18.io.netograph.CapSummary\"[\n\x1aRedirsByDestinationRequest\x12\x0f\n\x07\x64\x61taset\x18\x01 \x01(\t\x12\r\n\x05query\x18\x02 \x01(\t\x12\r\n\x05limit\x18\x03 \x01(\x03\x12\x0e\n\x06resume\x18\x04 \x01(\t\"\x83\x01\n\x1bRedirsByDestinationResponse\x12\x0e\n\x06source\x18\x01 \x01(\t\x12\x13\n\x0b\x64\x65stination\x18\x02 \x01(\t\x12/\n\rlatestcapture\x18\x03 \x01(\x0b\x32\x18.io.netograph.CapSummary\x12\x0e\n\x06resume\x18\x04 \x01(\t\"V\n\x15RedirsBySourceRequest\x12\x0f\n\x07\x64\x61taset\x18\x01 \x01(\t\x12\r\n\x05query\x18\x02 \x01(\t\x12\r\n\x05limit\x18\x03 \x01(\x03\x12\x0e\n\x06resume\x18\x04 \x01(\t\"~\n\x16RedirsBySourceResponse\x12\x0e\n\x06source\x18\x01 \x01(\t\x12\x13\n\x0b\x64\x65stination\x18\x02 \x01(\t\x12/\n\rlatestcapture\x18\x03 \x01(\x0b\x32\x18.io.netograph.CapSummary\x12\x0e\n\x06resume\x18\x04 \x01(\t\"U\n\x14RootLogSearchRequest\x12\x0f\n\x07\x64\x61taset\x18\x01 \x01(\t\x12\r\n\x05query\x18\x02 \x01(\t\x12\r\n\x05limit\x18\x03 \x01(\x03\x12\x0e\n\x06resume\x18\x04 \x01(\t\"a\n\x13RootLogSearchResult\x12\x0c\n\x04root\x18\x01 \x01(\t\x12\x0e\n\x06resume\x18\x02 \x01(\t\x12,\n\ncapsummary\x18\x03 \x01(\x0b\x32\x18.io.netograph.CapSummary\"Y\n\x18RootsForSatelliteRequest\x12\x0f\n\x07\x64\x61taset\x18\x01 \x01(\t\x12\r\n\x05query\x18\x02 \x01(\t\x12\r\n\x05limit\x18\x03 \x01(\x03\x12\x0e\n\x06resume\x18\x04 \x01(\t\"\x8e\x01\n\x17RootsForSatelliteResult\x12\x0c\n\x04root\x18\x01 \x01(\t\x12\x11\n\tsatellite\x18\x02 \x01(\t\x12,\n\ncapsummary\x18\x03 \x01(\x0b\x32\x18.io.netograph.CapSummary\x12\x14\n\x0c\x61ssociations\x18\x04 \x03(\t\x12\x0e\n\x06resume\x18\x05 \x01(\t\"\x85\x01\n\x14SubmitCaptureRequest\x12\x0f\n\x07\x64\x61taset\x18\x01 \x01(\t\x12\x14\n\x0cnotification\x18\x02 \x01(\t\x12\x0c\n\x04urls\x18\x03 \x03(\t\x12$\n\x04meta\x18\x04 \x03(\x0b\x32\x16.io.netograph.Metadata\x12\x12\n\nskiprecent\x18\x05 \x01(\x03\"B\n\x13SubmitCaptureResult\x12\x0e\n\x06\x61ssets\x18\x01 \x01(\t\x12\x0f\n\x07skipped\x18\x02 \x01(\x08\x12\n\n\x02id\x18\x03 \x01(\t\"Z\n\x19SatelliteLogSearchRequest\x12\x0f\n\x07\x64\x61taset\x18\x01 \x01(\t\x12\r\n\x05query\x18\x02 \x01(\t\x12\r\n\x05limit\x18\x03 \x01(\x03\x12\x0e\n\x06resume\x18\x04 \x01(\t\"k\n\x18SatelliteLogSearchResult\x12\x11\n\tsatellite\x18\x01 \x01(\t\x12\x0e\n\x06resume\x18\x02 \x01(\t\x12,\n\ncapsummary\x18\x03 \x01(\x0b\x32\x18.io.netograph.CapSummary\"Y\n\x18SatellitesForRootRequest\x12\x0f\n\x07\x64\x61taset\x18\x01 \x01(\t\x12\r\n\x05query\x18\x02 \x01(\t\x12\r\n\x05limit\x18\x03 \x01(\x03\x12\x0e\n\x06resume\x18\x04 \x01(\t\"\x8e\x01\n\x17SatellitesForRootResult\x12\x0c\n\x04root\x18\x01 \x01(\t\x12\x11\n\tsatellite\x18\x02 \x01(\t\x12,\n\ncapsummary\x18\x03 \x01(\x0b\x32\x18.io.netograph.CapSummary\x12\x14\n\x0c\x61ssociations\x18\x04 \x03(\t\x12\x0e\n\x06resume\x18\x05 \x01(\t\"^\n\x12TempCaptureRequest\x12\x14\n\x0cnotification\x18\x01 \x01(\t\x12\x0c\n\x04urls\x18\x02 \x03(\t\x12$\n\x04meta\x18\x03 \x03(\x0b\x32\x16.io.netograph.Metadata\"/\n\x11TempCaptureResult\x12\x0e\n\x06\x61ssets\x18\x01 \x01(\t\x12\n\n\x02id\x18\x03 \x01(\t\"T\n\x13URLLogSearchRequest\x12\x0f\n\x07\x64\x61taset\x18\x01 \x01(\t\x12\r\n\x05query\x18\x02 \x01(\t\x12\r\n\x05limit\x18\x03 \x01(\x03\x12\x0e\n\x06resume\x18\x04 \x01(\t\"_\n\x12URLLogSearchResult\x12\x0b\n\x03url\x18\x01 \x01(\t\x12\x0e\n\x06resume\x18\x02 \x01(\t\x12,\n\ncapsummary\x18\x03 \x01(\x0b\x32\x18.io.netograph.CapSummary2\xc9\x0e\n\tNetograph\x12P\n\x0bTempCapture\x12 .io.netograph.TempCaptureRequest\x1a\x1f.io.netograph.TempCaptureResult\x12\x42\n\x08\x44\x61tasets\x12\x1d.io.netograph.DatasetsRequest\x1a\x15.io.netograph.Dataset0\x01\x12V\n\rSubmitCapture\x12\".io.netograph.SubmitCaptureRequest\x1a!.io.netograph.SubmitCaptureResult\x12P\n\x0b\x43\x61ptureInfo\x12 .io.netograph.CaptureInfoRequest\x1a\x1f.io.netograph.CaptureInfoResult\x12O\n\nCaptureLog\x12\x1f.io.netograph.CaptureLogRequest\x1a\x1e.io.netograph.CaptureLogResult0\x01\x12X\n\rDomainHistory\x12\".io.netograph.DomainHistoryRequest\x1a!.io.netograph.DomainHistoryResult0\x01\x12U\n\x0c\x44omainSearch\x12!.io.netograph.DomainSearchRequest\x1a .io.netograph.DomainSearchResult0\x01\x12U\n\x0c\x44omainsForIP\x12!.io.netograph.DomainsForIPRequest\x1a .io.netograph.DomainsForIPResult0\x01\x12L\n\tIPHistory\x12\x1e.io.netograph.IPHistoryRequest\x1a\x1d.io.netograph.IPHistoryResult0\x01\x12R\n\x0bIPLogSearch\x12 .io.netograph.IPLogSearchRequest\x1a\x1f.io.netograph.IPLogSearchResult0\x01\x12I\n\x08IPSearch\x12\x1d.io.netograph.IPSearchRequest\x1a\x1c.io.netograph.IPSearchResult0\x01\x12U\n\x0cIPsForDomain\x12!.io.netograph.IPsForDomainRequest\x1a .io.netograph.IPsForDomainResult0\x01\x12[\n\x0eMetaForCapture\x12#.io.netograph.MetaForCaptureRequest\x1a\".io.netograph.MetaForCaptureResult0\x01\x12O\n\nMetaSearch\x12\x1f.io.netograph.MetaSearchRequest\x1a\x1e.io.netograph.MetaSearchResult0\x01\x12l\n\x13RedirsByDestination\x12(.io.netograph.RedirsByDestinationRequest\x1a).io.netograph.RedirsByDestinationResponse0\x01\x12]\n\x0eRedirsBySource\x12#.io.netograph.RedirsBySourceRequest\x1a$.io.netograph.RedirsBySourceResponse0\x01\x12X\n\rRootLogSearch\x12\".io.netograph.RootLogSearchRequest\x1a!.io.netograph.RootLogSearchResult0\x01\x12\x64\n\x11RootsForSatellite\x12&.io.netograph.RootsForSatelliteRequest\x1a%.io.netograph.RootsForSatelliteResult0\x01\x12g\n\x12SatelliteLogSearch\x12\'.io.netograph.SatelliteLogSearchRequest\x1a&.io.netograph.SatelliteLogSearchResult0\x01\x12\x64\n\x11SatellitesForRoot\x12&.io.netograph.SatellitesForRootRequest\x1a%.io.netograph.SatellitesForRootResult0\x01\x12U\n\x0cURLLogSearch\x12!.io.netograph.URLLogSearchRequest\x1a .io.netograph.URLLogSearchResult0\x01\x42\x07Z\x05ngapib\x06proto3')
+  serialized_pb=_b('\n\x0bngapi.proto\x1a\x1fgoogle/protobuf/timestamp.proto\"\x11\n\x0f\x44\x61tasetsRequest\"|\n\x07\x44\x61taset\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x02 \x01(\t\x12\x0f\n\x07urlbase\x18\x03 \x01(\t\x12+\n\x07\x64\x65leted\x18\x04 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x10\n\x08readonly\x18\x05 \x01(\x08\"\x9c\x02\n\nCapSummary\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0e\n\x06\x61ssets\x18\x02 \x01(\t\x12\x1f\n\x05roots\x18\x03 \x03(\x0b\x32\x10.CapSummary.Root\x12(\n\x04time\x18\x04 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x1e\n\x04plan\x18\x05 \x01(\x0b\x32\x10.CapSummary.Plan\x12 \n\x05stats\x18\x06 \x01(\x0b\x32\x11.CapSummary.Stats\x1a\x14\n\x04Plan\x12\x0c\n\x04urls\x18\x01 \x03(\t\x1a\x14\n\x04Root\x12\x0c\n\x04urls\x18\x01 \x03(\t\x1a\x39\n\x05Stats\x12\r\n\x05\x66lows\x18\x01 \x01(\x05\x12\x12\n\nwebsockets\x18\x02 \x01(\x05\x12\r\n\x05hosts\x18\x03 \x01(\x05\"&\n\x08Metadata\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t\"1\n\x12\x43\x61ptureInfoRequest\x12\x0f\n\x07\x64\x61taset\x18\x01 \x01(\t\x12\n\n\x02id\x18\x02 \x01(\t\"4\n\x11\x43\x61ptureInfoResult\x12\x1f\n\ncapsummary\x18\x01 \x01(\x0b\x32\x0b.CapSummary\"\x97\x01\n\x11\x43\x61ptureLogRequest\x12\x0f\n\x07\x64\x61taset\x18\x01 \x01(\t\x12\r\n\x05limit\x18\x02 \x01(\x03\x12\x0e\n\x06resume\x18\x03 \x01(\t\x12)\n\x05start\x18\x04 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\'\n\x03\x65nd\x18\x05 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\"C\n\x10\x43\x61ptureLogResult\x12\x1f\n\ncapsummary\x18\x01 \x01(\x0b\x32\x0b.CapSummary\x12\x0e\n\x06resume\x18\x02 \x01(\t\"F\n\x14\x44omainHistoryRequest\x12\x0f\n\x07\x64\x61taset\x18\x01 \x01(\t\x12\x0e\n\x06\x64omain\x18\x02 \x01(\t\x12\r\n\x05limit\x18\x03 \x01(\x03\"6\n\x13\x44omainHistoryResult\x12\x1f\n\ncapsummary\x18\x01 \x01(\x0b\x32\x0b.CapSummary\"T\n\x13\x44omainSearchRequest\x12\x0f\n\x07\x64\x61taset\x18\x01 \x01(\t\x12\r\n\x05query\x18\x02 \x01(\t\x12\r\n\x05limit\x18\x03 \x01(\x03\x12\x0e\n\x06resume\x18\x04 \x01(\t\"X\n\x12\x44omainSearchResult\x12\x0e\n\x06\x64omain\x18\x01 \x01(\t\x12\x0e\n\x06resume\x18\x02 \x01(\t\x12\"\n\rlatestcapture\x18\x03 \x01(\x0b\x32\x0b.CapSummary\"Q\n\x13\x44omainsForIPRequest\x12\x0f\n\x07\x64\x61taset\x18\x01 \x01(\t\x12\n\n\x02ip\x18\x02 \x01(\t\x12\r\n\x05limit\x18\x03 \x01(\x03\x12\x0e\n\x06resume\x18\x04 \x01(\t\"z\n\x12\x44omainsForIPResult\x12\x0e\n\x06\x64omain\x18\x01 \x01(\t\x12\n\n\x02ip\x18\x02 \x01(\t\x12\"\n\rlatestcapture\x18\x03 \x01(\x0b\x32\x0b.CapSummary\x12\x14\n\x0c\x61ssociations\x18\x04 \x03(\t\x12\x0e\n\x06resume\x18\x05 \x01(\t\">\n\x10IPHistoryRequest\x12\x0f\n\x07\x64\x61taset\x18\x01 \x01(\t\x12\n\n\x02ip\x18\x02 \x01(\t\x12\r\n\x05limit\x18\x03 \x01(\x03\"2\n\x0fIPHistoryResult\x12\x1f\n\ncapsummary\x18\x01 \x01(\x0b\x32\x0b.CapSummary\"P\n\x12IPLogSearchRequest\x12\x0f\n\x07\x64\x61taset\x18\x01 \x01(\t\x12\n\n\x02ip\x18\x02 \x01(\t\x12\r\n\x05limit\x18\x03 \x01(\x03\x12\x0e\n\x06resume\x18\x04 \x01(\t\"P\n\x11IPLogSearchResult\x12\x1f\n\ncapsummary\x18\x01 \x01(\x0b\x32\x0b.CapSummary\x12\n\n\x02ip\x18\x02 \x01(\t\x12\x0e\n\x06resume\x18\x03 \x01(\t\"P\n\x0eIPSearchResult\x12\n\n\x02ip\x18\x01 \x01(\t\x12\x0e\n\x06resume\x18\x02 \x01(\t\x12\"\n\rlatestcapture\x18\x03 \x01(\x0b\x32\x0b.CapSummary\"[\n\x0fIPSearchRequest\x12\x0f\n\x07\x64\x61taset\x18\x01 \x01(\t\x12\n\n\x02ip\x18\x02 \x01(\t\x12\x0c\n\x04mask\x18\x03 \x01(\x05\x12\r\n\x05limit\x18\x04 \x01(\x03\x12\x0e\n\x06resume\x18\x05 \x01(\t\"T\n\x13IPsForDomainRequest\x12\x0f\n\x07\x64\x61taset\x18\x01 \x01(\t\x12\r\n\x05query\x18\x02 \x01(\t\x12\r\n\x05limit\x18\x03 \x01(\x03\x12\x0e\n\x06resume\x18\x04 \x01(\t\"z\n\x12IPsForDomainResult\x12\x0e\n\x06\x64omain\x18\x01 \x01(\t\x12\n\n\x02ip\x18\x02 \x01(\t\x12\"\n\rlatestcapture\x18\x03 \x01(\x0b\x32\x0b.CapSummary\x12\x14\n\x0c\x61ssociations\x18\x04 \x03(\t\x12\x0e\n\x06resume\x18\x05 \x01(\t\"S\n\x15MetaForCaptureRequest\x12\x0f\n\x07\x64\x61taset\x18\x01 \x01(\t\x12\n\n\x02id\x18\x02 \x01(\t\x12\r\n\x05limit\x18\x03 \x01(\x03\x12\x0e\n\x06resume\x18\x04 \x01(\t\"i\n\x14MetaForCaptureResult\x12\x17\n\x04meta\x18\x01 \x01(\x0b\x32\t.Metadata\x12(\n\x04time\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x0e\n\x06resume\x18\x03 \x01(\t\"R\n\x11MetaSearchRequest\x12\x0f\n\x07\x64\x61taset\x18\x01 \x01(\t\x12\r\n\x05query\x18\x02 \x01(\t\x12\r\n\x05limit\x18\x03 \x01(\x03\x12\x0e\n\x06resume\x18\x04 \x01(\t\"\\\n\x10MetaSearchResult\x12\x17\n\x04meta\x18\x01 \x01(\x0b\x32\t.Metadata\x12\x0e\n\x06resume\x18\x03 \x01(\t\x12\x1f\n\ncapsummary\x18\x04 \x01(\x0b\x32\x0b.CapSummary\"[\n\x1aRedirsByDestinationRequest\x12\x0f\n\x07\x64\x61taset\x18\x01 \x01(\t\x12\r\n\x05query\x18\x02 \x01(\t\x12\r\n\x05limit\x18\x03 \x01(\x03\x12\x0e\n\x06resume\x18\x04 \x01(\t\"v\n\x1bRedirsByDestinationResponse\x12\x0e\n\x06source\x18\x01 \x01(\t\x12\x13\n\x0b\x64\x65stination\x18\x02 \x01(\t\x12\"\n\rlatestcapture\x18\x03 \x01(\x0b\x32\x0b.CapSummary\x12\x0e\n\x06resume\x18\x04 \x01(\t\"V\n\x15RedirsBySourceRequest\x12\x0f\n\x07\x64\x61taset\x18\x01 \x01(\t\x12\r\n\x05query\x18\x02 \x01(\t\x12\r\n\x05limit\x18\x03 \x01(\x03\x12\x0e\n\x06resume\x18\x04 \x01(\t\"q\n\x16RedirsBySourceResponse\x12\x0e\n\x06source\x18\x01 \x01(\t\x12\x13\n\x0b\x64\x65stination\x18\x02 \x01(\t\x12\"\n\rlatestcapture\x18\x03 \x01(\x0b\x32\x0b.CapSummary\x12\x0e\n\x06resume\x18\x04 \x01(\t\"U\n\x14RootLogSearchRequest\x12\x0f\n\x07\x64\x61taset\x18\x01 \x01(\t\x12\r\n\x05query\x18\x02 \x01(\t\x12\r\n\x05limit\x18\x03 \x01(\x03\x12\x0e\n\x06resume\x18\x04 \x01(\t\"T\n\x13RootLogSearchResult\x12\x0c\n\x04root\x18\x01 \x01(\t\x12\x0e\n\x06resume\x18\x02 \x01(\t\x12\x1f\n\ncapsummary\x18\x03 \x01(\x0b\x32\x0b.CapSummary\"Y\n\x18RootsForSatelliteRequest\x12\x0f\n\x07\x64\x61taset\x18\x01 \x01(\t\x12\r\n\x05query\x18\x02 \x01(\t\x12\r\n\x05limit\x18\x03 \x01(\x03\x12\x0e\n\x06resume\x18\x04 \x01(\t\"\x81\x01\n\x17RootsForSatelliteResult\x12\x0c\n\x04root\x18\x01 \x01(\t\x12\x11\n\tsatellite\x18\x02 \x01(\t\x12\x1f\n\ncapsummary\x18\x03 \x01(\x0b\x32\x0b.CapSummary\x12\x14\n\x0c\x61ssociations\x18\x04 \x03(\t\x12\x0e\n\x06resume\x18\x05 \x01(\t\"x\n\x14SubmitCaptureRequest\x12\x0f\n\x07\x64\x61taset\x18\x01 \x01(\t\x12\x14\n\x0cnotification\x18\x02 \x01(\t\x12\x0c\n\x04urls\x18\x03 \x03(\t\x12\x17\n\x04meta\x18\x04 \x03(\x0b\x32\t.Metadata\x12\x12\n\nskiprecent\x18\x05 \x01(\x03\"B\n\x13SubmitCaptureResult\x12\x0e\n\x06\x61ssets\x18\x01 \x01(\t\x12\x0f\n\x07skipped\x18\x02 \x01(\x08\x12\n\n\x02id\x18\x03 \x01(\t\"Z\n\x19SatelliteLogSearchRequest\x12\x0f\n\x07\x64\x61taset\x18\x01 \x01(\t\x12\r\n\x05query\x18\x02 \x01(\t\x12\r\n\x05limit\x18\x03 \x01(\x03\x12\x0e\n\x06resume\x18\x04 \x01(\t\"^\n\x18SatelliteLogSearchResult\x12\x11\n\tsatellite\x18\x01 \x01(\t\x12\x0e\n\x06resume\x18\x02 \x01(\t\x12\x1f\n\ncapsummary\x18\x03 \x01(\x0b\x32\x0b.CapSummary\"Y\n\x18SatellitesForRootRequest\x12\x0f\n\x07\x64\x61taset\x18\x01 \x01(\t\x12\r\n\x05query\x18\x02 \x01(\t\x12\r\n\x05limit\x18\x03 \x01(\x03\x12\x0e\n\x06resume\x18\x04 \x01(\t\"\x81\x01\n\x17SatellitesForRootResult\x12\x0c\n\x04root\x18\x01 \x01(\t\x12\x11\n\tsatellite\x18\x02 \x01(\t\x12\x1f\n\ncapsummary\x18\x03 \x01(\x0b\x32\x0b.CapSummary\x12\x14\n\x0c\x61ssociations\x18\x04 \x03(\t\x12\x0e\n\x06resume\x18\x05 \x01(\t\"Q\n\x12TempCaptureRequest\x12\x14\n\x0cnotification\x18\x01 \x01(\t\x12\x0c\n\x04urls\x18\x02 \x03(\t\x12\x17\n\x04meta\x18\x03 \x03(\x0b\x32\t.Metadata\"/\n\x11TempCaptureResult\x12\x0e\n\x06\x61ssets\x18\x01 \x01(\t\x12\n\n\x02id\x18\x03 \x01(\t\"T\n\x13URLLogSearchRequest\x12\x0f\n\x07\x64\x61taset\x18\x01 \x01(\t\x12\r\n\x05query\x18\x02 \x01(\t\x12\r\n\x05limit\x18\x03 \x01(\x03\x12\x0e\n\x06resume\x18\x04 \x01(\t\"R\n\x12URLLogSearchResult\x12\x0b\n\x03url\x18\x01 \x01(\t\x12\x0e\n\x06resume\x18\x02 \x01(\t\x12\x1f\n\ncapsummary\x18\x03 \x01(\x0b\x32\x0b.CapSummary2\xa7\n\n\tNetograph\x12\x36\n\x0bTempCapture\x12\x13.TempCaptureRequest\x1a\x12.TempCaptureResult\x12(\n\x08\x44\x61tasets\x12\x10.DatasetsRequest\x1a\x08.Dataset0\x01\x12<\n\rSubmitCapture\x12\x15.SubmitCaptureRequest\x1a\x14.SubmitCaptureResult\x12\x36\n\x0b\x43\x61ptureInfo\x12\x13.CaptureInfoRequest\x1a\x12.CaptureInfoResult\x12\x35\n\nCaptureLog\x12\x12.CaptureLogRequest\x1a\x11.CaptureLogResult0\x01\x12>\n\rDomainHistory\x12\x15.DomainHistoryRequest\x1a\x14.DomainHistoryResult0\x01\x12;\n\x0c\x44omainSearch\x12\x14.DomainSearchRequest\x1a\x13.DomainSearchResult0\x01\x12;\n\x0c\x44omainsForIP\x12\x14.DomainsForIPRequest\x1a\x13.DomainsForIPResult0\x01\x12\x32\n\tIPHistory\x12\x11.IPHistoryRequest\x1a\x10.IPHistoryResult0\x01\x12\x38\n\x0bIPLogSearch\x12\x13.IPLogSearchRequest\x1a\x12.IPLogSearchResult0\x01\x12/\n\x08IPSearch\x12\x10.IPSearchRequest\x1a\x0f.IPSearchResult0\x01\x12;\n\x0cIPsForDomain\x12\x14.IPsForDomainRequest\x1a\x13.IPsForDomainResult0\x01\x12\x41\n\x0eMetaForCapture\x12\x16.MetaForCaptureRequest\x1a\x15.MetaForCaptureResult0\x01\x12\x35\n\nMetaSearch\x12\x12.MetaSearchRequest\x1a\x11.MetaSearchResult0\x01\x12R\n\x13RedirsByDestination\x12\x1b.RedirsByDestinationRequest\x1a\x1c.RedirsByDestinationResponse0\x01\x12\x43\n\x0eRedirsBySource\x12\x16.RedirsBySourceRequest\x1a\x17.RedirsBySourceResponse0\x01\x12>\n\rRootLogSearch\x12\x15.RootLogSearchRequest\x1a\x14.RootLogSearchResult0\x01\x12J\n\x11RootsForSatellite\x12\x19.RootsForSatelliteRequest\x1a\x18.RootsForSatelliteResult0\x01\x12M\n\x12SatelliteLogSearch\x12\x1a.SatelliteLogSearchRequest\x1a\x19.SatelliteLogSearchResult0\x01\x12J\n\x11SatellitesForRoot\x12\x19.SatellitesForRootRequest\x1a\x18.SatellitesForRootResult0\x01\x12;\n\x0cURLLogSearch\x12\x14.URLLogSearchRequest\x1a\x13.URLLogSearchResult0\x01\x42\x07Z\x05ngapib\x06proto3')
   ,
   dependencies=[google_dot_protobuf_dot_timestamp__pb2.DESCRIPTOR,])
 
@@ -29,7 +29,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
 
 _DATASETSREQUEST = _descriptor.Descriptor(
   name='DatasetsRequest',
-  full_name='io.netograph.DatasetsRequest',
+  full_name='DatasetsRequest',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
@@ -46,48 +46,48 @@ _DATASETSREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=62,
-  serialized_end=79,
+  serialized_start=48,
+  serialized_end=65,
 )
 
 
 _DATASET = _descriptor.Descriptor(
   name='Dataset',
-  full_name='io.netograph.Dataset',
+  full_name='Dataset',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='name', full_name='io.netograph.Dataset.name', index=0,
+      name='name', full_name='Dataset.name', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='description', full_name='io.netograph.Dataset.description', index=1,
+      name='description', full_name='Dataset.description', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='urlbase', full_name='io.netograph.Dataset.urlbase', index=2,
+      name='urlbase', full_name='Dataset.urlbase', index=2,
       number=3, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='deleted', full_name='io.netograph.Dataset.deleted', index=3,
+      name='deleted', full_name='Dataset.deleted', index=3,
       number=4, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='readonly', full_name='io.netograph.Dataset.readonly', index=4,
+      name='readonly', full_name='Dataset.readonly', index=4,
       number=5, type=8, cpp_type=7, label=1,
       has_default_value=False, default_value=False,
       message_type=None, enum_type=None, containing_type=None,
@@ -105,20 +105,20 @@ _DATASET = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=81,
-  serialized_end=205,
+  serialized_start=67,
+  serialized_end=191,
 )
 
 
 _CAPSUMMARY_PLAN = _descriptor.Descriptor(
   name='Plan',
-  full_name='io.netograph.CapSummary.Plan',
+  full_name='CapSummary.Plan',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='urls', full_name='io.netograph.CapSummary.Plan.urls', index=0,
+      name='urls', full_name='CapSummary.Plan.urls', index=0,
       number=1, type=9, cpp_type=9, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
@@ -136,19 +136,19 @@ _CAPSUMMARY_PLAN = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=430,
-  serialized_end=450,
+  serialized_start=377,
+  serialized_end=397,
 )
 
 _CAPSUMMARY_ROOT = _descriptor.Descriptor(
   name='Root',
-  full_name='io.netograph.CapSummary.Root',
+  full_name='CapSummary.Root',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='urls', full_name='io.netograph.CapSummary.Root.urls', index=0,
+      name='urls', full_name='CapSummary.Root.urls', index=0,
       number=1, type=9, cpp_type=9, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
@@ -166,33 +166,33 @@ _CAPSUMMARY_ROOT = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=452,
-  serialized_end=472,
+  serialized_start=399,
+  serialized_end=419,
 )
 
 _CAPSUMMARY_STATS = _descriptor.Descriptor(
   name='Stats',
-  full_name='io.netograph.CapSummary.Stats',
+  full_name='CapSummary.Stats',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='flows', full_name='io.netograph.CapSummary.Stats.flows', index=0,
+      name='flows', full_name='CapSummary.Stats.flows', index=0,
       number=1, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='websockets', full_name='io.netograph.CapSummary.Stats.websockets', index=1,
+      name='websockets', full_name='CapSummary.Stats.websockets', index=1,
       number=2, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='hosts', full_name='io.netograph.CapSummary.Stats.hosts', index=2,
+      name='hosts', full_name='CapSummary.Stats.hosts', index=2,
       number=3, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
@@ -210,54 +210,54 @@ _CAPSUMMARY_STATS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=474,
-  serialized_end=531,
+  serialized_start=421,
+  serialized_end=478,
 )
 
 _CAPSUMMARY = _descriptor.Descriptor(
   name='CapSummary',
-  full_name='io.netograph.CapSummary',
+  full_name='CapSummary',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='id', full_name='io.netograph.CapSummary.id', index=0,
+      name='id', full_name='CapSummary.id', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='assets', full_name='io.netograph.CapSummary.assets', index=1,
+      name='assets', full_name='CapSummary.assets', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='roots', full_name='io.netograph.CapSummary.roots', index=2,
+      name='roots', full_name='CapSummary.roots', index=2,
       number=3, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='time', full_name='io.netograph.CapSummary.time', index=3,
+      name='time', full_name='CapSummary.time', index=3,
       number=4, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='plan', full_name='io.netograph.CapSummary.plan', index=4,
+      name='plan', full_name='CapSummary.plan', index=4,
       number=5, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='stats', full_name='io.netograph.CapSummary.stats', index=5,
+      name='stats', full_name='CapSummary.stats', index=5,
       number=6, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
@@ -275,27 +275,27 @@ _CAPSUMMARY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=208,
-  serialized_end=531,
+  serialized_start=194,
+  serialized_end=478,
 )
 
 
 _METADATA = _descriptor.Descriptor(
   name='Metadata',
-  full_name='io.netograph.Metadata',
+  full_name='Metadata',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='key', full_name='io.netograph.Metadata.key', index=0,
+      name='key', full_name='Metadata.key', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='value', full_name='io.netograph.Metadata.value', index=1,
+      name='value', full_name='Metadata.value', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
@@ -313,27 +313,27 @@ _METADATA = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=533,
-  serialized_end=571,
+  serialized_start=480,
+  serialized_end=518,
 )
 
 
 _CAPTUREINFOREQUEST = _descriptor.Descriptor(
   name='CaptureInfoRequest',
-  full_name='io.netograph.CaptureInfoRequest',
+  full_name='CaptureInfoRequest',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='dataset', full_name='io.netograph.CaptureInfoRequest.dataset', index=0,
+      name='dataset', full_name='CaptureInfoRequest.dataset', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='id', full_name='io.netograph.CaptureInfoRequest.id', index=1,
+      name='id', full_name='CaptureInfoRequest.id', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
@@ -351,20 +351,20 @@ _CAPTUREINFOREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=573,
-  serialized_end=622,
+  serialized_start=520,
+  serialized_end=569,
 )
 
 
 _CAPTUREINFORESULT = _descriptor.Descriptor(
   name='CaptureInfoResult',
-  full_name='io.netograph.CaptureInfoResult',
+  full_name='CaptureInfoResult',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='capsummary', full_name='io.netograph.CaptureInfoResult.capsummary', index=0,
+      name='capsummary', full_name='CaptureInfoResult.capsummary', index=0,
       number=1, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
@@ -382,48 +382,48 @@ _CAPTUREINFORESULT = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=624,
-  serialized_end=689,
+  serialized_start=571,
+  serialized_end=623,
 )
 
 
 _CAPTURELOGREQUEST = _descriptor.Descriptor(
   name='CaptureLogRequest',
-  full_name='io.netograph.CaptureLogRequest',
+  full_name='CaptureLogRequest',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='dataset', full_name='io.netograph.CaptureLogRequest.dataset', index=0,
+      name='dataset', full_name='CaptureLogRequest.dataset', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='limit', full_name='io.netograph.CaptureLogRequest.limit', index=1,
+      name='limit', full_name='CaptureLogRequest.limit', index=1,
       number=2, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='resume', full_name='io.netograph.CaptureLogRequest.resume', index=2,
+      name='resume', full_name='CaptureLogRequest.resume', index=2,
       number=3, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='start', full_name='io.netograph.CaptureLogRequest.start', index=3,
+      name='start', full_name='CaptureLogRequest.start', index=3,
       number=4, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='end', full_name='io.netograph.CaptureLogRequest.end', index=4,
+      name='end', full_name='CaptureLogRequest.end', index=4,
       number=5, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
@@ -441,27 +441,27 @@ _CAPTURELOGREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=692,
-  serialized_end=843,
+  serialized_start=626,
+  serialized_end=777,
 )
 
 
 _CAPTURELOGRESULT = _descriptor.Descriptor(
   name='CaptureLogResult',
-  full_name='io.netograph.CaptureLogResult',
+  full_name='CaptureLogResult',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='capsummary', full_name='io.netograph.CaptureLogResult.capsummary', index=0,
+      name='capsummary', full_name='CaptureLogResult.capsummary', index=0,
       number=1, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='resume', full_name='io.netograph.CaptureLogResult.resume', index=1,
+      name='resume', full_name='CaptureLogResult.resume', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
@@ -479,34 +479,34 @@ _CAPTURELOGRESULT = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=845,
-  serialized_end=925,
+  serialized_start=779,
+  serialized_end=846,
 )
 
 
 _DOMAINHISTORYREQUEST = _descriptor.Descriptor(
   name='DomainHistoryRequest',
-  full_name='io.netograph.DomainHistoryRequest',
+  full_name='DomainHistoryRequest',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='dataset', full_name='io.netograph.DomainHistoryRequest.dataset', index=0,
+      name='dataset', full_name='DomainHistoryRequest.dataset', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='domain', full_name='io.netograph.DomainHistoryRequest.domain', index=1,
+      name='domain', full_name='DomainHistoryRequest.domain', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='limit', full_name='io.netograph.DomainHistoryRequest.limit', index=2,
+      name='limit', full_name='DomainHistoryRequest.limit', index=2,
       number=3, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
@@ -524,20 +524,20 @@ _DOMAINHISTORYREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=927,
-  serialized_end=997,
+  serialized_start=848,
+  serialized_end=918,
 )
 
 
 _DOMAINHISTORYRESULT = _descriptor.Descriptor(
   name='DomainHistoryResult',
-  full_name='io.netograph.DomainHistoryResult',
+  full_name='DomainHistoryResult',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='capsummary', full_name='io.netograph.DomainHistoryResult.capsummary', index=0,
+      name='capsummary', full_name='DomainHistoryResult.capsummary', index=0,
       number=1, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
@@ -555,41 +555,41 @@ _DOMAINHISTORYRESULT = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=999,
-  serialized_end=1066,
+  serialized_start=920,
+  serialized_end=974,
 )
 
 
 _DOMAINSEARCHREQUEST = _descriptor.Descriptor(
   name='DomainSearchRequest',
-  full_name='io.netograph.DomainSearchRequest',
+  full_name='DomainSearchRequest',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='dataset', full_name='io.netograph.DomainSearchRequest.dataset', index=0,
+      name='dataset', full_name='DomainSearchRequest.dataset', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='query', full_name='io.netograph.DomainSearchRequest.query', index=1,
+      name='query', full_name='DomainSearchRequest.query', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='limit', full_name='io.netograph.DomainSearchRequest.limit', index=2,
+      name='limit', full_name='DomainSearchRequest.limit', index=2,
       number=3, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='resume', full_name='io.netograph.DomainSearchRequest.resume', index=3,
+      name='resume', full_name='DomainSearchRequest.resume', index=3,
       number=4, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
@@ -607,34 +607,34 @@ _DOMAINSEARCHREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1068,
-  serialized_end=1152,
+  serialized_start=976,
+  serialized_end=1060,
 )
 
 
 _DOMAINSEARCHRESULT = _descriptor.Descriptor(
   name='DomainSearchResult',
-  full_name='io.netograph.DomainSearchResult',
+  full_name='DomainSearchResult',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='domain', full_name='io.netograph.DomainSearchResult.domain', index=0,
+      name='domain', full_name='DomainSearchResult.domain', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='resume', full_name='io.netograph.DomainSearchResult.resume', index=1,
+      name='resume', full_name='DomainSearchResult.resume', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='latestcapture', full_name='io.netograph.DomainSearchResult.latestcapture', index=2,
+      name='latestcapture', full_name='DomainSearchResult.latestcapture', index=2,
       number=3, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
@@ -652,41 +652,41 @@ _DOMAINSEARCHRESULT = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1154,
-  serialized_end=1255,
+  serialized_start=1062,
+  serialized_end=1150,
 )
 
 
 _DOMAINSFORIPREQUEST = _descriptor.Descriptor(
   name='DomainsForIPRequest',
-  full_name='io.netograph.DomainsForIPRequest',
+  full_name='DomainsForIPRequest',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='dataset', full_name='io.netograph.DomainsForIPRequest.dataset', index=0,
+      name='dataset', full_name='DomainsForIPRequest.dataset', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='ip', full_name='io.netograph.DomainsForIPRequest.ip', index=1,
+      name='ip', full_name='DomainsForIPRequest.ip', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='limit', full_name='io.netograph.DomainsForIPRequest.limit', index=2,
+      name='limit', full_name='DomainsForIPRequest.limit', index=2,
       number=3, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='resume', full_name='io.netograph.DomainsForIPRequest.resume', index=3,
+      name='resume', full_name='DomainsForIPRequest.resume', index=3,
       number=4, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
@@ -704,48 +704,48 @@ _DOMAINSFORIPREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1257,
-  serialized_end=1338,
+  serialized_start=1152,
+  serialized_end=1233,
 )
 
 
 _DOMAINSFORIPRESULT = _descriptor.Descriptor(
   name='DomainsForIPResult',
-  full_name='io.netograph.DomainsForIPResult',
+  full_name='DomainsForIPResult',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='domain', full_name='io.netograph.DomainsForIPResult.domain', index=0,
+      name='domain', full_name='DomainsForIPResult.domain', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='ip', full_name='io.netograph.DomainsForIPResult.ip', index=1,
+      name='ip', full_name='DomainsForIPResult.ip', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='latestcapture', full_name='io.netograph.DomainsForIPResult.latestcapture', index=2,
+      name='latestcapture', full_name='DomainsForIPResult.latestcapture', index=2,
       number=3, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='associations', full_name='io.netograph.DomainsForIPResult.associations', index=3,
+      name='associations', full_name='DomainsForIPResult.associations', index=3,
       number=4, type=9, cpp_type=9, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='resume', full_name='io.netograph.DomainsForIPResult.resume', index=4,
+      name='resume', full_name='DomainsForIPResult.resume', index=4,
       number=5, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
@@ -763,34 +763,34 @@ _DOMAINSFORIPRESULT = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1341,
-  serialized_end=1476,
+  serialized_start=1235,
+  serialized_end=1357,
 )
 
 
 _IPHISTORYREQUEST = _descriptor.Descriptor(
   name='IPHistoryRequest',
-  full_name='io.netograph.IPHistoryRequest',
+  full_name='IPHistoryRequest',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='dataset', full_name='io.netograph.IPHistoryRequest.dataset', index=0,
+      name='dataset', full_name='IPHistoryRequest.dataset', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='ip', full_name='io.netograph.IPHistoryRequest.ip', index=1,
+      name='ip', full_name='IPHistoryRequest.ip', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='limit', full_name='io.netograph.IPHistoryRequest.limit', index=2,
+      name='limit', full_name='IPHistoryRequest.limit', index=2,
       number=3, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
@@ -808,20 +808,20 @@ _IPHISTORYREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1478,
-  serialized_end=1540,
+  serialized_start=1359,
+  serialized_end=1421,
 )
 
 
 _IPHISTORYRESULT = _descriptor.Descriptor(
   name='IPHistoryResult',
-  full_name='io.netograph.IPHistoryResult',
+  full_name='IPHistoryResult',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='capsummary', full_name='io.netograph.IPHistoryResult.capsummary', index=0,
+      name='capsummary', full_name='IPHistoryResult.capsummary', index=0,
       number=1, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
@@ -839,41 +839,41 @@ _IPHISTORYRESULT = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1542,
-  serialized_end=1605,
+  serialized_start=1423,
+  serialized_end=1473,
 )
 
 
 _IPLOGSEARCHREQUEST = _descriptor.Descriptor(
   name='IPLogSearchRequest',
-  full_name='io.netograph.IPLogSearchRequest',
+  full_name='IPLogSearchRequest',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='dataset', full_name='io.netograph.IPLogSearchRequest.dataset', index=0,
+      name='dataset', full_name='IPLogSearchRequest.dataset', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='ip', full_name='io.netograph.IPLogSearchRequest.ip', index=1,
+      name='ip', full_name='IPLogSearchRequest.ip', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='limit', full_name='io.netograph.IPLogSearchRequest.limit', index=2,
+      name='limit', full_name='IPLogSearchRequest.limit', index=2,
       number=3, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='resume', full_name='io.netograph.IPLogSearchRequest.resume', index=3,
+      name='resume', full_name='IPLogSearchRequest.resume', index=3,
       number=4, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
@@ -891,34 +891,34 @@ _IPLOGSEARCHREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1607,
-  serialized_end=1687,
+  serialized_start=1475,
+  serialized_end=1555,
 )
 
 
 _IPLOGSEARCHRESULT = _descriptor.Descriptor(
   name='IPLogSearchResult',
-  full_name='io.netograph.IPLogSearchResult',
+  full_name='IPLogSearchResult',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='capsummary', full_name='io.netograph.IPLogSearchResult.capsummary', index=0,
+      name='capsummary', full_name='IPLogSearchResult.capsummary', index=0,
       number=1, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='ip', full_name='io.netograph.IPLogSearchResult.ip', index=1,
+      name='ip', full_name='IPLogSearchResult.ip', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='resume', full_name='io.netograph.IPLogSearchResult.resume', index=2,
+      name='resume', full_name='IPLogSearchResult.resume', index=2,
       number=3, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
@@ -936,34 +936,34 @@ _IPLOGSEARCHRESULT = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1689,
-  serialized_end=1782,
+  serialized_start=1557,
+  serialized_end=1637,
 )
 
 
 _IPSEARCHRESULT = _descriptor.Descriptor(
   name='IPSearchResult',
-  full_name='io.netograph.IPSearchResult',
+  full_name='IPSearchResult',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='ip', full_name='io.netograph.IPSearchResult.ip', index=0,
+      name='ip', full_name='IPSearchResult.ip', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='resume', full_name='io.netograph.IPSearchResult.resume', index=1,
+      name='resume', full_name='IPSearchResult.resume', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='latestcapture', full_name='io.netograph.IPSearchResult.latestcapture', index=2,
+      name='latestcapture', full_name='IPSearchResult.latestcapture', index=2,
       number=3, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
@@ -981,48 +981,48 @@ _IPSEARCHRESULT = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1784,
-  serialized_end=1877,
+  serialized_start=1639,
+  serialized_end=1719,
 )
 
 
 _IPSEARCHREQUEST = _descriptor.Descriptor(
   name='IPSearchRequest',
-  full_name='io.netograph.IPSearchRequest',
+  full_name='IPSearchRequest',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='dataset', full_name='io.netograph.IPSearchRequest.dataset', index=0,
+      name='dataset', full_name='IPSearchRequest.dataset', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='ip', full_name='io.netograph.IPSearchRequest.ip', index=1,
+      name='ip', full_name='IPSearchRequest.ip', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='mask', full_name='io.netograph.IPSearchRequest.mask', index=2,
+      name='mask', full_name='IPSearchRequest.mask', index=2,
       number=3, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='limit', full_name='io.netograph.IPSearchRequest.limit', index=3,
+      name='limit', full_name='IPSearchRequest.limit', index=3,
       number=4, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='resume', full_name='io.netograph.IPSearchRequest.resume', index=4,
+      name='resume', full_name='IPSearchRequest.resume', index=4,
       number=5, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
@@ -1040,41 +1040,41 @@ _IPSEARCHREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1879,
-  serialized_end=1970,
+  serialized_start=1721,
+  serialized_end=1812,
 )
 
 
 _IPSFORDOMAINREQUEST = _descriptor.Descriptor(
   name='IPsForDomainRequest',
-  full_name='io.netograph.IPsForDomainRequest',
+  full_name='IPsForDomainRequest',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='dataset', full_name='io.netograph.IPsForDomainRequest.dataset', index=0,
+      name='dataset', full_name='IPsForDomainRequest.dataset', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='query', full_name='io.netograph.IPsForDomainRequest.query', index=1,
+      name='query', full_name='IPsForDomainRequest.query', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='limit', full_name='io.netograph.IPsForDomainRequest.limit', index=2,
+      name='limit', full_name='IPsForDomainRequest.limit', index=2,
       number=3, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='resume', full_name='io.netograph.IPsForDomainRequest.resume', index=3,
+      name='resume', full_name='IPsForDomainRequest.resume', index=3,
       number=4, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
@@ -1092,48 +1092,48 @@ _IPSFORDOMAINREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1972,
-  serialized_end=2056,
+  serialized_start=1814,
+  serialized_end=1898,
 )
 
 
 _IPSFORDOMAINRESULT = _descriptor.Descriptor(
   name='IPsForDomainResult',
-  full_name='io.netograph.IPsForDomainResult',
+  full_name='IPsForDomainResult',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='domain', full_name='io.netograph.IPsForDomainResult.domain', index=0,
+      name='domain', full_name='IPsForDomainResult.domain', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='ip', full_name='io.netograph.IPsForDomainResult.ip', index=1,
+      name='ip', full_name='IPsForDomainResult.ip', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='latestcapture', full_name='io.netograph.IPsForDomainResult.latestcapture', index=2,
+      name='latestcapture', full_name='IPsForDomainResult.latestcapture', index=2,
       number=3, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='associations', full_name='io.netograph.IPsForDomainResult.associations', index=3,
+      name='associations', full_name='IPsForDomainResult.associations', index=3,
       number=4, type=9, cpp_type=9, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='resume', full_name='io.netograph.IPsForDomainResult.resume', index=4,
+      name='resume', full_name='IPsForDomainResult.resume', index=4,
       number=5, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
@@ -1151,41 +1151,41 @@ _IPSFORDOMAINRESULT = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2059,
-  serialized_end=2194,
+  serialized_start=1900,
+  serialized_end=2022,
 )
 
 
 _METAFORCAPTUREREQUEST = _descriptor.Descriptor(
   name='MetaForCaptureRequest',
-  full_name='io.netograph.MetaForCaptureRequest',
+  full_name='MetaForCaptureRequest',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='dataset', full_name='io.netograph.MetaForCaptureRequest.dataset', index=0,
+      name='dataset', full_name='MetaForCaptureRequest.dataset', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='id', full_name='io.netograph.MetaForCaptureRequest.id', index=1,
+      name='id', full_name='MetaForCaptureRequest.id', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='limit', full_name='io.netograph.MetaForCaptureRequest.limit', index=2,
+      name='limit', full_name='MetaForCaptureRequest.limit', index=2,
       number=3, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='resume', full_name='io.netograph.MetaForCaptureRequest.resume', index=3,
+      name='resume', full_name='MetaForCaptureRequest.resume', index=3,
       number=4, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
@@ -1203,34 +1203,34 @@ _METAFORCAPTUREREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2196,
-  serialized_end=2279,
+  serialized_start=2024,
+  serialized_end=2107,
 )
 
 
 _METAFORCAPTURERESULT = _descriptor.Descriptor(
   name='MetaForCaptureResult',
-  full_name='io.netograph.MetaForCaptureResult',
+  full_name='MetaForCaptureResult',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='meta', full_name='io.netograph.MetaForCaptureResult.meta', index=0,
+      name='meta', full_name='MetaForCaptureResult.meta', index=0,
       number=1, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='time', full_name='io.netograph.MetaForCaptureResult.time', index=1,
+      name='time', full_name='MetaForCaptureResult.time', index=1,
       number=2, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='resume', full_name='io.netograph.MetaForCaptureResult.resume', index=2,
+      name='resume', full_name='MetaForCaptureResult.resume', index=2,
       number=3, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
@@ -1248,41 +1248,41 @@ _METAFORCAPTURERESULT = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2281,
-  serialized_end=2399,
+  serialized_start=2109,
+  serialized_end=2214,
 )
 
 
 _METASEARCHREQUEST = _descriptor.Descriptor(
   name='MetaSearchRequest',
-  full_name='io.netograph.MetaSearchRequest',
+  full_name='MetaSearchRequest',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='dataset', full_name='io.netograph.MetaSearchRequest.dataset', index=0,
+      name='dataset', full_name='MetaSearchRequest.dataset', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='query', full_name='io.netograph.MetaSearchRequest.query', index=1,
+      name='query', full_name='MetaSearchRequest.query', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='limit', full_name='io.netograph.MetaSearchRequest.limit', index=2,
+      name='limit', full_name='MetaSearchRequest.limit', index=2,
       number=3, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='resume', full_name='io.netograph.MetaSearchRequest.resume', index=3,
+      name='resume', full_name='MetaSearchRequest.resume', index=3,
       number=4, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
@@ -1300,34 +1300,34 @@ _METASEARCHREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2401,
-  serialized_end=2483,
+  serialized_start=2216,
+  serialized_end=2298,
 )
 
 
 _METASEARCHRESULT = _descriptor.Descriptor(
   name='MetaSearchResult',
-  full_name='io.netograph.MetaSearchResult',
+  full_name='MetaSearchResult',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='meta', full_name='io.netograph.MetaSearchResult.meta', index=0,
+      name='meta', full_name='MetaSearchResult.meta', index=0,
       number=1, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='resume', full_name='io.netograph.MetaSearchResult.resume', index=1,
+      name='resume', full_name='MetaSearchResult.resume', index=1,
       number=3, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='capsummary', full_name='io.netograph.MetaSearchResult.capsummary', index=2,
+      name='capsummary', full_name='MetaSearchResult.capsummary', index=2,
       number=4, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
@@ -1345,41 +1345,41 @@ _METASEARCHRESULT = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2485,
-  serialized_end=2603,
+  serialized_start=2300,
+  serialized_end=2392,
 )
 
 
 _REDIRSBYDESTINATIONREQUEST = _descriptor.Descriptor(
   name='RedirsByDestinationRequest',
-  full_name='io.netograph.RedirsByDestinationRequest',
+  full_name='RedirsByDestinationRequest',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='dataset', full_name='io.netograph.RedirsByDestinationRequest.dataset', index=0,
+      name='dataset', full_name='RedirsByDestinationRequest.dataset', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='query', full_name='io.netograph.RedirsByDestinationRequest.query', index=1,
+      name='query', full_name='RedirsByDestinationRequest.query', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='limit', full_name='io.netograph.RedirsByDestinationRequest.limit', index=2,
+      name='limit', full_name='RedirsByDestinationRequest.limit', index=2,
       number=3, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='resume', full_name='io.netograph.RedirsByDestinationRequest.resume', index=3,
+      name='resume', full_name='RedirsByDestinationRequest.resume', index=3,
       number=4, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
@@ -1397,41 +1397,41 @@ _REDIRSBYDESTINATIONREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2605,
-  serialized_end=2696,
+  serialized_start=2394,
+  serialized_end=2485,
 )
 
 
 _REDIRSBYDESTINATIONRESPONSE = _descriptor.Descriptor(
   name='RedirsByDestinationResponse',
-  full_name='io.netograph.RedirsByDestinationResponse',
+  full_name='RedirsByDestinationResponse',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='source', full_name='io.netograph.RedirsByDestinationResponse.source', index=0,
+      name='source', full_name='RedirsByDestinationResponse.source', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='destination', full_name='io.netograph.RedirsByDestinationResponse.destination', index=1,
+      name='destination', full_name='RedirsByDestinationResponse.destination', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='latestcapture', full_name='io.netograph.RedirsByDestinationResponse.latestcapture', index=2,
+      name='latestcapture', full_name='RedirsByDestinationResponse.latestcapture', index=2,
       number=3, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='resume', full_name='io.netograph.RedirsByDestinationResponse.resume', index=3,
+      name='resume', full_name='RedirsByDestinationResponse.resume', index=3,
       number=4, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
@@ -1449,41 +1449,41 @@ _REDIRSBYDESTINATIONRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2699,
-  serialized_end=2830,
+  serialized_start=2487,
+  serialized_end=2605,
 )
 
 
 _REDIRSBYSOURCEREQUEST = _descriptor.Descriptor(
   name='RedirsBySourceRequest',
-  full_name='io.netograph.RedirsBySourceRequest',
+  full_name='RedirsBySourceRequest',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='dataset', full_name='io.netograph.RedirsBySourceRequest.dataset', index=0,
+      name='dataset', full_name='RedirsBySourceRequest.dataset', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='query', full_name='io.netograph.RedirsBySourceRequest.query', index=1,
+      name='query', full_name='RedirsBySourceRequest.query', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='limit', full_name='io.netograph.RedirsBySourceRequest.limit', index=2,
+      name='limit', full_name='RedirsBySourceRequest.limit', index=2,
       number=3, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='resume', full_name='io.netograph.RedirsBySourceRequest.resume', index=3,
+      name='resume', full_name='RedirsBySourceRequest.resume', index=3,
       number=4, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
@@ -1501,41 +1501,41 @@ _REDIRSBYSOURCEREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2832,
-  serialized_end=2918,
+  serialized_start=2607,
+  serialized_end=2693,
 )
 
 
 _REDIRSBYSOURCERESPONSE = _descriptor.Descriptor(
   name='RedirsBySourceResponse',
-  full_name='io.netograph.RedirsBySourceResponse',
+  full_name='RedirsBySourceResponse',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='source', full_name='io.netograph.RedirsBySourceResponse.source', index=0,
+      name='source', full_name='RedirsBySourceResponse.source', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='destination', full_name='io.netograph.RedirsBySourceResponse.destination', index=1,
+      name='destination', full_name='RedirsBySourceResponse.destination', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='latestcapture', full_name='io.netograph.RedirsBySourceResponse.latestcapture', index=2,
+      name='latestcapture', full_name='RedirsBySourceResponse.latestcapture', index=2,
       number=3, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='resume', full_name='io.netograph.RedirsBySourceResponse.resume', index=3,
+      name='resume', full_name='RedirsBySourceResponse.resume', index=3,
       number=4, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
@@ -1553,41 +1553,41 @@ _REDIRSBYSOURCERESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2920,
-  serialized_end=3046,
+  serialized_start=2695,
+  serialized_end=2808,
 )
 
 
 _ROOTLOGSEARCHREQUEST = _descriptor.Descriptor(
   name='RootLogSearchRequest',
-  full_name='io.netograph.RootLogSearchRequest',
+  full_name='RootLogSearchRequest',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='dataset', full_name='io.netograph.RootLogSearchRequest.dataset', index=0,
+      name='dataset', full_name='RootLogSearchRequest.dataset', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='query', full_name='io.netograph.RootLogSearchRequest.query', index=1,
+      name='query', full_name='RootLogSearchRequest.query', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='limit', full_name='io.netograph.RootLogSearchRequest.limit', index=2,
+      name='limit', full_name='RootLogSearchRequest.limit', index=2,
       number=3, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='resume', full_name='io.netograph.RootLogSearchRequest.resume', index=3,
+      name='resume', full_name='RootLogSearchRequest.resume', index=3,
       number=4, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
@@ -1605,34 +1605,34 @@ _ROOTLOGSEARCHREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3048,
-  serialized_end=3133,
+  serialized_start=2810,
+  serialized_end=2895,
 )
 
 
 _ROOTLOGSEARCHRESULT = _descriptor.Descriptor(
   name='RootLogSearchResult',
-  full_name='io.netograph.RootLogSearchResult',
+  full_name='RootLogSearchResult',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='root', full_name='io.netograph.RootLogSearchResult.root', index=0,
+      name='root', full_name='RootLogSearchResult.root', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='resume', full_name='io.netograph.RootLogSearchResult.resume', index=1,
+      name='resume', full_name='RootLogSearchResult.resume', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='capsummary', full_name='io.netograph.RootLogSearchResult.capsummary', index=2,
+      name='capsummary', full_name='RootLogSearchResult.capsummary', index=2,
       number=3, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
@@ -1650,41 +1650,41 @@ _ROOTLOGSEARCHRESULT = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3135,
-  serialized_end=3232,
+  serialized_start=2897,
+  serialized_end=2981,
 )
 
 
 _ROOTSFORSATELLITEREQUEST = _descriptor.Descriptor(
   name='RootsForSatelliteRequest',
-  full_name='io.netograph.RootsForSatelliteRequest',
+  full_name='RootsForSatelliteRequest',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='dataset', full_name='io.netograph.RootsForSatelliteRequest.dataset', index=0,
+      name='dataset', full_name='RootsForSatelliteRequest.dataset', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='query', full_name='io.netograph.RootsForSatelliteRequest.query', index=1,
+      name='query', full_name='RootsForSatelliteRequest.query', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='limit', full_name='io.netograph.RootsForSatelliteRequest.limit', index=2,
+      name='limit', full_name='RootsForSatelliteRequest.limit', index=2,
       number=3, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='resume', full_name='io.netograph.RootsForSatelliteRequest.resume', index=3,
+      name='resume', full_name='RootsForSatelliteRequest.resume', index=3,
       number=4, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
@@ -1702,48 +1702,48 @@ _ROOTSFORSATELLITEREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3234,
-  serialized_end=3323,
+  serialized_start=2983,
+  serialized_end=3072,
 )
 
 
 _ROOTSFORSATELLITERESULT = _descriptor.Descriptor(
   name='RootsForSatelliteResult',
-  full_name='io.netograph.RootsForSatelliteResult',
+  full_name='RootsForSatelliteResult',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='root', full_name='io.netograph.RootsForSatelliteResult.root', index=0,
+      name='root', full_name='RootsForSatelliteResult.root', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='satellite', full_name='io.netograph.RootsForSatelliteResult.satellite', index=1,
+      name='satellite', full_name='RootsForSatelliteResult.satellite', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='capsummary', full_name='io.netograph.RootsForSatelliteResult.capsummary', index=2,
+      name='capsummary', full_name='RootsForSatelliteResult.capsummary', index=2,
       number=3, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='associations', full_name='io.netograph.RootsForSatelliteResult.associations', index=3,
+      name='associations', full_name='RootsForSatelliteResult.associations', index=3,
       number=4, type=9, cpp_type=9, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='resume', full_name='io.netograph.RootsForSatelliteResult.resume', index=4,
+      name='resume', full_name='RootsForSatelliteResult.resume', index=4,
       number=5, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
@@ -1761,48 +1761,48 @@ _ROOTSFORSATELLITERESULT = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3326,
-  serialized_end=3468,
+  serialized_start=3075,
+  serialized_end=3204,
 )
 
 
 _SUBMITCAPTUREREQUEST = _descriptor.Descriptor(
   name='SubmitCaptureRequest',
-  full_name='io.netograph.SubmitCaptureRequest',
+  full_name='SubmitCaptureRequest',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='dataset', full_name='io.netograph.SubmitCaptureRequest.dataset', index=0,
+      name='dataset', full_name='SubmitCaptureRequest.dataset', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='notification', full_name='io.netograph.SubmitCaptureRequest.notification', index=1,
+      name='notification', full_name='SubmitCaptureRequest.notification', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='urls', full_name='io.netograph.SubmitCaptureRequest.urls', index=2,
+      name='urls', full_name='SubmitCaptureRequest.urls', index=2,
       number=3, type=9, cpp_type=9, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='meta', full_name='io.netograph.SubmitCaptureRequest.meta', index=3,
+      name='meta', full_name='SubmitCaptureRequest.meta', index=3,
       number=4, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='skiprecent', full_name='io.netograph.SubmitCaptureRequest.skiprecent', index=4,
+      name='skiprecent', full_name='SubmitCaptureRequest.skiprecent', index=4,
       number=5, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
@@ -1820,34 +1820,34 @@ _SUBMITCAPTUREREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3471,
-  serialized_end=3604,
+  serialized_start=3206,
+  serialized_end=3326,
 )
 
 
 _SUBMITCAPTURERESULT = _descriptor.Descriptor(
   name='SubmitCaptureResult',
-  full_name='io.netograph.SubmitCaptureResult',
+  full_name='SubmitCaptureResult',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='assets', full_name='io.netograph.SubmitCaptureResult.assets', index=0,
+      name='assets', full_name='SubmitCaptureResult.assets', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='skipped', full_name='io.netograph.SubmitCaptureResult.skipped', index=1,
+      name='skipped', full_name='SubmitCaptureResult.skipped', index=1,
       number=2, type=8, cpp_type=7, label=1,
       has_default_value=False, default_value=False,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='id', full_name='io.netograph.SubmitCaptureResult.id', index=2,
+      name='id', full_name='SubmitCaptureResult.id', index=2,
       number=3, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
@@ -1865,41 +1865,41 @@ _SUBMITCAPTURERESULT = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3606,
-  serialized_end=3672,
+  serialized_start=3328,
+  serialized_end=3394,
 )
 
 
 _SATELLITELOGSEARCHREQUEST = _descriptor.Descriptor(
   name='SatelliteLogSearchRequest',
-  full_name='io.netograph.SatelliteLogSearchRequest',
+  full_name='SatelliteLogSearchRequest',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='dataset', full_name='io.netograph.SatelliteLogSearchRequest.dataset', index=0,
+      name='dataset', full_name='SatelliteLogSearchRequest.dataset', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='query', full_name='io.netograph.SatelliteLogSearchRequest.query', index=1,
+      name='query', full_name='SatelliteLogSearchRequest.query', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='limit', full_name='io.netograph.SatelliteLogSearchRequest.limit', index=2,
+      name='limit', full_name='SatelliteLogSearchRequest.limit', index=2,
       number=3, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='resume', full_name='io.netograph.SatelliteLogSearchRequest.resume', index=3,
+      name='resume', full_name='SatelliteLogSearchRequest.resume', index=3,
       number=4, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
@@ -1917,34 +1917,34 @@ _SATELLITELOGSEARCHREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3674,
-  serialized_end=3764,
+  serialized_start=3396,
+  serialized_end=3486,
 )
 
 
 _SATELLITELOGSEARCHRESULT = _descriptor.Descriptor(
   name='SatelliteLogSearchResult',
-  full_name='io.netograph.SatelliteLogSearchResult',
+  full_name='SatelliteLogSearchResult',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='satellite', full_name='io.netograph.SatelliteLogSearchResult.satellite', index=0,
+      name='satellite', full_name='SatelliteLogSearchResult.satellite', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='resume', full_name='io.netograph.SatelliteLogSearchResult.resume', index=1,
+      name='resume', full_name='SatelliteLogSearchResult.resume', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='capsummary', full_name='io.netograph.SatelliteLogSearchResult.capsummary', index=2,
+      name='capsummary', full_name='SatelliteLogSearchResult.capsummary', index=2,
       number=3, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
@@ -1962,41 +1962,41 @@ _SATELLITELOGSEARCHRESULT = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3766,
-  serialized_end=3873,
+  serialized_start=3488,
+  serialized_end=3582,
 )
 
 
 _SATELLITESFORROOTREQUEST = _descriptor.Descriptor(
   name='SatellitesForRootRequest',
-  full_name='io.netograph.SatellitesForRootRequest',
+  full_name='SatellitesForRootRequest',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='dataset', full_name='io.netograph.SatellitesForRootRequest.dataset', index=0,
+      name='dataset', full_name='SatellitesForRootRequest.dataset', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='query', full_name='io.netograph.SatellitesForRootRequest.query', index=1,
+      name='query', full_name='SatellitesForRootRequest.query', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='limit', full_name='io.netograph.SatellitesForRootRequest.limit', index=2,
+      name='limit', full_name='SatellitesForRootRequest.limit', index=2,
       number=3, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='resume', full_name='io.netograph.SatellitesForRootRequest.resume', index=3,
+      name='resume', full_name='SatellitesForRootRequest.resume', index=3,
       number=4, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
@@ -2014,48 +2014,48 @@ _SATELLITESFORROOTREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3875,
-  serialized_end=3964,
+  serialized_start=3584,
+  serialized_end=3673,
 )
 
 
 _SATELLITESFORROOTRESULT = _descriptor.Descriptor(
   name='SatellitesForRootResult',
-  full_name='io.netograph.SatellitesForRootResult',
+  full_name='SatellitesForRootResult',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='root', full_name='io.netograph.SatellitesForRootResult.root', index=0,
+      name='root', full_name='SatellitesForRootResult.root', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='satellite', full_name='io.netograph.SatellitesForRootResult.satellite', index=1,
+      name='satellite', full_name='SatellitesForRootResult.satellite', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='capsummary', full_name='io.netograph.SatellitesForRootResult.capsummary', index=2,
+      name='capsummary', full_name='SatellitesForRootResult.capsummary', index=2,
       number=3, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='associations', full_name='io.netograph.SatellitesForRootResult.associations', index=3,
+      name='associations', full_name='SatellitesForRootResult.associations', index=3,
       number=4, type=9, cpp_type=9, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='resume', full_name='io.netograph.SatellitesForRootResult.resume', index=4,
+      name='resume', full_name='SatellitesForRootResult.resume', index=4,
       number=5, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
@@ -2073,34 +2073,34 @@ _SATELLITESFORROOTRESULT = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3967,
-  serialized_end=4109,
+  serialized_start=3676,
+  serialized_end=3805,
 )
 
 
 _TEMPCAPTUREREQUEST = _descriptor.Descriptor(
   name='TempCaptureRequest',
-  full_name='io.netograph.TempCaptureRequest',
+  full_name='TempCaptureRequest',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='notification', full_name='io.netograph.TempCaptureRequest.notification', index=0,
+      name='notification', full_name='TempCaptureRequest.notification', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='urls', full_name='io.netograph.TempCaptureRequest.urls', index=1,
+      name='urls', full_name='TempCaptureRequest.urls', index=1,
       number=2, type=9, cpp_type=9, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='meta', full_name='io.netograph.TempCaptureRequest.meta', index=2,
+      name='meta', full_name='TempCaptureRequest.meta', index=2,
       number=3, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
@@ -2118,27 +2118,27 @@ _TEMPCAPTUREREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4111,
-  serialized_end=4205,
+  serialized_start=3807,
+  serialized_end=3888,
 )
 
 
 _TEMPCAPTURERESULT = _descriptor.Descriptor(
   name='TempCaptureResult',
-  full_name='io.netograph.TempCaptureResult',
+  full_name='TempCaptureResult',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='assets', full_name='io.netograph.TempCaptureResult.assets', index=0,
+      name='assets', full_name='TempCaptureResult.assets', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='id', full_name='io.netograph.TempCaptureResult.id', index=1,
+      name='id', full_name='TempCaptureResult.id', index=1,
       number=3, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
@@ -2156,41 +2156,41 @@ _TEMPCAPTURERESULT = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4207,
-  serialized_end=4254,
+  serialized_start=3890,
+  serialized_end=3937,
 )
 
 
 _URLLOGSEARCHREQUEST = _descriptor.Descriptor(
   name='URLLogSearchRequest',
-  full_name='io.netograph.URLLogSearchRequest',
+  full_name='URLLogSearchRequest',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='dataset', full_name='io.netograph.URLLogSearchRequest.dataset', index=0,
+      name='dataset', full_name='URLLogSearchRequest.dataset', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='query', full_name='io.netograph.URLLogSearchRequest.query', index=1,
+      name='query', full_name='URLLogSearchRequest.query', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='limit', full_name='io.netograph.URLLogSearchRequest.limit', index=2,
+      name='limit', full_name='URLLogSearchRequest.limit', index=2,
       number=3, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='resume', full_name='io.netograph.URLLogSearchRequest.resume', index=3,
+      name='resume', full_name='URLLogSearchRequest.resume', index=3,
       number=4, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
@@ -2208,34 +2208,34 @@ _URLLOGSEARCHREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4256,
-  serialized_end=4340,
+  serialized_start=3939,
+  serialized_end=4023,
 )
 
 
 _URLLOGSEARCHRESULT = _descriptor.Descriptor(
   name='URLLogSearchResult',
-  full_name='io.netograph.URLLogSearchResult',
+  full_name='URLLogSearchResult',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='url', full_name='io.netograph.URLLogSearchResult.url', index=0,
+      name='url', full_name='URLLogSearchResult.url', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='resume', full_name='io.netograph.URLLogSearchResult.resume', index=1,
+      name='resume', full_name='URLLogSearchResult.resume', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='capsummary', full_name='io.netograph.URLLogSearchResult.capsummary', index=2,
+      name='capsummary', full_name='URLLogSearchResult.capsummary', index=2,
       number=3, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
@@ -2253,8 +2253,8 @@ _URLLOGSEARCHRESULT = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4342,
-  serialized_end=4437,
+  serialized_start=4025,
+  serialized_end=4107,
 )
 
 _DATASET.fields_by_name['deleted'].message_type = google_dot_protobuf_dot_timestamp__pb2._TIMESTAMP
@@ -2338,14 +2338,14 @@ _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 DatasetsRequest = _reflection.GeneratedProtocolMessageType('DatasetsRequest', (_message.Message,), dict(
   DESCRIPTOR = _DATASETSREQUEST,
   __module__ = 'ngapi_pb2'
-  # @@protoc_insertion_point(class_scope:io.netograph.DatasetsRequest)
+  # @@protoc_insertion_point(class_scope:DatasetsRequest)
   ))
 _sym_db.RegisterMessage(DatasetsRequest)
 
 Dataset = _reflection.GeneratedProtocolMessageType('Dataset', (_message.Message,), dict(
   DESCRIPTOR = _DATASET,
   __module__ = 'ngapi_pb2'
-  # @@protoc_insertion_point(class_scope:io.netograph.Dataset)
+  # @@protoc_insertion_point(class_scope:Dataset)
   ))
 _sym_db.RegisterMessage(Dataset)
 
@@ -2354,26 +2354,26 @@ CapSummary = _reflection.GeneratedProtocolMessageType('CapSummary', (_message.Me
   Plan = _reflection.GeneratedProtocolMessageType('Plan', (_message.Message,), dict(
     DESCRIPTOR = _CAPSUMMARY_PLAN,
     __module__ = 'ngapi_pb2'
-    # @@protoc_insertion_point(class_scope:io.netograph.CapSummary.Plan)
+    # @@protoc_insertion_point(class_scope:CapSummary.Plan)
     ))
   ,
 
   Root = _reflection.GeneratedProtocolMessageType('Root', (_message.Message,), dict(
     DESCRIPTOR = _CAPSUMMARY_ROOT,
     __module__ = 'ngapi_pb2'
-    # @@protoc_insertion_point(class_scope:io.netograph.CapSummary.Root)
+    # @@protoc_insertion_point(class_scope:CapSummary.Root)
     ))
   ,
 
   Stats = _reflection.GeneratedProtocolMessageType('Stats', (_message.Message,), dict(
     DESCRIPTOR = _CAPSUMMARY_STATS,
     __module__ = 'ngapi_pb2'
-    # @@protoc_insertion_point(class_scope:io.netograph.CapSummary.Stats)
+    # @@protoc_insertion_point(class_scope:CapSummary.Stats)
     ))
   ,
   DESCRIPTOR = _CAPSUMMARY,
   __module__ = 'ngapi_pb2'
-  # @@protoc_insertion_point(class_scope:io.netograph.CapSummary)
+  # @@protoc_insertion_point(class_scope:CapSummary)
   ))
 _sym_db.RegisterMessage(CapSummary)
 _sym_db.RegisterMessage(CapSummary.Plan)
@@ -2383,287 +2383,287 @@ _sym_db.RegisterMessage(CapSummary.Stats)
 Metadata = _reflection.GeneratedProtocolMessageType('Metadata', (_message.Message,), dict(
   DESCRIPTOR = _METADATA,
   __module__ = 'ngapi_pb2'
-  # @@protoc_insertion_point(class_scope:io.netograph.Metadata)
+  # @@protoc_insertion_point(class_scope:Metadata)
   ))
 _sym_db.RegisterMessage(Metadata)
 
 CaptureInfoRequest = _reflection.GeneratedProtocolMessageType('CaptureInfoRequest', (_message.Message,), dict(
   DESCRIPTOR = _CAPTUREINFOREQUEST,
   __module__ = 'ngapi_pb2'
-  # @@protoc_insertion_point(class_scope:io.netograph.CaptureInfoRequest)
+  # @@protoc_insertion_point(class_scope:CaptureInfoRequest)
   ))
 _sym_db.RegisterMessage(CaptureInfoRequest)
 
 CaptureInfoResult = _reflection.GeneratedProtocolMessageType('CaptureInfoResult', (_message.Message,), dict(
   DESCRIPTOR = _CAPTUREINFORESULT,
   __module__ = 'ngapi_pb2'
-  # @@protoc_insertion_point(class_scope:io.netograph.CaptureInfoResult)
+  # @@protoc_insertion_point(class_scope:CaptureInfoResult)
   ))
 _sym_db.RegisterMessage(CaptureInfoResult)
 
 CaptureLogRequest = _reflection.GeneratedProtocolMessageType('CaptureLogRequest', (_message.Message,), dict(
   DESCRIPTOR = _CAPTURELOGREQUEST,
   __module__ = 'ngapi_pb2'
-  # @@protoc_insertion_point(class_scope:io.netograph.CaptureLogRequest)
+  # @@protoc_insertion_point(class_scope:CaptureLogRequest)
   ))
 _sym_db.RegisterMessage(CaptureLogRequest)
 
 CaptureLogResult = _reflection.GeneratedProtocolMessageType('CaptureLogResult', (_message.Message,), dict(
   DESCRIPTOR = _CAPTURELOGRESULT,
   __module__ = 'ngapi_pb2'
-  # @@protoc_insertion_point(class_scope:io.netograph.CaptureLogResult)
+  # @@protoc_insertion_point(class_scope:CaptureLogResult)
   ))
 _sym_db.RegisterMessage(CaptureLogResult)
 
 DomainHistoryRequest = _reflection.GeneratedProtocolMessageType('DomainHistoryRequest', (_message.Message,), dict(
   DESCRIPTOR = _DOMAINHISTORYREQUEST,
   __module__ = 'ngapi_pb2'
-  # @@protoc_insertion_point(class_scope:io.netograph.DomainHistoryRequest)
+  # @@protoc_insertion_point(class_scope:DomainHistoryRequest)
   ))
 _sym_db.RegisterMessage(DomainHistoryRequest)
 
 DomainHistoryResult = _reflection.GeneratedProtocolMessageType('DomainHistoryResult', (_message.Message,), dict(
   DESCRIPTOR = _DOMAINHISTORYRESULT,
   __module__ = 'ngapi_pb2'
-  # @@protoc_insertion_point(class_scope:io.netograph.DomainHistoryResult)
+  # @@protoc_insertion_point(class_scope:DomainHistoryResult)
   ))
 _sym_db.RegisterMessage(DomainHistoryResult)
 
 DomainSearchRequest = _reflection.GeneratedProtocolMessageType('DomainSearchRequest', (_message.Message,), dict(
   DESCRIPTOR = _DOMAINSEARCHREQUEST,
   __module__ = 'ngapi_pb2'
-  # @@protoc_insertion_point(class_scope:io.netograph.DomainSearchRequest)
+  # @@protoc_insertion_point(class_scope:DomainSearchRequest)
   ))
 _sym_db.RegisterMessage(DomainSearchRequest)
 
 DomainSearchResult = _reflection.GeneratedProtocolMessageType('DomainSearchResult', (_message.Message,), dict(
   DESCRIPTOR = _DOMAINSEARCHRESULT,
   __module__ = 'ngapi_pb2'
-  # @@protoc_insertion_point(class_scope:io.netograph.DomainSearchResult)
+  # @@protoc_insertion_point(class_scope:DomainSearchResult)
   ))
 _sym_db.RegisterMessage(DomainSearchResult)
 
 DomainsForIPRequest = _reflection.GeneratedProtocolMessageType('DomainsForIPRequest', (_message.Message,), dict(
   DESCRIPTOR = _DOMAINSFORIPREQUEST,
   __module__ = 'ngapi_pb2'
-  # @@protoc_insertion_point(class_scope:io.netograph.DomainsForIPRequest)
+  # @@protoc_insertion_point(class_scope:DomainsForIPRequest)
   ))
 _sym_db.RegisterMessage(DomainsForIPRequest)
 
 DomainsForIPResult = _reflection.GeneratedProtocolMessageType('DomainsForIPResult', (_message.Message,), dict(
   DESCRIPTOR = _DOMAINSFORIPRESULT,
   __module__ = 'ngapi_pb2'
-  # @@protoc_insertion_point(class_scope:io.netograph.DomainsForIPResult)
+  # @@protoc_insertion_point(class_scope:DomainsForIPResult)
   ))
 _sym_db.RegisterMessage(DomainsForIPResult)
 
 IPHistoryRequest = _reflection.GeneratedProtocolMessageType('IPHistoryRequest', (_message.Message,), dict(
   DESCRIPTOR = _IPHISTORYREQUEST,
   __module__ = 'ngapi_pb2'
-  # @@protoc_insertion_point(class_scope:io.netograph.IPHistoryRequest)
+  # @@protoc_insertion_point(class_scope:IPHistoryRequest)
   ))
 _sym_db.RegisterMessage(IPHistoryRequest)
 
 IPHistoryResult = _reflection.GeneratedProtocolMessageType('IPHistoryResult', (_message.Message,), dict(
   DESCRIPTOR = _IPHISTORYRESULT,
   __module__ = 'ngapi_pb2'
-  # @@protoc_insertion_point(class_scope:io.netograph.IPHistoryResult)
+  # @@protoc_insertion_point(class_scope:IPHistoryResult)
   ))
 _sym_db.RegisterMessage(IPHistoryResult)
 
 IPLogSearchRequest = _reflection.GeneratedProtocolMessageType('IPLogSearchRequest', (_message.Message,), dict(
   DESCRIPTOR = _IPLOGSEARCHREQUEST,
   __module__ = 'ngapi_pb2'
-  # @@protoc_insertion_point(class_scope:io.netograph.IPLogSearchRequest)
+  # @@protoc_insertion_point(class_scope:IPLogSearchRequest)
   ))
 _sym_db.RegisterMessage(IPLogSearchRequest)
 
 IPLogSearchResult = _reflection.GeneratedProtocolMessageType('IPLogSearchResult', (_message.Message,), dict(
   DESCRIPTOR = _IPLOGSEARCHRESULT,
   __module__ = 'ngapi_pb2'
-  # @@protoc_insertion_point(class_scope:io.netograph.IPLogSearchResult)
+  # @@protoc_insertion_point(class_scope:IPLogSearchResult)
   ))
 _sym_db.RegisterMessage(IPLogSearchResult)
 
 IPSearchResult = _reflection.GeneratedProtocolMessageType('IPSearchResult', (_message.Message,), dict(
   DESCRIPTOR = _IPSEARCHRESULT,
   __module__ = 'ngapi_pb2'
-  # @@protoc_insertion_point(class_scope:io.netograph.IPSearchResult)
+  # @@protoc_insertion_point(class_scope:IPSearchResult)
   ))
 _sym_db.RegisterMessage(IPSearchResult)
 
 IPSearchRequest = _reflection.GeneratedProtocolMessageType('IPSearchRequest', (_message.Message,), dict(
   DESCRIPTOR = _IPSEARCHREQUEST,
   __module__ = 'ngapi_pb2'
-  # @@protoc_insertion_point(class_scope:io.netograph.IPSearchRequest)
+  # @@protoc_insertion_point(class_scope:IPSearchRequest)
   ))
 _sym_db.RegisterMessage(IPSearchRequest)
 
 IPsForDomainRequest = _reflection.GeneratedProtocolMessageType('IPsForDomainRequest', (_message.Message,), dict(
   DESCRIPTOR = _IPSFORDOMAINREQUEST,
   __module__ = 'ngapi_pb2'
-  # @@protoc_insertion_point(class_scope:io.netograph.IPsForDomainRequest)
+  # @@protoc_insertion_point(class_scope:IPsForDomainRequest)
   ))
 _sym_db.RegisterMessage(IPsForDomainRequest)
 
 IPsForDomainResult = _reflection.GeneratedProtocolMessageType('IPsForDomainResult', (_message.Message,), dict(
   DESCRIPTOR = _IPSFORDOMAINRESULT,
   __module__ = 'ngapi_pb2'
-  # @@protoc_insertion_point(class_scope:io.netograph.IPsForDomainResult)
+  # @@protoc_insertion_point(class_scope:IPsForDomainResult)
   ))
 _sym_db.RegisterMessage(IPsForDomainResult)
 
 MetaForCaptureRequest = _reflection.GeneratedProtocolMessageType('MetaForCaptureRequest', (_message.Message,), dict(
   DESCRIPTOR = _METAFORCAPTUREREQUEST,
   __module__ = 'ngapi_pb2'
-  # @@protoc_insertion_point(class_scope:io.netograph.MetaForCaptureRequest)
+  # @@protoc_insertion_point(class_scope:MetaForCaptureRequest)
   ))
 _sym_db.RegisterMessage(MetaForCaptureRequest)
 
 MetaForCaptureResult = _reflection.GeneratedProtocolMessageType('MetaForCaptureResult', (_message.Message,), dict(
   DESCRIPTOR = _METAFORCAPTURERESULT,
   __module__ = 'ngapi_pb2'
-  # @@protoc_insertion_point(class_scope:io.netograph.MetaForCaptureResult)
+  # @@protoc_insertion_point(class_scope:MetaForCaptureResult)
   ))
 _sym_db.RegisterMessage(MetaForCaptureResult)
 
 MetaSearchRequest = _reflection.GeneratedProtocolMessageType('MetaSearchRequest', (_message.Message,), dict(
   DESCRIPTOR = _METASEARCHREQUEST,
   __module__ = 'ngapi_pb2'
-  # @@protoc_insertion_point(class_scope:io.netograph.MetaSearchRequest)
+  # @@protoc_insertion_point(class_scope:MetaSearchRequest)
   ))
 _sym_db.RegisterMessage(MetaSearchRequest)
 
 MetaSearchResult = _reflection.GeneratedProtocolMessageType('MetaSearchResult', (_message.Message,), dict(
   DESCRIPTOR = _METASEARCHRESULT,
   __module__ = 'ngapi_pb2'
-  # @@protoc_insertion_point(class_scope:io.netograph.MetaSearchResult)
+  # @@protoc_insertion_point(class_scope:MetaSearchResult)
   ))
 _sym_db.RegisterMessage(MetaSearchResult)
 
 RedirsByDestinationRequest = _reflection.GeneratedProtocolMessageType('RedirsByDestinationRequest', (_message.Message,), dict(
   DESCRIPTOR = _REDIRSBYDESTINATIONREQUEST,
   __module__ = 'ngapi_pb2'
-  # @@protoc_insertion_point(class_scope:io.netograph.RedirsByDestinationRequest)
+  # @@protoc_insertion_point(class_scope:RedirsByDestinationRequest)
   ))
 _sym_db.RegisterMessage(RedirsByDestinationRequest)
 
 RedirsByDestinationResponse = _reflection.GeneratedProtocolMessageType('RedirsByDestinationResponse', (_message.Message,), dict(
   DESCRIPTOR = _REDIRSBYDESTINATIONRESPONSE,
   __module__ = 'ngapi_pb2'
-  # @@protoc_insertion_point(class_scope:io.netograph.RedirsByDestinationResponse)
+  # @@protoc_insertion_point(class_scope:RedirsByDestinationResponse)
   ))
 _sym_db.RegisterMessage(RedirsByDestinationResponse)
 
 RedirsBySourceRequest = _reflection.GeneratedProtocolMessageType('RedirsBySourceRequest', (_message.Message,), dict(
   DESCRIPTOR = _REDIRSBYSOURCEREQUEST,
   __module__ = 'ngapi_pb2'
-  # @@protoc_insertion_point(class_scope:io.netograph.RedirsBySourceRequest)
+  # @@protoc_insertion_point(class_scope:RedirsBySourceRequest)
   ))
 _sym_db.RegisterMessage(RedirsBySourceRequest)
 
 RedirsBySourceResponse = _reflection.GeneratedProtocolMessageType('RedirsBySourceResponse', (_message.Message,), dict(
   DESCRIPTOR = _REDIRSBYSOURCERESPONSE,
   __module__ = 'ngapi_pb2'
-  # @@protoc_insertion_point(class_scope:io.netograph.RedirsBySourceResponse)
+  # @@protoc_insertion_point(class_scope:RedirsBySourceResponse)
   ))
 _sym_db.RegisterMessage(RedirsBySourceResponse)
 
 RootLogSearchRequest = _reflection.GeneratedProtocolMessageType('RootLogSearchRequest', (_message.Message,), dict(
   DESCRIPTOR = _ROOTLOGSEARCHREQUEST,
   __module__ = 'ngapi_pb2'
-  # @@protoc_insertion_point(class_scope:io.netograph.RootLogSearchRequest)
+  # @@protoc_insertion_point(class_scope:RootLogSearchRequest)
   ))
 _sym_db.RegisterMessage(RootLogSearchRequest)
 
 RootLogSearchResult = _reflection.GeneratedProtocolMessageType('RootLogSearchResult', (_message.Message,), dict(
   DESCRIPTOR = _ROOTLOGSEARCHRESULT,
   __module__ = 'ngapi_pb2'
-  # @@protoc_insertion_point(class_scope:io.netograph.RootLogSearchResult)
+  # @@protoc_insertion_point(class_scope:RootLogSearchResult)
   ))
 _sym_db.RegisterMessage(RootLogSearchResult)
 
 RootsForSatelliteRequest = _reflection.GeneratedProtocolMessageType('RootsForSatelliteRequest', (_message.Message,), dict(
   DESCRIPTOR = _ROOTSFORSATELLITEREQUEST,
   __module__ = 'ngapi_pb2'
-  # @@protoc_insertion_point(class_scope:io.netograph.RootsForSatelliteRequest)
+  # @@protoc_insertion_point(class_scope:RootsForSatelliteRequest)
   ))
 _sym_db.RegisterMessage(RootsForSatelliteRequest)
 
 RootsForSatelliteResult = _reflection.GeneratedProtocolMessageType('RootsForSatelliteResult', (_message.Message,), dict(
   DESCRIPTOR = _ROOTSFORSATELLITERESULT,
   __module__ = 'ngapi_pb2'
-  # @@protoc_insertion_point(class_scope:io.netograph.RootsForSatelliteResult)
+  # @@protoc_insertion_point(class_scope:RootsForSatelliteResult)
   ))
 _sym_db.RegisterMessage(RootsForSatelliteResult)
 
 SubmitCaptureRequest = _reflection.GeneratedProtocolMessageType('SubmitCaptureRequest', (_message.Message,), dict(
   DESCRIPTOR = _SUBMITCAPTUREREQUEST,
   __module__ = 'ngapi_pb2'
-  # @@protoc_insertion_point(class_scope:io.netograph.SubmitCaptureRequest)
+  # @@protoc_insertion_point(class_scope:SubmitCaptureRequest)
   ))
 _sym_db.RegisterMessage(SubmitCaptureRequest)
 
 SubmitCaptureResult = _reflection.GeneratedProtocolMessageType('SubmitCaptureResult', (_message.Message,), dict(
   DESCRIPTOR = _SUBMITCAPTURERESULT,
   __module__ = 'ngapi_pb2'
-  # @@protoc_insertion_point(class_scope:io.netograph.SubmitCaptureResult)
+  # @@protoc_insertion_point(class_scope:SubmitCaptureResult)
   ))
 _sym_db.RegisterMessage(SubmitCaptureResult)
 
 SatelliteLogSearchRequest = _reflection.GeneratedProtocolMessageType('SatelliteLogSearchRequest', (_message.Message,), dict(
   DESCRIPTOR = _SATELLITELOGSEARCHREQUEST,
   __module__ = 'ngapi_pb2'
-  # @@protoc_insertion_point(class_scope:io.netograph.SatelliteLogSearchRequest)
+  # @@protoc_insertion_point(class_scope:SatelliteLogSearchRequest)
   ))
 _sym_db.RegisterMessage(SatelliteLogSearchRequest)
 
 SatelliteLogSearchResult = _reflection.GeneratedProtocolMessageType('SatelliteLogSearchResult', (_message.Message,), dict(
   DESCRIPTOR = _SATELLITELOGSEARCHRESULT,
   __module__ = 'ngapi_pb2'
-  # @@protoc_insertion_point(class_scope:io.netograph.SatelliteLogSearchResult)
+  # @@protoc_insertion_point(class_scope:SatelliteLogSearchResult)
   ))
 _sym_db.RegisterMessage(SatelliteLogSearchResult)
 
 SatellitesForRootRequest = _reflection.GeneratedProtocolMessageType('SatellitesForRootRequest', (_message.Message,), dict(
   DESCRIPTOR = _SATELLITESFORROOTREQUEST,
   __module__ = 'ngapi_pb2'
-  # @@protoc_insertion_point(class_scope:io.netograph.SatellitesForRootRequest)
+  # @@protoc_insertion_point(class_scope:SatellitesForRootRequest)
   ))
 _sym_db.RegisterMessage(SatellitesForRootRequest)
 
 SatellitesForRootResult = _reflection.GeneratedProtocolMessageType('SatellitesForRootResult', (_message.Message,), dict(
   DESCRIPTOR = _SATELLITESFORROOTRESULT,
   __module__ = 'ngapi_pb2'
-  # @@protoc_insertion_point(class_scope:io.netograph.SatellitesForRootResult)
+  # @@protoc_insertion_point(class_scope:SatellitesForRootResult)
   ))
 _sym_db.RegisterMessage(SatellitesForRootResult)
 
 TempCaptureRequest = _reflection.GeneratedProtocolMessageType('TempCaptureRequest', (_message.Message,), dict(
   DESCRIPTOR = _TEMPCAPTUREREQUEST,
   __module__ = 'ngapi_pb2'
-  # @@protoc_insertion_point(class_scope:io.netograph.TempCaptureRequest)
+  # @@protoc_insertion_point(class_scope:TempCaptureRequest)
   ))
 _sym_db.RegisterMessage(TempCaptureRequest)
 
 TempCaptureResult = _reflection.GeneratedProtocolMessageType('TempCaptureResult', (_message.Message,), dict(
   DESCRIPTOR = _TEMPCAPTURERESULT,
   __module__ = 'ngapi_pb2'
-  # @@protoc_insertion_point(class_scope:io.netograph.TempCaptureResult)
+  # @@protoc_insertion_point(class_scope:TempCaptureResult)
   ))
 _sym_db.RegisterMessage(TempCaptureResult)
 
 URLLogSearchRequest = _reflection.GeneratedProtocolMessageType('URLLogSearchRequest', (_message.Message,), dict(
   DESCRIPTOR = _URLLOGSEARCHREQUEST,
   __module__ = 'ngapi_pb2'
-  # @@protoc_insertion_point(class_scope:io.netograph.URLLogSearchRequest)
+  # @@protoc_insertion_point(class_scope:URLLogSearchRequest)
   ))
 _sym_db.RegisterMessage(URLLogSearchRequest)
 
 URLLogSearchResult = _reflection.GeneratedProtocolMessageType('URLLogSearchResult', (_message.Message,), dict(
   DESCRIPTOR = _URLLOGSEARCHRESULT,
   __module__ = 'ngapi_pb2'
-  # @@protoc_insertion_point(class_scope:io.netograph.URLLogSearchResult)
+  # @@protoc_insertion_point(class_scope:URLLogSearchResult)
   ))
 _sym_db.RegisterMessage(URLLogSearchResult)
 
@@ -2673,16 +2673,16 @@ DESCRIPTOR._options = _descriptor._ParseOptions(descriptor_pb2.FileOptions(), _b
 
 _NETOGRAPH = _descriptor.ServiceDescriptor(
   name='Netograph',
-  full_name='io.netograph.Netograph',
+  full_name='Netograph',
   file=DESCRIPTOR,
   index=0,
   options=None,
-  serialized_start=4440,
-  serialized_end=6305,
+  serialized_start=4110,
+  serialized_end=5429,
   methods=[
   _descriptor.MethodDescriptor(
     name='TempCapture',
-    full_name='io.netograph.Netograph.TempCapture',
+    full_name='Netograph.TempCapture',
     index=0,
     containing_service=None,
     input_type=_TEMPCAPTUREREQUEST,
@@ -2691,7 +2691,7 @@ _NETOGRAPH = _descriptor.ServiceDescriptor(
   ),
   _descriptor.MethodDescriptor(
     name='Datasets',
-    full_name='io.netograph.Netograph.Datasets',
+    full_name='Netograph.Datasets',
     index=1,
     containing_service=None,
     input_type=_DATASETSREQUEST,
@@ -2700,7 +2700,7 @@ _NETOGRAPH = _descriptor.ServiceDescriptor(
   ),
   _descriptor.MethodDescriptor(
     name='SubmitCapture',
-    full_name='io.netograph.Netograph.SubmitCapture',
+    full_name='Netograph.SubmitCapture',
     index=2,
     containing_service=None,
     input_type=_SUBMITCAPTUREREQUEST,
@@ -2709,7 +2709,7 @@ _NETOGRAPH = _descriptor.ServiceDescriptor(
   ),
   _descriptor.MethodDescriptor(
     name='CaptureInfo',
-    full_name='io.netograph.Netograph.CaptureInfo',
+    full_name='Netograph.CaptureInfo',
     index=3,
     containing_service=None,
     input_type=_CAPTUREINFOREQUEST,
@@ -2718,7 +2718,7 @@ _NETOGRAPH = _descriptor.ServiceDescriptor(
   ),
   _descriptor.MethodDescriptor(
     name='CaptureLog',
-    full_name='io.netograph.Netograph.CaptureLog',
+    full_name='Netograph.CaptureLog',
     index=4,
     containing_service=None,
     input_type=_CAPTURELOGREQUEST,
@@ -2727,7 +2727,7 @@ _NETOGRAPH = _descriptor.ServiceDescriptor(
   ),
   _descriptor.MethodDescriptor(
     name='DomainHistory',
-    full_name='io.netograph.Netograph.DomainHistory',
+    full_name='Netograph.DomainHistory',
     index=5,
     containing_service=None,
     input_type=_DOMAINHISTORYREQUEST,
@@ -2736,7 +2736,7 @@ _NETOGRAPH = _descriptor.ServiceDescriptor(
   ),
   _descriptor.MethodDescriptor(
     name='DomainSearch',
-    full_name='io.netograph.Netograph.DomainSearch',
+    full_name='Netograph.DomainSearch',
     index=6,
     containing_service=None,
     input_type=_DOMAINSEARCHREQUEST,
@@ -2745,7 +2745,7 @@ _NETOGRAPH = _descriptor.ServiceDescriptor(
   ),
   _descriptor.MethodDescriptor(
     name='DomainsForIP',
-    full_name='io.netograph.Netograph.DomainsForIP',
+    full_name='Netograph.DomainsForIP',
     index=7,
     containing_service=None,
     input_type=_DOMAINSFORIPREQUEST,
@@ -2754,7 +2754,7 @@ _NETOGRAPH = _descriptor.ServiceDescriptor(
   ),
   _descriptor.MethodDescriptor(
     name='IPHistory',
-    full_name='io.netograph.Netograph.IPHistory',
+    full_name='Netograph.IPHistory',
     index=8,
     containing_service=None,
     input_type=_IPHISTORYREQUEST,
@@ -2763,7 +2763,7 @@ _NETOGRAPH = _descriptor.ServiceDescriptor(
   ),
   _descriptor.MethodDescriptor(
     name='IPLogSearch',
-    full_name='io.netograph.Netograph.IPLogSearch',
+    full_name='Netograph.IPLogSearch',
     index=9,
     containing_service=None,
     input_type=_IPLOGSEARCHREQUEST,
@@ -2772,7 +2772,7 @@ _NETOGRAPH = _descriptor.ServiceDescriptor(
   ),
   _descriptor.MethodDescriptor(
     name='IPSearch',
-    full_name='io.netograph.Netograph.IPSearch',
+    full_name='Netograph.IPSearch',
     index=10,
     containing_service=None,
     input_type=_IPSEARCHREQUEST,
@@ -2781,7 +2781,7 @@ _NETOGRAPH = _descriptor.ServiceDescriptor(
   ),
   _descriptor.MethodDescriptor(
     name='IPsForDomain',
-    full_name='io.netograph.Netograph.IPsForDomain',
+    full_name='Netograph.IPsForDomain',
     index=11,
     containing_service=None,
     input_type=_IPSFORDOMAINREQUEST,
@@ -2790,7 +2790,7 @@ _NETOGRAPH = _descriptor.ServiceDescriptor(
   ),
   _descriptor.MethodDescriptor(
     name='MetaForCapture',
-    full_name='io.netograph.Netograph.MetaForCapture',
+    full_name='Netograph.MetaForCapture',
     index=12,
     containing_service=None,
     input_type=_METAFORCAPTUREREQUEST,
@@ -2799,7 +2799,7 @@ _NETOGRAPH = _descriptor.ServiceDescriptor(
   ),
   _descriptor.MethodDescriptor(
     name='MetaSearch',
-    full_name='io.netograph.Netograph.MetaSearch',
+    full_name='Netograph.MetaSearch',
     index=13,
     containing_service=None,
     input_type=_METASEARCHREQUEST,
@@ -2808,7 +2808,7 @@ _NETOGRAPH = _descriptor.ServiceDescriptor(
   ),
   _descriptor.MethodDescriptor(
     name='RedirsByDestination',
-    full_name='io.netograph.Netograph.RedirsByDestination',
+    full_name='Netograph.RedirsByDestination',
     index=14,
     containing_service=None,
     input_type=_REDIRSBYDESTINATIONREQUEST,
@@ -2817,7 +2817,7 @@ _NETOGRAPH = _descriptor.ServiceDescriptor(
   ),
   _descriptor.MethodDescriptor(
     name='RedirsBySource',
-    full_name='io.netograph.Netograph.RedirsBySource',
+    full_name='Netograph.RedirsBySource',
     index=15,
     containing_service=None,
     input_type=_REDIRSBYSOURCEREQUEST,
@@ -2826,7 +2826,7 @@ _NETOGRAPH = _descriptor.ServiceDescriptor(
   ),
   _descriptor.MethodDescriptor(
     name='RootLogSearch',
-    full_name='io.netograph.Netograph.RootLogSearch',
+    full_name='Netograph.RootLogSearch',
     index=16,
     containing_service=None,
     input_type=_ROOTLOGSEARCHREQUEST,
@@ -2835,7 +2835,7 @@ _NETOGRAPH = _descriptor.ServiceDescriptor(
   ),
   _descriptor.MethodDescriptor(
     name='RootsForSatellite',
-    full_name='io.netograph.Netograph.RootsForSatellite',
+    full_name='Netograph.RootsForSatellite',
     index=17,
     containing_service=None,
     input_type=_ROOTSFORSATELLITEREQUEST,
@@ -2844,7 +2844,7 @@ _NETOGRAPH = _descriptor.ServiceDescriptor(
   ),
   _descriptor.MethodDescriptor(
     name='SatelliteLogSearch',
-    full_name='io.netograph.Netograph.SatelliteLogSearch',
+    full_name='Netograph.SatelliteLogSearch',
     index=18,
     containing_service=None,
     input_type=_SATELLITELOGSEARCHREQUEST,
@@ -2853,7 +2853,7 @@ _NETOGRAPH = _descriptor.ServiceDescriptor(
   ),
   _descriptor.MethodDescriptor(
     name='SatellitesForRoot',
-    full_name='io.netograph.Netograph.SatellitesForRoot',
+    full_name='Netograph.SatellitesForRoot',
     index=19,
     containing_service=None,
     input_type=_SATELLITESFORROOTREQUEST,
@@ -2862,7 +2862,7 @@ _NETOGRAPH = _descriptor.ServiceDescriptor(
   ),
   _descriptor.MethodDescriptor(
     name='URLLogSearch',
-    full_name='io.netograph.Netograph.URLLogSearch',
+    full_name='Netograph.URLLogSearch',
     index=20,
     containing_service=None,
     input_type=_URLLOGSEARCHREQUEST,

@@ -4,57 +4,57 @@
 ## Table of Contents
 
 - [proto/ngapi/ngapi.proto](#proto/ngapi/ngapi.proto)
-    - [CapSummary](#io.netograph.CapSummary)
-    - [CapSummary.Plan](#io.netograph.CapSummary.Plan)
-    - [CapSummary.Root](#io.netograph.CapSummary.Root)
-    - [CapSummary.Stats](#io.netograph.CapSummary.Stats)
-    - [CaptureInfoRequest](#io.netograph.CaptureInfoRequest)
-    - [CaptureInfoResult](#io.netograph.CaptureInfoResult)
-    - [CaptureLogRequest](#io.netograph.CaptureLogRequest)
-    - [CaptureLogResult](#io.netograph.CaptureLogResult)
-    - [Dataset](#io.netograph.Dataset)
-    - [DatasetsRequest](#io.netograph.DatasetsRequest)
-    - [DomainHistoryRequest](#io.netograph.DomainHistoryRequest)
-    - [DomainHistoryResult](#io.netograph.DomainHistoryResult)
-    - [DomainSearchRequest](#io.netograph.DomainSearchRequest)
-    - [DomainSearchResult](#io.netograph.DomainSearchResult)
-    - [DomainsForIPRequest](#io.netograph.DomainsForIPRequest)
-    - [DomainsForIPResult](#io.netograph.DomainsForIPResult)
-    - [IPHistoryRequest](#io.netograph.IPHistoryRequest)
-    - [IPHistoryResult](#io.netograph.IPHistoryResult)
-    - [IPLogSearchRequest](#io.netograph.IPLogSearchRequest)
-    - [IPLogSearchResult](#io.netograph.IPLogSearchResult)
-    - [IPSearchRequest](#io.netograph.IPSearchRequest)
-    - [IPSearchResult](#io.netograph.IPSearchResult)
-    - [IPsForDomainRequest](#io.netograph.IPsForDomainRequest)
-    - [IPsForDomainResult](#io.netograph.IPsForDomainResult)
-    - [MetaForCaptureRequest](#io.netograph.MetaForCaptureRequest)
-    - [MetaForCaptureResult](#io.netograph.MetaForCaptureResult)
-    - [MetaSearchRequest](#io.netograph.MetaSearchRequest)
-    - [MetaSearchResult](#io.netograph.MetaSearchResult)
-    - [Metadata](#io.netograph.Metadata)
-    - [RedirsByDestinationRequest](#io.netograph.RedirsByDestinationRequest)
-    - [RedirsByDestinationResponse](#io.netograph.RedirsByDestinationResponse)
-    - [RedirsBySourceRequest](#io.netograph.RedirsBySourceRequest)
-    - [RedirsBySourceResponse](#io.netograph.RedirsBySourceResponse)
-    - [RootLogSearchRequest](#io.netograph.RootLogSearchRequest)
-    - [RootLogSearchResult](#io.netograph.RootLogSearchResult)
-    - [RootsForSatelliteRequest](#io.netograph.RootsForSatelliteRequest)
-    - [RootsForSatelliteResult](#io.netograph.RootsForSatelliteResult)
-    - [SatelliteLogSearchRequest](#io.netograph.SatelliteLogSearchRequest)
-    - [SatelliteLogSearchResult](#io.netograph.SatelliteLogSearchResult)
-    - [SatellitesForRootRequest](#io.netograph.SatellitesForRootRequest)
-    - [SatellitesForRootResult](#io.netograph.SatellitesForRootResult)
-    - [SubmitCaptureRequest](#io.netograph.SubmitCaptureRequest)
-    - [SubmitCaptureResult](#io.netograph.SubmitCaptureResult)
-    - [TempCaptureRequest](#io.netograph.TempCaptureRequest)
-    - [TempCaptureResult](#io.netograph.TempCaptureResult)
-    - [URLLogSearchRequest](#io.netograph.URLLogSearchRequest)
-    - [URLLogSearchResult](#io.netograph.URLLogSearchResult)
+    - [CapSummary](#.CapSummary)
+    - [CapSummary.Plan](#.CapSummary.Plan)
+    - [CapSummary.Root](#.CapSummary.Root)
+    - [CapSummary.Stats](#.CapSummary.Stats)
+    - [CaptureInfoRequest](#.CaptureInfoRequest)
+    - [CaptureInfoResult](#.CaptureInfoResult)
+    - [CaptureLogRequest](#.CaptureLogRequest)
+    - [CaptureLogResult](#.CaptureLogResult)
+    - [Dataset](#.Dataset)
+    - [DatasetsRequest](#.DatasetsRequest)
+    - [DomainHistoryRequest](#.DomainHistoryRequest)
+    - [DomainHistoryResult](#.DomainHistoryResult)
+    - [DomainSearchRequest](#.DomainSearchRequest)
+    - [DomainSearchResult](#.DomainSearchResult)
+    - [DomainsForIPRequest](#.DomainsForIPRequest)
+    - [DomainsForIPResult](#.DomainsForIPResult)
+    - [IPHistoryRequest](#.IPHistoryRequest)
+    - [IPHistoryResult](#.IPHistoryResult)
+    - [IPLogSearchRequest](#.IPLogSearchRequest)
+    - [IPLogSearchResult](#.IPLogSearchResult)
+    - [IPSearchRequest](#.IPSearchRequest)
+    - [IPSearchResult](#.IPSearchResult)
+    - [IPsForDomainRequest](#.IPsForDomainRequest)
+    - [IPsForDomainResult](#.IPsForDomainResult)
+    - [MetaForCaptureRequest](#.MetaForCaptureRequest)
+    - [MetaForCaptureResult](#.MetaForCaptureResult)
+    - [MetaSearchRequest](#.MetaSearchRequest)
+    - [MetaSearchResult](#.MetaSearchResult)
+    - [Metadata](#.Metadata)
+    - [RedirsByDestinationRequest](#.RedirsByDestinationRequest)
+    - [RedirsByDestinationResponse](#.RedirsByDestinationResponse)
+    - [RedirsBySourceRequest](#.RedirsBySourceRequest)
+    - [RedirsBySourceResponse](#.RedirsBySourceResponse)
+    - [RootLogSearchRequest](#.RootLogSearchRequest)
+    - [RootLogSearchResult](#.RootLogSearchResult)
+    - [RootsForSatelliteRequest](#.RootsForSatelliteRequest)
+    - [RootsForSatelliteResult](#.RootsForSatelliteResult)
+    - [SatelliteLogSearchRequest](#.SatelliteLogSearchRequest)
+    - [SatelliteLogSearchResult](#.SatelliteLogSearchResult)
+    - [SatellitesForRootRequest](#.SatellitesForRootRequest)
+    - [SatellitesForRootResult](#.SatellitesForRootResult)
+    - [SubmitCaptureRequest](#.SubmitCaptureRequest)
+    - [SubmitCaptureResult](#.SubmitCaptureResult)
+    - [TempCaptureRequest](#.TempCaptureRequest)
+    - [TempCaptureResult](#.TempCaptureResult)
+    - [URLLogSearchRequest](#.URLLogSearchRequest)
+    - [URLLogSearchResult](#.URLLogSearchResult)
   
   
   
-    - [Netograph](#io.netograph.Netograph)
+    - [Netograph](#.Netograph)
   
 
 - [Scalar Value Types](#scalar-value-types)
@@ -68,7 +68,7 @@
 
 
 
-<a name="io.netograph.CapSummary"></a>
+<a name=".CapSummary"></a>
 
 ### CapSummary
 
@@ -78,17 +78,17 @@
 | ----- | ---- | ----- | ----------- |
 | id | [string](#string) |  |  |
 | assets | [string](#string) |  |  |
-| roots | [CapSummary.Root](#io.netograph.CapSummary.Root) | repeated |  |
+| roots | [CapSummary.Root](#CapSummary.Root) | repeated |  |
 | time | [google.protobuf.Timestamp](#google.protobuf.Timestamp) |  |  |
-| plan | [CapSummary.Plan](#io.netograph.CapSummary.Plan) |  |  |
-| stats | [CapSummary.Stats](#io.netograph.CapSummary.Stats) |  |  |
+| plan | [CapSummary.Plan](#CapSummary.Plan) |  |  |
+| stats | [CapSummary.Stats](#CapSummary.Stats) |  |  |
 
 
 
 
 
 
-<a name="io.netograph.CapSummary.Plan"></a>
+<a name=".CapSummary.Plan"></a>
 
 ### CapSummary.Plan
 
@@ -103,7 +103,7 @@
 
 
 
-<a name="io.netograph.CapSummary.Root"></a>
+<a name=".CapSummary.Root"></a>
 
 ### CapSummary.Root
 
@@ -118,7 +118,7 @@
 
 
 
-<a name="io.netograph.CapSummary.Stats"></a>
+<a name=".CapSummary.Stats"></a>
 
 ### CapSummary.Stats
 
@@ -135,7 +135,7 @@
 
 
 
-<a name="io.netograph.CaptureInfoRequest"></a>
+<a name=".CaptureInfoRequest"></a>
 
 ### CaptureInfoRequest
 
@@ -151,7 +151,7 @@
 
 
 
-<a name="io.netograph.CaptureInfoResult"></a>
+<a name=".CaptureInfoResult"></a>
 
 ### CaptureInfoResult
 
@@ -159,14 +159,14 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| capsummary | [CapSummary](#io.netograph.CapSummary) |  |  |
+| capsummary | [CapSummary](#CapSummary) |  |  |
 
 
 
 
 
 
-<a name="io.netograph.CaptureLogRequest"></a>
+<a name=".CaptureLogRequest"></a>
 
 ### CaptureLogRequest
 
@@ -185,7 +185,7 @@
 
 
 
-<a name="io.netograph.CaptureLogResult"></a>
+<a name=".CaptureLogResult"></a>
 
 ### CaptureLogResult
 
@@ -193,7 +193,7 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| capsummary | [CapSummary](#io.netograph.CapSummary) |  |  |
+| capsummary | [CapSummary](#CapSummary) |  |  |
 | resume | [string](#string) |  |  |
 
 
@@ -201,7 +201,7 @@
 
 
 
-<a name="io.netograph.Dataset"></a>
+<a name=".Dataset"></a>
 
 ### Dataset
 
@@ -220,7 +220,7 @@
 
 
 
-<a name="io.netograph.DatasetsRequest"></a>
+<a name=".DatasetsRequest"></a>
 
 ### DatasetsRequest
 
@@ -230,7 +230,7 @@
 
 
 
-<a name="io.netograph.DomainHistoryRequest"></a>
+<a name=".DomainHistoryRequest"></a>
 
 ### DomainHistoryRequest
 
@@ -247,7 +247,7 @@
 
 
 
-<a name="io.netograph.DomainHistoryResult"></a>
+<a name=".DomainHistoryResult"></a>
 
 ### DomainHistoryResult
 
@@ -255,14 +255,14 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| capsummary | [CapSummary](#io.netograph.CapSummary) |  |  |
+| capsummary | [CapSummary](#CapSummary) |  |  |
 
 
 
 
 
 
-<a name="io.netograph.DomainSearchRequest"></a>
+<a name=".DomainSearchRequest"></a>
 
 ### DomainSearchRequest
 
@@ -280,7 +280,7 @@
 
 
 
-<a name="io.netograph.DomainSearchResult"></a>
+<a name=".DomainSearchResult"></a>
 
 ### DomainSearchResult
 
@@ -290,14 +290,14 @@
 | ----- | ---- | ----- | ----------- |
 | domain | [string](#string) |  |  |
 | resume | [string](#string) |  |  |
-| latestcapture | [CapSummary](#io.netograph.CapSummary) |  |  |
+| latestcapture | [CapSummary](#CapSummary) |  |  |
 
 
 
 
 
 
-<a name="io.netograph.DomainsForIPRequest"></a>
+<a name=".DomainsForIPRequest"></a>
 
 ### DomainsForIPRequest
 
@@ -315,7 +315,7 @@
 
 
 
-<a name="io.netograph.DomainsForIPResult"></a>
+<a name=".DomainsForIPResult"></a>
 
 ### DomainsForIPResult
 
@@ -325,7 +325,7 @@
 | ----- | ---- | ----- | ----------- |
 | domain | [string](#string) |  |  |
 | ip | [string](#string) |  |  |
-| latestcapture | [CapSummary](#io.netograph.CapSummary) |  |  |
+| latestcapture | [CapSummary](#CapSummary) |  |  |
 | associations | [string](#string) | repeated |  |
 | resume | [string](#string) |  |  |
 
@@ -334,7 +334,7 @@
 
 
 
-<a name="io.netograph.IPHistoryRequest"></a>
+<a name=".IPHistoryRequest"></a>
 
 ### IPHistoryRequest
 
@@ -351,7 +351,7 @@
 
 
 
-<a name="io.netograph.IPHistoryResult"></a>
+<a name=".IPHistoryResult"></a>
 
 ### IPHistoryResult
 
@@ -359,14 +359,14 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| capsummary | [CapSummary](#io.netograph.CapSummary) |  |  |
+| capsummary | [CapSummary](#CapSummary) |  |  |
 
 
 
 
 
 
-<a name="io.netograph.IPLogSearchRequest"></a>
+<a name=".IPLogSearchRequest"></a>
 
 ### IPLogSearchRequest
 
@@ -384,7 +384,7 @@
 
 
 
-<a name="io.netograph.IPLogSearchResult"></a>
+<a name=".IPLogSearchResult"></a>
 
 ### IPLogSearchResult
 
@@ -392,7 +392,7 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| capsummary | [CapSummary](#io.netograph.CapSummary) |  |  |
+| capsummary | [CapSummary](#CapSummary) |  |  |
 | ip | [string](#string) |  |  |
 | resume | [string](#string) |  |  |
 
@@ -401,7 +401,7 @@
 
 
 
-<a name="io.netograph.IPSearchRequest"></a>
+<a name=".IPSearchRequest"></a>
 
 ### IPSearchRequest
 
@@ -420,7 +420,7 @@
 
 
 
-<a name="io.netograph.IPSearchResult"></a>
+<a name=".IPSearchResult"></a>
 
 ### IPSearchResult
 
@@ -430,14 +430,14 @@
 | ----- | ---- | ----- | ----------- |
 | ip | [string](#string) |  |  |
 | resume | [string](#string) |  |  |
-| latestcapture | [CapSummary](#io.netograph.CapSummary) |  |  |
+| latestcapture | [CapSummary](#CapSummary) |  |  |
 
 
 
 
 
 
-<a name="io.netograph.IPsForDomainRequest"></a>
+<a name=".IPsForDomainRequest"></a>
 
 ### IPsForDomainRequest
 
@@ -455,7 +455,7 @@
 
 
 
-<a name="io.netograph.IPsForDomainResult"></a>
+<a name=".IPsForDomainResult"></a>
 
 ### IPsForDomainResult
 
@@ -465,7 +465,7 @@
 | ----- | ---- | ----- | ----------- |
 | domain | [string](#string) |  |  |
 | ip | [string](#string) |  |  |
-| latestcapture | [CapSummary](#io.netograph.CapSummary) |  |  |
+| latestcapture | [CapSummary](#CapSummary) |  |  |
 | associations | [string](#string) | repeated |  |
 | resume | [string](#string) |  |  |
 
@@ -474,7 +474,7 @@
 
 
 
-<a name="io.netograph.MetaForCaptureRequest"></a>
+<a name=".MetaForCaptureRequest"></a>
 
 ### MetaForCaptureRequest
 
@@ -492,7 +492,7 @@
 
 
 
-<a name="io.netograph.MetaForCaptureResult"></a>
+<a name=".MetaForCaptureResult"></a>
 
 ### MetaForCaptureResult
 
@@ -500,7 +500,7 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| meta | [Metadata](#io.netograph.Metadata) |  |  |
+| meta | [Metadata](#Metadata) |  |  |
 | time | [google.protobuf.Timestamp](#google.protobuf.Timestamp) |  |  |
 | resume | [string](#string) |  |  |
 
@@ -509,7 +509,7 @@
 
 
 
-<a name="io.netograph.MetaSearchRequest"></a>
+<a name=".MetaSearchRequest"></a>
 
 ### MetaSearchRequest
 
@@ -527,7 +527,7 @@
 
 
 
-<a name="io.netograph.MetaSearchResult"></a>
+<a name=".MetaSearchResult"></a>
 
 ### MetaSearchResult
 
@@ -535,16 +535,16 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| meta | [Metadata](#io.netograph.Metadata) |  |  |
+| meta | [Metadata](#Metadata) |  |  |
 | resume | [string](#string) |  |  |
-| capsummary | [CapSummary](#io.netograph.CapSummary) |  |  |
+| capsummary | [CapSummary](#CapSummary) |  |  |
 
 
 
 
 
 
-<a name="io.netograph.Metadata"></a>
+<a name=".Metadata"></a>
 
 ### Metadata
 
@@ -560,7 +560,7 @@
 
 
 
-<a name="io.netograph.RedirsByDestinationRequest"></a>
+<a name=".RedirsByDestinationRequest"></a>
 
 ### RedirsByDestinationRequest
 
@@ -578,7 +578,7 @@
 
 
 
-<a name="io.netograph.RedirsByDestinationResponse"></a>
+<a name=".RedirsByDestinationResponse"></a>
 
 ### RedirsByDestinationResponse
 
@@ -588,7 +588,7 @@
 | ----- | ---- | ----- | ----------- |
 | source | [string](#string) |  |  |
 | destination | [string](#string) |  |  |
-| latestcapture | [CapSummary](#io.netograph.CapSummary) |  |  |
+| latestcapture | [CapSummary](#CapSummary) |  |  |
 | resume | [string](#string) |  |  |
 
 
@@ -596,7 +596,7 @@
 
 
 
-<a name="io.netograph.RedirsBySourceRequest"></a>
+<a name=".RedirsBySourceRequest"></a>
 
 ### RedirsBySourceRequest
 
@@ -614,7 +614,7 @@
 
 
 
-<a name="io.netograph.RedirsBySourceResponse"></a>
+<a name=".RedirsBySourceResponse"></a>
 
 ### RedirsBySourceResponse
 
@@ -624,7 +624,7 @@
 | ----- | ---- | ----- | ----------- |
 | source | [string](#string) |  |  |
 | destination | [string](#string) |  |  |
-| latestcapture | [CapSummary](#io.netograph.CapSummary) |  |  |
+| latestcapture | [CapSummary](#CapSummary) |  |  |
 | resume | [string](#string) |  |  |
 
 
@@ -632,7 +632,7 @@
 
 
 
-<a name="io.netograph.RootLogSearchRequest"></a>
+<a name=".RootLogSearchRequest"></a>
 
 ### RootLogSearchRequest
 
@@ -650,7 +650,7 @@
 
 
 
-<a name="io.netograph.RootLogSearchResult"></a>
+<a name=".RootLogSearchResult"></a>
 
 ### RootLogSearchResult
 
@@ -660,14 +660,14 @@
 | ----- | ---- | ----- | ----------- |
 | root | [string](#string) |  |  |
 | resume | [string](#string) |  |  |
-| capsummary | [CapSummary](#io.netograph.CapSummary) |  |  |
+| capsummary | [CapSummary](#CapSummary) |  |  |
 
 
 
 
 
 
-<a name="io.netograph.RootsForSatelliteRequest"></a>
+<a name=".RootsForSatelliteRequest"></a>
 
 ### RootsForSatelliteRequest
 
@@ -685,7 +685,7 @@
 
 
 
-<a name="io.netograph.RootsForSatelliteResult"></a>
+<a name=".RootsForSatelliteResult"></a>
 
 ### RootsForSatelliteResult
 
@@ -695,7 +695,7 @@
 | ----- | ---- | ----- | ----------- |
 | root | [string](#string) |  |  |
 | satellite | [string](#string) |  |  |
-| capsummary | [CapSummary](#io.netograph.CapSummary) |  |  |
+| capsummary | [CapSummary](#CapSummary) |  |  |
 | associations | [string](#string) | repeated |  |
 | resume | [string](#string) |  |  |
 
@@ -704,7 +704,7 @@
 
 
 
-<a name="io.netograph.SatelliteLogSearchRequest"></a>
+<a name=".SatelliteLogSearchRequest"></a>
 
 ### SatelliteLogSearchRequest
 
@@ -722,7 +722,7 @@
 
 
 
-<a name="io.netograph.SatelliteLogSearchResult"></a>
+<a name=".SatelliteLogSearchResult"></a>
 
 ### SatelliteLogSearchResult
 
@@ -732,14 +732,14 @@
 | ----- | ---- | ----- | ----------- |
 | satellite | [string](#string) |  |  |
 | resume | [string](#string) |  |  |
-| capsummary | [CapSummary](#io.netograph.CapSummary) |  |  |
+| capsummary | [CapSummary](#CapSummary) |  |  |
 
 
 
 
 
 
-<a name="io.netograph.SatellitesForRootRequest"></a>
+<a name=".SatellitesForRootRequest"></a>
 
 ### SatellitesForRootRequest
 
@@ -757,7 +757,7 @@
 
 
 
-<a name="io.netograph.SatellitesForRootResult"></a>
+<a name=".SatellitesForRootResult"></a>
 
 ### SatellitesForRootResult
 
@@ -767,7 +767,7 @@
 | ----- | ---- | ----- | ----------- |
 | root | [string](#string) |  |  |
 | satellite | [string](#string) |  |  |
-| capsummary | [CapSummary](#io.netograph.CapSummary) |  |  |
+| capsummary | [CapSummary](#CapSummary) |  |  |
 | associations | [string](#string) | repeated |  |
 | resume | [string](#string) |  |  |
 
@@ -776,7 +776,7 @@
 
 
 
-<a name="io.netograph.SubmitCaptureRequest"></a>
+<a name=".SubmitCaptureRequest"></a>
 
 ### SubmitCaptureRequest
 
@@ -787,7 +787,7 @@
 | dataset | [string](#string) |  |  |
 | notification | [string](#string) |  |  |
 | urls | [string](#string) | repeated |  |
-| meta | [Metadata](#io.netograph.Metadata) | repeated |  |
+| meta | [Metadata](#Metadata) | repeated |  |
 | skiprecent | [int64](#int64) |  |  |
 
 
@@ -795,7 +795,7 @@
 
 
 
-<a name="io.netograph.SubmitCaptureResult"></a>
+<a name=".SubmitCaptureResult"></a>
 
 ### SubmitCaptureResult
 
@@ -812,7 +812,7 @@
 
 
 
-<a name="io.netograph.TempCaptureRequest"></a>
+<a name=".TempCaptureRequest"></a>
 
 ### TempCaptureRequest
 
@@ -822,14 +822,14 @@
 | ----- | ---- | ----- | ----------- |
 | notification | [string](#string) |  |  |
 | urls | [string](#string) | repeated |  |
-| meta | [Metadata](#io.netograph.Metadata) | repeated |  |
+| meta | [Metadata](#Metadata) | repeated |  |
 
 
 
 
 
 
-<a name="io.netograph.TempCaptureResult"></a>
+<a name=".TempCaptureResult"></a>
 
 ### TempCaptureResult
 
@@ -845,7 +845,7 @@
 
 
 
-<a name="io.netograph.URLLogSearchRequest"></a>
+<a name=".URLLogSearchRequest"></a>
 
 ### URLLogSearchRequest
 
@@ -863,7 +863,7 @@
 
 
 
-<a name="io.netograph.URLLogSearchResult"></a>
+<a name=".URLLogSearchResult"></a>
 
 ### URLLogSearchResult
 
@@ -873,7 +873,7 @@
 | ----- | ---- | ----- | ----------- |
 | url | [string](#string) |  |  |
 | resume | [string](#string) |  |  |
-| capsummary | [CapSummary](#io.netograph.CapSummary) |  |  |
+| capsummary | [CapSummary](#CapSummary) |  |  |
 
 
 
@@ -886,34 +886,34 @@
  
 
 
-<a name="io.netograph.Netograph"></a>
+<a name=".Netograph"></a>
 
 ### Netograph
 
 
 | Method Name | Request Type | Response Type | Description |
 | ----------- | ------------ | ------------- | ------------|
-| TempCapture | [TempCaptureRequest](#io.netograph.TempCaptureRequest) | [TempCaptureResult](#io.netograph.TempCaptureResult) | Request a temporary capture. Temporary captures are not stored in a dataset, and the capture assets will be available for download for 24 hours before being deleted. |
-| Datasets | [DatasetsRequest](#io.netograph.DatasetsRequest) | [Dataset](#io.netograph.Dataset) | List all datasets to which the authorizing account has access. This includes public datasets, which will be marked readonly. |
-| SubmitCapture | [SubmitCaptureRequest](#io.netograph.SubmitCaptureRequest) | [SubmitCaptureResult](#io.netograph.SubmitCaptureResult) | Submit a capture request to a dataset. |
-| CaptureInfo | [CaptureInfoRequest](#io.netograph.CaptureInfoRequest) | [CaptureInfoResult](#io.netograph.CaptureInfoResult) | Retrieve info for a specified capture by ID within a dataset. |
-| CaptureLog | [CaptureLogRequest](#io.netograph.CaptureLogRequest) | [CaptureLogResult](#io.netograph.CaptureLogResult) | Retrieve the capture log for a dataset, in reverse chronological order. |
-| DomainHistory | [DomainHistoryRequest](#io.netograph.DomainHistoryRequest) | [DomainHistoryResult](#io.netograph.DomainHistoryResult) | Retrieve the capture history for a specified domain in a dataset. The length of this history is capped at ~100. |
-| DomainSearch | [DomainSearchRequest](#io.netograph.DomainSearchRequest) | [DomainSearchResult](#io.netograph.DomainSearchResult) | Retrieve the capture log for a dataset, in reverse chronological order. |
-| DomainsForIP | [DomainsForIPRequest](#io.netograph.DomainsForIPRequest) | [DomainsForIPResult](#io.netograph.DomainsForIPResult) | Find all domains in the dataset associated with a given IP address. |
-| IPHistory | [IPHistoryRequest](#io.netograph.IPHistoryRequest) | [IPHistoryResult](#io.netograph.IPHistoryResult) | Retrieve the capture history for a specified IP in a dataset. The length of this history is capped at ~100. |
-| IPLogSearch | [IPLogSearchRequest](#io.netograph.IPLogSearchRequest) | [IPLogSearchResult](#io.netograph.IPLogSearchResult) | Search the dataset log for captures that contain a given IP. |
-| IPSearch | [IPSearchRequest](#io.netograph.IPSearchRequest) | [IPSearchResult](#io.netograph.IPSearchResult) | Find all IPs in the dataset that match an address and integer netmask. |
-| IPsForDomain | [IPsForDomainRequest](#io.netograph.IPsForDomainRequest) | [IPsForDomainResult](#io.netograph.IPsForDomainResult) | Find all IPs in a dataset associated with a given domain. |
-| MetaForCapture | [MetaForCaptureRequest](#io.netograph.MetaForCaptureRequest) | [MetaForCaptureResult](#io.netograph.MetaForCaptureResult) | Get metadata associated with a specified capture within a dataset. |
-| MetaSearch | [MetaSearchRequest](#io.netograph.MetaSearchRequest) | [MetaSearchResult](#io.netograph.MetaSearchResult) | Search the dataset log for captures matching a metadata query. |
-| RedirsByDestination | [RedirsByDestinationRequest](#io.netograph.RedirsByDestinationRequest) | [RedirsByDestinationResponse](#io.netograph.RedirsByDestinationResponse) | Find all redirections in the dataset for a given destination domain query. |
-| RedirsBySource | [RedirsBySourceRequest](#io.netograph.RedirsBySourceRequest) | [RedirsBySourceResponse](#io.netograph.RedirsBySourceResponse) | Find all redirections in the dataset for a given source domain query. |
-| RootLogSearch | [RootLogSearchRequest](#io.netograph.RootLogSearchRequest) | [RootLogSearchResult](#io.netograph.RootLogSearchResult) | Search the dataset log for captures where any root domain matches a given query. |
-| RootsForSatellite | [RootsForSatelliteRequest](#io.netograph.RootsForSatelliteRequest) | [RootsForSatelliteResult](#io.netograph.RootsForSatelliteResult) | Find all roots in a dataset that are associated with a given satellite query. |
-| SatelliteLogSearch | [SatelliteLogSearchRequest](#io.netograph.SatelliteLogSearchRequest) | [SatelliteLogSearchResult](#io.netograph.SatelliteLogSearchResult) | Search the dataset log for captures where any satellite domain matches a given query. |
-| SatellitesForRoot | [SatellitesForRootRequest](#io.netograph.SatellitesForRootRequest) | [SatellitesForRootResult](#io.netograph.SatellitesForRootResult) | Find all satellites in the dataset that are associated with a given root query. |
-| URLLogSearch | [URLLogSearchRequest](#io.netograph.URLLogSearchRequest) | [URLLogSearchResult](#io.netograph.URLLogSearchResult) | Search the dataset log for captures where any root URL matches a given URL query. |
+| TempCapture | [.TempCaptureRequest](#TempCaptureRequest) | [.TempCaptureResult](#TempCaptureResult) | Request a temporary capture. Temporary captures are not stored in a dataset, and the capture assets will be available for download for 24 hours before being deleted. |
+| Datasets | [.DatasetsRequest](#DatasetsRequest) | [.Dataset](#Dataset) | List all datasets to which the authorizing account has access. This includes public datasets, which will be marked readonly. |
+| SubmitCapture | [.SubmitCaptureRequest](#SubmitCaptureRequest) | [.SubmitCaptureResult](#SubmitCaptureResult) | Submit a capture request to a dataset. |
+| CaptureInfo | [.CaptureInfoRequest](#CaptureInfoRequest) | [.CaptureInfoResult](#CaptureInfoResult) | Retrieve info for a specified capture by ID within a dataset. |
+| CaptureLog | [.CaptureLogRequest](#CaptureLogRequest) | [.CaptureLogResult](#CaptureLogResult) | Retrieve the capture log for a dataset, in reverse chronological order. |
+| DomainHistory | [.DomainHistoryRequest](#DomainHistoryRequest) | [.DomainHistoryResult](#DomainHistoryResult) | Retrieve the capture history for a specified domain in a dataset. The length of this history is capped at ~100. |
+| DomainSearch | [.DomainSearchRequest](#DomainSearchRequest) | [.DomainSearchResult](#DomainSearchResult) | Retrieve the capture log for a dataset, in reverse chronological order. |
+| DomainsForIP | [.DomainsForIPRequest](#DomainsForIPRequest) | [.DomainsForIPResult](#DomainsForIPResult) | Find all domains in the dataset associated with a given IP address. |
+| IPHistory | [.IPHistoryRequest](#IPHistoryRequest) | [.IPHistoryResult](#IPHistoryResult) | Retrieve the capture history for a specified IP in a dataset. The length of this history is capped at ~100. |
+| IPLogSearch | [.IPLogSearchRequest](#IPLogSearchRequest) | [.IPLogSearchResult](#IPLogSearchResult) | Search the dataset log for captures that contain a given IP. |
+| IPSearch | [.IPSearchRequest](#IPSearchRequest) | [.IPSearchResult](#IPSearchResult) | Find all IPs in the dataset that match an address and integer netmask. |
+| IPsForDomain | [.IPsForDomainRequest](#IPsForDomainRequest) | [.IPsForDomainResult](#IPsForDomainResult) | Find all IPs in a dataset associated with a given domain. |
+| MetaForCapture | [.MetaForCaptureRequest](#MetaForCaptureRequest) | [.MetaForCaptureResult](#MetaForCaptureResult) | Get metadata associated with a specified capture within a dataset. |
+| MetaSearch | [.MetaSearchRequest](#MetaSearchRequest) | [.MetaSearchResult](#MetaSearchResult) | Search the dataset log for captures matching a metadata query. |
+| RedirsByDestination | [.RedirsByDestinationRequest](#RedirsByDestinationRequest) | [.RedirsByDestinationResponse](#RedirsByDestinationResponse) | Find all redirections in the dataset for a given destination domain query. |
+| RedirsBySource | [.RedirsBySourceRequest](#RedirsBySourceRequest) | [.RedirsBySourceResponse](#RedirsBySourceResponse) | Find all redirections in the dataset for a given source domain query. |
+| RootLogSearch | [.RootLogSearchRequest](#RootLogSearchRequest) | [.RootLogSearchResult](#RootLogSearchResult) | Search the dataset log for captures where any root domain matches a given query. |
+| RootsForSatellite | [.RootsForSatelliteRequest](#RootsForSatelliteRequest) | [.RootsForSatelliteResult](#RootsForSatelliteResult) | Find all roots in a dataset that are associated with a given satellite query. |
+| SatelliteLogSearch | [.SatelliteLogSearchRequest](#SatelliteLogSearchRequest) | [.SatelliteLogSearchResult](#SatelliteLogSearchResult) | Search the dataset log for captures where any satellite domain matches a given query. |
+| SatellitesForRoot | [.SatellitesForRootRequest](#SatellitesForRootRequest) | [.SatellitesForRootResult](#SatellitesForRootResult) | Find all satellites in the dataset that are associated with a given root query. |
+| URLLogSearch | [.URLLogSearchRequest](#URLLogSearchRequest) | [.URLLogSearchResult](#URLLogSearchResult) | Search the dataset log for captures where any root URL matches a given URL query. |
 
  
 
