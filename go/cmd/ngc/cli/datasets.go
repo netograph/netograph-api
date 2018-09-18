@@ -3,8 +3,8 @@ package cli
 import (
 	"io"
 
+	"github.com/netograph/netograph-api/go/proto/ngapi/userapi"
 	"github.com/spf13/cobra"
-	"github.com/netograph/netograph-api/go/proto/ngapi"
 )
 
 func datasetsCommand() *cobra.Command {
@@ -13,11 +13,11 @@ func datasetsCommand() *cobra.Command {
 		Aliases: []string{"dsets"},
 		Short:   "List all available datasets",
 		RunE: func(cmd *cobra.Command, args []string) error {
-			c, ctx, err := connect()
+			c, ctx, err := connectUser()
 			if err != nil {
 				return err
 			}
-			r, err := c.Datasets(ctx, &ngapi.DatasetsRequest{})
+			r, err := c.Datasets(ctx, &userapi.DatasetsRequest{})
 			if err != nil {
 				return err
 			}

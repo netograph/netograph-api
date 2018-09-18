@@ -1,59 +1,71 @@
 syntax = "proto3";
 import "google/protobuf/timestamp.proto";
 
-// package io.netograph;
-option go_package = "ngapi";
+package io.netograph.dset;
+option go_package = "dsetapi";
 
-message DatasetsRequest {}
-
-message Dataset {
-    string name = 1;
-    string description = 2;
-    string urlbase = 3;
-    google.protobuf.Timestamp deleted = 4;
-    bool readonly = 5;
-}
-
+// A capture summary - this is the data that you will recieve for any query that
+// returns captures.
 message CapSummary {
     message Plan {
+        // URLs submitted for capture.
         repeated string urls = 1;
     }
+
+    // Roots that resulted from loading a URL in the the submitted plan. You can
+    // think of this as the trajectory of redirections followed to reach the
+    // final resting URL.
     message Root {
         repeated string urls = 1;
     }
     message Stats {
+        // Th enumber of flows.
         int32 flows = 1;
+        // The number of websocket connections.
         int32 websockets = 2;
+        // The number of distinct hosts.
         int32 hosts = 3;
     }
+    // The globally unique ID for this capture.
     string id = 1;
+    // The URL under which this capture's static assets can be found.
     string assets = 2;
+    // The roots for each URL in the capture plan.
     repeated Root roots = 3;
+    // The time of capture.
     google.protobuf.Timestamp time = 4;
+    // The capture plan.
     Plan plan = 5;
+    // Some basic statistics on the resulting capture.
     Stats stats = 6;
 }
 
+// Metadata is arbitrary information associated with a capture.
 message Metadata {
+    // The key for this metadata pair. Keys do not have to be unique.
     string key = 1;
+    // The value for this metadata pair.
     string value = 2;
 }
 
 
-
-/* Query API message types */
-
 message CaptureInfoRequest {
+    // The name of the dataset to query.
     string dataset = 1;
+    // The unique ID of the capture.
     string id = 2;
 }
 message CaptureInfoResult {
+    // A capture summary for this result.
     CapSummary capsummary = 1;
 }
 
 message CaptureLogRequest {
+    // The name of the dataset to query.
     string dataset = 1;
+    // Limit the number of records that will be returned.
     int64 limit = 2;
+    // A resumption token, previously returned by an identical query.
     string resume = 3;
     // The capture log is in reverse chronological order, so the start of the
     // range is the most recent time. If start is zero, it's taken to be the
@@ -65,171 +77,249 @@ message CaptureLogRequest {
     google.protobuf.Timestamp end = 5;
 }
 message CaptureLogResult {
+    // A capture summary for this result.
     CapSummary capsummary = 1;
+    // A resumption token that can be passed to an identical query to resume
+    // results.
     string resume = 2;
 }
 
 
 message DomainHistoryRequest {
+    // The name of the dataset to query.
     string dataset = 1;
     string domain = 2;
+    // Limit the number of records that will be returned.
     int64 limit = 3;
 }
 message DomainHistoryResult {
+    // A capture summary for this result.
     CapSummary capsummary = 1;
 }
 
 message DomainSearchRequest {
+    // The name of the dataset to query.
     string dataset = 1;
+    // A domain query. This is a domain prefix, which will return results for
+    // all relevant subdomains. To search for an exact domain, prefix with "$" -
+    // e.g. "$rt.com".
     string query = 2;
+    // Limit the number of records that will be returned.
     int64 limit = 3;
+    // A resumption token, previously returned by an identical query.
     string resume = 4;
 }
 message DomainSearchResult {
     string domain = 1;
+    // A resumption token that can be passed to an identical query to resume
+    // results.
     string resume = 2;
+    // THe latest capture relevant to this result.
     CapSummary latestcapture = 3;
 }
 
 message DomainsForIPRequest {
+    // The name of the dataset to query.
     string dataset = 1;
     string ip = 2;
+    // Limit the number of records that will be returned.
     int64 limit = 3;
+    // A resumption token, previously returned by an identical query.
     string resume = 4;
 }
 message DomainsForIPResult {
     string domain = 1;
     string ip = 2;
+    // THe latest capture relevant to this result.
     CapSummary latestcapture = 3;
     repeated string associations = 4;
+    // A resumption token that can be passed to an identical query to resume
+    // results.
     string resume = 5;
 }
 
 message IPHistoryRequest {
+    // The name of the dataset to query.
     string dataset = 1;
     string ip = 2;
+    // Limit the number of records that will be returned.
     int64 limit = 3;
 }
 message IPHistoryResult {
+    // A capture summary for this result.
     CapSummary capsummary = 1;
 }
 
 message IPLogSearchRequest {
+    // The name of the dataset to query.
     string dataset = 1;
     string ip = 2;
+    // Limit the number of records that will be returned.
     int64 limit = 3;
+    // A resumption token, previously returned by an identical query.
     string resume = 4;
 }
 message IPLogSearchResult {
+    // A capture summary for this result.
     CapSummary capsummary = 1;
     string ip = 2;
+    // A resumption token that can be passed to an identical query to resume
+    // results.
     string resume = 3;
 }
 
 message IPSearchResult {
     string ip = 1;
+    // A resumption token that can be passed to an identical query to resume
+    // results.
     string resume = 2;
+    // THe latest capture relevant to this result.
     CapSummary latestcapture = 3;
 }
 message IPSearchRequest {
+    // The name of the dataset to query.
     string dataset = 1;
     string ip = 2;
     int32 mask = 3;
+    // Limit the number of records that will be returned.
     int64 limit = 4;
+    // A resumption token, previously returned by an identical query.
     string resume = 5;
 }
 
 message IPsForDomainRequest {
+    // The name of the dataset to query.
     string dataset = 1;
     string query = 2;
+    // Limit the number of records that will be returned.
     int64 limit = 3;
+    // A resumption token, previously returned by an identical query.
     string resume = 4;
 }
 message IPsForDomainResult {
     string domain = 1;
     string ip = 2;
+    // THe latest capture relevant to this result.
     CapSummary latestcapture = 3;
     repeated string associations = 4;
+    // A resumption token that can be passed to an identical query to resume
+    // results.
     string resume = 5;
 }
 
 message MetaForCaptureRequest {
+    // The name of the dataset to query.
     string dataset = 1;
     string id = 2;
+    // Limit the number of records that will be returned.
     int64 limit = 3;
+    // A resumption token, previously returned by an identical query.
     string resume = 4;
 }
 message MetaForCaptureResult {
     Metadata meta = 1;
     google.protobuf.Timestamp time = 2;
+    // A resumption token that can be passed to an identical query to resume
+    // results.
     string resume = 3;
 }
 
 message MetaSearchRequest {
+    // The name of the dataset to query.
     string dataset = 1;
     string query = 2;
+    // Limit the number of records that will be returned.
     int64 limit = 3;
+    // A resumption token, previously returned by an identical query.
     string resume = 4;
 }
 message MetaSearchResult {
     Metadata meta = 1;
+    // A resumption token that can be passed to an identical query to resume
+    // results.
     string resume = 3;
+    // A capture summary for this result.
     CapSummary capsummary = 4;
 }
 
 message RedirsByDestinationRequest {
+    // The name of the dataset to query.
     string dataset = 1;
     string query = 2;
+    // Limit the number of records that will be returned.
     int64 limit = 3;
+    // A resumption token, previously returned by an identical query.
     string resume = 4;
 }
-message RedirsByDestinationResponse {
+message RedirsByDestinationResult {
     string source = 1;
     string destination = 2;
+    // THe latest capture relevant to this result.
     CapSummary latestcapture = 3;
+    // A resumption token that can be passed to an identical query to resume
+    // results.
     string resume = 4;
 }
 
 message RedirsBySourceRequest {
+    // The name of the dataset to query.
     string dataset = 1;
     string query = 2;
+    // Limit the number of records that will be returned.
     int64 limit = 3;
+    // A resumption token, previously returned by an identical query.
     string resume = 4;
 }
-message RedirsBySourceResponse {
+message RedirsBySourceResult {
     string source = 1;
     string destination = 2;
+    // THe latest capture relevant to this result.
     CapSummary latestcapture = 3;
+    // A resumption token that can be passed to an identical query to resume
+    // results.
     string resume = 4;
 }
 
 message RootLogSearchRequest {
+    // The name of the dataset to query.
     string dataset = 1;
     string query = 2;
+    // Limit the number of records that will be returned.
     int64 limit = 3;
+    // A resumption token, previously returned by an identical query.
     string resume = 4;
 }
 message RootLogSearchResult {
     string root = 1;
+    // A resumption token that can be passed to an identical query to resume
+    // results.
     string resume = 2;
+    // A capture summary for this result.
     CapSummary capsummary = 3;
 }
 
 message RootsForSatelliteRequest {
+    // The name of the dataset to query.
     string dataset = 1;
     string query = 2;
+    // Limit the number of records that will be returned.
     int64 limit = 3;
+    // A resumption token, previously returned by an identical query.
     string resume = 4;
 }
 message RootsForSatelliteResult {
     string root = 1;
     string satellite = 2;
+    // A capture summary for this result.
     CapSummary capsummary = 3;
     repeated string associations = 4;
+    // A resumption token that can be passed to an identical query to resume
+    // results.
     string resume = 5;
 }
 
 message SubmitCaptureRequest {
+    // The name of the dataset to query.
     string dataset = 1;
     string notification = 2;
     repeated string urls = 3;
@@ -243,64 +333,63 @@ message SubmitCaptureResult {
 }
 
 message SatelliteLogSearchRequest {
+    // The name of the dataset to query.
     string dataset = 1;
     string query = 2;
+    // Limit the number of records that will be returned.
     int64 limit = 3;
+    // A resumption token, previously returned by an identical query.
     string resume = 4;
 }
 message SatelliteLogSearchResult {
     string satellite = 1;
+    // A resumption token that can be passed to an identical query to resume
+    // results.
     string resume = 2;
+    // A capture summary for this result.
     CapSummary capsummary = 3;
 }
 
 message SatellitesForRootRequest {
+    // The name of the dataset to query.
     string dataset = 1;
     string query = 2;
+    // Limit the number of records that will be returned.
     int64 limit = 3;
+    // A resumption token, previously returned by an identical query.
     string resume = 4;
 }
 message SatellitesForRootResult {
     string root = 1;
     string satellite = 2;
+    // A capture summary for this result.
     CapSummary capsummary = 3;
     repeated string associations = 4;
+    // A resumption token that can be passed to an identical query to resume
+    // results.
     string resume = 5;
 }
 
-message TempCaptureRequest {
-    string notification = 1;
-    repeated string urls = 2;
-    repeated Metadata meta = 3;
-}
-message TempCaptureResult {
-    string assets = 1;
-    string id = 3;
-}
-
 message URLLogSearchRequest {
+    // The name of the dataset to query.
     string dataset = 1;
     string query = 2;
+    // Limit the number of records that will be returned.
     int64 limit = 3;
+    // A resumption token, previously returned by an identical query.
     string resume = 4;
 }
 message URLLogSearchResult {
     string url = 1;
+    // A resumption token that can be passed to an identical query to resume
+    // results.
     string resume = 2;
+    // A capture summary for this result.
     CapSummary capsummary = 3;
 }
 
 
-service Netograph {
-    // Request a temporary capture. Temporary captures are not stored in a
-    // dataset, and the capture assets will be available for download for 24
-    // hours before being deleted.
-    rpc TempCapture (TempCaptureRequest) returns (TempCaptureResult);
-
-    // List all datasets to which the authorizing account has access. This
-    // includes public datasets, which will be marked readonly.
-    rpc Datasets (DatasetsRequest) returns (stream Dataset);
-
+service Dset {
     // Submit a capture request to a dataset.
     rpc SubmitCapture (SubmitCaptureRequest) returns (SubmitCaptureResult);
 
@@ -340,10 +429,10 @@ service Netograph {
     rpc MetaSearch(MetaSearchRequest) returns (stream MetaSearchResult);
 
     // Find all redirections in the dataset for a given destination domain query.
-    rpc RedirsByDestination(RedirsByDestinationRequest) returns (stream RedirsByDestinationResponse);
+    rpc RedirsByDestination(RedirsByDestinationRequest) returns (stream RedirsByDestinationResult);
 
     // Find all redirections in the dataset for a given source domain query.
-    rpc RedirsBySource(RedirsBySourceRequest) returns (stream RedirsBySourceResponse);
+    rpc RedirsBySource(RedirsBySourceRequest) returns (stream RedirsBySourceResult);
 
     // Search the dataset log for captures where any root domain matches a given query.
     rpc RootLogSearch(RootLogSearchRequest) returns (stream RootLogSearchResult);

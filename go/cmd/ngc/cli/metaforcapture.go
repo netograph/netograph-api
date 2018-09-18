@@ -4,9 +4,9 @@ import (
 	"fmt"
 	"io"
 
+	"github.com/netograph/netograph-api/go/proto/ngapi/dsetapi"
 	"github.com/spf13/cobra"
 	"github.com/spf13/viper"
-	"github.com/netograph/netograph-api/go/proto/ngapi"
 )
 
 func metaForCaptureCommand() *cobra.Command {
@@ -22,7 +22,7 @@ func metaForCaptureCommand() *cobra.Command {
 			return nil
 		},
 		RunE: func(cmd *cobra.Command, args []string) error {
-			c, ctx, err := connect()
+			c, ctx, err := connectDset()
 			if err != nil {
 				return err
 			}
@@ -31,7 +31,7 @@ func metaForCaptureCommand() *cobra.Command {
 				return err
 			}
 
-			r, err := c.MetaForCapture(ctx, &ngapi.MetaForCaptureRequest{
+			r, err := c.MetaForCapture(ctx, &dsetapi.MetaForCaptureRequest{
 				Dataset: viper.GetString("dset"),
 				Id:      args[0],
 				Limit:   limit,

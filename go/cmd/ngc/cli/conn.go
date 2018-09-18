@@ -6,14 +6,15 @@ import (
 	"fmt"
 	"strings"
 
-	"github.com/netograph/netograph-api/go/proto/ngapi"
+	"github.com/netograph/netograph-api/go/proto/ngapi/dsetapi"
+	"github.com/netograph/netograph-api/go/proto/ngapi/userapi"
 	"github.com/spf13/viper"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/credentials"
 	"google.golang.org/grpc/metadata"
 )
 
-func connect() (ngapi.NetographClient, context.Context, error) {
+func connect() (*grpc.ClientConn, context.Context, error) {
 	tlsconf := &tls.Config{
 		ServerName: "grpc.netograph.io",
 	}
@@ -32,9 +33,24 @@ func connect() (ngapi.NetographClient, context.Context, error) {
 	if err != nil {
 		return nil, nil, err
 	}
-	c := ngapi.NewNetographClient(conn)
 
 	header := metadata.New(map[string]string{"authorization": token})
 	ctx := metadata.NewOutgoingContext(context.Background(), header)
-	return c, ctx, nil
+	return conn, ctx, nil
+}
+
+func connectUser() (userapi.UserClient, context.Context, error) {
+	conn, ctx, err := connect()
+	if err != nil {
+		return nil, nil, err
+	}
+	return userapi.NewUserClient(conn), ctx, nil
+}
+
+func connectDset() (dsetapi.DsetClient, context.Context, error) {
+	conn, ctx, err := connect()
+	if err != nil {
+		return nil, nil, err
+	}
+	return dsetapi.NewDsetClient(conn), ctx, nil
 }

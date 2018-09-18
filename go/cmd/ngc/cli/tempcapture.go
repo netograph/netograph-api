@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"strings"
 
-	"github.com/netograph/netograph-api/go/proto/ngapi"
+	"github.com/netograph/netograph-api/go/proto/ngapi/userapi"
 	"github.com/spf13/cobra"
 )
 
@@ -22,17 +22,17 @@ func tempCaptureCommand() *cobra.Command {
 			return nil
 		},
 		RunE: func(cmd *cobra.Command, args []string) error {
-			c, ctx, err := connect()
+			c, ctx, err := connectUser()
 			if err != nil {
 				return err
 			}
-			ms := make([]*ngapi.Metadata, len(*meta))
+			ms := make([]*userapi.Metadata, len(*meta))
 			for i, v := range *meta {
 				vals := strings.SplitN(v, "=", 2)
 				if len(vals) != 2 {
 					return fmt.Errorf("Invalid metadata specification: %s", v)
 				}
-				ms[i] = &ngapi.Metadata{
+				ms[i] = &userapi.Metadata{
 					Key:   vals[0],
 					Value: vals[1],
 				}
@@ -40,7 +40,7 @@ func tempCaptureCommand() *cobra.Command {
 			for i, v := range args {
 				args[i] = strings.TrimSpace(v)
 			}
-			cap := ngapi.TempCaptureRequest{
+			cap := userapi.TempCaptureRequest{
 				Urls:         args,
 				Notification: *notification,
 				Meta:         ms,

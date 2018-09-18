@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"strings"
 
-	"github.com/netograph/netograph-api/go/proto/ngapi"
+	"github.com/netograph/netograph-api/go/proto/ngapi/dsetapi"
 	"github.com/spf13/cobra"
 	"github.com/spf13/viper"
 )
@@ -24,18 +24,18 @@ func submitCaptureCommand() *cobra.Command {
 			return nil
 		},
 		RunE: func(cmd *cobra.Command, args []string) error {
-			c, ctx, err := connect()
+			c, ctx, err := connectDset()
 			if err != nil {
 				return err
 			}
 
-			ms := make([]*ngapi.Metadata, len(*meta))
+			ms := make([]*dsetapi.Metadata, len(*meta))
 			for i, v := range *meta {
 				vals := strings.SplitN(v, "=", 2)
 				if len(vals) != 2 {
 					return fmt.Errorf("Invalid metadata specification: %s", v)
 				}
-				ms[i] = &ngapi.Metadata{
+				ms[i] = &dsetapi.Metadata{
 					Key:   vals[0],
 					Value: vals[1],
 				}
@@ -45,7 +45,7 @@ func submitCaptureCommand() *cobra.Command {
 				args[i] = strings.TrimSpace(v)
 			}
 
-			cap := ngapi.SubmitCaptureRequest{
+			cap := dsetapi.SubmitCaptureRequest{
 				Dataset:      viper.GetString("dset"),
 				Urls:         args,
 				Notification: *notification,

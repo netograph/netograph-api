@@ -4,9 +4,9 @@ import (
 	"fmt"
 	"io"
 
+	"github.com/netograph/netograph-api/go/proto/ngapi/dsetapi"
 	"github.com/spf13/cobra"
 	"github.com/spf13/viper"
-	"github.com/netograph/netograph-api/go/proto/ngapi"
 )
 
 func ipHistoryCommand() *cobra.Command {
@@ -21,7 +21,7 @@ func ipHistoryCommand() *cobra.Command {
 			return nil
 		},
 		RunE: func(cmd *cobra.Command, args []string) error {
-			c, ctx, err := connect()
+			c, ctx, err := connectDset()
 			if err != nil {
 				return err
 			}
@@ -31,7 +31,7 @@ func ipHistoryCommand() *cobra.Command {
 				return err
 			}
 
-			r, err := c.IPHistory(ctx, &ngapi.IPHistoryRequest{
+			r, err := c.IPHistory(ctx, &dsetapi.IPHistoryRequest{
 				Dataset: viper.GetString("dset"),
 				Ip:      args[0],
 				Limit:   limit,

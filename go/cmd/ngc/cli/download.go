@@ -7,7 +7,7 @@ import (
 	"time"
 
 	"github.com/briandowns/spinner"
-	"github.com/netograph/netograph-api/go/proto/ngapi"
+	"github.com/netograph/netograph-api/go/proto/ngapi/dsetapi"
 	"github.com/spf13/cobra"
 	"github.com/spf13/viper"
 )
@@ -26,7 +26,7 @@ func downloadCommand() *cobra.Command {
 			return nil
 		},
 		RunE: func(cmd *cobra.Command, args []string) error {
-			c, ctx, err := connect()
+			c, ctx, err := connectDset()
 			if err != nil {
 				return err
 			}
@@ -46,7 +46,7 @@ func downloadCommand() *cobra.Command {
 				}
 				r, err := c.CaptureInfo(
 					ctx,
-					&ngapi.CaptureInfoRequest{
+					&dsetapi.CaptureInfoRequest{
 						Dataset: viper.GetString("dset"),
 						Id:      id,
 					},

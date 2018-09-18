@@ -7,7 +7,7 @@ import (
 
 	"github.com/golang/protobuf/ptypes"
 	"github.com/golang/protobuf/ptypes/timestamp"
-	"github.com/netograph/netograph-api/go/proto/ngapi"
+	"github.com/netograph/netograph-api/go/proto/ngapi/dsetapi"
 	"github.com/spf13/cobra"
 	"github.com/spf13/viper"
 )
@@ -62,7 +62,7 @@ Times can be specified in the following formats:
 	yyyy-mm-dd
 		`,
 		RunE: func(cmd *cobra.Command, args []string) error {
-			c, ctx, err := connect()
+			c, ctx, err := connectDset()
 			if err != nil {
 				return err
 			}
@@ -79,7 +79,7 @@ Times can be specified in the following formats:
 				return err
 			}
 
-			r, err := c.CaptureLog(ctx, &ngapi.CaptureLogRequest{
+			r, err := c.CaptureLog(ctx, &dsetapi.CaptureLogRequest{
 				Dataset: viper.GetString("dset"),
 				Limit:   limit,
 				Resume:  *resume,

@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"io"
 
-	"github.com/netograph/netograph-api/go/proto/ngapi"
+	"github.com/netograph/netograph-api/go/proto/ngapi/dsetapi"
 	"github.com/spf13/cobra"
 	"github.com/spf13/viper"
 )
@@ -22,7 +22,7 @@ func domainsForIPCommand() *cobra.Command {
 			return nil
 		},
 		RunE: func(cmd *cobra.Command, args []string) error {
-			c, ctx, err := connect()
+			c, ctx, err := connectDset()
 			if err != nil {
 				return err
 			}
@@ -32,7 +32,7 @@ func domainsForIPCommand() *cobra.Command {
 				return err
 			}
 
-			r, err := c.DomainsForIP(ctx, &ngapi.DomainsForIPRequest{
+			r, err := c.DomainsForIP(ctx, &dsetapi.DomainsForIPRequest{
 				Dataset: viper.GetString("dset"),
 				Ip:      args[0],
 				Limit:   limit,
