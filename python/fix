@@ -3,7 +3,10 @@
 # The Python GRPC compiler has trouble dealing correctly with Python3-style
 # imports. We fix this in post, rather crudely for now.
 
-SPATH = "netograph/ngapi_pb2_grpc.py"
+SPATH = "netograph/dsetapi/dset_pb2_grpc.py"
+f = open(SPATH).read().replace("from dsetapi", "from netograph.dsetapi")
+out = open(SPATH, "w").write(f)
 
-f = open(SPATH).read().replace("import ngapi_pb2", "import netograph.ngapi_pb2")
+SPATH = "netograph/userapi/user_pb2_grpc.py"
+f = open(SPATH).read().replace("from userapi", "from netograph.userapi")
 out = open(SPATH, "w").write(f)

@@ -14,7 +14,7 @@
 import os
 
 import netograph
-from netograph import ngapi_pb2
+from netograph.dsetapi import dset_pb2
 
 DSET = "netograph:social"
 # Limit response size - CDNs mean that very large numbers of domains can be
@@ -24,15 +24,15 @@ LIMIT = 50
 seen = set([])
 domains = set([])
 
-conn = netograph.channel(os.environ["NGC_TOKEN"])
-satq = ngapi_pb2.DomainSearchRequest(
+conn = netograph.connect_dset(os.environ["NGC_TOKEN"])
+satq = dset_pb2.DomainSearchRequest(
     query="kaspersky.com",
     dataset=DSET,
     limit=LIMIT
 )
 for root in conn.DomainSearch(satq):
     print(f"{root.domain}")
-    ipq = ngapi_pb2.IPsForDomainRequest(
+    ipq = dset_pb2.IPsForDomainRequest(
         query=root.domain,
         dataset=DSET,
         limit=LIMIT
@@ -42,7 +42,7 @@ for root in conn.DomainSearch(satq):
         if ip.ip in seen:
             print("\t\talready seen - skipping")
         else:
-            sharedq = ngapi_pb2.DomainsForIPRequest(
+            sharedq = dset_pb2.DomainsForIPRequest(
                 ip=ip.ip,
                 dataset=DSET,
                 limit=LIMIT
