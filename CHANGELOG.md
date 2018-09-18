@@ -1,3 +1,8 @@
+# v0.4: 18 September 2018
+
+- Split dataset and user APIs to clarify our API structure, and get ready for
+future extensions.
+
 # v0.3: 14 August 2018
 
 - CaptureLog now takes a start and end timestamp. Please note that since the
