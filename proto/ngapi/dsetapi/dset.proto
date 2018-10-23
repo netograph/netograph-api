@@ -114,7 +114,7 @@ message DomainSearchResult {
     // A resumption token that can be passed to an identical query to resume
     // results.
     string resume = 2;
-    // THe latest capture relevant to this result.
+    // The latest capture relevant to this result.
     CapSummary latestcapture = 3;
 }
 
@@ -130,7 +130,7 @@ message DomainsForIPRequest {
 message DomainsForIPResult {
     string domain = 1;
     string ip = 2;
-    // THe latest capture relevant to this result.
+    // The latest capture relevant to this result.
     CapSummary latestcapture = 3;
     repeated string associations = 4;
     // A resumption token that can be passed to an identical query to resume
@@ -173,7 +173,7 @@ message IPSearchResult {
     // A resumption token that can be passed to an identical query to resume
     // results.
     string resume = 2;
-    // THe latest capture relevant to this result.
+    // The latest capture relevant to this result.
     CapSummary latestcapture = 3;
 }
 message IPSearchRequest {
@@ -199,7 +199,7 @@ message IPsForDomainRequest {
 message IPsForDomainResult {
     string domain = 1;
     string ip = 2;
-    // THe latest capture relevant to this result.
+    // The latest capture relevant to this result.
     CapSummary latestcapture = 3;
     repeated string associations = 4;
     // A resumption token that can be passed to an identical query to resume
@@ -254,7 +254,7 @@ message RedirsByDestinationRequest {
 message RedirsByDestinationResult {
     string source = 1;
     string destination = 2;
-    // THe latest capture relevant to this result.
+    // The latest capture relevant to this result.
     CapSummary latestcapture = 3;
     // A resumption token that can be passed to an identical query to resume
     // results.
@@ -273,7 +273,7 @@ message RedirsBySourceRequest {
 message RedirsBySourceResult {
     string source = 1;
     string destination = 2;
-    // THe latest capture relevant to this result.
+    // The latest capture relevant to this result.
     CapSummary latestcapture = 3;
     // A resumption token that can be passed to an identical query to resume
     // results.
@@ -321,14 +321,23 @@ message RootsForSatelliteResult {
 message SubmitCaptureRequest {
     // The name of the dataset to query.
     string dataset = 1;
+    // A URL to which a notification will be posted when capture completes
     string notification = 2;
+    // A sequence of URLs to visit in order
     repeated string urls = 3;
+    // Metadata to associate with the apture
     repeated Metadata meta = 4;
+    // Skip capture if we've seen this exact URL within a specified number of seconds
     int64 skiprecent = 5;
+    // Capture zone - "us" or "eu". If unspecified, we choose based on availability.
+    string zone = 6;
 }
 message SubmitCaptureResult {
+    // A URL under which capture assets may be found
     string assets = 1;
+    // Was capture skipped due to a skiprecent specification?
     bool skipped = 2;
+    // The capture ID
     string id = 3;
 }
 
@@ -389,6 +398,7 @@ message URLLogSearchResult {
 }
 
 
+// Methods that operate on an individual dataset, either public or private.
 service Dset {
     // Submit a capture request to a dataset.
     rpc SubmitCapture (SubmitCaptureRequest) returns (SubmitCaptureResult);

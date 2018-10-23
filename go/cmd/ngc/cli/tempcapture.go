@@ -11,6 +11,7 @@ import (
 func tempCaptureCommand() *cobra.Command {
 	var notification *string
 	var meta *[]string
+	var zone *string
 	cmd := &cobra.Command{
 		Use:     "tempcapture url [url...]",
 		Aliases: []string{"submit"},
@@ -44,6 +45,7 @@ func tempCaptureCommand() *cobra.Command {
 				Urls:         args,
 				Notification: *notification,
 				Meta:         ms,
+				Zone:         *zone,
 			}
 
 			r, err := c.TempCapture(ctx, &cap)
@@ -64,6 +66,9 @@ func tempCaptureCommand() *cobra.Command {
 		"meta",
 		[]string{},
 		"Metadata in the format key=value",
+	)
+	zone = cmd.Flags().String(
+		"zone", "", "Capture zone (\"eu\" or \"us\")",
 	)
 	return cmd
 }

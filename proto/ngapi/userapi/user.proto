@@ -32,12 +32,14 @@ message TempCaptureRequest {
     string notification = 1;
     repeated string urls = 2;
     repeated Metadata meta = 3;
+    string zone = 4;
 }
 message TempCaptureResult {
     string assets = 1;
     string id = 3;
 }
 
+// Methods that operate at the level of the user account.
 service User {
     // Request a temporary capture. Temporary captures are not stored in a
     // dataset, and the capture assets will be available for download for 24

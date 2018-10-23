@@ -4,7 +4,7 @@
   <head>
     <title>Protocol Documentation</title>
     <meta charset="UTF-8">
-    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Ubuntu:400,700,400italic"/>
+    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Ubuntu:400,700,400italic"/>
     <style>
       body {
         width: 60em;
@@ -822,7 +822,7 @@ results. </p></td>
                   <td>latestcapture</td>
                   <td><a href="#io.netograph.dset.CapSummary">CapSummary</a></td>
                   <td></td>
-                  <td><p>THe latest capture relevant to this result. </p></td>
+                  <td><p>The latest capture relevant to this result. </p></td>
                 </tr>
               
             </tbody>
@@ -903,7 +903,7 @@ results. </p></td>
                   <td>latestcapture</td>
                   <td><a href="#io.netograph.dset.CapSummary">CapSummary</a></td>
                   <td></td>
-                  <td><p>THe latest capture relevant to this result. </p></td>
+                  <td><p>The latest capture relevant to this result. </p></td>
                 </tr>
               
                 <tr>
@@ -1149,7 +1149,7 @@ results. </p></td>
                   <td>latestcapture</td>
                   <td><a href="#io.netograph.dset.CapSummary">CapSummary</a></td>
                   <td></td>
-                  <td><p>THe latest capture relevant to this result. </p></td>
+                  <td><p>The latest capture relevant to this result. </p></td>
                 </tr>
               
             </tbody>
@@ -1230,7 +1230,7 @@ results. </p></td>
                   <td>latestcapture</td>
                   <td><a href="#io.netograph.dset.CapSummary">CapSummary</a></td>
                   <td></td>
-                  <td><p>THe latest capture relevant to this result. </p></td>
+                  <td><p>The latest capture relevant to this result. </p></td>
                 </tr>
               
                 <tr>
@@ -1520,7 +1520,7 @@ results. </p></td>
                   <td>latestcapture</td>
                   <td><a href="#io.netograph.dset.CapSummary">CapSummary</a></td>
                   <td></td>
-                  <td><p>THe latest capture relevant to this result. </p></td>
+                  <td><p>The latest capture relevant to this result. </p></td>
                 </tr>
               
                 <tr>
@@ -1609,7 +1609,7 @@ results. </p></td>
                   <td>latestcapture</td>
                   <td><a href="#io.netograph.dset.CapSummary">CapSummary</a></td>
                   <td></td>
-                  <td><p>THe latest capture relevant to this result. </p></td>
+                  <td><p>The latest capture relevant to this result. </p></td>
                 </tr>
               
                 <tr>
@@ -2003,28 +2003,35 @@ results. </p></td>
                   <td>notification</td>
                   <td><a href="#string">string</a></td>
                   <td></td>
-                  <td><p> </p></td>
+                  <td><p>A URL to which a notification will be posted when capture completes </p></td>
                 </tr>
               
                 <tr>
                   <td>urls</td>
                   <td><a href="#string">string</a></td>
                   <td>repeated</td>
-                  <td><p> </p></td>
+                  <td><p>A sequence of URLs to visit in order </p></td>
                 </tr>
               
                 <tr>
                   <td>meta</td>
                   <td><a href="#io.netograph.dset.Metadata">Metadata</a></td>
                   <td>repeated</td>
-                  <td><p> </p></td>
+                  <td><p>Metadata to associate with the apture </p></td>
                 </tr>
               
                 <tr>
                   <td>skiprecent</td>
                   <td><a href="#int64">int64</a></td>
                   <td></td>
-                  <td><p> </p></td>
+                  <td><p>Skip capture if we&#39;ve seen this exact URL within a specified number of seconds </p></td>
+                </tr>
+              
+                <tr>
+                  <td>zone</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p>Capture zone - &#34;us&#34; or &#34;eu&#34;. If unspecified, we choose based on availability. </p></td>
                 </tr>
               
             </tbody>
@@ -2047,21 +2054,21 @@ results. </p></td>
                   <td>assets</td>
                   <td><a href="#string">string</a></td>
                   <td></td>
-                  <td><p> </p></td>
+                  <td><p>A URL under which capture assets may be found </p></td>
                 </tr>
               
                 <tr>
                   <td>skipped</td>
                   <td><a href="#bool">bool</a></td>
                   <td></td>
-                  <td><p> </p></td>
+                  <td><p>Was capture skipped due to a skiprecent specification? </p></td>
                 </tr>
               
                 <tr>
                   <td>id</td>
                   <td><a href="#string">string</a></td>
                   <td></td>
-                  <td><p> </p></td>
+                  <td><p>The capture ID </p></td>
                 </tr>
               
             </tbody>
@@ -2159,7 +2166,7 @@ results. </p></td>
 
       
         <h3 id="io.netograph.dset.Dset">Dset</h3>
-        <p></p>
+        <p>Methods that operate on an individual dataset, either public or private.</p>
         <table class="enum-table">
           <thead>
             <tr><td>Method Name</td><td>Request Type</td><td>Response Type</td><td>Description</td></tr>
@@ -2432,6 +2439,13 @@ submission and other write operation swill be denied. </p></td>
                   <td><p> </p></td>
                 </tr>
               
+                <tr>
+                  <td>zone</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
             </tbody>
           </table>
         
@@ -2475,7 +2489,7 @@ submission and other write operation swill be denied. </p></td>
 
       
         <h3 id="io.netograph.user.User">User</h3>
-        <p></p>
+        <p>Methods that operate at the level of the user account.</p>
         <table class="enum-table">
           <thead>
             <tr><td>Method Name</td><td>Request Type</td><td>Response Type</td><td>Description</td></tr>

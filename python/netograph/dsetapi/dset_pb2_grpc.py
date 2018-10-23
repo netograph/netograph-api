@@ -5,8 +5,8 @@ from netograph.dsetapi import dset_pb2 as dsetapi_dot_dset__pb2
 
 
 class DsetStub(object):
-  # missing associated documentation comment in .proto file
-  pass
+  """Methods that operate on an individual dataset, either public or private.
+  """
 
   def __init__(self, channel):
     """Constructor.
@@ -112,8 +112,8 @@ class DsetStub(object):
 
 
 class DsetServicer(object):
-  # missing associated documentation comment in .proto file
-  pass
+  """Methods that operate on an individual dataset, either public or private.
+  """
 
   def SubmitCapture(self, request, context):
     """Submit a capture request to a dataset.

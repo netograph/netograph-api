@@ -5,8 +5,8 @@ from netograph.userapi import user_pb2 as userapi_dot_user__pb2
 
 
 class UserStub(object):
-  # missing associated documentation comment in .proto file
-  pass
+  """Methods that operate at the level of the user account.
+  """
 
   def __init__(self, channel):
     """Constructor.
@@ -27,8 +27,8 @@ class UserStub(object):
 
 
 class UserServicer(object):
-  # missing associated documentation comment in .proto file
-  pass
+  """Methods that operate at the level of the user account.
+  """
 
   def TempCapture(self, request, context):
     """Request a temporary capture. Temporary captures are not stored in a
