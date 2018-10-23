@@ -1,3 +1,9 @@
+# v0.5: 24 October 2018
+
+- Add a zone flag to capture submissions. We currently support "eu" and "us"
+  capture zones. If neither is specified, Netograph chooses a capture zone
+  based on load and availabilty.
+
 # v0.4: 18 September 2018
 
 - Split dataset and user APIs to clarify our API structure, and get ready for
