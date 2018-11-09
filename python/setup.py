@@ -7,7 +7,7 @@ setup(
     url="https://netograph.io",
     author="Netograph Ltd",
     author_email="aldo@netograph.io",
-    packages=find_packages(include=["netograph"]),
+    packages=find_packages(),
     include_package_data=True,
     install_requires=[
         "grpcio>=1.13",
