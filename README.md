@@ -87,7 +87,7 @@ There are a few things to note here.
 Putting all of this together, we have a command like this:
 
 ```sh
-ngc -n 0 --cjson satsforroot  | jq -r .satelite
+ngc -n 0 --cjson satsforroot  rt.com | jq -r .satellite
 ```
 
 At the time of writing, this command cleanly lists about 3600 third-party
