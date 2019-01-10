@@ -813,6 +813,7 @@ Metadata is arbitrary information associated with a capture.
 | meta | [Metadata](#io.netograph.dset.Metadata) | repeated | Metadata to associate with the apture |
 | skiprecent | [int64](#int64) |  | Skip capture if we&#39;ve seen this exact URL within a specified number of seconds |
 | zone | [string](#string) |  | Capture zone - &#34;us&#34; or &#34;eu&#34;. If unspecified, we choose based on availability. |
+| extended | [bool](#bool) |  | Extended capture includes full-page screenshot and page content formats |
 
 
 
@@ -973,6 +974,7 @@ Metadata is arbitrary information associated with a capture.
 | urls | [string](#string) | repeated |  |
 | meta | [Metadata](#io.netograph.user.Metadata) | repeated |  |
 | zone | [string](#string) |  |  |
+| extended | [bool](#bool) |  | Extended capture includes full-page screenshot and page content formats |
 
 
 

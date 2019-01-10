@@ -14,6 +14,7 @@ func submitCaptureCommand() *cobra.Command {
 	var skiprecent *int64
 	var meta *[]string
 	var zone *string
+	var extended *bool
 	cmd := &cobra.Command{
 		Use:     "submitcapture url [url...]",
 		Aliases: []string{"submit"},
@@ -53,6 +54,7 @@ func submitCaptureCommand() *cobra.Command {
 				Skiprecent:   *skiprecent,
 				Meta:         ms,
 				Zone:         *zone,
+				Extended:     *extended,
 			}
 
 			r, err := c.SubmitCapture(ctx, &cap)
@@ -79,6 +81,9 @@ func submitCaptureCommand() *cobra.Command {
 	)
 	zone = cmd.Flags().String(
 		"zone", "", "Capture zone (\"eu\" or \"us\")",
+	)
+	extended = cmd.Flags().Bool(
+		"extended", false, "Extended capture",
 	)
 	return cmd
 }

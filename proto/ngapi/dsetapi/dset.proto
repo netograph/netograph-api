@@ -331,6 +331,8 @@ message SubmitCaptureRequest {
     int64 skiprecent = 5;
     // Capture zone - "us" or "eu". If unspecified, we choose based on availability.
     string zone = 6;
+    // Extended capture includes full-page screenshot and page content formats
+    bool extended = 7;
 }
 message SubmitCaptureResult {
     // A URL under which capture assets may be found

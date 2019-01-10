@@ -20,7 +20,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='io.netograph.user',
   syntax='proto3',
   serialized_options=_b('Z\007userapi'),
-  serialized_pb=_b('\n\x12userapi/user.proto\x12\x11io.netograph.user\x1a\x1fgoogle/protobuf/timestamp.proto\"&\n\x08Metadata\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t\"\x11\n\x0f\x44\x61tasetsRequest\"|\n\x07\x44\x61taset\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x02 \x01(\t\x12\x0f\n\x07urlbase\x18\x03 \x01(\t\x12+\n\x07\x64\x65leted\x18\x04 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x10\n\x08readonly\x18\x05 \x01(\x08\"q\n\x12TempCaptureRequest\x12\x14\n\x0cnotification\x18\x01 \x01(\t\x12\x0c\n\x04urls\x18\x02 \x03(\t\x12)\n\x04meta\x18\x03 \x03(\x0b\x32\x1b.io.netograph.user.Metadata\x12\x0c\n\x04zone\x18\x04 \x01(\t\"/\n\x11TempCaptureResult\x12\x0e\n\x06\x61ssets\x18\x01 \x01(\t\x12\n\n\x02id\x18\x03 \x01(\t2\xb0\x01\n\x04User\x12Z\n\x0bTempCapture\x12%.io.netograph.user.TempCaptureRequest\x1a$.io.netograph.user.TempCaptureResult\x12L\n\x08\x44\x61tasets\x12\".io.netograph.user.DatasetsRequest\x1a\x1a.io.netograph.user.Dataset0\x01\x42\tZ\x07userapib\x06proto3')
+  serialized_pb=_b('\n\x12userapi/user.proto\x12\x11io.netograph.user\x1a\x1fgoogle/protobuf/timestamp.proto\"&\n\x08Metadata\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t\"\x11\n\x0f\x44\x61tasetsRequest\"|\n\x07\x44\x61taset\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x02 \x01(\t\x12\x0f\n\x07urlbase\x18\x03 \x01(\t\x12+\n\x07\x64\x65leted\x18\x04 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x10\n\x08readonly\x18\x05 \x01(\x08\"\x83\x01\n\x12TempCaptureRequest\x12\x14\n\x0cnotification\x18\x01 \x01(\t\x12\x0c\n\x04urls\x18\x02 \x03(\t\x12)\n\x04meta\x18\x03 \x03(\x0b\x32\x1b.io.netograph.user.Metadata\x12\x0c\n\x04zone\x18\x04 \x01(\t\x12\x10\n\x08\x65xtended\x18\x05 \x01(\x08\"/\n\x11TempCaptureResult\x12\x0e\n\x06\x61ssets\x18\x01 \x01(\t\x12\n\n\x02id\x18\x03 \x01(\t2\xb0\x01\n\x04User\x12Z\n\x0bTempCapture\x12%.io.netograph.user.TempCaptureRequest\x1a$.io.netograph.user.TempCaptureResult\x12L\n\x08\x44\x61tasets\x12\".io.netograph.user.DatasetsRequest\x1a\x1a.io.netograph.user.Dataset0\x01\x42\tZ\x07userapib\x06proto3')
   ,
   dependencies=[google_dot_protobuf_dot_timestamp__pb2.DESCRIPTOR,])
 
@@ -183,6 +183,13 @@ _TEMPCAPTUREREQUEST = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='extended', full_name='io.netograph.user.TempCaptureRequest.extended', index=4,
+      number=5, type=8, cpp_type=7, label=1,
+      has_default_value=False, default_value=False,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -195,8 +202,8 @@ _TEMPCAPTUREREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=259,
-  serialized_end=372,
+  serialized_start=260,
+  serialized_end=391,
 )
 
 
@@ -233,8 +240,8 @@ _TEMPCAPTURERESULT = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=374,
-  serialized_end=421,
+  serialized_start=393,
+  serialized_end=440,
 )
 
 _DATASET.fields_by_name['deleted'].message_type = google_dot_protobuf_dot_timestamp__pb2._TIMESTAMP
@@ -290,8 +297,8 @@ _USER = _descriptor.ServiceDescriptor(
   file=DESCRIPTOR,
   index=0,
   serialized_options=None,
-  serialized_start=424,
-  serialized_end=600,
+  serialized_start=443,
+  serialized_end=619,
   methods=[
   _descriptor.MethodDescriptor(
     name='TempCapture',

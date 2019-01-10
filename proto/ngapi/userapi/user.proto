@@ -33,6 +33,8 @@ message TempCaptureRequest {
     repeated string urls = 2;
     repeated Metadata meta = 3;
     string zone = 4;
+    // Extended capture includes full-page screenshot and page content formats
+    bool extended = 5;
 }
 message TempCaptureResult {
     string assets = 1;
