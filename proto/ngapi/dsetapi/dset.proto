@@ -19,7 +19,7 @@ message CapSummary {
         repeated string urls = 1;
     }
     message Stats {
-        // Th enumber of flows.
+        // The number of flows.
         int32 flows = 1;
         // The number of websocket connections.
         int32 websockets = 2;
@@ -397,6 +397,24 @@ message URLLogSearchResult {
     CapSummary capsummary = 3;
 }
 
+message PoliciesForDomainRequest {
+    // The name of the dataset to query.
+    string dataset = 1;
+    string query = 2;
+    // Limit the number of records that will be returned.
+    int64 limit = 3;
+    // A resumption token, previously returned by an identical query.
+    string resume = 4;
+}
+message PoliciesForDomainResult {
+    string type = 1;
+    string url = 2;
+    string root = 3;
+    CapSummary capsummary = 4;
+    // A resumption token that can be passed to an identical query to resume
+    // results.
+    string resume = 5;
+}
 
 // Methods that operate on an individual dataset, either public or private.
 service Dset {
@@ -413,7 +431,7 @@ service Dset {
     // length of this history is capped at ~100.
     rpc DomainHistory(DomainHistoryRequest) returns (stream DomainHistoryResult);
 
-    // Retrieve the capture log for a dataset, in reverse chronological order.
+    // Retrieve the capture log for a specified domain in a dataset.
     rpc DomainSearch(DomainSearchRequest) returns (stream DomainSearchResult);
 
     // Find all domains in the dataset associated with a given IP address.
@@ -437,6 +455,9 @@ service Dset {
 
     // Search the dataset log for captures matching a metadata query.
     rpc MetaSearch(MetaSearchRequest) returns (stream MetaSearchResult);
+
+    // Find all policies for a specified domain query.
+    rpc PoliciesForDomain(PoliciesForDomainRequest) returns (stream PoliciesForDomainResult);
 
     // Find all redirections in the dataset for a given destination domain query.
     rpc RedirsByDestination(RedirsByDestinationRequest) returns (stream RedirsByDestinationResult);

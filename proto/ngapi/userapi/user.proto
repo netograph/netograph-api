@@ -24,7 +24,7 @@ message Dataset {
     // Non-zero if the dataset has been deleted.
     google.protobuf.Timestamp deleted = 4;
     // Is the current user restricted to readonly access? If so, capture
-    // submission and other write operation swill be denied.
+    // submission and other write operations will be denied.
     bool readonly = 5;
 }
 

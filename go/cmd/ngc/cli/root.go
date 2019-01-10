@@ -38,6 +38,7 @@ func init() {
 		ipLogSearchCommand(),
 		metaForCaptureCommand(),
 		metaSearchCommand(),
+		policiesForDomainCommand(),
 		redirsByDestinationCommand(),
 		redirsBySourceCommand(),
 		rootLogSearchCommand(),

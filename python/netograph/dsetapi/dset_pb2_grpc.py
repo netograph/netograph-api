@@ -74,6 +74,11 @@ class DsetStub(object):
         request_serializer=dsetapi_dot_dset__pb2.MetaSearchRequest.SerializeToString,
         response_deserializer=dsetapi_dot_dset__pb2.MetaSearchResult.FromString,
         )
+    self.PoliciesForDomain = channel.unary_stream(
+        '/io.netograph.dset.Dset/PoliciesForDomain',
+        request_serializer=dsetapi_dot_dset__pb2.PoliciesForDomainRequest.SerializeToString,
+        response_deserializer=dsetapi_dot_dset__pb2.PoliciesForDomainResult.FromString,
+        )
     self.RedirsByDestination = channel.unary_stream(
         '/io.netograph.dset.Dset/RedirsByDestination',
         request_serializer=dsetapi_dot_dset__pb2.RedirsByDestinationRequest.SerializeToString,
@@ -145,7 +150,7 @@ class DsetServicer(object):
     raise NotImplementedError('Method not implemented!')
 
   def DomainSearch(self, request, context):
-    """Retrieve the capture log for a dataset, in reverse chronological order.
+    """Retrieve the capture log for a specified domain in a dataset.
     """
     context.set_code(grpc.StatusCode.UNIMPLEMENTED)
     context.set_details('Method not implemented!')
@@ -196,6 +201,13 @@ class DsetServicer(object):
 
   def MetaSearch(self, request, context):
     """Search the dataset log for captures matching a metadata query.
+    """
+    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+    context.set_details('Method not implemented!')
+    raise NotImplementedError('Method not implemented!')
+
+  def PoliciesForDomain(self, request, context):
+    """Find all policies for a specified domain query.
     """
     context.set_code(grpc.StatusCode.UNIMPLEMENTED)
     context.set_details('Method not implemented!')
@@ -312,6 +324,11 @@ def add_DsetServicer_to_server(servicer, server):
           servicer.MetaSearch,
           request_deserializer=dsetapi_dot_dset__pb2.MetaSearchRequest.FromString,
           response_serializer=dsetapi_dot_dset__pb2.MetaSearchResult.SerializeToString,
+      ),
+      'PoliciesForDomain': grpc.unary_stream_rpc_method_handler(
+          servicer.PoliciesForDomain,
+          request_deserializer=dsetapi_dot_dset__pb2.PoliciesForDomainRequest.FromString,
+          response_serializer=dsetapi_dot_dset__pb2.PoliciesForDomainResult.SerializeToString,
       ),
       'RedirsByDestination': grpc.unary_stream_rpc_method_handler(
           servicer.RedirsByDestination,

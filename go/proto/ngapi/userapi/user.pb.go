@@ -39,7 +39,7 @@ func (m *Metadata) Reset()         { *m = Metadata{} }
 func (m *Metadata) String() string { return proto.CompactTextString(m) }
 func (*Metadata) ProtoMessage()    {}
 func (*Metadata) Descriptor() ([]byte, []int) {
-	return fileDescriptor_user_dfb6256e6e67aaba, []int{0}
+	return fileDescriptor_user_abe6052286b60b03, []int{0}
 }
 func (m *Metadata) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_Metadata.Unmarshal(m, b)
@@ -83,7 +83,7 @@ func (m *DatasetsRequest) Reset()         { *m = DatasetsRequest{} }
 func (m *DatasetsRequest) String() string { return proto.CompactTextString(m) }
 func (*DatasetsRequest) ProtoMessage()    {}
 func (*DatasetsRequest) Descriptor() ([]byte, []int) {
-	return fileDescriptor_user_dfb6256e6e67aaba, []int{1}
+	return fileDescriptor_user_abe6052286b60b03, []int{1}
 }
 func (m *DatasetsRequest) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_DatasetsRequest.Unmarshal(m, b)
@@ -113,7 +113,7 @@ type Dataset struct {
 	// Non-zero if the dataset has been deleted.
 	Deleted *timestamp.Timestamp `protobuf:"bytes,4,opt,name=deleted,proto3" json:"deleted,omitempty"`
 	// Is the current user restricted to readonly access? If so, capture
-	// submission and other write operation swill be denied.
+	// submission and other write operations will be denied.
 	Readonly             bool     `protobuf:"varint,5,opt,name=readonly,proto3" json:"readonly,omitempty"`
 	XXX_NoUnkeyedLiteral struct{} `json:"-"`
 	XXX_unrecognized     []byte   `json:"-"`
@@ -124,7 +124,7 @@ func (m *Dataset) Reset()         { *m = Dataset{} }
 func (m *Dataset) String() string { return proto.CompactTextString(m) }
 func (*Dataset) ProtoMessage()    {}
 func (*Dataset) Descriptor() ([]byte, []int) {
-	return fileDescriptor_user_dfb6256e6e67aaba, []int{2}
+	return fileDescriptor_user_abe6052286b60b03, []int{2}
 }
 func (m *Dataset) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_Dataset.Unmarshal(m, b)
@@ -193,7 +193,7 @@ func (m *TempCaptureRequest) Reset()         { *m = TempCaptureRequest{} }
 func (m *TempCaptureRequest) String() string { return proto.CompactTextString(m) }
 func (*TempCaptureRequest) ProtoMessage()    {}
 func (*TempCaptureRequest) Descriptor() ([]byte, []int) {
-	return fileDescriptor_user_dfb6256e6e67aaba, []int{3}
+	return fileDescriptor_user_abe6052286b60b03, []int{3}
 }
 func (m *TempCaptureRequest) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_TempCaptureRequest.Unmarshal(m, b)
@@ -253,7 +253,7 @@ func (m *TempCaptureResult) Reset()         { *m = TempCaptureResult{} }
 func (m *TempCaptureResult) String() string { return proto.CompactTextString(m) }
 func (*TempCaptureResult) ProtoMessage()    {}
 func (*TempCaptureResult) Descriptor() ([]byte, []int) {
-	return fileDescriptor_user_dfb6256e6e67aaba, []int{4}
+	return fileDescriptor_user_abe6052286b60b03, []int{4}
 }
 func (m *TempCaptureResult) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_TempCaptureResult.Unmarshal(m, b)
@@ -439,10 +439,10 @@ var _User_serviceDesc = grpc.ServiceDesc{
 }
 
 func init() {
-	proto.RegisterFile("proto/ngapi/userapi/user.proto", fileDescriptor_user_dfb6256e6e67aaba)
+	proto.RegisterFile("proto/ngapi/userapi/user.proto", fileDescriptor_user_abe6052286b60b03)
 }
 
-var fileDescriptor_user_dfb6256e6e67aaba = []byte{
+var fileDescriptor_user_abe6052286b60b03 = []byte{
 	// 404 bytes of a gzipped FileDescriptorProto
 	0x1f, 0x8b, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02, 0xff, 0x84, 0x92, 0xcd, 0x6e, 0xd3, 0x40,
 	0x10, 0xc7, 0xb5, 0x71, 0xda, 0x24, 0x13, 0x04, 0x64, 0x84, 0xd0, 0xca, 0x48, 0x60, 0x59, 0x20,

@@ -4,7 +4,7 @@
   <head>
     <title>Protocol Documentation</title>
     <meta charset="UTF-8">
-    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Ubuntu:400,700,400italic"/>
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Ubuntu:400,700,400italic"/>
     <style>
       body {
         width: 60em;
@@ -287,6 +287,14 @@
                 </li>
               
                 <li>
+                  <a href="#io.netograph.dset.PoliciesForDomainRequest"><span class="badge">M</span>PoliciesForDomainRequest</a>
+                </li>
+              
+                <li>
+                  <a href="#io.netograph.dset.PoliciesForDomainResult"><span class="badge">M</span>PoliciesForDomainResult</a>
+                </li>
+              
+                <li>
                   <a href="#io.netograph.dset.RedirsByDestinationRequest"><span class="badge">M</span>RedirsByDestinationRequest</a>
                 </li>
               
@@ -525,7 +533,7 @@
                   <td>flows</td>
                   <td><a href="#int32">int32</a></td>
                   <td></td>
-                  <td><p>Th enumber of flows. </p></td>
+                  <td><p>The number of flows. </p></td>
                 </tr>
               
                 <tr>
@@ -1448,6 +1456,102 @@ results. </p></td>
 
         
       
+        <h3 id="io.netograph.dset.PoliciesForDomainRequest">PoliciesForDomainRequest</h3>
+        <p></p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>dataset</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p>The name of the dataset to query. </p></td>
+                </tr>
+              
+                <tr>
+                  <td>query</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>limit</td>
+                  <td><a href="#int64">int64</a></td>
+                  <td></td>
+                  <td><p>Limit the number of records that will be returned. </p></td>
+                </tr>
+              
+                <tr>
+                  <td>resume</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p>A resumption token, previously returned by an identical query. </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+        
+
+        
+      
+        <h3 id="io.netograph.dset.PoliciesForDomainResult">PoliciesForDomainResult</h3>
+        <p></p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>type</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>url</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>root</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>capsummary</td>
+                  <td><a href="#io.netograph.dset.CapSummary">CapSummary</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>resume</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p>A resumption token that can be passed to an identical query to resume
+results. </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+        
+
+        
+      
         <h3 id="io.netograph.dset.RedirsByDestinationRequest">RedirsByDestinationRequest</h3>
         <p></p>
 
@@ -2206,7 +2310,7 @@ length of this history is capped at ~100.</p></td>
                 <td>DomainSearch</td>
                 <td><a href="#io.netograph.dset.DomainSearchRequest">DomainSearchRequest</a></td>
                 <td><a href="#io.netograph.dset.DomainSearchResult">DomainSearchResult</a></td>
-                <td><p>Retrieve the capture log for a dataset, in reverse chronological order.</p></td>
+                <td><p>Retrieve the capture log for a specified domain in a dataset.</p></td>
               </tr>
             
               <tr>
@@ -2257,6 +2361,13 @@ length of this history is capped at ~100.</p></td>
                 <td><a href="#io.netograph.dset.MetaSearchRequest">MetaSearchRequest</a></td>
                 <td><a href="#io.netograph.dset.MetaSearchResult">MetaSearchResult</a></td>
                 <td><p>Search the dataset log for captures matching a metadata query.</p></td>
+              </tr>
+            
+              <tr>
+                <td>PoliciesForDomain</td>
+                <td><a href="#io.netograph.dset.PoliciesForDomainRequest">PoliciesForDomainRequest</a></td>
+                <td><a href="#io.netograph.dset.PoliciesForDomainResult">PoliciesForDomainResult</a></td>
+                <td><p>Find all policies for a specified domain query.</p></td>
               </tr>
             
               <tr>
@@ -2362,7 +2473,7 @@ length of this history is capped at ~100.</p></td>
                   <td><a href="#bool">bool</a></td>
                   <td></td>
                   <td><p>Is the current user restricted to readonly access? If so, capture
-submission and other write operation swill be denied. </p></td>
+submission and other write operations will be denied. </p></td>
                 </tr>
               
             </tbody>
