@@ -410,10 +410,14 @@ message PoliciesForDomainResult {
     string type = 1;
     string url = 2;
     string root = 3;
-    CapSummary capsummary = 4;
+    string policyid = 4;
+    // The most recent capture on which we observed this policy
+    CapSummary capsummary = 5;
+    // The most recent capture for the policy itself
+    CapSummary policycapsummary = 6;
     // A resumption token that can be passed to an identical query to resume
     // results.
-    string resume = 5;
+    string resume = 7;
 }
 
 // Methods that operate on an individual dataset, either public or private.

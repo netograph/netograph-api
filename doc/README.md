@@ -573,7 +573,9 @@ Metadata is arbitrary information associated with a capture.
 | type | [string](#string) |  |  |
 | url | [string](#string) |  |  |
 | root | [string](#string) |  |  |
-| capsummary | [CapSummary](#io.netograph.dset.CapSummary) |  |  |
+| policyid | [string](#string) |  |  |
+| capsummary | [CapSummary](#io.netograph.dset.CapSummary) |  | The most recent capture on which we observed this policy |
+| policycapsummary | [CapSummary](#io.netograph.dset.CapSummary) |  | The most recent capture for the policy itself |
 | resume | [string](#string) |  | A resumption token that can be passed to an identical query to resume results. |
 
 
