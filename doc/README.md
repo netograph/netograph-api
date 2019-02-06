@@ -33,6 +33,8 @@
     - [Metadata](#io.netograph.dset.Metadata)
     - [PoliciesForDomainRequest](#io.netograph.dset.PoliciesForDomainRequest)
     - [PoliciesForDomainResult](#io.netograph.dset.PoliciesForDomainResult)
+    - [PolicyCaptureLogRequest](#io.netograph.dset.PolicyCaptureLogRequest)
+    - [PolicyCaptureLogResult](#io.netograph.dset.PolicyCaptureLogResult)
     - [RedirsByDestinationRequest](#io.netograph.dset.RedirsByDestinationRequest)
     - [RedirsByDestinationResult](#io.netograph.dset.RedirsByDestinationResult)
     - [RedirsBySourceRequest](#io.netograph.dset.RedirsBySourceRequest)
@@ -81,7 +83,7 @@
 <a name="io.netograph.dset.CapSummary"></a>
 
 ### CapSummary
-A capture summary - this is the data that you will recieve for any query that
+A capture summary - this is the data that you will receive for any query that
 returns captures.
 
 
@@ -117,7 +119,7 @@ returns captures.
 <a name="io.netograph.dset.CapSummary.Root"></a>
 
 ### CapSummary.Root
-Roots that resulted from loading a URL in the the submitted plan. You can
+Roots that resulted from loading a URL in the submitted plan. You can
 think of this as the trajectory of redirections followed to reach the
 final resting URL.
 
@@ -467,9 +469,10 @@ final resting URL.
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | dataset | [string](#string) |  | The name of the dataset to query. |
-| id | [string](#string) |  |  |
+| id | [string](#string) |  | The ID of the capture |
 | limit | [int64](#int64) |  | Limit the number of records that will be returned. |
 | resume | [string](#string) |  | A resumption token, previously returned by an identical query. |
+| prefix | [string](#string) |  | An optional key prefix |
 
 
 
@@ -576,6 +579,41 @@ Metadata is arbitrary information associated with a capture.
 | policyid | [string](#string) |  |  |
 | capsummary | [CapSummary](#io.netograph.dset.CapSummary) |  | The most recent capture on which we observed this policy |
 | policycapsummary | [CapSummary](#io.netograph.dset.CapSummary) |  | The most recent capture for the policy itself |
+| resume | [string](#string) |  | A resumption token that can be passed to an identical query to resume results. |
+
+
+
+
+
+
+<a name="io.netograph.dset.PolicyCaptureLogRequest"></a>
+
+### PolicyCaptureLogRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| dataset | [string](#string) |  | The name of the dataset to query. |
+| limit | [int64](#int64) |  | Limit the number of records that will be returned. |
+| resume | [string](#string) |  | A resumption token, previously returned by an identical query. |
+| start | [google.protobuf.Timestamp](#google.protobuf.Timestamp) |  | The capture log is in reverse chronological order, so the start of the range is the most recent time. If start is zero, it&#39;s taken to be the largest possible time value. |
+| end | [google.protobuf.Timestamp](#google.protobuf.Timestamp) |  | The capture log is in reverse chronological order, so the end of the range is the least recent time. If end is zero, it&#39;s taken to be the smallest possible time value. |
+
+
+
+
+
+
+<a name="io.netograph.dset.PolicyCaptureLogResult"></a>
+
+### PolicyCaptureLogResult
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| capsummary | [CapSummary](#io.netograph.dset.CapSummary) |  | A capture summary for this result. |
 | resume | [string](#string) |  | A resumption token that can be passed to an identical query to resume results. |
 
 
@@ -810,7 +848,7 @@ Metadata is arbitrary information associated with a capture.
 | dataset | [string](#string) |  | The name of the dataset to query. |
 | notification | [string](#string) |  | A URL to which a notification will be posted when capture completes |
 | urls | [string](#string) | repeated | A sequence of URLs to visit in order |
-| meta | [Metadata](#io.netograph.dset.Metadata) | repeated | Metadata to associate with the apture |
+| meta | [Metadata](#io.netograph.dset.Metadata) | repeated | Metadata to associate with the capture |
 | skiprecent | [int64](#int64) |  | Skip capture if we&#39;ve seen this exact URL within a specified number of seconds |
 | zone | [string](#string) |  | Capture zone - &#34;us&#34; or &#34;eu&#34;. If unspecified, we choose based on availability. |
 | extended | [bool](#bool) |  | Extended capture includes full-page screenshot and page content formats |
@@ -887,24 +925,25 @@ Methods that operate on an individual dataset, either public or private.
 | ----------- | ------------ | ------------- | ------------|
 | SubmitCapture | [SubmitCaptureRequest](#io.netograph.dset.SubmitCaptureRequest) | [SubmitCaptureResult](#io.netograph.dset.SubmitCaptureResult) | Submit a capture request to a dataset. |
 | CaptureInfo | [CaptureInfoRequest](#io.netograph.dset.CaptureInfoRequest) | [CaptureInfoResult](#io.netograph.dset.CaptureInfoResult) | Retrieve info for a specified capture by ID within a dataset. |
-| CaptureLog | [CaptureLogRequest](#io.netograph.dset.CaptureLogRequest) | [CaptureLogResult](#io.netograph.dset.CaptureLogResult) | Retrieve the capture log for a dataset, in reverse chronological order. |
-| DomainHistory | [DomainHistoryRequest](#io.netograph.dset.DomainHistoryRequest) | [DomainHistoryResult](#io.netograph.dset.DomainHistoryResult) | Retrieve the capture history for a specified domain in a dataset. The length of this history is capped at ~100. |
-| DomainSearch | [DomainSearchRequest](#io.netograph.dset.DomainSearchRequest) | [DomainSearchResult](#io.netograph.dset.DomainSearchResult) | Retrieve the capture log for a specified domain in a dataset. |
-| DomainsForIP | [DomainsForIPRequest](#io.netograph.dset.DomainsForIPRequest) | [DomainsForIPResult](#io.netograph.dset.DomainsForIPResult) | Find all domains in the dataset associated with a given IP address. |
-| IPHistory | [IPHistoryRequest](#io.netograph.dset.IPHistoryRequest) | [IPHistoryResult](#io.netograph.dset.IPHistoryResult) | Retrieve the capture history for a specified IP in a dataset. The length of this history is capped at ~100. |
-| IPLogSearch | [IPLogSearchRequest](#io.netograph.dset.IPLogSearchRequest) | [IPLogSearchResult](#io.netograph.dset.IPLogSearchResult) | Search the dataset log for captures that contain a given IP. |
-| IPSearch | [IPSearchRequest](#io.netograph.dset.IPSearchRequest) | [IPSearchResult](#io.netograph.dset.IPSearchResult) | Find all IPs in the dataset that match an address and integer netmask. |
-| IPsForDomain | [IPsForDomainRequest](#io.netograph.dset.IPsForDomainRequest) | [IPsForDomainResult](#io.netograph.dset.IPsForDomainResult) | Find all IPs in a dataset associated with a given domain. |
-| MetaForCapture | [MetaForCaptureRequest](#io.netograph.dset.MetaForCaptureRequest) | [MetaForCaptureResult](#io.netograph.dset.MetaForCaptureResult) | Get metadata associated with a specified capture within a dataset. |
-| MetaSearch | [MetaSearchRequest](#io.netograph.dset.MetaSearchRequest) | [MetaSearchResult](#io.netograph.dset.MetaSearchResult) | Search the dataset log for captures matching a metadata query. |
-| PoliciesForDomain | [PoliciesForDomainRequest](#io.netograph.dset.PoliciesForDomainRequest) | [PoliciesForDomainResult](#io.netograph.dset.PoliciesForDomainResult) | Find all policies for a specified domain query. |
-| RedirsByDestination | [RedirsByDestinationRequest](#io.netograph.dset.RedirsByDestinationRequest) | [RedirsByDestinationResult](#io.netograph.dset.RedirsByDestinationResult) | Find all redirections in the dataset for a given destination domain query. |
-| RedirsBySource | [RedirsBySourceRequest](#io.netograph.dset.RedirsBySourceRequest) | [RedirsBySourceResult](#io.netograph.dset.RedirsBySourceResult) | Find all redirections in the dataset for a given source domain query. |
-| RootLogSearch | [RootLogSearchRequest](#io.netograph.dset.RootLogSearchRequest) | [RootLogSearchResult](#io.netograph.dset.RootLogSearchResult) | Search the dataset log for captures where any root domain matches a given query. |
-| RootsForSatellite | [RootsForSatelliteRequest](#io.netograph.dset.RootsForSatelliteRequest) | [RootsForSatelliteResult](#io.netograph.dset.RootsForSatelliteResult) | Find all roots in a dataset that are associated with a given satellite query. |
-| SatelliteLogSearch | [SatelliteLogSearchRequest](#io.netograph.dset.SatelliteLogSearchRequest) | [SatelliteLogSearchResult](#io.netograph.dset.SatelliteLogSearchResult) | Search the dataset log for captures where any satellite domain matches a given query. |
-| SatellitesForRoot | [SatellitesForRootRequest](#io.netograph.dset.SatellitesForRootRequest) | [SatellitesForRootResult](#io.netograph.dset.SatellitesForRootResult) | Find all satellites in the dataset that are associated with a given root query. |
-| URLLogSearch | [URLLogSearchRequest](#io.netograph.dset.URLLogSearchRequest) | [URLLogSearchResult](#io.netograph.dset.URLLogSearchResult) | Search the dataset log for captures where any root URL matches a given URL query. |
+| CaptureLog | [CaptureLogRequest](#io.netograph.dset.CaptureLogRequest) | [CaptureLogResult](#io.netograph.dset.CaptureLogResult) stream | Retrieve the capture log for a dataset, in reverse chronological order. |
+| DomainHistory | [DomainHistoryRequest](#io.netograph.dset.DomainHistoryRequest) | [DomainHistoryResult](#io.netograph.dset.DomainHistoryResult) stream | Retrieve the capture history for a specified domain in a dataset. The length of this history is capped at ~100. |
+| DomainSearch | [DomainSearchRequest](#io.netograph.dset.DomainSearchRequest) | [DomainSearchResult](#io.netograph.dset.DomainSearchResult) stream | Retrieve the capture log for a specified domain in a dataset. |
+| DomainsForIP | [DomainsForIPRequest](#io.netograph.dset.DomainsForIPRequest) | [DomainsForIPResult](#io.netograph.dset.DomainsForIPResult) stream | Find all domains in the dataset associated with a given IP address. |
+| IPHistory | [IPHistoryRequest](#io.netograph.dset.IPHistoryRequest) | [IPHistoryResult](#io.netograph.dset.IPHistoryResult) stream | Retrieve the capture history for a specified IP in a dataset. The length of this history is capped at ~100. |
+| IPLogSearch | [IPLogSearchRequest](#io.netograph.dset.IPLogSearchRequest) | [IPLogSearchResult](#io.netograph.dset.IPLogSearchResult) stream | Search the dataset log for captures that contain a given IP. |
+| IPSearch | [IPSearchRequest](#io.netograph.dset.IPSearchRequest) | [IPSearchResult](#io.netograph.dset.IPSearchResult) stream | Find all IPs in the dataset that match an address and integer netmask. |
+| IPsForDomain | [IPsForDomainRequest](#io.netograph.dset.IPsForDomainRequest) | [IPsForDomainResult](#io.netograph.dset.IPsForDomainResult) stream | Find all IPs in a dataset associated with a given domain. |
+| MetaForCapture | [MetaForCaptureRequest](#io.netograph.dset.MetaForCaptureRequest) | [MetaForCaptureResult](#io.netograph.dset.MetaForCaptureResult) stream | Get metadata associated with a specified capture within a dataset. |
+| MetaSearch | [MetaSearchRequest](#io.netograph.dset.MetaSearchRequest) | [MetaSearchResult](#io.netograph.dset.MetaSearchResult) stream | Search the dataset log for captures matching a metadata query. |
+| PoliciesForDomain | [PoliciesForDomainRequest](#io.netograph.dset.PoliciesForDomainRequest) | [PoliciesForDomainResult](#io.netograph.dset.PoliciesForDomainResult) stream | Find all policies for a specified domain query. |
+| PolicyCaptureLog | [PolicyCaptureLogRequest](#io.netograph.dset.PolicyCaptureLogRequest) | [PolicyCaptureLogResult](#io.netograph.dset.PolicyCaptureLogResult) stream | Retrieve the policy capture log for a dataset, in reverse chronological order. |
+| RedirsByDestination | [RedirsByDestinationRequest](#io.netograph.dset.RedirsByDestinationRequest) | [RedirsByDestinationResult](#io.netograph.dset.RedirsByDestinationResult) stream | Find all redirections in the dataset for a given destination domain query. |
+| RedirsBySource | [RedirsBySourceRequest](#io.netograph.dset.RedirsBySourceRequest) | [RedirsBySourceResult](#io.netograph.dset.RedirsBySourceResult) stream | Find all redirections in the dataset for a given source domain query. |
+| RootLogSearch | [RootLogSearchRequest](#io.netograph.dset.RootLogSearchRequest) | [RootLogSearchResult](#io.netograph.dset.RootLogSearchResult) stream | Search the dataset log for captures where any root domain matches a given query. |
+| RootsForSatellite | [RootsForSatelliteRequest](#io.netograph.dset.RootsForSatelliteRequest) | [RootsForSatelliteResult](#io.netograph.dset.RootsForSatelliteResult) stream | Find all roots in a dataset that are associated with a given satellite query. |
+| SatelliteLogSearch | [SatelliteLogSearchRequest](#io.netograph.dset.SatelliteLogSearchRequest) | [SatelliteLogSearchResult](#io.netograph.dset.SatelliteLogSearchResult) stream | Search the dataset log for captures where any satellite domain matches a given query. |
+| SatellitesForRoot | [SatellitesForRootRequest](#io.netograph.dset.SatellitesForRootRequest) | [SatellitesForRootResult](#io.netograph.dset.SatellitesForRootResult) stream | Find all satellites in the dataset that are associated with a given root query. |
+| URLLogSearch | [URLLogSearchRequest](#io.netograph.dset.URLLogSearchRequest) | [URLLogSearchResult](#io.netograph.dset.URLLogSearchResult) stream | Search the dataset log for captures where any root URL matches a given URL query. |
 
  
 
@@ -1011,7 +1050,7 @@ Methods that operate at the level of the user account.
 | Method Name | Request Type | Response Type | Description |
 | ----------- | ------------ | ------------- | ------------|
 | TempCapture | [TempCaptureRequest](#io.netograph.user.TempCaptureRequest) | [TempCaptureResult](#io.netograph.user.TempCaptureResult) | Request a temporary capture. Temporary captures are not stored in a dataset, and the capture assets will be available for download for 24 hours before being deleted. |
-| Datasets | [DatasetsRequest](#io.netograph.user.DatasetsRequest) | [Dataset](#io.netograph.user.Dataset) | List all datasets to which the authorizing account has access. This includes public datasets, which will be marked readonly. |
+| Datasets | [DatasetsRequest](#io.netograph.user.DatasetsRequest) | [Dataset](#io.netograph.user.Dataset) stream | List all datasets to which the authorizing account has access. This includes public datasets, which will be marked readonly. |
 
  
 

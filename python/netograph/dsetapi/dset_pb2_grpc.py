@@ -79,6 +79,11 @@ class DsetStub(object):
         request_serializer=dsetapi_dot_dset__pb2.PoliciesForDomainRequest.SerializeToString,
         response_deserializer=dsetapi_dot_dset__pb2.PoliciesForDomainResult.FromString,
         )
+    self.PolicyCaptureLog = channel.unary_stream(
+        '/io.netograph.dset.Dset/PolicyCaptureLog',
+        request_serializer=dsetapi_dot_dset__pb2.PolicyCaptureLogRequest.SerializeToString,
+        response_deserializer=dsetapi_dot_dset__pb2.PolicyCaptureLogResult.FromString,
+        )
     self.RedirsByDestination = channel.unary_stream(
         '/io.netograph.dset.Dset/RedirsByDestination',
         request_serializer=dsetapi_dot_dset__pb2.RedirsByDestinationRequest.SerializeToString,
@@ -213,6 +218,13 @@ class DsetServicer(object):
     context.set_details('Method not implemented!')
     raise NotImplementedError('Method not implemented!')
 
+  def PolicyCaptureLog(self, request, context):
+    """Retrieve the policy capture log for a dataset, in reverse chronological order.
+    """
+    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+    context.set_details('Method not implemented!')
+    raise NotImplementedError('Method not implemented!')
+
   def RedirsByDestination(self, request, context):
     """Find all redirections in the dataset for a given destination domain query.
     """
@@ -329,6 +341,11 @@ def add_DsetServicer_to_server(servicer, server):
           servicer.PoliciesForDomain,
           request_deserializer=dsetapi_dot_dset__pb2.PoliciesForDomainRequest.FromString,
           response_serializer=dsetapi_dot_dset__pb2.PoliciesForDomainResult.SerializeToString,
+      ),
+      'PolicyCaptureLog': grpc.unary_stream_rpc_method_handler(
+          servicer.PolicyCaptureLog,
+          request_deserializer=dsetapi_dot_dset__pb2.PolicyCaptureLogRequest.FromString,
+          response_serializer=dsetapi_dot_dset__pb2.PolicyCaptureLogResult.SerializeToString,
       ),
       'RedirsByDestination': grpc.unary_stream_rpc_method_handler(
           servicer.RedirsByDestination,

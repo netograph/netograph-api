@@ -4,7 +4,7 @@ import "google/protobuf/timestamp.proto";
 package io.netograph.dset;
 option go_package = "dsetapi";
 
-// A capture summary - this is the data that you will recieve for any query that
+// A capture summary - this is the data that you will receive for any query that
 // returns captures.
 message CapSummary {
     message Plan {
@@ -12,7 +12,7 @@ message CapSummary {
         repeated string urls = 1;
     }
 
-    // Roots that resulted from loading a URL in the the submitted plan. You can
+    // Roots that resulted from loading a URL in the submitted plan. You can
     // think of this as the trajectory of redirections followed to reach the
     // final resting URL.
     message Root {
@@ -210,11 +210,14 @@ message IPsForDomainResult {
 message MetaForCaptureRequest {
     // The name of the dataset to query.
     string dataset = 1;
+    // The ID of the capture
     string id = 2;
     // Limit the number of records that will be returned.
     int64 limit = 3;
     // A resumption token, previously returned by an identical query.
     string resume = 4;
+    // An optional key prefix
+    string prefix = 5;
 }
 message MetaForCaptureResult {
     Metadata meta = 1;
@@ -325,7 +328,7 @@ message SubmitCaptureRequest {
     string notification = 2;
     // A sequence of URLs to visit in order
     repeated string urls = 3;
-    // Metadata to associate with the apture
+    // Metadata to associate with the capture
     repeated Metadata meta = 4;
     // Skip capture if we've seen this exact URL within a specified number of seconds
     int64 skiprecent = 5;
@@ -422,6 +425,31 @@ message PoliciesForDomainResult {
     string resume = 7;
 }
 
+message PolicyCaptureLogRequest {
+    // The name of the dataset to query.
+    string dataset = 1;
+    // Limit the number of records that will be returned.
+    int64 limit = 2;
+    // A resumption token, previously returned by an identical query.
+    string resume = 3;
+    // The capture log is in reverse chronological order, so the start of the
+    // range is the most recent time. If start is zero, it's taken to be the
+    // largest possible time value.
+    google.protobuf.Timestamp start = 4;
+    // The capture log is in reverse chronological order, so the end of the
+    // range is the least recent time. If end is zero, it's taken to be the
+    // smallest possible time value.
+    google.protobuf.Timestamp end = 5;
+}
+message PolicyCaptureLogResult {
+    // A capture summary for this result.
+    CapSummary capsummary = 1;
+    // A resumption token that can be passed to an identical query to resume
+    // results.
+    string resume = 2;
+}
+
+
 // Methods that operate on an individual dataset, either public or private.
 service Dset {
     // Submit a capture request to a dataset.
@@ -464,6 +492,9 @@ service Dset {
 
     // Find all policies for a specified domain query.
     rpc PoliciesForDomain(PoliciesForDomainRequest) returns (stream PoliciesForDomainResult);
+
+    // Retrieve the policy capture log for a dataset, in reverse chronological order.
+    rpc PolicyCaptureLog(PolicyCaptureLogRequest) returns (stream PolicyCaptureLogResult);
 
     // Find all redirections in the dataset for a given destination domain query.
     rpc RedirsByDestination(RedirsByDestinationRequest) returns (stream RedirsByDestinationResult);
