@@ -14,7 +14,7 @@ func policyCaptureLogCommand() *cobra.Command {
 	var end *string
 	cmd := &cobra.Command{
 		Use:     "policycapturelog",
-		Aliases: []string{"caplog"},
+		Aliases: []string{"pcaplog"},
 		Short:   "Log of policy captures in reverse chronological order",
 		Long: `
 Log of captures in reverse chronological order
