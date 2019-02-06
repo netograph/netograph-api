@@ -7,7 +7,7 @@ import (
 	"github.com/spf13/viper"
 )
 
-const VERSION = "0.5"
+const VERSION = "0.6"
 
 var RootCmd = &cobra.Command{
 	Use:          "ngc",
