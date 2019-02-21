@@ -4,6 +4,13 @@ from netograph.dsetapi import dset_pb2_grpc
 from netograph.userapi import user_pb2_grpc
 
 
+common_options = [
+    ('grpc.keepalive_time_ms', 300000),
+    ('grpc.ssl_target_name_override', "grpc.netograph.io"),
+    ('grpc.keepalive_permit_without_calls', 1),
+]
+
+
 def connect_dset(token):
     channel = grpc.secure_channel(
         'grpc.netograph.io:443',
@@ -11,9 +18,7 @@ def connect_dset(token):
             grpc.ssl_channel_credentials(),
             grpc.access_token_call_credentials(token),
         ),
-        options=[
-            ('grpc.ssl_target_name_override', "grpc.netograph.io"),
-        ]
+        options=common_options,
     )
     return dset_pb2_grpc.DsetStub(channel)
 
@@ -25,8 +30,6 @@ def connect_user(token):
             grpc.ssl_channel_credentials(),
             grpc.access_token_call_credentials(token),
         ),
-        options=[
-            ('grpc.ssl_target_name_override', "grpc.netograph.io"),
-        ]
+        options=common_options,
     )
     return user_pb2_grpc.UserStub(channel)

@@ -10,7 +10,7 @@ setup(
     packages=find_packages(),
     include_package_data=True,
     install_requires=[
-        "grpcio>=1.13",
+        "grpcio==1.19.0rc1",
         "googleapis-common-protos"
     ],
     extras_require={
