@@ -1,5 +1,5 @@
 # Protocol Documentation
-<a name="top"></a>
+<a name="top"/>
 
 ## Table of Contents
 
@@ -73,14 +73,14 @@
 
 
 
-<a name="proto/ngapi/dsetapi/dset.proto"></a>
+<a name="proto/ngapi/dsetapi/dset.proto"/>
 <p align="right"><a href="#top">Top</a></p>
 
 ## proto/ngapi/dsetapi/dset.proto
 
 
 
-<a name="io.netograph.dset.CapSummary"></a>
+<a name="io.netograph.dset.CapSummary"/>
 
 ### CapSummary
 A capture summary - this is the data that you will receive for any query that
@@ -101,7 +101,7 @@ returns captures.
 
 
 
-<a name="io.netograph.dset.CapSummary.Plan"></a>
+<a name="io.netograph.dset.CapSummary.Plan"/>
 
 ### CapSummary.Plan
 
@@ -116,7 +116,7 @@ returns captures.
 
 
 
-<a name="io.netograph.dset.CapSummary.Root"></a>
+<a name="io.netograph.dset.CapSummary.Root"/>
 
 ### CapSummary.Root
 Roots that resulted from loading a URL in the submitted plan. You can
@@ -133,7 +133,7 @@ final resting URL.
 
 
 
-<a name="io.netograph.dset.CapSummary.Stats"></a>
+<a name="io.netograph.dset.CapSummary.Stats"/>
 
 ### CapSummary.Stats
 
@@ -150,7 +150,7 @@ final resting URL.
 
 
 
-<a name="io.netograph.dset.CaptureInfoRequest"></a>
+<a name="io.netograph.dset.CaptureInfoRequest"/>
 
 ### CaptureInfoRequest
 
@@ -166,7 +166,7 @@ final resting URL.
 
 
 
-<a name="io.netograph.dset.CaptureInfoResult"></a>
+<a name="io.netograph.dset.CaptureInfoResult"/>
 
 ### CaptureInfoResult
 
@@ -181,7 +181,7 @@ final resting URL.
 
 
 
-<a name="io.netograph.dset.CaptureLogRequest"></a>
+<a name="io.netograph.dset.CaptureLogRequest"/>
 
 ### CaptureLogRequest
 
@@ -200,7 +200,7 @@ final resting URL.
 
 
 
-<a name="io.netograph.dset.CaptureLogResult"></a>
+<a name="io.netograph.dset.CaptureLogResult"/>
 
 ### CaptureLogResult
 
@@ -216,7 +216,7 @@ final resting URL.
 
 
 
-<a name="io.netograph.dset.DomainHistoryRequest"></a>
+<a name="io.netograph.dset.DomainHistoryRequest"/>
 
 ### DomainHistoryRequest
 
@@ -233,7 +233,7 @@ final resting URL.
 
 
 
-<a name="io.netograph.dset.DomainHistoryResult"></a>
+<a name="io.netograph.dset.DomainHistoryResult"/>
 
 ### DomainHistoryResult
 
@@ -248,7 +248,7 @@ final resting URL.
 
 
 
-<a name="io.netograph.dset.DomainSearchRequest"></a>
+<a name="io.netograph.dset.DomainSearchRequest"/>
 
 ### DomainSearchRequest
 
@@ -266,7 +266,7 @@ final resting URL.
 
 
 
-<a name="io.netograph.dset.DomainSearchResult"></a>
+<a name="io.netograph.dset.DomainSearchResult"/>
 
 ### DomainSearchResult
 
@@ -283,7 +283,7 @@ final resting URL.
 
 
 
-<a name="io.netograph.dset.DomainsForIPRequest"></a>
+<a name="io.netograph.dset.DomainsForIPRequest"/>
 
 ### DomainsForIPRequest
 
@@ -301,7 +301,7 @@ final resting URL.
 
 
 
-<a name="io.netograph.dset.DomainsForIPResult"></a>
+<a name="io.netograph.dset.DomainsForIPResult"/>
 
 ### DomainsForIPResult
 
@@ -320,7 +320,7 @@ final resting URL.
 
 
 
-<a name="io.netograph.dset.IPHistoryRequest"></a>
+<a name="io.netograph.dset.IPHistoryRequest"/>
 
 ### IPHistoryRequest
 
@@ -337,7 +337,7 @@ final resting URL.
 
 
 
-<a name="io.netograph.dset.IPHistoryResult"></a>
+<a name="io.netograph.dset.IPHistoryResult"/>
 
 ### IPHistoryResult
 
@@ -352,7 +352,7 @@ final resting URL.
 
 
 
-<a name="io.netograph.dset.IPLogSearchRequest"></a>
+<a name="io.netograph.dset.IPLogSearchRequest"/>
 
 ### IPLogSearchRequest
 
@@ -370,7 +370,7 @@ final resting URL.
 
 
 
-<a name="io.netograph.dset.IPLogSearchResult"></a>
+<a name="io.netograph.dset.IPLogSearchResult"/>
 
 ### IPLogSearchResult
 
@@ -387,7 +387,7 @@ final resting URL.
 
 
 
-<a name="io.netograph.dset.IPSearchRequest"></a>
+<a name="io.netograph.dset.IPSearchRequest"/>
 
 ### IPSearchRequest
 
@@ -406,7 +406,7 @@ final resting URL.
 
 
 
-<a name="io.netograph.dset.IPSearchResult"></a>
+<a name="io.netograph.dset.IPSearchResult"/>
 
 ### IPSearchResult
 
@@ -423,7 +423,7 @@ final resting URL.
 
 
 
-<a name="io.netograph.dset.IPsForDomainRequest"></a>
+<a name="io.netograph.dset.IPsForDomainRequest"/>
 
 ### IPsForDomainRequest
 
@@ -441,7 +441,7 @@ final resting URL.
 
 
 
-<a name="io.netograph.dset.IPsForDomainResult"></a>
+<a name="io.netograph.dset.IPsForDomainResult"/>
 
 ### IPsForDomainResult
 
@@ -460,7 +460,7 @@ final resting URL.
 
 
 
-<a name="io.netograph.dset.MetaForCaptureRequest"></a>
+<a name="io.netograph.dset.MetaForCaptureRequest"/>
 
 ### MetaForCaptureRequest
 
@@ -479,7 +479,7 @@ final resting URL.
 
 
 
-<a name="io.netograph.dset.MetaForCaptureResult"></a>
+<a name="io.netograph.dset.MetaForCaptureResult"/>
 
 ### MetaForCaptureResult
 
@@ -496,7 +496,7 @@ final resting URL.
 
 
 
-<a name="io.netograph.dset.MetaSearchRequest"></a>
+<a name="io.netograph.dset.MetaSearchRequest"/>
 
 ### MetaSearchRequest
 
@@ -514,7 +514,7 @@ final resting URL.
 
 
 
-<a name="io.netograph.dset.MetaSearchResult"></a>
+<a name="io.netograph.dset.MetaSearchResult"/>
 
 ### MetaSearchResult
 
@@ -531,7 +531,7 @@ final resting URL.
 
 
 
-<a name="io.netograph.dset.Metadata"></a>
+<a name="io.netograph.dset.Metadata"/>
 
 ### Metadata
 Metadata is arbitrary information associated with a capture.
@@ -547,7 +547,7 @@ Metadata is arbitrary information associated with a capture.
 
 
 
-<a name="io.netograph.dset.PoliciesForDomainRequest"></a>
+<a name="io.netograph.dset.PoliciesForDomainRequest"/>
 
 ### PoliciesForDomainRequest
 
@@ -565,7 +565,7 @@ Metadata is arbitrary information associated with a capture.
 
 
 
-<a name="io.netograph.dset.PoliciesForDomainResult"></a>
+<a name="io.netograph.dset.PoliciesForDomainResult"/>
 
 ### PoliciesForDomainResult
 
@@ -586,7 +586,7 @@ Metadata is arbitrary information associated with a capture.
 
 
 
-<a name="io.netograph.dset.PolicyCaptureLogRequest"></a>
+<a name="io.netograph.dset.PolicyCaptureLogRequest"/>
 
 ### PolicyCaptureLogRequest
 
@@ -605,7 +605,7 @@ Metadata is arbitrary information associated with a capture.
 
 
 
-<a name="io.netograph.dset.PolicyCaptureLogResult"></a>
+<a name="io.netograph.dset.PolicyCaptureLogResult"/>
 
 ### PolicyCaptureLogResult
 
@@ -621,7 +621,7 @@ Metadata is arbitrary information associated with a capture.
 
 
 
-<a name="io.netograph.dset.RedirsByDestinationRequest"></a>
+<a name="io.netograph.dset.RedirsByDestinationRequest"/>
 
 ### RedirsByDestinationRequest
 
@@ -639,7 +639,7 @@ Metadata is arbitrary information associated with a capture.
 
 
 
-<a name="io.netograph.dset.RedirsByDestinationResult"></a>
+<a name="io.netograph.dset.RedirsByDestinationResult"/>
 
 ### RedirsByDestinationResult
 
@@ -657,7 +657,7 @@ Metadata is arbitrary information associated with a capture.
 
 
 
-<a name="io.netograph.dset.RedirsBySourceRequest"></a>
+<a name="io.netograph.dset.RedirsBySourceRequest"/>
 
 ### RedirsBySourceRequest
 
@@ -675,7 +675,7 @@ Metadata is arbitrary information associated with a capture.
 
 
 
-<a name="io.netograph.dset.RedirsBySourceResult"></a>
+<a name="io.netograph.dset.RedirsBySourceResult"/>
 
 ### RedirsBySourceResult
 
@@ -693,7 +693,7 @@ Metadata is arbitrary information associated with a capture.
 
 
 
-<a name="io.netograph.dset.RootLogSearchRequest"></a>
+<a name="io.netograph.dset.RootLogSearchRequest"/>
 
 ### RootLogSearchRequest
 
@@ -711,7 +711,7 @@ Metadata is arbitrary information associated with a capture.
 
 
 
-<a name="io.netograph.dset.RootLogSearchResult"></a>
+<a name="io.netograph.dset.RootLogSearchResult"/>
 
 ### RootLogSearchResult
 
@@ -728,7 +728,7 @@ Metadata is arbitrary information associated with a capture.
 
 
 
-<a name="io.netograph.dset.RootsForSatelliteRequest"></a>
+<a name="io.netograph.dset.RootsForSatelliteRequest"/>
 
 ### RootsForSatelliteRequest
 
@@ -746,7 +746,7 @@ Metadata is arbitrary information associated with a capture.
 
 
 
-<a name="io.netograph.dset.RootsForSatelliteResult"></a>
+<a name="io.netograph.dset.RootsForSatelliteResult"/>
 
 ### RootsForSatelliteResult
 
@@ -765,7 +765,7 @@ Metadata is arbitrary information associated with a capture.
 
 
 
-<a name="io.netograph.dset.SatelliteLogSearchRequest"></a>
+<a name="io.netograph.dset.SatelliteLogSearchRequest"/>
 
 ### SatelliteLogSearchRequest
 
@@ -783,7 +783,7 @@ Metadata is arbitrary information associated with a capture.
 
 
 
-<a name="io.netograph.dset.SatelliteLogSearchResult"></a>
+<a name="io.netograph.dset.SatelliteLogSearchResult"/>
 
 ### SatelliteLogSearchResult
 
@@ -800,7 +800,7 @@ Metadata is arbitrary information associated with a capture.
 
 
 
-<a name="io.netograph.dset.SatellitesForRootRequest"></a>
+<a name="io.netograph.dset.SatellitesForRootRequest"/>
 
 ### SatellitesForRootRequest
 
@@ -818,7 +818,7 @@ Metadata is arbitrary information associated with a capture.
 
 
 
-<a name="io.netograph.dset.SatellitesForRootResult"></a>
+<a name="io.netograph.dset.SatellitesForRootResult"/>
 
 ### SatellitesForRootResult
 
@@ -837,7 +837,7 @@ Metadata is arbitrary information associated with a capture.
 
 
 
-<a name="io.netograph.dset.SubmitCaptureRequest"></a>
+<a name="io.netograph.dset.SubmitCaptureRequest"/>
 
 ### SubmitCaptureRequest
 
@@ -858,7 +858,7 @@ Metadata is arbitrary information associated with a capture.
 
 
 
-<a name="io.netograph.dset.SubmitCaptureResult"></a>
+<a name="io.netograph.dset.SubmitCaptureResult"/>
 
 ### SubmitCaptureResult
 
@@ -875,7 +875,7 @@ Metadata is arbitrary information associated with a capture.
 
 
 
-<a name="io.netograph.dset.URLLogSearchRequest"></a>
+<a name="io.netograph.dset.URLLogSearchRequest"/>
 
 ### URLLogSearchRequest
 
@@ -893,7 +893,7 @@ Metadata is arbitrary information associated with a capture.
 
 
 
-<a name="io.netograph.dset.URLLogSearchResult"></a>
+<a name="io.netograph.dset.URLLogSearchResult"/>
 
 ### URLLogSearchResult
 
@@ -916,47 +916,47 @@ Metadata is arbitrary information associated with a capture.
  
 
 
-<a name="io.netograph.dset.Dset"></a>
+<a name="io.netograph.dset.Dset"/>
 
 ### Dset
 Methods that operate on an individual dataset, either public or private.
 
 | Method Name | Request Type | Response Type | Description |
 | ----------- | ------------ | ------------- | ------------|
-| SubmitCapture | [SubmitCaptureRequest](#io.netograph.dset.SubmitCaptureRequest) | [SubmitCaptureResult](#io.netograph.dset.SubmitCaptureResult) | Submit a capture request to a dataset. |
-| CaptureInfo | [CaptureInfoRequest](#io.netograph.dset.CaptureInfoRequest) | [CaptureInfoResult](#io.netograph.dset.CaptureInfoResult) | Retrieve info for a specified capture by ID within a dataset. |
-| CaptureLog | [CaptureLogRequest](#io.netograph.dset.CaptureLogRequest) | [CaptureLogResult](#io.netograph.dset.CaptureLogResult) stream | Retrieve the capture log for a dataset, in reverse chronological order. |
-| DomainHistory | [DomainHistoryRequest](#io.netograph.dset.DomainHistoryRequest) | [DomainHistoryResult](#io.netograph.dset.DomainHistoryResult) stream | Retrieve the capture history for a specified domain in a dataset. The length of this history is capped at ~100. |
-| DomainSearch | [DomainSearchRequest](#io.netograph.dset.DomainSearchRequest) | [DomainSearchResult](#io.netograph.dset.DomainSearchResult) stream | Retrieve the capture log for a specified domain in a dataset. |
-| DomainsForIP | [DomainsForIPRequest](#io.netograph.dset.DomainsForIPRequest) | [DomainsForIPResult](#io.netograph.dset.DomainsForIPResult) stream | Find all domains in the dataset associated with a given IP address. |
-| IPHistory | [IPHistoryRequest](#io.netograph.dset.IPHistoryRequest) | [IPHistoryResult](#io.netograph.dset.IPHistoryResult) stream | Retrieve the capture history for a specified IP in a dataset. The length of this history is capped at ~100. |
-| IPLogSearch | [IPLogSearchRequest](#io.netograph.dset.IPLogSearchRequest) | [IPLogSearchResult](#io.netograph.dset.IPLogSearchResult) stream | Search the dataset log for captures that contain a given IP. |
-| IPSearch | [IPSearchRequest](#io.netograph.dset.IPSearchRequest) | [IPSearchResult](#io.netograph.dset.IPSearchResult) stream | Find all IPs in the dataset that match an address and integer netmask. |
-| IPsForDomain | [IPsForDomainRequest](#io.netograph.dset.IPsForDomainRequest) | [IPsForDomainResult](#io.netograph.dset.IPsForDomainResult) stream | Find all IPs in a dataset associated with a given domain. |
-| MetaForCapture | [MetaForCaptureRequest](#io.netograph.dset.MetaForCaptureRequest) | [MetaForCaptureResult](#io.netograph.dset.MetaForCaptureResult) stream | Get metadata associated with a specified capture within a dataset. |
-| MetaSearch | [MetaSearchRequest](#io.netograph.dset.MetaSearchRequest) | [MetaSearchResult](#io.netograph.dset.MetaSearchResult) stream | Search the dataset log for captures matching a metadata query. |
-| PoliciesForDomain | [PoliciesForDomainRequest](#io.netograph.dset.PoliciesForDomainRequest) | [PoliciesForDomainResult](#io.netograph.dset.PoliciesForDomainResult) stream | Find all policies for a specified domain query. |
-| PolicyCaptureLog | [PolicyCaptureLogRequest](#io.netograph.dset.PolicyCaptureLogRequest) | [PolicyCaptureLogResult](#io.netograph.dset.PolicyCaptureLogResult) stream | Retrieve the policy capture log for a dataset, in reverse chronological order. |
-| RedirsByDestination | [RedirsByDestinationRequest](#io.netograph.dset.RedirsByDestinationRequest) | [RedirsByDestinationResult](#io.netograph.dset.RedirsByDestinationResult) stream | Find all redirections in the dataset for a given destination domain query. |
-| RedirsBySource | [RedirsBySourceRequest](#io.netograph.dset.RedirsBySourceRequest) | [RedirsBySourceResult](#io.netograph.dset.RedirsBySourceResult) stream | Find all redirections in the dataset for a given source domain query. |
-| RootLogSearch | [RootLogSearchRequest](#io.netograph.dset.RootLogSearchRequest) | [RootLogSearchResult](#io.netograph.dset.RootLogSearchResult) stream | Search the dataset log for captures where any root domain matches a given query. |
-| RootsForSatellite | [RootsForSatelliteRequest](#io.netograph.dset.RootsForSatelliteRequest) | [RootsForSatelliteResult](#io.netograph.dset.RootsForSatelliteResult) stream | Find all roots in a dataset that are associated with a given satellite query. |
-| SatelliteLogSearch | [SatelliteLogSearchRequest](#io.netograph.dset.SatelliteLogSearchRequest) | [SatelliteLogSearchResult](#io.netograph.dset.SatelliteLogSearchResult) stream | Search the dataset log for captures where any satellite domain matches a given query. |
-| SatellitesForRoot | [SatellitesForRootRequest](#io.netograph.dset.SatellitesForRootRequest) | [SatellitesForRootResult](#io.netograph.dset.SatellitesForRootResult) stream | Find all satellites in the dataset that are associated with a given root query. |
-| URLLogSearch | [URLLogSearchRequest](#io.netograph.dset.URLLogSearchRequest) | [URLLogSearchResult](#io.netograph.dset.URLLogSearchResult) stream | Search the dataset log for captures where any root URL matches a given URL query. |
+| SubmitCapture | [SubmitCaptureRequest](#io.netograph.dset.SubmitCaptureRequest) | [SubmitCaptureResult](#io.netograph.dset.SubmitCaptureRequest) | Submit a capture request to a dataset. |
+| CaptureInfo | [CaptureInfoRequest](#io.netograph.dset.CaptureInfoRequest) | [CaptureInfoResult](#io.netograph.dset.CaptureInfoRequest) | Retrieve info for a specified capture by ID within a dataset. |
+| CaptureLog | [CaptureLogRequest](#io.netograph.dset.CaptureLogRequest) | [CaptureLogResult](#io.netograph.dset.CaptureLogRequest) | Retrieve the capture log for a dataset, in reverse chronological order. |
+| DomainHistory | [DomainHistoryRequest](#io.netograph.dset.DomainHistoryRequest) | [DomainHistoryResult](#io.netograph.dset.DomainHistoryRequest) | Retrieve the capture history for a specified domain in a dataset. The length of this history is capped at ~100. |
+| DomainSearch | [DomainSearchRequest](#io.netograph.dset.DomainSearchRequest) | [DomainSearchResult](#io.netograph.dset.DomainSearchRequest) | Retrieve the capture log for a specified domain in a dataset. |
+| DomainsForIP | [DomainsForIPRequest](#io.netograph.dset.DomainsForIPRequest) | [DomainsForIPResult](#io.netograph.dset.DomainsForIPRequest) | Find all domains in the dataset associated with a given IP address. |
+| IPHistory | [IPHistoryRequest](#io.netograph.dset.IPHistoryRequest) | [IPHistoryResult](#io.netograph.dset.IPHistoryRequest) | Retrieve the capture history for a specified IP in a dataset. The length of this history is capped at ~100. |
+| IPLogSearch | [IPLogSearchRequest](#io.netograph.dset.IPLogSearchRequest) | [IPLogSearchResult](#io.netograph.dset.IPLogSearchRequest) | Search the dataset log for captures that contain a given IP. |
+| IPSearch | [IPSearchRequest](#io.netograph.dset.IPSearchRequest) | [IPSearchResult](#io.netograph.dset.IPSearchRequest) | Find all IPs in the dataset that match an address and integer netmask. |
+| IPsForDomain | [IPsForDomainRequest](#io.netograph.dset.IPsForDomainRequest) | [IPsForDomainResult](#io.netograph.dset.IPsForDomainRequest) | Find all IPs in a dataset associated with a given domain. |
+| MetaForCapture | [MetaForCaptureRequest](#io.netograph.dset.MetaForCaptureRequest) | [MetaForCaptureResult](#io.netograph.dset.MetaForCaptureRequest) | Get metadata associated with a specified capture within a dataset. |
+| MetaSearch | [MetaSearchRequest](#io.netograph.dset.MetaSearchRequest) | [MetaSearchResult](#io.netograph.dset.MetaSearchRequest) | Search the dataset log for captures matching a metadata query. |
+| PoliciesForDomain | [PoliciesForDomainRequest](#io.netograph.dset.PoliciesForDomainRequest) | [PoliciesForDomainResult](#io.netograph.dset.PoliciesForDomainRequest) | Find all policies for a specified domain query. |
+| PolicyCaptureLog | [PolicyCaptureLogRequest](#io.netograph.dset.PolicyCaptureLogRequest) | [PolicyCaptureLogResult](#io.netograph.dset.PolicyCaptureLogRequest) | Retrieve the policy capture log for a dataset, in reverse chronological order. |
+| RedirsByDestination | [RedirsByDestinationRequest](#io.netograph.dset.RedirsByDestinationRequest) | [RedirsByDestinationResult](#io.netograph.dset.RedirsByDestinationRequest) | Find all redirections in the dataset for a given destination domain query. |
+| RedirsBySource | [RedirsBySourceRequest](#io.netograph.dset.RedirsBySourceRequest) | [RedirsBySourceResult](#io.netograph.dset.RedirsBySourceRequest) | Find all redirections in the dataset for a given source domain query. |
+| RootLogSearch | [RootLogSearchRequest](#io.netograph.dset.RootLogSearchRequest) | [RootLogSearchResult](#io.netograph.dset.RootLogSearchRequest) | Search the dataset log for captures where any root domain matches a given query. |
+| RootsForSatellite | [RootsForSatelliteRequest](#io.netograph.dset.RootsForSatelliteRequest) | [RootsForSatelliteResult](#io.netograph.dset.RootsForSatelliteRequest) | Find all roots in a dataset that are associated with a given satellite query. |
+| SatelliteLogSearch | [SatelliteLogSearchRequest](#io.netograph.dset.SatelliteLogSearchRequest) | [SatelliteLogSearchResult](#io.netograph.dset.SatelliteLogSearchRequest) | Search the dataset log for captures where any satellite domain matches a given query. |
+| SatellitesForRoot | [SatellitesForRootRequest](#io.netograph.dset.SatellitesForRootRequest) | [SatellitesForRootResult](#io.netograph.dset.SatellitesForRootRequest) | Find all satellites in the dataset that are associated with a given root query. |
+| URLLogSearch | [URLLogSearchRequest](#io.netograph.dset.URLLogSearchRequest) | [URLLogSearchResult](#io.netograph.dset.URLLogSearchRequest) | Search the dataset log for captures where any root URL matches a given URL query. |
 
  
 
 
 
-<a name="proto/ngapi/userapi/user.proto"></a>
+<a name="proto/ngapi/userapi/user.proto"/>
 <p align="right"><a href="#top">Top</a></p>
 
 ## proto/ngapi/userapi/user.proto
 
 
 
-<a name="io.netograph.user.Dataset"></a>
+<a name="io.netograph.user.Dataset"/>
 
 ### Dataset
 
@@ -975,7 +975,7 @@ Methods that operate on an individual dataset, either public or private.
 
 
 
-<a name="io.netograph.user.DatasetsRequest"></a>
+<a name="io.netograph.user.DatasetsRequest"/>
 
 ### DatasetsRequest
 
@@ -985,7 +985,7 @@ Methods that operate on an individual dataset, either public or private.
 
 
 
-<a name="io.netograph.user.Metadata"></a>
+<a name="io.netograph.user.Metadata"/>
 
 ### Metadata
 Metadata is arbitrary information associated with a capture.
@@ -1001,7 +1001,7 @@ Metadata is arbitrary information associated with a capture.
 
 
 
-<a name="io.netograph.user.TempCaptureRequest"></a>
+<a name="io.netograph.user.TempCaptureRequest"/>
 
 ### TempCaptureRequest
 
@@ -1020,7 +1020,7 @@ Metadata is arbitrary information associated with a capture.
 
 
 
-<a name="io.netograph.user.TempCaptureResult"></a>
+<a name="io.netograph.user.TempCaptureResult"/>
 
 ### TempCaptureResult
 
@@ -1042,15 +1042,15 @@ Metadata is arbitrary information associated with a capture.
  
 
 
-<a name="io.netograph.user.User"></a>
+<a name="io.netograph.user.User"/>
 
 ### User
 Methods that operate at the level of the user account.
 
 | Method Name | Request Type | Response Type | Description |
 | ----------- | ------------ | ------------- | ------------|
-| TempCapture | [TempCaptureRequest](#io.netograph.user.TempCaptureRequest) | [TempCaptureResult](#io.netograph.user.TempCaptureResult) | Request a temporary capture. Temporary captures are not stored in a dataset, and the capture assets will be available for download for 24 hours before being deleted. |
-| Datasets | [DatasetsRequest](#io.netograph.user.DatasetsRequest) | [Dataset](#io.netograph.user.Dataset) stream | List all datasets to which the authorizing account has access. This includes public datasets, which will be marked readonly. |
+| TempCapture | [TempCaptureRequest](#io.netograph.user.TempCaptureRequest) | [TempCaptureResult](#io.netograph.user.TempCaptureRequest) | Request a temporary capture. Temporary captures are not stored in a dataset, and the capture assets will be available for download for 24 hours before being deleted. |
+| Datasets | [DatasetsRequest](#io.netograph.user.DatasetsRequest) | [Dataset](#io.netograph.user.DatasetsRequest) | List all datasets to which the authorizing account has access. This includes public datasets, which will be marked readonly. |
 
  
 
