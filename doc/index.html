@@ -4,7 +4,7 @@
   <head>
     <title>Protocol Documentation</title>
     <meta charset="UTF-8">
-    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Ubuntu:400,700,400italic"/>
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Ubuntu:400,700,400italic"/>
     <style>
       body {
         width: 60em;
@@ -287,19 +287,27 @@
                 </li>
               
                 <li>
-                  <a href="#io.netograph.dset.PoliciesForDomainRequest"><span class="badge">M</span>PoliciesForDomainRequest</a>
+                  <a href="#io.netograph.dset.PoliciesForRootRequest"><span class="badge">M</span>PoliciesForRootRequest</a>
                 </li>
               
                 <li>
-                  <a href="#io.netograph.dset.PoliciesForDomainResult"><span class="badge">M</span>PoliciesForDomainResult</a>
+                  <a href="#io.netograph.dset.PoliciesForRootResult"><span class="badge">M</span>PoliciesForRootResult</a>
                 </li>
               
                 <li>
-                  <a href="#io.netograph.dset.PolicyCaptureLogRequest"><span class="badge">M</span>PolicyCaptureLogRequest</a>
+                  <a href="#io.netograph.dset.PolicyDomainCapturesRequest"><span class="badge">M</span>PolicyDomainCapturesRequest</a>
                 </li>
               
                 <li>
-                  <a href="#io.netograph.dset.PolicyCaptureLogResult"><span class="badge">M</span>PolicyCaptureLogResult</a>
+                  <a href="#io.netograph.dset.PolicyDomainCapturesResult"><span class="badge">M</span>PolicyDomainCapturesResult</a>
+                </li>
+              
+                <li>
+                  <a href="#io.netograph.dset.PolicyDomainStatsRequest"><span class="badge">M</span>PolicyDomainStatsRequest</a>
+                </li>
+              
+                <li>
+                  <a href="#io.netograph.dset.PolicyDomainStatsResult"><span class="badge">M</span>PolicyDomainStatsResult</a>
                 </li>
               
                 <li>
@@ -1471,7 +1479,7 @@ results. </p></td>
 
         
       
-        <h3 id="io.netograph.dset.PoliciesForDomainRequest">PoliciesForDomainRequest</h3>
+        <h3 id="io.netograph.dset.PoliciesForRootRequest">PoliciesForRootRequest</h3>
         <p></p>
 
         
@@ -1496,6 +1504,24 @@ results. </p></td>
                 </tr>
               
                 <tr>
+                  <td>start</td>
+                  <td><a href="#google.protobuf.Timestamp">google.protobuf.Timestamp</a></td>
+                  <td></td>
+                  <td><p>The capture log is in reverse chronological order, so the start of the
+range is the most recent time. If start is zero, it&#39;s taken to be the
+largest possible time value. </p></td>
+                </tr>
+              
+                <tr>
+                  <td>end</td>
+                  <td><a href="#google.protobuf.Timestamp">google.protobuf.Timestamp</a></td>
+                  <td></td>
+                  <td><p>The capture log is in reverse chronological order, so the end of the
+range is the least recent time. If end is zero, it&#39;s taken to be the
+smallest possible time value. </p></td>
+                </tr>
+              
+                <tr>
                   <td>limit</td>
                   <td><a href="#int64">int64</a></td>
                   <td></td>
@@ -1515,7 +1541,7 @@ results. </p></td>
 
         
       
-        <h3 id="io.netograph.dset.PoliciesForDomainResult">PoliciesForDomainResult</h3>
+        <h3 id="io.netograph.dset.PoliciesForRootResult">PoliciesForRootResult</h3>
         <p></p>
 
         
@@ -1526,7 +1552,7 @@ results. </p></td>
             <tbody>
               
                 <tr>
-                  <td>type</td>
+                  <td>rootdomain</td>
                   <td><a href="#string">string</a></td>
                   <td></td>
                   <td><p> </p></td>
@@ -1540,39 +1566,31 @@ results. </p></td>
                 </tr>
               
                 <tr>
-                  <td>root</td>
-                  <td><a href="#string">string</a></td>
+                  <td>time</td>
+                  <td><a href="#google.protobuf.Timestamp">google.protobuf.Timestamp</a></td>
                   <td></td>
                   <td><p> </p></td>
                 </tr>
               
                 <tr>
-                  <td>policyid</td>
-                  <td><a href="#string">string</a></td>
+                  <td>lastreference</td>
+                  <td><a href="#io.netograph.dset.CapSummary">CapSummary</a></td>
                   <td></td>
                   <td><p> </p></td>
                 </tr>
               
                 <tr>
-                  <td>capsummary</td>
+                  <td>lastcapture</td>
                   <td><a href="#io.netograph.dset.CapSummary">CapSummary</a></td>
                   <td></td>
-                  <td><p>The most recent capture on which we observed this policy </p></td>
-                </tr>
-              
-                <tr>
-                  <td>policycapsummary</td>
-                  <td><a href="#io.netograph.dset.CapSummary">CapSummary</a></td>
-                  <td></td>
-                  <td><p>The most recent capture for the policy itself </p></td>
+                  <td><p> </p></td>
                 </tr>
               
                 <tr>
                   <td>resume</td>
                   <td><a href="#string">string</a></td>
                   <td></td>
-                  <td><p>A resumption token that can be passed to an identical query to resume
-results. </p></td>
+                  <td><p> </p></td>
                 </tr>
               
             </tbody>
@@ -1581,7 +1599,7 @@ results. </p></td>
 
         
       
-        <h3 id="io.netograph.dset.PolicyCaptureLogRequest">PolicyCaptureLogRequest</h3>
+        <h3 id="io.netograph.dset.PolicyDomainCapturesRequest">PolicyDomainCapturesRequest</h3>
         <p></p>
 
         
@@ -1599,17 +1617,19 @@ results. </p></td>
                 </tr>
               
                 <tr>
+                  <td>query</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p>A domain query. This is a domain prefix, which will return results for
+all relevant subdomains. To search for an exact domain, prefix with &#34;$&#34; -
+e.g. &#34;$rt.com&#34;. </p></td>
+                </tr>
+              
+                <tr>
                   <td>limit</td>
                   <td><a href="#int64">int64</a></td>
                   <td></td>
                   <td><p>Limit the number of records that will be returned. </p></td>
-                </tr>
-              
-                <tr>
-                  <td>resume</td>
-                  <td><a href="#string">string</a></td>
-                  <td></td>
-                  <td><p>A resumption token, previously returned by an identical query. </p></td>
                 </tr>
               
                 <tr>
@@ -1630,13 +1650,20 @@ range is the least recent time. If end is zero, it&#39;s taken to be the
 smallest possible time value. </p></td>
                 </tr>
               
+                <tr>
+                  <td>resume</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p>A resumption token, previously returned by an identical query. </p></td>
+                </tr>
+              
             </tbody>
           </table>
         
 
         
       
-        <h3 id="io.netograph.dset.PolicyCaptureLogResult">PolicyCaptureLogResult</h3>
+        <h3 id="io.netograph.dset.PolicyDomainCapturesResult">PolicyDomainCapturesResult</h3>
         <p></p>
 
         
@@ -1645,6 +1672,13 @@ smallest possible time value. </p></td>
               <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
             </thead>
             <tbody>
+              
+                <tr>
+                  <td>domain</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p>The matching domain. </p></td>
+                </tr>
               
                 <tr>
                   <td>capsummary</td>
@@ -1659,6 +1693,96 @@ smallest possible time value. </p></td>
                   <td></td>
                   <td><p>A resumption token that can be passed to an identical query to resume
 results. </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+        
+
+        
+      
+        <h3 id="io.netograph.dset.PolicyDomainStatsRequest">PolicyDomainStatsRequest</h3>
+        <p></p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>dataset</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p>The name of the dataset to query. </p></td>
+                </tr>
+              
+                <tr>
+                  <td>query</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p>A domain query. This is a domain prefix, which will return results for
+all relevant subdomains. To search for an exact domain, prefix with &#34;$&#34; -
+e.g. &#34;$rt.com&#34;. </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+        
+
+        
+      
+        <h3 id="io.netograph.dset.PolicyDomainStatsResult">PolicyDomainStatsResult</h3>
+        <p></p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>policydomains</td>
+                  <td><a href="#uint64">uint64</a></td>
+                  <td></td>
+                  <td><p>Number of matching domains with policies </p></td>
+                </tr>
+              
+                <tr>
+                  <td>subdomainpolicies</td>
+                  <td><a href="#uint64">uint64</a></td>
+                  <td></td>
+                  <td><p>Number of policies at all matching subdomains </p></td>
+                </tr>
+              
+                <tr>
+                  <td>policies</td>
+                  <td><a href="#uint64">uint64</a></td>
+                  <td></td>
+                  <td><p>Number of policies at the exact matching domain </p></td>
+                </tr>
+              
+                <tr>
+                  <td>subdomaincaptures</td>
+                  <td><a href="#uint64">uint64</a></td>
+                  <td></td>
+                  <td><p>Total number of policy captures at all matching subdomains </p></td>
+                </tr>
+              
+                <tr>
+                  <td>captures</td>
+                  <td><a href="#uint64">uint64</a></td>
+                  <td></td>
+                  <td><p>Number of policy captures at the exact matching domain </p></td>
+                </tr>
+              
+                <tr>
+                  <td>capturedomains</td>
+                  <td><a href="#uint64">uint64</a></td>
+                  <td></td>
+                  <td><p>Total number of subdomains with policy captures </p></td>
                 </tr>
               
             </tbody>
@@ -2416,14 +2540,14 @@ results. </p></td>
               <tr>
                 <td>CaptureLog</td>
                 <td><a href="#io.netograph.dset.CaptureLogRequest">CaptureLogRequest</a></td>
-                <td><a href="#io.netograph.dset.CaptureLogResult">CaptureLogResult</a></td>
+                <td><a href="#io.netograph.dset.CaptureLogResult">CaptureLogResult</a> stream</td>
                 <td><p>Retrieve the capture log for a dataset, in reverse chronological order.</p></td>
               </tr>
             
               <tr>
                 <td>DomainHistory</td>
                 <td><a href="#io.netograph.dset.DomainHistoryRequest">DomainHistoryRequest</a></td>
-                <td><a href="#io.netograph.dset.DomainHistoryResult">DomainHistoryResult</a></td>
+                <td><a href="#io.netograph.dset.DomainHistoryResult">DomainHistoryResult</a> stream</td>
                 <td><p>Retrieve the capture history for a specified domain in a dataset. The
 length of this history is capped at ~100.</p></td>
               </tr>
@@ -2431,21 +2555,21 @@ length of this history is capped at ~100.</p></td>
               <tr>
                 <td>DomainSearch</td>
                 <td><a href="#io.netograph.dset.DomainSearchRequest">DomainSearchRequest</a></td>
-                <td><a href="#io.netograph.dset.DomainSearchResult">DomainSearchResult</a></td>
+                <td><a href="#io.netograph.dset.DomainSearchResult">DomainSearchResult</a> stream</td>
                 <td><p>Retrieve the capture log for a specified domain in a dataset.</p></td>
               </tr>
             
               <tr>
                 <td>DomainsForIP</td>
                 <td><a href="#io.netograph.dset.DomainsForIPRequest">DomainsForIPRequest</a></td>
-                <td><a href="#io.netograph.dset.DomainsForIPResult">DomainsForIPResult</a></td>
+                <td><a href="#io.netograph.dset.DomainsForIPResult">DomainsForIPResult</a> stream</td>
                 <td><p>Find all domains in the dataset associated with a given IP address.</p></td>
               </tr>
             
               <tr>
                 <td>IPHistory</td>
                 <td><a href="#io.netograph.dset.IPHistoryRequest">IPHistoryRequest</a></td>
-                <td><a href="#io.netograph.dset.IPHistoryResult">IPHistoryResult</a></td>
+                <td><a href="#io.netograph.dset.IPHistoryResult">IPHistoryResult</a> stream</td>
                 <td><p>Retrieve the capture history for a specified IP in a dataset. The
 length of this history is capped at ~100.</p></td>
               </tr>
@@ -2453,98 +2577,105 @@ length of this history is capped at ~100.</p></td>
               <tr>
                 <td>IPLogSearch</td>
                 <td><a href="#io.netograph.dset.IPLogSearchRequest">IPLogSearchRequest</a></td>
-                <td><a href="#io.netograph.dset.IPLogSearchResult">IPLogSearchResult</a></td>
+                <td><a href="#io.netograph.dset.IPLogSearchResult">IPLogSearchResult</a> stream</td>
                 <td><p>Search the dataset log for captures that contain a given IP.</p></td>
               </tr>
             
               <tr>
                 <td>IPSearch</td>
                 <td><a href="#io.netograph.dset.IPSearchRequest">IPSearchRequest</a></td>
-                <td><a href="#io.netograph.dset.IPSearchResult">IPSearchResult</a></td>
+                <td><a href="#io.netograph.dset.IPSearchResult">IPSearchResult</a> stream</td>
                 <td><p>Find all IPs in the dataset that match an address and integer netmask.</p></td>
               </tr>
             
               <tr>
                 <td>IPsForDomain</td>
                 <td><a href="#io.netograph.dset.IPsForDomainRequest">IPsForDomainRequest</a></td>
-                <td><a href="#io.netograph.dset.IPsForDomainResult">IPsForDomainResult</a></td>
+                <td><a href="#io.netograph.dset.IPsForDomainResult">IPsForDomainResult</a> stream</td>
                 <td><p>Find all IPs in a dataset associated with a given domain.</p></td>
               </tr>
             
               <tr>
                 <td>MetaForCapture</td>
                 <td><a href="#io.netograph.dset.MetaForCaptureRequest">MetaForCaptureRequest</a></td>
-                <td><a href="#io.netograph.dset.MetaForCaptureResult">MetaForCaptureResult</a></td>
+                <td><a href="#io.netograph.dset.MetaForCaptureResult">MetaForCaptureResult</a> stream</td>
                 <td><p>Get metadata associated with a specified capture within a dataset.</p></td>
               </tr>
             
               <tr>
                 <td>MetaSearch</td>
                 <td><a href="#io.netograph.dset.MetaSearchRequest">MetaSearchRequest</a></td>
-                <td><a href="#io.netograph.dset.MetaSearchResult">MetaSearchResult</a></td>
+                <td><a href="#io.netograph.dset.MetaSearchResult">MetaSearchResult</a> stream</td>
                 <td><p>Search the dataset log for captures matching a metadata query.</p></td>
               </tr>
             
               <tr>
-                <td>PoliciesForDomain</td>
-                <td><a href="#io.netograph.dset.PoliciesForDomainRequest">PoliciesForDomainRequest</a></td>
-                <td><a href="#io.netograph.dset.PoliciesForDomainResult">PoliciesForDomainResult</a></td>
+                <td>PoliciesForRoot</td>
+                <td><a href="#io.netograph.dset.PoliciesForRootRequest">PoliciesForRootRequest</a></td>
+                <td><a href="#io.netograph.dset.PoliciesForRootResult">PoliciesForRootResult</a> stream</td>
                 <td><p>Find all policies for a specified domain query.</p></td>
               </tr>
             
               <tr>
-                <td>PolicyCaptureLog</td>
-                <td><a href="#io.netograph.dset.PolicyCaptureLogRequest">PolicyCaptureLogRequest</a></td>
-                <td><a href="#io.netograph.dset.PolicyCaptureLogResult">PolicyCaptureLogResult</a></td>
-                <td><p>Retrieve the policy capture log for a dataset, in reverse chronological order.</p></td>
+                <td>PolicyDomainCaptures</td>
+                <td><a href="#io.netograph.dset.PolicyDomainCapturesRequest">PolicyDomainCapturesRequest</a></td>
+                <td><a href="#io.netograph.dset.PolicyDomainCapturesResult">PolicyDomainCapturesResult</a> stream</td>
+                <td><p>Retrieve the policy capture log for a domain query, in reverse chronological order.</p></td>
+              </tr>
+            
+              <tr>
+                <td>PolicyDomainStats</td>
+                <td><a href="#io.netograph.dset.PolicyDomainStatsRequest">PolicyDomainStatsRequest</a></td>
+                <td><a href="#io.netograph.dset.PolicyDomainStatsResult">PolicyDomainStatsResult</a></td>
+                <td><p>Retrieve statistics for a policy domain query.</p></td>
               </tr>
             
               <tr>
                 <td>RedirsByDestination</td>
                 <td><a href="#io.netograph.dset.RedirsByDestinationRequest">RedirsByDestinationRequest</a></td>
-                <td><a href="#io.netograph.dset.RedirsByDestinationResult">RedirsByDestinationResult</a></td>
+                <td><a href="#io.netograph.dset.RedirsByDestinationResult">RedirsByDestinationResult</a> stream</td>
                 <td><p>Find all redirections in the dataset for a given destination domain query.</p></td>
               </tr>
             
               <tr>
                 <td>RedirsBySource</td>
                 <td><a href="#io.netograph.dset.RedirsBySourceRequest">RedirsBySourceRequest</a></td>
-                <td><a href="#io.netograph.dset.RedirsBySourceResult">RedirsBySourceResult</a></td>
+                <td><a href="#io.netograph.dset.RedirsBySourceResult">RedirsBySourceResult</a> stream</td>
                 <td><p>Find all redirections in the dataset for a given source domain query.</p></td>
               </tr>
             
               <tr>
                 <td>RootLogSearch</td>
                 <td><a href="#io.netograph.dset.RootLogSearchRequest">RootLogSearchRequest</a></td>
-                <td><a href="#io.netograph.dset.RootLogSearchResult">RootLogSearchResult</a></td>
+                <td><a href="#io.netograph.dset.RootLogSearchResult">RootLogSearchResult</a> stream</td>
                 <td><p>Search the dataset log for captures where any root domain matches a given query.</p></td>
               </tr>
             
               <tr>
                 <td>RootsForSatellite</td>
                 <td><a href="#io.netograph.dset.RootsForSatelliteRequest">RootsForSatelliteRequest</a></td>
-                <td><a href="#io.netograph.dset.RootsForSatelliteResult">RootsForSatelliteResult</a></td>
+                <td><a href="#io.netograph.dset.RootsForSatelliteResult">RootsForSatelliteResult</a> stream</td>
                 <td><p>Find all roots in a dataset that are associated with a given satellite query.</p></td>
               </tr>
             
               <tr>
                 <td>SatelliteLogSearch</td>
                 <td><a href="#io.netograph.dset.SatelliteLogSearchRequest">SatelliteLogSearchRequest</a></td>
-                <td><a href="#io.netograph.dset.SatelliteLogSearchResult">SatelliteLogSearchResult</a></td>
+                <td><a href="#io.netograph.dset.SatelliteLogSearchResult">SatelliteLogSearchResult</a> stream</td>
                 <td><p>Search the dataset log for captures where any satellite domain matches a given query.</p></td>
               </tr>
             
               <tr>
                 <td>SatellitesForRoot</td>
                 <td><a href="#io.netograph.dset.SatellitesForRootRequest">SatellitesForRootRequest</a></td>
-                <td><a href="#io.netograph.dset.SatellitesForRootResult">SatellitesForRootResult</a></td>
+                <td><a href="#io.netograph.dset.SatellitesForRootResult">SatellitesForRootResult</a> stream</td>
                 <td><p>Find all satellites in the dataset that are associated with a given root query.</p></td>
               </tr>
             
               <tr>
                 <td>URLLogSearch</td>
                 <td><a href="#io.netograph.dset.URLLogSearchRequest">URLLogSearchRequest</a></td>
-                <td><a href="#io.netograph.dset.URLLogSearchResult">URLLogSearchResult</a></td>
+                <td><a href="#io.netograph.dset.URLLogSearchResult">URLLogSearchResult</a> stream</td>
                 <td><p>Search the dataset log for captures where any root URL matches a given URL query.</p></td>
               </tr>
             
@@ -2755,7 +2886,7 @@ hours before being deleted.</p></td>
               <tr>
                 <td>Datasets</td>
                 <td><a href="#io.netograph.user.DatasetsRequest">DatasetsRequest</a></td>
-                <td><a href="#io.netograph.user.Dataset">Dataset</a></td>
+                <td><a href="#io.netograph.user.Dataset">Dataset</a> stream</td>
                 <td><p>List all datasets to which the authorizing account has access. This
 includes public datasets, which will be marked readonly.</p></td>
               </tr>

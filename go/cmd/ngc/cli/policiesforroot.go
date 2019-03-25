@@ -9,10 +9,10 @@ import (
 	"github.com/spf13/viper"
 )
 
-func policiesForDomainCommand() *cobra.Command {
+func policiesForRootCommand() *cobra.Command {
 	var resume *string
 	cmd := &cobra.Command{
-		Use:     "policiesfordomain query",
+		Use:     "policiesforroot query",
 		Aliases: []string{"pols"},
 		Short:   "Retrieve all policies for a given domain query",
 		Args: func(cmd *cobra.Command, args []string) error {
@@ -31,7 +31,7 @@ func policiesForDomainCommand() *cobra.Command {
 				return err
 			}
 
-			r, err := c.PoliciesForDomain(ctx, &dsetapi.PoliciesForDomainRequest{
+			r, err := c.PoliciesForRoot(ctx, &dsetapi.PoliciesForRootRequest{
 				Dataset: viper.GetString("dset"),
 				Query:   args[0],
 				Limit:   limit,

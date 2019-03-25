@@ -74,15 +74,20 @@ class DsetStub(object):
         request_serializer=dsetapi_dot_dset__pb2.MetaSearchRequest.SerializeToString,
         response_deserializer=dsetapi_dot_dset__pb2.MetaSearchResult.FromString,
         )
-    self.PoliciesForDomain = channel.unary_stream(
-        '/io.netograph.dset.Dset/PoliciesForDomain',
-        request_serializer=dsetapi_dot_dset__pb2.PoliciesForDomainRequest.SerializeToString,
-        response_deserializer=dsetapi_dot_dset__pb2.PoliciesForDomainResult.FromString,
+    self.PoliciesForRoot = channel.unary_stream(
+        '/io.netograph.dset.Dset/PoliciesForRoot',
+        request_serializer=dsetapi_dot_dset__pb2.PoliciesForRootRequest.SerializeToString,
+        response_deserializer=dsetapi_dot_dset__pb2.PoliciesForRootResult.FromString,
         )
-    self.PolicyCaptureLog = channel.unary_stream(
-        '/io.netograph.dset.Dset/PolicyCaptureLog',
-        request_serializer=dsetapi_dot_dset__pb2.PolicyCaptureLogRequest.SerializeToString,
-        response_deserializer=dsetapi_dot_dset__pb2.PolicyCaptureLogResult.FromString,
+    self.PolicyDomainCaptures = channel.unary_stream(
+        '/io.netograph.dset.Dset/PolicyDomainCaptures',
+        request_serializer=dsetapi_dot_dset__pb2.PolicyDomainCapturesRequest.SerializeToString,
+        response_deserializer=dsetapi_dot_dset__pb2.PolicyDomainCapturesResult.FromString,
+        )
+    self.PolicyDomainStats = channel.unary_unary(
+        '/io.netograph.dset.Dset/PolicyDomainStats',
+        request_serializer=dsetapi_dot_dset__pb2.PolicyDomainStatsRequest.SerializeToString,
+        response_deserializer=dsetapi_dot_dset__pb2.PolicyDomainStatsResult.FromString,
         )
     self.RedirsByDestination = channel.unary_stream(
         '/io.netograph.dset.Dset/RedirsByDestination',
@@ -211,15 +216,22 @@ class DsetServicer(object):
     context.set_details('Method not implemented!')
     raise NotImplementedError('Method not implemented!')
 
-  def PoliciesForDomain(self, request, context):
+  def PoliciesForRoot(self, request, context):
     """Find all policies for a specified domain query.
     """
     context.set_code(grpc.StatusCode.UNIMPLEMENTED)
     context.set_details('Method not implemented!')
     raise NotImplementedError('Method not implemented!')
 
-  def PolicyCaptureLog(self, request, context):
-    """Retrieve the policy capture log for a dataset, in reverse chronological order.
+  def PolicyDomainCaptures(self, request, context):
+    """Retrieve the policy capture log for a domain query, in reverse chronological order.
+    """
+    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+    context.set_details('Method not implemented!')
+    raise NotImplementedError('Method not implemented!')
+
+  def PolicyDomainStats(self, request, context):
+    """Retrieve statistics for a policy domain query.
     """
     context.set_code(grpc.StatusCode.UNIMPLEMENTED)
     context.set_details('Method not implemented!')
@@ -337,15 +349,20 @@ def add_DsetServicer_to_server(servicer, server):
           request_deserializer=dsetapi_dot_dset__pb2.MetaSearchRequest.FromString,
           response_serializer=dsetapi_dot_dset__pb2.MetaSearchResult.SerializeToString,
       ),
-      'PoliciesForDomain': grpc.unary_stream_rpc_method_handler(
-          servicer.PoliciesForDomain,
-          request_deserializer=dsetapi_dot_dset__pb2.PoliciesForDomainRequest.FromString,
-          response_serializer=dsetapi_dot_dset__pb2.PoliciesForDomainResult.SerializeToString,
+      'PoliciesForRoot': grpc.unary_stream_rpc_method_handler(
+          servicer.PoliciesForRoot,
+          request_deserializer=dsetapi_dot_dset__pb2.PoliciesForRootRequest.FromString,
+          response_serializer=dsetapi_dot_dset__pb2.PoliciesForRootResult.SerializeToString,
       ),
-      'PolicyCaptureLog': grpc.unary_stream_rpc_method_handler(
-          servicer.PolicyCaptureLog,
-          request_deserializer=dsetapi_dot_dset__pb2.PolicyCaptureLogRequest.FromString,
-          response_serializer=dsetapi_dot_dset__pb2.PolicyCaptureLogResult.SerializeToString,
+      'PolicyDomainCaptures': grpc.unary_stream_rpc_method_handler(
+          servicer.PolicyDomainCaptures,
+          request_deserializer=dsetapi_dot_dset__pb2.PolicyDomainCapturesRequest.FromString,
+          response_serializer=dsetapi_dot_dset__pb2.PolicyDomainCapturesResult.SerializeToString,
+      ),
+      'PolicyDomainStats': grpc.unary_unary_rpc_method_handler(
+          servicer.PolicyDomainStats,
+          request_deserializer=dsetapi_dot_dset__pb2.PolicyDomainStatsRequest.FromString,
+          response_serializer=dsetapi_dot_dset__pb2.PolicyDomainStatsResult.SerializeToString,
       ),
       'RedirsByDestination': grpc.unary_stream_rpc_method_handler(
           servicer.RedirsByDestination,

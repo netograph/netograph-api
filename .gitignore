@@ -15,3 +15,4 @@ secrets
 .sass-cache
 .tmp
 .cache
+.pytest_cache

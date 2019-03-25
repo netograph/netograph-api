@@ -402,36 +402,41 @@ message URLLogSearchResult {
     CapSummary capsummary = 3;
 }
 
-message PoliciesForDomainRequest {
+message PoliciesForRootRequest {
     // The name of the dataset to query.
     string dataset = 1;
     string query = 2;
+    // The capture log is in reverse chronological order, so the start of the
+    // range is the most recent time. If start is zero, it's taken to be the
+    // largest possible time value.
+    google.protobuf.Timestamp start = 3;
+    // The capture log is in reverse chronological order, so the end of the
+    // range is the least recent time. If end is zero, it's taken to be the
+    // smallest possible time value.
+    google.protobuf.Timestamp end = 4;
     // Limit the number of records that will be returned.
-    int64 limit = 3;
+    int64 limit = 5;
     // A resumption token, previously returned by an identical query.
-    string resume = 4;
+    string resume = 6;
 }
-message PoliciesForDomainResult {
-    string type = 1;
+message PoliciesForRootResult {
+    string rootdomain = 1;
     string url = 2;
-    string root = 3;
-    string policyid = 4;
-    // The most recent capture on which we observed this policy
-    CapSummary capsummary = 5;
-    // The most recent capture for the policy itself
-    CapSummary policycapsummary = 6;
-    // A resumption token that can be passed to an identical query to resume
-    // results.
-    string resume = 7;
+    google.protobuf.Timestamp time = 3;
+    CapSummary lastreference = 4;
+    CapSummary lastcapture = 5;
+    string resume = 6;
 }
 
-message PolicyCaptureLogRequest {
+message PolicyDomainCapturesRequest {
     // The name of the dataset to query.
     string dataset = 1;
+    // A domain query. This is a domain prefix, which will return results for
+    // all relevant subdomains. To search for an exact domain, prefix with "$" -
+    // e.g. "$rt.com".
+    string query = 2;
     // Limit the number of records that will be returned.
-    int64 limit = 2;
-    // A resumption token, previously returned by an identical query.
-    string resume = 3;
+    int64 limit = 3;
     // The capture log is in reverse chronological order, so the start of the
     // range is the most recent time. If start is zero, it's taken to be the
     // largest possible time value.
@@ -440,13 +445,40 @@ message PolicyCaptureLogRequest {
     // range is the least recent time. If end is zero, it's taken to be the
     // smallest possible time value.
     google.protobuf.Timestamp end = 5;
+    // A resumption token, previously returned by an identical query.
+    string resume = 6;
 }
-message PolicyCaptureLogResult {
+message PolicyDomainCapturesResult {
+    // The matching domain.
+    string domain = 1;
     // A capture summary for this result.
-    CapSummary capsummary = 1;
+    CapSummary capsummary = 2;
     // A resumption token that can be passed to an identical query to resume
     // results.
-    string resume = 2;
+    string resume = 3;
+}
+
+message PolicyDomainStatsRequest {
+    // The name of the dataset to query.
+    string dataset = 1;
+    // A domain query. This is a domain prefix, which will return results for
+    // all relevant subdomains. To search for an exact domain, prefix with "$" -
+    // e.g. "$rt.com".
+    string query = 2;
+}
+message PolicyDomainStatsResult {
+    // Number of matching domains with policies
+    uint64 policydomains = 1;
+    // Number of policies at all matching subdomains
+    uint64 subdomainpolicies = 2;
+    // Number of policies at the exact matching domain
+    uint64 policies = 3;
+    // Total number of policy captures at all matching subdomains
+    uint64 subdomaincaptures = 4;
+    // Number of policy captures at the exact matching domain
+    uint64 captures = 5;
+    // Total number of subdomains with policy captures
+    uint64 capturedomains = 6;
 }
 
 
@@ -491,10 +523,13 @@ service Dset {
     rpc MetaSearch(MetaSearchRequest) returns (stream MetaSearchResult);
 
     // Find all policies for a specified domain query.
-    rpc PoliciesForDomain(PoliciesForDomainRequest) returns (stream PoliciesForDomainResult);
+    rpc PoliciesForRoot(PoliciesForRootRequest) returns (stream PoliciesForRootResult);
 
-    // Retrieve the policy capture log for a dataset, in reverse chronological order.
-    rpc PolicyCaptureLog(PolicyCaptureLogRequest) returns (stream PolicyCaptureLogResult);
+    // Retrieve the policy capture log for a domain query, in reverse chronological order.
+    rpc PolicyDomainCaptures(PolicyDomainCapturesRequest) returns (stream PolicyDomainCapturesResult);
+
+    // Retrieve statistics for a policy domain query.
+    rpc PolicyDomainStats(PolicyDomainStatsRequest) returns (PolicyDomainStatsResult);
 
     // Find all redirections in the dataset for a given destination domain query.
     rpc RedirsByDestination(RedirsByDestinationRequest) returns (stream RedirsByDestinationResult);

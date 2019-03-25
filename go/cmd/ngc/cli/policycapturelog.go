@@ -46,7 +46,7 @@ Times can be specified in the following formats:
 				return err
 			}
 
-			r, err := c.PolicyCaptureLog(ctx, &dsetapi.PolicyCaptureLogRequest{
+			r, err := c.PolicyDomainCaptures(ctx, &dsetapi.PolicyDomainCapturesRequest{
 				Dataset: viper.GetString("dset"),
 				Limit:   limit,
 				Resume:  *resume,
