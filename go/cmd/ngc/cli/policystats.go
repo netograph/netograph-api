@@ -5,6 +5,7 @@ import (
 
 	"github.com/netograph/netograph-api/go/proto/ngapi/dsetapi"
 	"github.com/spf13/cobra"
+	"github.com/spf13/viper"
 )
 
 func policyStatsCommand() *cobra.Command {
@@ -24,7 +25,8 @@ func policyStatsCommand() *cobra.Command {
 				return err
 			}
 			r, err := c.PolicyDomainStats(ctx, &dsetapi.PolicyDomainStatsRequest{
-				Query: args[0],
+				Dataset: viper.GetString("dset"),
+				Query:   args[0],
 			})
 			if err != nil {
 				return err
