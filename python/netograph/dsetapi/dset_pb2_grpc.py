@@ -89,6 +89,11 @@ class DsetStub(object):
         request_serializer=dsetapi_dot_dset__pb2.PolicyDomainStatsRequest.SerializeToString,
         response_deserializer=dsetapi_dot_dset__pb2.PolicyDomainStatsResult.FromString,
         )
+    self.PolicyURLCaptures = channel.unary_stream(
+        '/io.netograph.dset.Dset/PolicyURLCaptures',
+        request_serializer=dsetapi_dot_dset__pb2.PolicyURLCapturesRequest.SerializeToString,
+        response_deserializer=dsetapi_dot_dset__pb2.PolicyURLCapturesResult.FromString,
+        )
     self.RedirsByDestination = channel.unary_stream(
         '/io.netograph.dset.Dset/RedirsByDestination',
         request_serializer=dsetapi_dot_dset__pb2.RedirsByDestinationRequest.SerializeToString,
@@ -237,6 +242,13 @@ class DsetServicer(object):
     context.set_details('Method not implemented!')
     raise NotImplementedError('Method not implemented!')
 
+  def PolicyURLCaptures(self, request, context):
+    """Retrieve the policy capture log for specific policy URL, in reverse chronological order.
+    """
+    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+    context.set_details('Method not implemented!')
+    raise NotImplementedError('Method not implemented!')
+
   def RedirsByDestination(self, request, context):
     """Find all redirections in the dataset for a given destination domain query.
     """
@@ -363,6 +375,11 @@ def add_DsetServicer_to_server(servicer, server):
           servicer.PolicyDomainStats,
           request_deserializer=dsetapi_dot_dset__pb2.PolicyDomainStatsRequest.FromString,
           response_serializer=dsetapi_dot_dset__pb2.PolicyDomainStatsResult.SerializeToString,
+      ),
+      'PolicyURLCaptures': grpc.unary_stream_rpc_method_handler(
+          servicer.PolicyURLCaptures,
+          request_deserializer=dsetapi_dot_dset__pb2.PolicyURLCapturesRequest.FromString,
+          response_serializer=dsetapi_dot_dset__pb2.PolicyURLCapturesResult.SerializeToString,
       ),
       'RedirsByDestination': grpc.unary_stream_rpc_method_handler(
           servicer.RedirsByDestination,

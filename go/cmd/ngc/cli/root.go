@@ -41,6 +41,7 @@ func init() {
 		policiesForRootCommand(),
 		policyDomainCaptures(),
 		policyStatsCommand(),
+		policyURLCapturesCommand(),
 		redirsByDestinationCommand(),
 		redirsBySourceCommand(),
 		rootLogSearchCommand(),

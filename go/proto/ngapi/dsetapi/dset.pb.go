@@ -3,14 +3,15 @@
 
 package dsetapi
 
-import proto "github.com/golang/protobuf/proto"
-import fmt "fmt"
-import math "math"
-import timestamp "github.com/golang/protobuf/ptypes/timestamp"
-
 import (
-	context "golang.org/x/net/context"
+	context "context"
+	fmt "fmt"
+	proto "github.com/golang/protobuf/proto"
+	timestamp "github.com/golang/protobuf/ptypes/timestamp"
 	grpc "google.golang.org/grpc"
+	codes "google.golang.org/grpc/codes"
+	status "google.golang.org/grpc/status"
+	math "math"
 )
 
 // Reference imports to suppress errors if they are not otherwise used.
@@ -22,7 +23,7 @@ var _ = math.Inf
 // is compatible with the proto package it is being compiled against.
 // A compilation error at this line likely means your copy of the
 // proto package needs to be updated.
-const _ = proto.ProtoPackageIsVersion2 // please upgrade the proto package
+const _ = proto.ProtoPackageIsVersion3 // please upgrade the proto package
 
 // A capture summary - this is the data that you will receive for any query that
 // returns captures.
@@ -48,16 +49,17 @@ func (m *CapSummary) Reset()         { *m = CapSummary{} }
 func (m *CapSummary) String() string { return proto.CompactTextString(m) }
 func (*CapSummary) ProtoMessage()    {}
 func (*CapSummary) Descriptor() ([]byte, []int) {
-	return fileDescriptor_dset_85a1e70af362325e, []int{0}
+	return fileDescriptor_2c427b3fd17a4424, []int{0}
 }
+
 func (m *CapSummary) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_CapSummary.Unmarshal(m, b)
 }
 func (m *CapSummary) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_CapSummary.Marshal(b, m, deterministic)
 }
-func (dst *CapSummary) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_CapSummary.Merge(dst, src)
+func (m *CapSummary) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_CapSummary.Merge(m, src)
 }
 func (m *CapSummary) XXX_Size() int {
 	return xxx_messageInfo_CapSummary.Size(m)
@@ -122,16 +124,17 @@ func (m *CapSummary_Plan) Reset()         { *m = CapSummary_Plan{} }
 func (m *CapSummary_Plan) String() string { return proto.CompactTextString(m) }
 func (*CapSummary_Plan) ProtoMessage()    {}
 func (*CapSummary_Plan) Descriptor() ([]byte, []int) {
-	return fileDescriptor_dset_85a1e70af362325e, []int{0, 0}
+	return fileDescriptor_2c427b3fd17a4424, []int{0, 0}
 }
+
 func (m *CapSummary_Plan) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_CapSummary_Plan.Unmarshal(m, b)
 }
 func (m *CapSummary_Plan) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_CapSummary_Plan.Marshal(b, m, deterministic)
 }
-func (dst *CapSummary_Plan) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_CapSummary_Plan.Merge(dst, src)
+func (m *CapSummary_Plan) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_CapSummary_Plan.Merge(m, src)
 }
 func (m *CapSummary_Plan) XXX_Size() int {
 	return xxx_messageInfo_CapSummary_Plan.Size(m)
@@ -163,16 +166,17 @@ func (m *CapSummary_Root) Reset()         { *m = CapSummary_Root{} }
 func (m *CapSummary_Root) String() string { return proto.CompactTextString(m) }
 func (*CapSummary_Root) ProtoMessage()    {}
 func (*CapSummary_Root) Descriptor() ([]byte, []int) {
-	return fileDescriptor_dset_85a1e70af362325e, []int{0, 1}
+	return fileDescriptor_2c427b3fd17a4424, []int{0, 1}
 }
+
 func (m *CapSummary_Root) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_CapSummary_Root.Unmarshal(m, b)
 }
 func (m *CapSummary_Root) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_CapSummary_Root.Marshal(b, m, deterministic)
 }
-func (dst *CapSummary_Root) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_CapSummary_Root.Merge(dst, src)
+func (m *CapSummary_Root) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_CapSummary_Root.Merge(m, src)
 }
 func (m *CapSummary_Root) XXX_Size() int {
 	return xxx_messageInfo_CapSummary_Root.Size(m)
@@ -206,16 +210,17 @@ func (m *CapSummary_Stats) Reset()         { *m = CapSummary_Stats{} }
 func (m *CapSummary_Stats) String() string { return proto.CompactTextString(m) }
 func (*CapSummary_Stats) ProtoMessage()    {}
 func (*CapSummary_Stats) Descriptor() ([]byte, []int) {
-	return fileDescriptor_dset_85a1e70af362325e, []int{0, 2}
+	return fileDescriptor_2c427b3fd17a4424, []int{0, 2}
 }
+
 func (m *CapSummary_Stats) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_CapSummary_Stats.Unmarshal(m, b)
 }
 func (m *CapSummary_Stats) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_CapSummary_Stats.Marshal(b, m, deterministic)
 }
-func (dst *CapSummary_Stats) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_CapSummary_Stats.Merge(dst, src)
+func (m *CapSummary_Stats) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_CapSummary_Stats.Merge(m, src)
 }
 func (m *CapSummary_Stats) XXX_Size() int {
 	return xxx_messageInfo_CapSummary_Stats.Size(m)
@@ -262,16 +267,17 @@ func (m *Metadata) Reset()         { *m = Metadata{} }
 func (m *Metadata) String() string { return proto.CompactTextString(m) }
 func (*Metadata) ProtoMessage()    {}
 func (*Metadata) Descriptor() ([]byte, []int) {
-	return fileDescriptor_dset_85a1e70af362325e, []int{1}
+	return fileDescriptor_2c427b3fd17a4424, []int{1}
 }
+
 func (m *Metadata) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_Metadata.Unmarshal(m, b)
 }
 func (m *Metadata) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_Metadata.Marshal(b, m, deterministic)
 }
-func (dst *Metadata) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_Metadata.Merge(dst, src)
+func (m *Metadata) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_Metadata.Merge(m, src)
 }
 func (m *Metadata) XXX_Size() int {
 	return xxx_messageInfo_Metadata.Size(m)
@@ -310,16 +316,17 @@ func (m *CaptureInfoRequest) Reset()         { *m = CaptureInfoRequest{} }
 func (m *CaptureInfoRequest) String() string { return proto.CompactTextString(m) }
 func (*CaptureInfoRequest) ProtoMessage()    {}
 func (*CaptureInfoRequest) Descriptor() ([]byte, []int) {
-	return fileDescriptor_dset_85a1e70af362325e, []int{2}
+	return fileDescriptor_2c427b3fd17a4424, []int{2}
 }
+
 func (m *CaptureInfoRequest) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_CaptureInfoRequest.Unmarshal(m, b)
 }
 func (m *CaptureInfoRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_CaptureInfoRequest.Marshal(b, m, deterministic)
 }
-func (dst *CaptureInfoRequest) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_CaptureInfoRequest.Merge(dst, src)
+func (m *CaptureInfoRequest) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_CaptureInfoRequest.Merge(m, src)
 }
 func (m *CaptureInfoRequest) XXX_Size() int {
 	return xxx_messageInfo_CaptureInfoRequest.Size(m)
@@ -356,16 +363,17 @@ func (m *CaptureInfoResult) Reset()         { *m = CaptureInfoResult{} }
 func (m *CaptureInfoResult) String() string { return proto.CompactTextString(m) }
 func (*CaptureInfoResult) ProtoMessage()    {}
 func (*CaptureInfoResult) Descriptor() ([]byte, []int) {
-	return fileDescriptor_dset_85a1e70af362325e, []int{3}
+	return fileDescriptor_2c427b3fd17a4424, []int{3}
 }
+
 func (m *CaptureInfoResult) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_CaptureInfoResult.Unmarshal(m, b)
 }
 func (m *CaptureInfoResult) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_CaptureInfoResult.Marshal(b, m, deterministic)
 }
-func (dst *CaptureInfoResult) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_CaptureInfoResult.Merge(dst, src)
+func (m *CaptureInfoResult) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_CaptureInfoResult.Merge(m, src)
 }
 func (m *CaptureInfoResult) XXX_Size() int {
 	return xxx_messageInfo_CaptureInfoResult.Size(m)
@@ -407,16 +415,17 @@ func (m *CaptureLogRequest) Reset()         { *m = CaptureLogRequest{} }
 func (m *CaptureLogRequest) String() string { return proto.CompactTextString(m) }
 func (*CaptureLogRequest) ProtoMessage()    {}
 func (*CaptureLogRequest) Descriptor() ([]byte, []int) {
-	return fileDescriptor_dset_85a1e70af362325e, []int{4}
+	return fileDescriptor_2c427b3fd17a4424, []int{4}
 }
+
 func (m *CaptureLogRequest) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_CaptureLogRequest.Unmarshal(m, b)
 }
 func (m *CaptureLogRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_CaptureLogRequest.Marshal(b, m, deterministic)
 }
-func (dst *CaptureLogRequest) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_CaptureLogRequest.Merge(dst, src)
+func (m *CaptureLogRequest) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_CaptureLogRequest.Merge(m, src)
 }
 func (m *CaptureLogRequest) XXX_Size() int {
 	return xxx_messageInfo_CaptureLogRequest.Size(m)
@@ -477,16 +486,17 @@ func (m *CaptureLogResult) Reset()         { *m = CaptureLogResult{} }
 func (m *CaptureLogResult) String() string { return proto.CompactTextString(m) }
 func (*CaptureLogResult) ProtoMessage()    {}
 func (*CaptureLogResult) Descriptor() ([]byte, []int) {
-	return fileDescriptor_dset_85a1e70af362325e, []int{5}
+	return fileDescriptor_2c427b3fd17a4424, []int{5}
 }
+
 func (m *CaptureLogResult) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_CaptureLogResult.Unmarshal(m, b)
 }
 func (m *CaptureLogResult) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_CaptureLogResult.Marshal(b, m, deterministic)
 }
-func (dst *CaptureLogResult) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_CaptureLogResult.Merge(dst, src)
+func (m *CaptureLogResult) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_CaptureLogResult.Merge(m, src)
 }
 func (m *CaptureLogResult) XXX_Size() int {
 	return xxx_messageInfo_CaptureLogResult.Size(m)
@@ -526,16 +536,17 @@ func (m *DomainHistoryRequest) Reset()         { *m = DomainHistoryRequest{} }
 func (m *DomainHistoryRequest) String() string { return proto.CompactTextString(m) }
 func (*DomainHistoryRequest) ProtoMessage()    {}
 func (*DomainHistoryRequest) Descriptor() ([]byte, []int) {
-	return fileDescriptor_dset_85a1e70af362325e, []int{6}
+	return fileDescriptor_2c427b3fd17a4424, []int{6}
 }
+
 func (m *DomainHistoryRequest) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_DomainHistoryRequest.Unmarshal(m, b)
 }
 func (m *DomainHistoryRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_DomainHistoryRequest.Marshal(b, m, deterministic)
 }
-func (dst *DomainHistoryRequest) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_DomainHistoryRequest.Merge(dst, src)
+func (m *DomainHistoryRequest) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_DomainHistoryRequest.Merge(m, src)
 }
 func (m *DomainHistoryRequest) XXX_Size() int {
 	return xxx_messageInfo_DomainHistoryRequest.Size(m)
@@ -579,16 +590,17 @@ func (m *DomainHistoryResult) Reset()         { *m = DomainHistoryResult{} }
 func (m *DomainHistoryResult) String() string { return proto.CompactTextString(m) }
 func (*DomainHistoryResult) ProtoMessage()    {}
 func (*DomainHistoryResult) Descriptor() ([]byte, []int) {
-	return fileDescriptor_dset_85a1e70af362325e, []int{7}
+	return fileDescriptor_2c427b3fd17a4424, []int{7}
 }
+
 func (m *DomainHistoryResult) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_DomainHistoryResult.Unmarshal(m, b)
 }
 func (m *DomainHistoryResult) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_DomainHistoryResult.Marshal(b, m, deterministic)
 }
-func (dst *DomainHistoryResult) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_DomainHistoryResult.Merge(dst, src)
+func (m *DomainHistoryResult) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_DomainHistoryResult.Merge(m, src)
 }
 func (m *DomainHistoryResult) XXX_Size() int {
 	return xxx_messageInfo_DomainHistoryResult.Size(m)
@@ -626,16 +638,17 @@ func (m *DomainSearchRequest) Reset()         { *m = DomainSearchRequest{} }
 func (m *DomainSearchRequest) String() string { return proto.CompactTextString(m) }
 func (*DomainSearchRequest) ProtoMessage()    {}
 func (*DomainSearchRequest) Descriptor() ([]byte, []int) {
-	return fileDescriptor_dset_85a1e70af362325e, []int{8}
+	return fileDescriptor_2c427b3fd17a4424, []int{8}
 }
+
 func (m *DomainSearchRequest) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_DomainSearchRequest.Unmarshal(m, b)
 }
 func (m *DomainSearchRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_DomainSearchRequest.Marshal(b, m, deterministic)
 }
-func (dst *DomainSearchRequest) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_DomainSearchRequest.Merge(dst, src)
+func (m *DomainSearchRequest) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_DomainSearchRequest.Merge(m, src)
 }
 func (m *DomainSearchRequest) XXX_Size() int {
 	return xxx_messageInfo_DomainSearchRequest.Size(m)
@@ -690,16 +703,17 @@ func (m *DomainSearchResult) Reset()         { *m = DomainSearchResult{} }
 func (m *DomainSearchResult) String() string { return proto.CompactTextString(m) }
 func (*DomainSearchResult) ProtoMessage()    {}
 func (*DomainSearchResult) Descriptor() ([]byte, []int) {
-	return fileDescriptor_dset_85a1e70af362325e, []int{9}
+	return fileDescriptor_2c427b3fd17a4424, []int{9}
 }
+
 func (m *DomainSearchResult) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_DomainSearchResult.Unmarshal(m, b)
 }
 func (m *DomainSearchResult) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_DomainSearchResult.Marshal(b, m, deterministic)
 }
-func (dst *DomainSearchResult) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_DomainSearchResult.Merge(dst, src)
+func (m *DomainSearchResult) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_DomainSearchResult.Merge(m, src)
 }
 func (m *DomainSearchResult) XXX_Size() int {
 	return xxx_messageInfo_DomainSearchResult.Size(m)
@@ -748,16 +762,17 @@ func (m *DomainsForIPRequest) Reset()         { *m = DomainsForIPRequest{} }
 func (m *DomainsForIPRequest) String() string { return proto.CompactTextString(m) }
 func (*DomainsForIPRequest) ProtoMessage()    {}
 func (*DomainsForIPRequest) Descriptor() ([]byte, []int) {
-	return fileDescriptor_dset_85a1e70af362325e, []int{10}
+	return fileDescriptor_2c427b3fd17a4424, []int{10}
 }
+
 func (m *DomainsForIPRequest) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_DomainsForIPRequest.Unmarshal(m, b)
 }
 func (m *DomainsForIPRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_DomainsForIPRequest.Marshal(b, m, deterministic)
 }
-func (dst *DomainsForIPRequest) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_DomainsForIPRequest.Merge(dst, src)
+func (m *DomainsForIPRequest) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_DomainsForIPRequest.Merge(m, src)
 }
 func (m *DomainsForIPRequest) XXX_Size() int {
 	return xxx_messageInfo_DomainsForIPRequest.Size(m)
@@ -814,16 +829,17 @@ func (m *DomainsForIPResult) Reset()         { *m = DomainsForIPResult{} }
 func (m *DomainsForIPResult) String() string { return proto.CompactTextString(m) }
 func (*DomainsForIPResult) ProtoMessage()    {}
 func (*DomainsForIPResult) Descriptor() ([]byte, []int) {
-	return fileDescriptor_dset_85a1e70af362325e, []int{11}
+	return fileDescriptor_2c427b3fd17a4424, []int{11}
 }
+
 func (m *DomainsForIPResult) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_DomainsForIPResult.Unmarshal(m, b)
 }
 func (m *DomainsForIPResult) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_DomainsForIPResult.Marshal(b, m, deterministic)
 }
-func (dst *DomainsForIPResult) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_DomainsForIPResult.Merge(dst, src)
+func (m *DomainsForIPResult) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_DomainsForIPResult.Merge(m, src)
 }
 func (m *DomainsForIPResult) XXX_Size() int {
 	return xxx_messageInfo_DomainsForIPResult.Size(m)
@@ -884,16 +900,17 @@ func (m *IPHistoryRequest) Reset()         { *m = IPHistoryRequest{} }
 func (m *IPHistoryRequest) String() string { return proto.CompactTextString(m) }
 func (*IPHistoryRequest) ProtoMessage()    {}
 func (*IPHistoryRequest) Descriptor() ([]byte, []int) {
-	return fileDescriptor_dset_85a1e70af362325e, []int{12}
+	return fileDescriptor_2c427b3fd17a4424, []int{12}
 }
+
 func (m *IPHistoryRequest) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_IPHistoryRequest.Unmarshal(m, b)
 }
 func (m *IPHistoryRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_IPHistoryRequest.Marshal(b, m, deterministic)
 }
-func (dst *IPHistoryRequest) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_IPHistoryRequest.Merge(dst, src)
+func (m *IPHistoryRequest) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_IPHistoryRequest.Merge(m, src)
 }
 func (m *IPHistoryRequest) XXX_Size() int {
 	return xxx_messageInfo_IPHistoryRequest.Size(m)
@@ -937,16 +954,17 @@ func (m *IPHistoryResult) Reset()         { *m = IPHistoryResult{} }
 func (m *IPHistoryResult) String() string { return proto.CompactTextString(m) }
 func (*IPHistoryResult) ProtoMessage()    {}
 func (*IPHistoryResult) Descriptor() ([]byte, []int) {
-	return fileDescriptor_dset_85a1e70af362325e, []int{13}
+	return fileDescriptor_2c427b3fd17a4424, []int{13}
 }
+
 func (m *IPHistoryResult) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_IPHistoryResult.Unmarshal(m, b)
 }
 func (m *IPHistoryResult) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_IPHistoryResult.Marshal(b, m, deterministic)
 }
-func (dst *IPHistoryResult) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_IPHistoryResult.Merge(dst, src)
+func (m *IPHistoryResult) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_IPHistoryResult.Merge(m, src)
 }
 func (m *IPHistoryResult) XXX_Size() int {
 	return xxx_messageInfo_IPHistoryResult.Size(m)
@@ -981,16 +999,17 @@ func (m *IPLogSearchRequest) Reset()         { *m = IPLogSearchRequest{} }
 func (m *IPLogSearchRequest) String() string { return proto.CompactTextString(m) }
 func (*IPLogSearchRequest) ProtoMessage()    {}
 func (*IPLogSearchRequest) Descriptor() ([]byte, []int) {
-	return fileDescriptor_dset_85a1e70af362325e, []int{14}
+	return fileDescriptor_2c427b3fd17a4424, []int{14}
 }
+
 func (m *IPLogSearchRequest) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_IPLogSearchRequest.Unmarshal(m, b)
 }
 func (m *IPLogSearchRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_IPLogSearchRequest.Marshal(b, m, deterministic)
 }
-func (dst *IPLogSearchRequest) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_IPLogSearchRequest.Merge(dst, src)
+func (m *IPLogSearchRequest) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_IPLogSearchRequest.Merge(m, src)
 }
 func (m *IPLogSearchRequest) XXX_Size() int {
 	return xxx_messageInfo_IPLogSearchRequest.Size(m)
@@ -1045,16 +1064,17 @@ func (m *IPLogSearchResult) Reset()         { *m = IPLogSearchResult{} }
 func (m *IPLogSearchResult) String() string { return proto.CompactTextString(m) }
 func (*IPLogSearchResult) ProtoMessage()    {}
 func (*IPLogSearchResult) Descriptor() ([]byte, []int) {
-	return fileDescriptor_dset_85a1e70af362325e, []int{15}
+	return fileDescriptor_2c427b3fd17a4424, []int{15}
 }
+
 func (m *IPLogSearchResult) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_IPLogSearchResult.Unmarshal(m, b)
 }
 func (m *IPLogSearchResult) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_IPLogSearchResult.Marshal(b, m, deterministic)
 }
-func (dst *IPLogSearchResult) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_IPLogSearchResult.Merge(dst, src)
+func (m *IPLogSearchResult) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_IPLogSearchResult.Merge(m, src)
 }
 func (m *IPLogSearchResult) XXX_Size() int {
 	return xxx_messageInfo_IPLogSearchResult.Size(m)
@@ -1102,16 +1122,17 @@ func (m *IPSearchResult) Reset()         { *m = IPSearchResult{} }
 func (m *IPSearchResult) String() string { return proto.CompactTextString(m) }
 func (*IPSearchResult) ProtoMessage()    {}
 func (*IPSearchResult) Descriptor() ([]byte, []int) {
-	return fileDescriptor_dset_85a1e70af362325e, []int{16}
+	return fileDescriptor_2c427b3fd17a4424, []int{16}
 }
+
 func (m *IPSearchResult) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_IPSearchResult.Unmarshal(m, b)
 }
 func (m *IPSearchResult) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_IPSearchResult.Marshal(b, m, deterministic)
 }
-func (dst *IPSearchResult) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_IPSearchResult.Merge(dst, src)
+func (m *IPSearchResult) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_IPSearchResult.Merge(m, src)
 }
 func (m *IPSearchResult) XXX_Size() int {
 	return xxx_messageInfo_IPSearchResult.Size(m)
@@ -1161,16 +1182,17 @@ func (m *IPSearchRequest) Reset()         { *m = IPSearchRequest{} }
 func (m *IPSearchRequest) String() string { return proto.CompactTextString(m) }
 func (*IPSearchRequest) ProtoMessage()    {}
 func (*IPSearchRequest) Descriptor() ([]byte, []int) {
-	return fileDescriptor_dset_85a1e70af362325e, []int{17}
+	return fileDescriptor_2c427b3fd17a4424, []int{17}
 }
+
 func (m *IPSearchRequest) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_IPSearchRequest.Unmarshal(m, b)
 }
 func (m *IPSearchRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_IPSearchRequest.Marshal(b, m, deterministic)
 }
-func (dst *IPSearchRequest) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_IPSearchRequest.Merge(dst, src)
+func (m *IPSearchRequest) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_IPSearchRequest.Merge(m, src)
 }
 func (m *IPSearchRequest) XXX_Size() int {
 	return xxx_messageInfo_IPSearchRequest.Size(m)
@@ -1233,16 +1255,17 @@ func (m *IPsForDomainRequest) Reset()         { *m = IPsForDomainRequest{} }
 func (m *IPsForDomainRequest) String() string { return proto.CompactTextString(m) }
 func (*IPsForDomainRequest) ProtoMessage()    {}
 func (*IPsForDomainRequest) Descriptor() ([]byte, []int) {
-	return fileDescriptor_dset_85a1e70af362325e, []int{18}
+	return fileDescriptor_2c427b3fd17a4424, []int{18}
 }
+
 func (m *IPsForDomainRequest) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_IPsForDomainRequest.Unmarshal(m, b)
 }
 func (m *IPsForDomainRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_IPsForDomainRequest.Marshal(b, m, deterministic)
 }
-func (dst *IPsForDomainRequest) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_IPsForDomainRequest.Merge(dst, src)
+func (m *IPsForDomainRequest) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_IPsForDomainRequest.Merge(m, src)
 }
 func (m *IPsForDomainRequest) XXX_Size() int {
 	return xxx_messageInfo_IPsForDomainRequest.Size(m)
@@ -1299,16 +1322,17 @@ func (m *IPsForDomainResult) Reset()         { *m = IPsForDomainResult{} }
 func (m *IPsForDomainResult) String() string { return proto.CompactTextString(m) }
 func (*IPsForDomainResult) ProtoMessage()    {}
 func (*IPsForDomainResult) Descriptor() ([]byte, []int) {
-	return fileDescriptor_dset_85a1e70af362325e, []int{19}
+	return fileDescriptor_2c427b3fd17a4424, []int{19}
 }
+
 func (m *IPsForDomainResult) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_IPsForDomainResult.Unmarshal(m, b)
 }
 func (m *IPsForDomainResult) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_IPsForDomainResult.Marshal(b, m, deterministic)
 }
-func (dst *IPsForDomainResult) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_IPsForDomainResult.Merge(dst, src)
+func (m *IPsForDomainResult) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_IPsForDomainResult.Merge(m, src)
 }
 func (m *IPsForDomainResult) XXX_Size() int {
 	return xxx_messageInfo_IPsForDomainResult.Size(m)
@@ -1374,16 +1398,17 @@ func (m *MetaForCaptureRequest) Reset()         { *m = MetaForCaptureRequest{} }
 func (m *MetaForCaptureRequest) String() string { return proto.CompactTextString(m) }
 func (*MetaForCaptureRequest) ProtoMessage()    {}
 func (*MetaForCaptureRequest) Descriptor() ([]byte, []int) {
-	return fileDescriptor_dset_85a1e70af362325e, []int{20}
+	return fileDescriptor_2c427b3fd17a4424, []int{20}
 }
+
 func (m *MetaForCaptureRequest) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_MetaForCaptureRequest.Unmarshal(m, b)
 }
 func (m *MetaForCaptureRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_MetaForCaptureRequest.Marshal(b, m, deterministic)
 }
-func (dst *MetaForCaptureRequest) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_MetaForCaptureRequest.Merge(dst, src)
+func (m *MetaForCaptureRequest) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_MetaForCaptureRequest.Merge(m, src)
 }
 func (m *MetaForCaptureRequest) XXX_Size() int {
 	return xxx_messageInfo_MetaForCaptureRequest.Size(m)
@@ -1444,16 +1469,17 @@ func (m *MetaForCaptureResult) Reset()         { *m = MetaForCaptureResult{} }
 func (m *MetaForCaptureResult) String() string { return proto.CompactTextString(m) }
 func (*MetaForCaptureResult) ProtoMessage()    {}
 func (*MetaForCaptureResult) Descriptor() ([]byte, []int) {
-	return fileDescriptor_dset_85a1e70af362325e, []int{21}
+	return fileDescriptor_2c427b3fd17a4424, []int{21}
 }
+
 func (m *MetaForCaptureResult) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_MetaForCaptureResult.Unmarshal(m, b)
 }
 func (m *MetaForCaptureResult) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_MetaForCaptureResult.Marshal(b, m, deterministic)
 }
-func (dst *MetaForCaptureResult) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_MetaForCaptureResult.Merge(dst, src)
+func (m *MetaForCaptureResult) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_MetaForCaptureResult.Merge(m, src)
 }
 func (m *MetaForCaptureResult) XXX_Size() int {
 	return xxx_messageInfo_MetaForCaptureResult.Size(m)
@@ -1502,16 +1528,17 @@ func (m *MetaSearchRequest) Reset()         { *m = MetaSearchRequest{} }
 func (m *MetaSearchRequest) String() string { return proto.CompactTextString(m) }
 func (*MetaSearchRequest) ProtoMessage()    {}
 func (*MetaSearchRequest) Descriptor() ([]byte, []int) {
-	return fileDescriptor_dset_85a1e70af362325e, []int{22}
+	return fileDescriptor_2c427b3fd17a4424, []int{22}
 }
+
 func (m *MetaSearchRequest) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_MetaSearchRequest.Unmarshal(m, b)
 }
 func (m *MetaSearchRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_MetaSearchRequest.Marshal(b, m, deterministic)
 }
-func (dst *MetaSearchRequest) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_MetaSearchRequest.Merge(dst, src)
+func (m *MetaSearchRequest) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_MetaSearchRequest.Merge(m, src)
 }
 func (m *MetaSearchRequest) XXX_Size() int {
 	return xxx_messageInfo_MetaSearchRequest.Size(m)
@@ -1566,16 +1593,17 @@ func (m *MetaSearchResult) Reset()         { *m = MetaSearchResult{} }
 func (m *MetaSearchResult) String() string { return proto.CompactTextString(m) }
 func (*MetaSearchResult) ProtoMessage()    {}
 func (*MetaSearchResult) Descriptor() ([]byte, []int) {
-	return fileDescriptor_dset_85a1e70af362325e, []int{23}
+	return fileDescriptor_2c427b3fd17a4424, []int{23}
 }
+
 func (m *MetaSearchResult) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_MetaSearchResult.Unmarshal(m, b)
 }
 func (m *MetaSearchResult) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_MetaSearchResult.Marshal(b, m, deterministic)
 }
-func (dst *MetaSearchResult) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_MetaSearchResult.Merge(dst, src)
+func (m *MetaSearchResult) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_MetaSearchResult.Merge(m, src)
 }
 func (m *MetaSearchResult) XXX_Size() int {
 	return xxx_messageInfo_MetaSearchResult.Size(m)
@@ -1624,16 +1652,17 @@ func (m *RedirsByDestinationRequest) Reset()         { *m = RedirsByDestinationR
 func (m *RedirsByDestinationRequest) String() string { return proto.CompactTextString(m) }
 func (*RedirsByDestinationRequest) ProtoMessage()    {}
 func (*RedirsByDestinationRequest) Descriptor() ([]byte, []int) {
-	return fileDescriptor_dset_85a1e70af362325e, []int{24}
+	return fileDescriptor_2c427b3fd17a4424, []int{24}
 }
+
 func (m *RedirsByDestinationRequest) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_RedirsByDestinationRequest.Unmarshal(m, b)
 }
 func (m *RedirsByDestinationRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_RedirsByDestinationRequest.Marshal(b, m, deterministic)
 }
-func (dst *RedirsByDestinationRequest) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_RedirsByDestinationRequest.Merge(dst, src)
+func (m *RedirsByDestinationRequest) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_RedirsByDestinationRequest.Merge(m, src)
 }
 func (m *RedirsByDestinationRequest) XXX_Size() int {
 	return xxx_messageInfo_RedirsByDestinationRequest.Size(m)
@@ -1689,16 +1718,17 @@ func (m *RedirsByDestinationResult) Reset()         { *m = RedirsByDestinationRe
 func (m *RedirsByDestinationResult) String() string { return proto.CompactTextString(m) }
 func (*RedirsByDestinationResult) ProtoMessage()    {}
 func (*RedirsByDestinationResult) Descriptor() ([]byte, []int) {
-	return fileDescriptor_dset_85a1e70af362325e, []int{25}
+	return fileDescriptor_2c427b3fd17a4424, []int{25}
 }
+
 func (m *RedirsByDestinationResult) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_RedirsByDestinationResult.Unmarshal(m, b)
 }
 func (m *RedirsByDestinationResult) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_RedirsByDestinationResult.Marshal(b, m, deterministic)
 }
-func (dst *RedirsByDestinationResult) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_RedirsByDestinationResult.Merge(dst, src)
+func (m *RedirsByDestinationResult) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_RedirsByDestinationResult.Merge(m, src)
 }
 func (m *RedirsByDestinationResult) XXX_Size() int {
 	return xxx_messageInfo_RedirsByDestinationResult.Size(m)
@@ -1754,16 +1784,17 @@ func (m *RedirsBySourceRequest) Reset()         { *m = RedirsBySourceRequest{} }
 func (m *RedirsBySourceRequest) String() string { return proto.CompactTextString(m) }
 func (*RedirsBySourceRequest) ProtoMessage()    {}
 func (*RedirsBySourceRequest) Descriptor() ([]byte, []int) {
-	return fileDescriptor_dset_85a1e70af362325e, []int{26}
+	return fileDescriptor_2c427b3fd17a4424, []int{26}
 }
+
 func (m *RedirsBySourceRequest) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_RedirsBySourceRequest.Unmarshal(m, b)
 }
 func (m *RedirsBySourceRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_RedirsBySourceRequest.Marshal(b, m, deterministic)
 }
-func (dst *RedirsBySourceRequest) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_RedirsBySourceRequest.Merge(dst, src)
+func (m *RedirsBySourceRequest) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_RedirsBySourceRequest.Merge(m, src)
 }
 func (m *RedirsBySourceRequest) XXX_Size() int {
 	return xxx_messageInfo_RedirsBySourceRequest.Size(m)
@@ -1819,16 +1850,17 @@ func (m *RedirsBySourceResult) Reset()         { *m = RedirsBySourceResult{} }
 func (m *RedirsBySourceResult) String() string { return proto.CompactTextString(m) }
 func (*RedirsBySourceResult) ProtoMessage()    {}
 func (*RedirsBySourceResult) Descriptor() ([]byte, []int) {
-	return fileDescriptor_dset_85a1e70af362325e, []int{27}
+	return fileDescriptor_2c427b3fd17a4424, []int{27}
 }
+
 func (m *RedirsBySourceResult) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_RedirsBySourceResult.Unmarshal(m, b)
 }
 func (m *RedirsBySourceResult) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_RedirsBySourceResult.Marshal(b, m, deterministic)
 }
-func (dst *RedirsBySourceResult) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_RedirsBySourceResult.Merge(dst, src)
+func (m *RedirsBySourceResult) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_RedirsBySourceResult.Merge(m, src)
 }
 func (m *RedirsBySourceResult) XXX_Size() int {
 	return xxx_messageInfo_RedirsBySourceResult.Size(m)
@@ -1884,16 +1916,17 @@ func (m *RootLogSearchRequest) Reset()         { *m = RootLogSearchRequest{} }
 func (m *RootLogSearchRequest) String() string { return proto.CompactTextString(m) }
 func (*RootLogSearchRequest) ProtoMessage()    {}
 func (*RootLogSearchRequest) Descriptor() ([]byte, []int) {
-	return fileDescriptor_dset_85a1e70af362325e, []int{28}
+	return fileDescriptor_2c427b3fd17a4424, []int{28}
 }
+
 func (m *RootLogSearchRequest) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_RootLogSearchRequest.Unmarshal(m, b)
 }
 func (m *RootLogSearchRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_RootLogSearchRequest.Marshal(b, m, deterministic)
 }
-func (dst *RootLogSearchRequest) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_RootLogSearchRequest.Merge(dst, src)
+func (m *RootLogSearchRequest) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_RootLogSearchRequest.Merge(m, src)
 }
 func (m *RootLogSearchRequest) XXX_Size() int {
 	return xxx_messageInfo_RootLogSearchRequest.Size(m)
@@ -1948,16 +1981,17 @@ func (m *RootLogSearchResult) Reset()         { *m = RootLogSearchResult{} }
 func (m *RootLogSearchResult) String() string { return proto.CompactTextString(m) }
 func (*RootLogSearchResult) ProtoMessage()    {}
 func (*RootLogSearchResult) Descriptor() ([]byte, []int) {
-	return fileDescriptor_dset_85a1e70af362325e, []int{29}
+	return fileDescriptor_2c427b3fd17a4424, []int{29}
 }
+
 func (m *RootLogSearchResult) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_RootLogSearchResult.Unmarshal(m, b)
 }
 func (m *RootLogSearchResult) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_RootLogSearchResult.Marshal(b, m, deterministic)
 }
-func (dst *RootLogSearchResult) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_RootLogSearchResult.Merge(dst, src)
+func (m *RootLogSearchResult) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_RootLogSearchResult.Merge(m, src)
 }
 func (m *RootLogSearchResult) XXX_Size() int {
 	return xxx_messageInfo_RootLogSearchResult.Size(m)
@@ -2006,16 +2040,17 @@ func (m *RootsForSatelliteRequest) Reset()         { *m = RootsForSatelliteReque
 func (m *RootsForSatelliteRequest) String() string { return proto.CompactTextString(m) }
 func (*RootsForSatelliteRequest) ProtoMessage()    {}
 func (*RootsForSatelliteRequest) Descriptor() ([]byte, []int) {
-	return fileDescriptor_dset_85a1e70af362325e, []int{30}
+	return fileDescriptor_2c427b3fd17a4424, []int{30}
 }
+
 func (m *RootsForSatelliteRequest) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_RootsForSatelliteRequest.Unmarshal(m, b)
 }
 func (m *RootsForSatelliteRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_RootsForSatelliteRequest.Marshal(b, m, deterministic)
 }
-func (dst *RootsForSatelliteRequest) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_RootsForSatelliteRequest.Merge(dst, src)
+func (m *RootsForSatelliteRequest) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_RootsForSatelliteRequest.Merge(m, src)
 }
 func (m *RootsForSatelliteRequest) XXX_Size() int {
 	return xxx_messageInfo_RootsForSatelliteRequest.Size(m)
@@ -2072,16 +2107,17 @@ func (m *RootsForSatelliteResult) Reset()         { *m = RootsForSatelliteResult
 func (m *RootsForSatelliteResult) String() string { return proto.CompactTextString(m) }
 func (*RootsForSatelliteResult) ProtoMessage()    {}
 func (*RootsForSatelliteResult) Descriptor() ([]byte, []int) {
-	return fileDescriptor_dset_85a1e70af362325e, []int{31}
+	return fileDescriptor_2c427b3fd17a4424, []int{31}
 }
+
 func (m *RootsForSatelliteResult) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_RootsForSatelliteResult.Unmarshal(m, b)
 }
 func (m *RootsForSatelliteResult) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_RootsForSatelliteResult.Marshal(b, m, deterministic)
 }
-func (dst *RootsForSatelliteResult) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_RootsForSatelliteResult.Merge(dst, src)
+func (m *RootsForSatelliteResult) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_RootsForSatelliteResult.Merge(m, src)
 }
 func (m *RootsForSatelliteResult) XXX_Size() int {
 	return xxx_messageInfo_RootsForSatelliteResult.Size(m)
@@ -2151,16 +2187,17 @@ func (m *SubmitCaptureRequest) Reset()         { *m = SubmitCaptureRequest{} }
 func (m *SubmitCaptureRequest) String() string { return proto.CompactTextString(m) }
 func (*SubmitCaptureRequest) ProtoMessage()    {}
 func (*SubmitCaptureRequest) Descriptor() ([]byte, []int) {
-	return fileDescriptor_dset_85a1e70af362325e, []int{32}
+	return fileDescriptor_2c427b3fd17a4424, []int{32}
 }
+
 func (m *SubmitCaptureRequest) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_SubmitCaptureRequest.Unmarshal(m, b)
 }
 func (m *SubmitCaptureRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_SubmitCaptureRequest.Marshal(b, m, deterministic)
 }
-func (dst *SubmitCaptureRequest) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_SubmitCaptureRequest.Merge(dst, src)
+func (m *SubmitCaptureRequest) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_SubmitCaptureRequest.Merge(m, src)
 }
 func (m *SubmitCaptureRequest) XXX_Size() int {
 	return xxx_messageInfo_SubmitCaptureRequest.Size(m)
@@ -2236,16 +2273,17 @@ func (m *SubmitCaptureResult) Reset()         { *m = SubmitCaptureResult{} }
 func (m *SubmitCaptureResult) String() string { return proto.CompactTextString(m) }
 func (*SubmitCaptureResult) ProtoMessage()    {}
 func (*SubmitCaptureResult) Descriptor() ([]byte, []int) {
-	return fileDescriptor_dset_85a1e70af362325e, []int{33}
+	return fileDescriptor_2c427b3fd17a4424, []int{33}
 }
+
 func (m *SubmitCaptureResult) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_SubmitCaptureResult.Unmarshal(m, b)
 }
 func (m *SubmitCaptureResult) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_SubmitCaptureResult.Marshal(b, m, deterministic)
 }
-func (dst *SubmitCaptureResult) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_SubmitCaptureResult.Merge(dst, src)
+func (m *SubmitCaptureResult) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_SubmitCaptureResult.Merge(m, src)
 }
 func (m *SubmitCaptureResult) XXX_Size() int {
 	return xxx_messageInfo_SubmitCaptureResult.Size(m)
@@ -2294,16 +2332,17 @@ func (m *SatelliteLogSearchRequest) Reset()         { *m = SatelliteLogSearchReq
 func (m *SatelliteLogSearchRequest) String() string { return proto.CompactTextString(m) }
 func (*SatelliteLogSearchRequest) ProtoMessage()    {}
 func (*SatelliteLogSearchRequest) Descriptor() ([]byte, []int) {
-	return fileDescriptor_dset_85a1e70af362325e, []int{34}
+	return fileDescriptor_2c427b3fd17a4424, []int{34}
 }
+
 func (m *SatelliteLogSearchRequest) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_SatelliteLogSearchRequest.Unmarshal(m, b)
 }
 func (m *SatelliteLogSearchRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_SatelliteLogSearchRequest.Marshal(b, m, deterministic)
 }
-func (dst *SatelliteLogSearchRequest) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_SatelliteLogSearchRequest.Merge(dst, src)
+func (m *SatelliteLogSearchRequest) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_SatelliteLogSearchRequest.Merge(m, src)
 }
 func (m *SatelliteLogSearchRequest) XXX_Size() int {
 	return xxx_messageInfo_SatelliteLogSearchRequest.Size(m)
@@ -2358,16 +2397,17 @@ func (m *SatelliteLogSearchResult) Reset()         { *m = SatelliteLogSearchResu
 func (m *SatelliteLogSearchResult) String() string { return proto.CompactTextString(m) }
 func (*SatelliteLogSearchResult) ProtoMessage()    {}
 func (*SatelliteLogSearchResult) Descriptor() ([]byte, []int) {
-	return fileDescriptor_dset_85a1e70af362325e, []int{35}
+	return fileDescriptor_2c427b3fd17a4424, []int{35}
 }
+
 func (m *SatelliteLogSearchResult) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_SatelliteLogSearchResult.Unmarshal(m, b)
 }
 func (m *SatelliteLogSearchResult) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_SatelliteLogSearchResult.Marshal(b, m, deterministic)
 }
-func (dst *SatelliteLogSearchResult) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_SatelliteLogSearchResult.Merge(dst, src)
+func (m *SatelliteLogSearchResult) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_SatelliteLogSearchResult.Merge(m, src)
 }
 func (m *SatelliteLogSearchResult) XXX_Size() int {
 	return xxx_messageInfo_SatelliteLogSearchResult.Size(m)
@@ -2416,16 +2456,17 @@ func (m *SatellitesForRootRequest) Reset()         { *m = SatellitesForRootReque
 func (m *SatellitesForRootRequest) String() string { return proto.CompactTextString(m) }
 func (*SatellitesForRootRequest) ProtoMessage()    {}
 func (*SatellitesForRootRequest) Descriptor() ([]byte, []int) {
-	return fileDescriptor_dset_85a1e70af362325e, []int{36}
+	return fileDescriptor_2c427b3fd17a4424, []int{36}
 }
+
 func (m *SatellitesForRootRequest) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_SatellitesForRootRequest.Unmarshal(m, b)
 }
 func (m *SatellitesForRootRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_SatellitesForRootRequest.Marshal(b, m, deterministic)
 }
-func (dst *SatellitesForRootRequest) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_SatellitesForRootRequest.Merge(dst, src)
+func (m *SatellitesForRootRequest) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_SatellitesForRootRequest.Merge(m, src)
 }
 func (m *SatellitesForRootRequest) XXX_Size() int {
 	return xxx_messageInfo_SatellitesForRootRequest.Size(m)
@@ -2482,16 +2523,17 @@ func (m *SatellitesForRootResult) Reset()         { *m = SatellitesForRootResult
 func (m *SatellitesForRootResult) String() string { return proto.CompactTextString(m) }
 func (*SatellitesForRootResult) ProtoMessage()    {}
 func (*SatellitesForRootResult) Descriptor() ([]byte, []int) {
-	return fileDescriptor_dset_85a1e70af362325e, []int{37}
+	return fileDescriptor_2c427b3fd17a4424, []int{37}
 }
+
 func (m *SatellitesForRootResult) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_SatellitesForRootResult.Unmarshal(m, b)
 }
 func (m *SatellitesForRootResult) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_SatellitesForRootResult.Marshal(b, m, deterministic)
 }
-func (dst *SatellitesForRootResult) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_SatellitesForRootResult.Merge(dst, src)
+func (m *SatellitesForRootResult) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_SatellitesForRootResult.Merge(m, src)
 }
 func (m *SatellitesForRootResult) XXX_Size() int {
 	return xxx_messageInfo_SatellitesForRootResult.Size(m)
@@ -2554,16 +2596,17 @@ func (m *URLLogSearchRequest) Reset()         { *m = URLLogSearchRequest{} }
 func (m *URLLogSearchRequest) String() string { return proto.CompactTextString(m) }
 func (*URLLogSearchRequest) ProtoMessage()    {}
 func (*URLLogSearchRequest) Descriptor() ([]byte, []int) {
-	return fileDescriptor_dset_85a1e70af362325e, []int{38}
+	return fileDescriptor_2c427b3fd17a4424, []int{38}
 }
+
 func (m *URLLogSearchRequest) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_URLLogSearchRequest.Unmarshal(m, b)
 }
 func (m *URLLogSearchRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_URLLogSearchRequest.Marshal(b, m, deterministic)
 }
-func (dst *URLLogSearchRequest) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_URLLogSearchRequest.Merge(dst, src)
+func (m *URLLogSearchRequest) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_URLLogSearchRequest.Merge(m, src)
 }
 func (m *URLLogSearchRequest) XXX_Size() int {
 	return xxx_messageInfo_URLLogSearchRequest.Size(m)
@@ -2618,16 +2661,17 @@ func (m *URLLogSearchResult) Reset()         { *m = URLLogSearchResult{} }
 func (m *URLLogSearchResult) String() string { return proto.CompactTextString(m) }
 func (*URLLogSearchResult) ProtoMessage()    {}
 func (*URLLogSearchResult) Descriptor() ([]byte, []int) {
-	return fileDescriptor_dset_85a1e70af362325e, []int{39}
+	return fileDescriptor_2c427b3fd17a4424, []int{39}
 }
+
 func (m *URLLogSearchResult) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_URLLogSearchResult.Unmarshal(m, b)
 }
 func (m *URLLogSearchResult) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_URLLogSearchResult.Marshal(b, m, deterministic)
 }
-func (dst *URLLogSearchResult) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_URLLogSearchResult.Merge(dst, src)
+func (m *URLLogSearchResult) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_URLLogSearchResult.Merge(m, src)
 }
 func (m *URLLogSearchResult) XXX_Size() int {
 	return xxx_messageInfo_URLLogSearchResult.Size(m)
@@ -2684,16 +2728,17 @@ func (m *PoliciesForRootRequest) Reset()         { *m = PoliciesForRootRequest{}
 func (m *PoliciesForRootRequest) String() string { return proto.CompactTextString(m) }
 func (*PoliciesForRootRequest) ProtoMessage()    {}
 func (*PoliciesForRootRequest) Descriptor() ([]byte, []int) {
-	return fileDescriptor_dset_85a1e70af362325e, []int{40}
+	return fileDescriptor_2c427b3fd17a4424, []int{40}
 }
+
 func (m *PoliciesForRootRequest) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_PoliciesForRootRequest.Unmarshal(m, b)
 }
 func (m *PoliciesForRootRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_PoliciesForRootRequest.Marshal(b, m, deterministic)
 }
-func (dst *PoliciesForRootRequest) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_PoliciesForRootRequest.Merge(dst, src)
+func (m *PoliciesForRootRequest) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_PoliciesForRootRequest.Merge(m, src)
 }
 func (m *PoliciesForRootRequest) XXX_Size() int {
 	return xxx_messageInfo_PoliciesForRootRequest.Size(m)
@@ -2762,16 +2807,17 @@ func (m *PoliciesForRootResult) Reset()         { *m = PoliciesForRootResult{} }
 func (m *PoliciesForRootResult) String() string { return proto.CompactTextString(m) }
 func (*PoliciesForRootResult) ProtoMessage()    {}
 func (*PoliciesForRootResult) Descriptor() ([]byte, []int) {
-	return fileDescriptor_dset_85a1e70af362325e, []int{41}
+	return fileDescriptor_2c427b3fd17a4424, []int{41}
 }
+
 func (m *PoliciesForRootResult) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_PoliciesForRootResult.Unmarshal(m, b)
 }
 func (m *PoliciesForRootResult) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_PoliciesForRootResult.Marshal(b, m, deterministic)
 }
-func (dst *PoliciesForRootResult) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_PoliciesForRootResult.Merge(dst, src)
+func (m *PoliciesForRootResult) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_PoliciesForRootResult.Merge(m, src)
 }
 func (m *PoliciesForRootResult) XXX_Size() int {
 	return xxx_messageInfo_PoliciesForRootResult.Size(m)
@@ -2835,11 +2881,13 @@ type PolicyDomainCapturesRequest struct {
 	Limit int64 `protobuf:"varint,3,opt,name=limit,proto3" json:"limit,omitempty"`
 	// The capture log is in reverse chronological order, so the start of the
 	// range is the most recent time. If start is zero, it's taken to be the
-	// largest possible time value.
+	// largest possible time value. If a start or end time is specified, the
+	// query must be for an exact domain.
 	Start *timestamp.Timestamp `protobuf:"bytes,4,opt,name=start,proto3" json:"start,omitempty"`
 	// The capture log is in reverse chronological order, so the end of the
 	// range is the least recent time. If end is zero, it's taken to be the
-	// smallest possible time value.
+	// smallest possible time value. If a start or end time is specified, the
+	// query must be for an exact domain.
 	End *timestamp.Timestamp `protobuf:"bytes,5,opt,name=end,proto3" json:"end,omitempty"`
 	// A resumption token, previously returned by an identical query.
 	Resume               string   `protobuf:"bytes,6,opt,name=resume,proto3" json:"resume,omitempty"`
@@ -2852,16 +2900,17 @@ func (m *PolicyDomainCapturesRequest) Reset()         { *m = PolicyDomainCapture
 func (m *PolicyDomainCapturesRequest) String() string { return proto.CompactTextString(m) }
 func (*PolicyDomainCapturesRequest) ProtoMessage()    {}
 func (*PolicyDomainCapturesRequest) Descriptor() ([]byte, []int) {
-	return fileDescriptor_dset_85a1e70af362325e, []int{42}
+	return fileDescriptor_2c427b3fd17a4424, []int{42}
 }
+
 func (m *PolicyDomainCapturesRequest) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_PolicyDomainCapturesRequest.Unmarshal(m, b)
 }
 func (m *PolicyDomainCapturesRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_PolicyDomainCapturesRequest.Marshal(b, m, deterministic)
 }
-func (dst *PolicyDomainCapturesRequest) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_PolicyDomainCapturesRequest.Merge(dst, src)
+func (m *PolicyDomainCapturesRequest) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_PolicyDomainCapturesRequest.Merge(m, src)
 }
 func (m *PolicyDomainCapturesRequest) XXX_Size() int {
 	return xxx_messageInfo_PolicyDomainCapturesRequest.Size(m)
@@ -2931,16 +2980,17 @@ func (m *PolicyDomainCapturesResult) Reset()         { *m = PolicyDomainCaptures
 func (m *PolicyDomainCapturesResult) String() string { return proto.CompactTextString(m) }
 func (*PolicyDomainCapturesResult) ProtoMessage()    {}
 func (*PolicyDomainCapturesResult) Descriptor() ([]byte, []int) {
-	return fileDescriptor_dset_85a1e70af362325e, []int{43}
+	return fileDescriptor_2c427b3fd17a4424, []int{43}
 }
+
 func (m *PolicyDomainCapturesResult) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_PolicyDomainCapturesResult.Unmarshal(m, b)
 }
 func (m *PolicyDomainCapturesResult) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_PolicyDomainCapturesResult.Marshal(b, m, deterministic)
 }
-func (dst *PolicyDomainCapturesResult) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_PolicyDomainCapturesResult.Merge(dst, src)
+func (m *PolicyDomainCapturesResult) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_PolicyDomainCapturesResult.Merge(m, src)
 }
 func (m *PolicyDomainCapturesResult) XXX_Size() int {
 	return xxx_messageInfo_PolicyDomainCapturesResult.Size(m)
@@ -2988,16 +3038,17 @@ func (m *PolicyDomainStatsRequest) Reset()         { *m = PolicyDomainStatsReque
 func (m *PolicyDomainStatsRequest) String() string { return proto.CompactTextString(m) }
 func (*PolicyDomainStatsRequest) ProtoMessage()    {}
 func (*PolicyDomainStatsRequest) Descriptor() ([]byte, []int) {
-	return fileDescriptor_dset_85a1e70af362325e, []int{44}
+	return fileDescriptor_2c427b3fd17a4424, []int{44}
 }
+
 func (m *PolicyDomainStatsRequest) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_PolicyDomainStatsRequest.Unmarshal(m, b)
 }
 func (m *PolicyDomainStatsRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_PolicyDomainStatsRequest.Marshal(b, m, deterministic)
 }
-func (dst *PolicyDomainStatsRequest) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_PolicyDomainStatsRequest.Merge(dst, src)
+func (m *PolicyDomainStatsRequest) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_PolicyDomainStatsRequest.Merge(m, src)
 }
 func (m *PolicyDomainStatsRequest) XXX_Size() int {
 	return xxx_messageInfo_PolicyDomainStatsRequest.Size(m)
@@ -3044,16 +3095,17 @@ func (m *PolicyDomainStatsResult) Reset()         { *m = PolicyDomainStatsResult
 func (m *PolicyDomainStatsResult) String() string { return proto.CompactTextString(m) }
 func (*PolicyDomainStatsResult) ProtoMessage()    {}
 func (*PolicyDomainStatsResult) Descriptor() ([]byte, []int) {
-	return fileDescriptor_dset_85a1e70af362325e, []int{45}
+	return fileDescriptor_2c427b3fd17a4424, []int{45}
 }
+
 func (m *PolicyDomainStatsResult) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_PolicyDomainStatsResult.Unmarshal(m, b)
 }
 func (m *PolicyDomainStatsResult) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_PolicyDomainStatsResult.Marshal(b, m, deterministic)
 }
-func (dst *PolicyDomainStatsResult) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_PolicyDomainStatsResult.Merge(dst, src)
+func (m *PolicyDomainStatsResult) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_PolicyDomainStatsResult.Merge(m, src)
 }
 func (m *PolicyDomainStatsResult) XXX_Size() int {
 	return xxx_messageInfo_PolicyDomainStatsResult.Size(m)
@@ -3106,6 +3158,131 @@ func (m *PolicyDomainStatsResult) GetCapturedomains() uint64 {
 	return 0
 }
 
+type PolicyURLCapturesRequest struct {
+	// The name of the dataset to query.
+	Dataset string `protobuf:"bytes,1,opt,name=dataset,proto3" json:"dataset,omitempty"`
+	// A URL query
+	Query string `protobuf:"bytes,2,opt,name=query,proto3" json:"query,omitempty"`
+	// Limit the number of records that will be returned.
+	Limit int64 `protobuf:"varint,3,opt,name=limit,proto3" json:"limit,omitempty"`
+	// A resumption token, previously returned by an identical query.
+	Resume               string   `protobuf:"bytes,4,opt,name=resume,proto3" json:"resume,omitempty"`
+	XXX_NoUnkeyedLiteral struct{} `json:"-"`
+	XXX_unrecognized     []byte   `json:"-"`
+	XXX_sizecache        int32    `json:"-"`
+}
+
+func (m *PolicyURLCapturesRequest) Reset()         { *m = PolicyURLCapturesRequest{} }
+func (m *PolicyURLCapturesRequest) String() string { return proto.CompactTextString(m) }
+func (*PolicyURLCapturesRequest) ProtoMessage()    {}
+func (*PolicyURLCapturesRequest) Descriptor() ([]byte, []int) {
+	return fileDescriptor_2c427b3fd17a4424, []int{46}
+}
+
+func (m *PolicyURLCapturesRequest) XXX_Unmarshal(b []byte) error {
+	return xxx_messageInfo_PolicyURLCapturesRequest.Unmarshal(m, b)
+}
+func (m *PolicyURLCapturesRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	return xxx_messageInfo_PolicyURLCapturesRequest.Marshal(b, m, deterministic)
+}
+func (m *PolicyURLCapturesRequest) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_PolicyURLCapturesRequest.Merge(m, src)
+}
+func (m *PolicyURLCapturesRequest) XXX_Size() int {
+	return xxx_messageInfo_PolicyURLCapturesRequest.Size(m)
+}
+func (m *PolicyURLCapturesRequest) XXX_DiscardUnknown() {
+	xxx_messageInfo_PolicyURLCapturesRequest.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_PolicyURLCapturesRequest proto.InternalMessageInfo
+
+func (m *PolicyURLCapturesRequest) GetDataset() string {
+	if m != nil {
+		return m.Dataset
+	}
+	return ""
+}
+
+func (m *PolicyURLCapturesRequest) GetQuery() string {
+	if m != nil {
+		return m.Query
+	}
+	return ""
+}
+
+func (m *PolicyURLCapturesRequest) GetLimit() int64 {
+	if m != nil {
+		return m.Limit
+	}
+	return 0
+}
+
+func (m *PolicyURLCapturesRequest) GetResume() string {
+	if m != nil {
+		return m.Resume
+	}
+	return ""
+}
+
+type PolicyURLCapturesResult struct {
+	Url string `protobuf:"bytes,1,opt,name=url,proto3" json:"url,omitempty"`
+	// A resumption token that can be passed to an identical query to resume
+	// results.
+	Resume string `protobuf:"bytes,2,opt,name=resume,proto3" json:"resume,omitempty"`
+	// A capture summary for this result.
+	Capsummary           *CapSummary `protobuf:"bytes,3,opt,name=capsummary,proto3" json:"capsummary,omitempty"`
+	XXX_NoUnkeyedLiteral struct{}    `json:"-"`
+	XXX_unrecognized     []byte      `json:"-"`
+	XXX_sizecache        int32       `json:"-"`
+}
+
+func (m *PolicyURLCapturesResult) Reset()         { *m = PolicyURLCapturesResult{} }
+func (m *PolicyURLCapturesResult) String() string { return proto.CompactTextString(m) }
+func (*PolicyURLCapturesResult) ProtoMessage()    {}
+func (*PolicyURLCapturesResult) Descriptor() ([]byte, []int) {
+	return fileDescriptor_2c427b3fd17a4424, []int{47}
+}
+
+func (m *PolicyURLCapturesResult) XXX_Unmarshal(b []byte) error {
+	return xxx_messageInfo_PolicyURLCapturesResult.Unmarshal(m, b)
+}
+func (m *PolicyURLCapturesResult) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	return xxx_messageInfo_PolicyURLCapturesResult.Marshal(b, m, deterministic)
+}
+func (m *PolicyURLCapturesResult) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_PolicyURLCapturesResult.Merge(m, src)
+}
+func (m *PolicyURLCapturesResult) XXX_Size() int {
+	return xxx_messageInfo_PolicyURLCapturesResult.Size(m)
+}
+func (m *PolicyURLCapturesResult) XXX_DiscardUnknown() {
+	xxx_messageInfo_PolicyURLCapturesResult.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_PolicyURLCapturesResult proto.InternalMessageInfo
+
+func (m *PolicyURLCapturesResult) GetUrl() string {
+	if m != nil {
+		return m.Url
+	}
+	return ""
+}
+
+func (m *PolicyURLCapturesResult) GetResume() string {
+	if m != nil {
+		return m.Resume
+	}
+	return ""
+}
+
+func (m *PolicyURLCapturesResult) GetCapsummary() *CapSummary {
+	if m != nil {
+		return m.Capsummary
+	}
+	return nil
+}
+
 func init() {
 	proto.RegisterType((*CapSummary)(nil), "io.netograph.dset.CapSummary")
 	proto.RegisterType((*CapSummary_Plan)(nil), "io.netograph.dset.CapSummary.Plan")
@@ -3156,6 +3333,127 @@ func init() {
 	proto.RegisterType((*PolicyDomainCapturesResult)(nil), "io.netograph.dset.PolicyDomainCapturesResult")
 	proto.RegisterType((*PolicyDomainStatsRequest)(nil), "io.netograph.dset.PolicyDomainStatsRequest")
 	proto.RegisterType((*PolicyDomainStatsResult)(nil), "io.netograph.dset.PolicyDomainStatsResult")
+	proto.RegisterType((*PolicyURLCapturesRequest)(nil), "io.netograph.dset.PolicyURLCapturesRequest")
+	proto.RegisterType((*PolicyURLCapturesResult)(nil), "io.netograph.dset.PolicyURLCapturesResult")
+}
+
+func init() { proto.RegisterFile("proto/ngapi/dsetapi/dset.proto", fileDescriptor_2c427b3fd17a4424) }
+
+var fileDescriptor_2c427b3fd17a4424 = []byte{
+	// 1795 bytes of a gzipped FileDescriptorProto
+	0x1f, 0x8b, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02, 0xff, 0xd4, 0x5a, 0xcb, 0x6f, 0xdb, 0x46,
+	0x1a, 0xc7, 0x88, 0x94, 0x1f, 0x9f, 0x63, 0xc7, 0x1e, 0x2b, 0x89, 0xc2, 0xec, 0x7a, 0xbd, 0xcc,
+	0xcb, 0x9b, 0x64, 0x65, 0xc1, 0x0b, 0x2c, 0x76, 0x0f, 0x6d, 0x81, 0x24, 0x08, 0xea, 0xc2, 0x05,
+	0x04, 0x2a, 0x69, 0x91, 0xa0, 0x68, 0x4b, 0x4b, 0x63, 0x9b, 0x30, 0x25, 0xca, 0x9c, 0x61, 0x13,
+	0x07, 0x08, 0x50, 0xf4, 0x52, 0x14, 0x3d, 0xe4, 0x58, 0xa0, 0x87, 0xde, 0x7b, 0xe8, 0xa5, 0xd7,
+	0xa2, 0xd7, 0xfe, 0x09, 0xbd, 0xf4, 0x2f, 0xe8, 0xdf, 0xd0, 0x4b, 0x31, 0xc3, 0xe7, 0x50, 0x43,
+	0x89, 0xb6, 0x65, 0xa1, 0x39, 0x59, 0x33, 0xfc, 0xe6, 0x7b, 0xfc, 0xe6, 0xfb, 0xe6, 0xf1, 0x1b,
+	0xc3, 0xda, 0xc0, 0xf7, 0x98, 0xb7, 0xd9, 0xdf, 0xb7, 0x07, 0xce, 0x66, 0x97, 0x12, 0x16, 0xff,
+	0x6d, 0x88, 0x0f, 0x78, 0xc5, 0xf1, 0x1a, 0x7d, 0xc2, 0xbc, 0x7d, 0xdf, 0x1e, 0x1c, 0x34, 0xf8,
+	0x07, 0xe3, 0x1f, 0xfb, 0x9e, 0xb7, 0xef, 0x92, 0x4d, 0x21, 0xb0, 0x1b, 0xec, 0x6d, 0x32, 0xa7,
+	0x47, 0x28, 0xb3, 0x7b, 0x83, 0x70, 0x8c, 0xf9, 0x9d, 0x06, 0xf0, 0xc0, 0x1e, 0xb4, 0x83, 0x5e,
+	0xcf, 0xf6, 0x8f, 0xf1, 0x12, 0x54, 0x9c, 0x6e, 0x1d, 0xad, 0xa3, 0x8d, 0x79, 0xab, 0xe2, 0x74,
+	0xf1, 0x65, 0x98, 0xb1, 0x29, 0x25, 0x8c, 0xd6, 0x2b, 0xa2, 0x2f, 0x6a, 0xe1, 0xff, 0x41, 0xd5,
+	0xf7, 0x3c, 0x46, 0xeb, 0xda, 0xba, 0xb6, 0xb1, 0xb0, 0x65, 0x36, 0x86, 0x4c, 0x37, 0x52, 0xad,
+	0x0d, 0xcb, 0xf3, 0x98, 0x15, 0x0e, 0xc0, 0x0d, 0xd0, 0xb9, 0x0f, 0x75, 0x7d, 0x1d, 0x6d, 0x2c,
+	0x6c, 0x19, 0x8d, 0xd0, 0xc1, 0x46, 0xec, 0x60, 0xe3, 0x71, 0xec, 0xa0, 0x25, 0xe4, 0xf0, 0x7f,
+	0x41, 0x1f, 0xb8, 0x76, 0xbf, 0x5e, 0x15, 0xf2, 0x63, 0x0c, 0xb5, 0x5c, 0xbb, 0x6f, 0x09, 0x79,
+	0xfc, 0x7f, 0xa8, 0x52, 0x66, 0x33, 0x5a, 0x9f, 0x11, 0x03, 0xaf, 0x8f, 0x1e, 0xd8, 0xe6, 0xa2,
+	0x56, 0x38, 0xc2, 0x30, 0x40, 0xe7, 0x8a, 0x30, 0x06, 0x3d, 0xf0, 0x5d, 0x5a, 0x47, 0xeb, 0xda,
+	0xc6, 0xbc, 0x25, 0x7e, 0xf3, 0x6f, 0x3c, 0x1a, 0xe5, 0xb7, 0x36, 0x54, 0x85, 0x1e, 0x5c, 0x83,
+	0xea, 0x9e, 0xeb, 0x3d, 0xa7, 0x02, 0xc8, 0xaa, 0x15, 0x36, 0xf0, 0x1a, 0xc0, 0x73, 0xb2, 0x4b,
+	0xbd, 0xce, 0x61, 0x8c, 0x67, 0xd5, 0xca, 0xf4, 0xf0, 0x51, 0x07, 0x1e, 0x15, 0x98, 0x8a, 0x51,
+	0xa2, 0x61, 0x6e, 0xc1, 0xdc, 0xfb, 0x84, 0xd9, 0x5d, 0x9b, 0xd9, 0x78, 0x19, 0xb4, 0x43, 0x72,
+	0x1c, 0x4d, 0x0f, 0xff, 0xc9, 0xc7, 0x7c, 0x66, 0xbb, 0x01, 0x89, 0xa6, 0x27, 0x6c, 0x98, 0x6f,
+	0x03, 0x7e, 0x60, 0x0f, 0x58, 0xe0, 0x93, 0xed, 0xfe, 0x9e, 0x67, 0x91, 0xa3, 0x80, 0x50, 0x86,
+	0xeb, 0x30, 0xcb, 0xb5, 0x50, 0xc2, 0x22, 0x0d, 0x71, 0x33, 0x9a, 0xf5, 0x4a, 0x3c, 0xeb, 0xa6,
+	0x05, 0x2b, 0xd2, 0x78, 0x1a, 0xb8, 0x0c, 0xbf, 0x05, 0xd0, 0xb1, 0x07, 0x34, 0x04, 0x4c, 0x68,
+	0x58, 0xd8, 0xfa, 0xfb, 0x48, 0x54, 0xad, 0xcc, 0x00, 0xf3, 0x27, 0x94, 0x28, 0xdd, 0xf1, 0xf6,
+	0xc7, 0xfb, 0x54, 0x83, 0xaa, 0xeb, 0xf4, 0x1c, 0x26, 0xdc, 0xd2, 0xac, 0xb0, 0xc1, 0xf3, 0xd1,
+	0x27, 0x34, 0xe8, 0x11, 0x01, 0xd2, 0xbc, 0x15, 0xb5, 0x70, 0x53, 0xcc, 0xb6, 0xcf, 0x4a, 0xa4,
+	0x55, 0x28, 0x88, 0xef, 0x81, 0x46, 0xfa, 0xdd, 0x28, 0xad, 0x46, 0xc9, 0x73, 0x31, 0xd3, 0x81,
+	0xe5, 0xac, 0xf3, 0x13, 0x00, 0x24, 0x13, 0x4a, 0x25, 0x1b, 0x8a, 0xf9, 0x31, 0xd4, 0x1e, 0x7a,
+	0x3d, 0xdb, 0xe9, 0xbf, 0xeb, 0x50, 0xe6, 0xf9, 0xc7, 0xe3, 0xa1, 0xba, 0x0c, 0x33, 0x5d, 0x31,
+	0x22, 0xd6, 0x14, 0xb6, 0x52, 0x08, 0xb5, 0x0c, 0x84, 0xe6, 0x63, 0x58, 0xcd, 0xe9, 0x9f, 0xc4,
+	0xf4, 0xd2, 0x58, 0x6b, 0x9b, 0xd8, 0x7e, 0xe7, 0xa0, 0xd4, 0xfc, 0x1e, 0x05, 0xc4, 0x3f, 0x8e,
+	0x33, 0x57, 0x34, 0xd4, 0x2e, 0x67, 0xa0, 0xd2, 0x25, 0xa8, 0xbe, 0x42, 0x80, 0x65, 0xab, 0x22,
+	0x94, 0x14, 0x0f, 0x24, 0xe1, 0x51, 0x80, 0x38, 0x7e, 0x00, 0x8b, 0xae, 0xcd, 0x08, 0x65, 0x9d,
+	0x70, 0x8a, 0x85, 0xf1, 0xb1, 0xd1, 0xcb, 0x63, 0xcc, 0x5e, 0x0c, 0x00, 0x7d, 0xe4, 0xf9, 0xdb,
+	0xad, 0x72, 0x45, 0x37, 0x48, 0x8a, 0x6e, 0x70, 0xc2, 0xd0, 0x7f, 0x4e, 0x42, 0x8f, 0xed, 0x8d,
+	0x0c, 0x3d, 0x6f, 0x6c, 0x12, 0x21, 0x63, 0x13, 0x2e, 0xd8, 0x94, 0x7a, 0x1d, 0xc7, 0x66, 0x8e,
+	0xd7, 0xa7, 0x75, 0x5d, 0xac, 0x85, 0x52, 0x5f, 0xc6, 0xff, 0xaa, 0xe4, 0xbf, 0x05, 0xcb, 0xdb,
+	0xad, 0xd2, 0x19, 0x5e, 0x0a, 0x2b, 0xb3, 0x05, 0x17, 0x33, 0x3a, 0x27, 0x91, 0xd5, 0x2e, 0xe0,
+	0xed, 0xd6, 0x8e, 0xb7, 0x5f, 0x36, 0xa9, 0xcf, 0x36, 0xa7, 0x2f, 0x61, 0x45, 0xb2, 0x36, 0x89,
+	0x55, 0x26, 0xef, 0x51, 0xc1, 0x02, 0x6a, 0xbe, 0x82, 0xa5, 0xed, 0x96, 0x64, 0x38, 0x1c, 0x89,
+	0x14, 0x23, 0xcf, 0xa1, 0x7a, 0x5e, 0xf1, 0xa9, 0x3b, 0x2d, 0xca, 0x18, 0xf4, 0x9e, 0x4d, 0x0f,
+	0xa3, 0x7d, 0x53, 0xfc, 0x4e, 0x91, 0xd7, 0xd5, 0xc8, 0xcb, 0xd9, 0x48, 0x61, 0x75, 0xbb, 0xc5,
+	0x0b, 0x29, 0x2c, 0xa9, 0xe9, 0xac, 0x5e, 0xbc, 0x84, 0x65, 0xab, 0x6f, 0x56, 0x09, 0x7f, 0x89,
+	0xe0, 0x12, 0x3f, 0x9a, 0x3c, 0xf2, 0xfc, 0x68, 0x6f, 0x3c, 0xf1, 0x49, 0xe3, 0x64, 0x88, 0xf1,
+	0xfe, 0x81, 0x4f, 0xf6, 0x9c, 0x17, 0xb1, 0x27, 0x61, 0xcb, 0x7c, 0x8d, 0xa0, 0x96, 0xf7, 0x44,
+	0x60, 0xb9, 0x09, 0x7a, 0x8f, 0x30, 0x3b, 0x2a, 0x9b, 0x6b, 0x0a, 0x68, 0xe2, 0xb3, 0x95, 0x25,
+	0x04, 0x93, 0xd3, 0x69, 0xa5, 0xe4, 0xe9, 0xb4, 0xa8, 0x9c, 0x8e, 0x60, 0x85, 0x6b, 0x9e, 0xe6,
+	0x66, 0xf8, 0x2d, 0x82, 0xe5, 0xac, 0xcd, 0xd3, 0x01, 0x50, 0x74, 0xc0, 0x92, 0x97, 0x21, 0xfd,
+	0xa4, 0x0b, 0xe9, 0x4b, 0x30, 0x2c, 0xd2, 0x75, 0x7c, 0x7a, 0xff, 0xf8, 0x21, 0xa1, 0xcc, 0xe9,
+	0x8b, 0xdc, 0x9a, 0x0e, 0x30, 0x3f, 0x22, 0xb8, 0xaa, 0x34, 0x1e, 0x97, 0x1b, 0xf5, 0x02, 0xbf,
+	0x43, 0xe2, 0x72, 0x0b, 0x5b, 0x78, 0x1d, 0x16, 0xba, 0xa9, 0x70, 0x64, 0x3f, 0xdb, 0x35, 0x99,
+	0x02, 0x2c, 0x72, 0x3a, 0x80, 0x4b, 0xb1, 0xcf, 0x6d, 0xe1, 0xd0, 0x74, 0xb0, 0xfa, 0x01, 0x41,
+	0x2d, 0x6f, 0xf7, 0xaf, 0x0c, 0x13, 0x83, 0x1a, 0xbf, 0x8e, 0x9d, 0x60, 0x8b, 0x9e, 0x04, 0x4a,
+	0x9f, 0x23, 0x58, 0xcd, 0x99, 0x15, 0x20, 0x61, 0xd0, 0xf9, 0x25, 0x37, 0x32, 0x29, 0x7e, 0x17,
+	0x6e, 0x9b, 0x72, 0x41, 0x69, 0x27, 0x2d, 0xa8, 0x17, 0x50, 0xe7, 0x1e, 0xf0, 0xdd, 0xa3, 0x6d,
+	0x33, 0xe2, 0xba, 0x0e, 0x9b, 0x52, 0x8a, 0xfc, 0x82, 0xe0, 0x8a, 0xc2, 0x74, 0x21, 0x00, 0x7f,
+	0x83, 0x79, 0x1a, 0x8b, 0x45, 0x76, 0xd3, 0x8e, 0x33, 0xc2, 0x70, 0xa6, 0xfd, 0xeb, 0x77, 0x04,
+	0xb5, 0x76, 0xb0, 0xdb, 0x73, 0x58, 0xe9, 0xed, 0xcb, 0x84, 0x0b, 0x7d, 0x8f, 0x39, 0x7b, 0x4e,
+	0x27, 0x9b, 0xee, 0x52, 0x5f, 0xc2, 0x0c, 0x68, 0x29, 0x33, 0x90, 0x2c, 0xc3, 0xba, 0x60, 0x4b,
+	0x4a, 0x2c, 0xc3, 0x6b, 0x00, 0xf4, 0xd0, 0x19, 0xf8, 0xa4, 0x43, 0xfa, 0x4c, 0xf8, 0xad, 0x59,
+	0x99, 0x1e, 0x6e, 0xe4, 0xa5, 0xd7, 0x27, 0x82, 0xdc, 0x98, 0xb7, 0xc4, 0x6f, 0x6c, 0xc0, 0x1c,
+	0x79, 0xc1, 0x48, 0xbf, 0x4b, 0xba, 0xf5, 0xd9, 0x75, 0xb4, 0x31, 0x67, 0x25, 0x6d, 0xf3, 0x43,
+	0x58, 0xcd, 0x85, 0x1a, 0x57, 0x75, 0x44, 0xef, 0x20, 0x89, 0xde, 0xa9, 0xc3, 0x2c, 0x37, 0x36,
+	0x20, 0xe1, 0x5e, 0x3d, 0x67, 0xc5, 0xcd, 0x68, 0x03, 0xd7, 0x12, 0xaa, 0xe0, 0x18, 0xae, 0x26,
+	0x49, 0x30, 0xe5, 0x2a, 0x7c, 0x8d, 0xa0, 0xae, 0xb2, 0x2d, 0x22, 0x93, 0xb2, 0x0e, 0xe5, 0xb3,
+	0xee, 0xfc, 0x8a, 0x32, 0x71, 0x88, 0x97, 0x87, 0xe0, 0xbd, 0xa6, 0x56, 0x94, 0x0a, 0xd3, 0x6f,
+	0x5e, 0x51, 0x52, 0x58, 0x7d, 0x62, 0xed, 0x4c, 0x39, 0x93, 0x5e, 0x01, 0x96, 0x8d, 0x0a, 0xdc,
+	0x96, 0x41, 0x0b, 0x7c, 0x37, 0x66, 0xdb, 0x02, 0xdf, 0x3d, 0xaf, 0xb4, 0xf9, 0x15, 0xc1, 0xe5,
+	0x96, 0xe7, 0x3a, 0x1d, 0xe7, 0xcc, 0x59, 0x93, 0xf0, 0x60, 0xda, 0x09, 0x79, 0x30, 0xbd, 0x14,
+	0x0f, 0x96, 0xe2, 0x5a, 0x55, 0xe3, 0x3a, 0x23, 0xe1, 0xfa, 0x4d, 0x05, 0x2e, 0x0d, 0x05, 0x26,
+	0xb0, 0x5d, 0x03, 0xe0, 0x79, 0x28, 0x5d, 0x74, 0x32, 0x3d, 0x31, 0xf6, 0x95, 0x14, 0xfb, 0xf8,
+	0x64, 0xae, 0x95, 0x3c, 0x99, 0x8b, 0x63, 0x07, 0x65, 0x3e, 0xd9, 0x23, 0x3e, 0xe9, 0x77, 0x48,
+	0xb9, 0x33, 0xab, 0x3c, 0x06, 0xbf, 0x03, 0x0b, 0xbc, 0x23, 0x3e, 0xb9, 0x54, 0xcb, 0xa8, 0xc8,
+	0x8e, 0x28, 0x44, 0xe6, 0x37, 0x04, 0xd7, 0x04, 0x32, 0xc7, 0xe1, 0xdd, 0x2f, 0x5a, 0x96, 0xe9,
+	0x64, 0xf3, 0xfd, 0x9c, 0x59, 0xd1, 0xc2, 0xe8, 0xbe, 0x46, 0x60, 0xa8, 0xa3, 0x1b, 0x79, 0xc3,
+	0x95, 0xcb, 0xa8, 0x72, 0x7a, 0x42, 0x55, 0xbe, 0x8b, 0xbd, 0x07, 0xf5, 0xac, 0x33, 0x21, 0xd5,
+	0x7f, 0x3a, 0x9c, 0xcd, 0x3f, 0x10, 0x5c, 0x51, 0x28, 0x13, 0x61, 0xdd, 0x80, 0xc5, 0x81, 0xf8,
+	0x14, 0x86, 0x13, 0xee, 0xa9, 0xba, 0x25, 0x77, 0xe2, 0x7b, 0xb0, 0x42, 0x83, 0xdd, 0xb0, 0x35,
+	0x88, 0x6a, 0x43, 0xd8, 0xd0, 0xad, 0xe1, 0x0f, 0x7c, 0x4f, 0x4f, 0x84, 0x34, 0x21, 0x94, 0xb4,
+	0x25, 0x4d, 0x51, 0xbe, 0x51, 0x31, 0xd3, 0x59, 0x4d, 0xf1, 0x07, 0xae, 0x29, 0x11, 0xaa, 0x86,
+	0x9a, 0x92, 0x6f, 0xb7, 0x60, 0x29, 0xfa, 0x1d, 0xbb, 0x3e, 0x23, 0x24, 0x72, 0xbd, 0x7c, 0x7f,
+	0x0b, 0x83, 0x7f, 0x62, 0xed, 0x9c, 0x4f, 0xc6, 0x16, 0xad, 0xd0, 0x5f, 0x24, 0xb8, 0x4b, 0xa6,
+	0xa7, 0xba, 0x4e, 0x6f, 0x7d, 0x8f, 0x41, 0x7f, 0xc8, 0x23, 0xfa, 0x14, 0x16, 0xa5, 0xd3, 0x14,
+	0xbe, 0xad, 0x50, 0xa2, 0x3a, 0x5a, 0x1a, 0xb7, 0xc6, 0x0b, 0x8a, 0x98, 0x9e, 0xc1, 0x42, 0xe6,
+	0x05, 0x06, 0xdf, 0x54, 0x3b, 0x99, 0x7b, 0xe1, 0x31, 0x6e, 0x8c, 0x13, 0x13, 0xba, 0x9f, 0x8a,
+	0x17, 0xbf, 0xe8, 0x2d, 0x03, 0x8f, 0x18, 0x93, 0xbe, 0xd3, 0x18, 0xd7, 0xc7, 0x48, 0x71, 0xc5,
+	0x4d, 0x84, 0x77, 0x61, 0x51, 0x7a, 0x5b, 0x50, 0x02, 0xa3, 0x7a, 0xdd, 0x50, 0x02, 0xa3, 0x78,
+	0xa6, 0x68, 0x22, 0xfc, 0x09, 0x5c, 0xc8, 0x72, 0xfe, 0xb8, 0x78, 0xa4, 0x74, 0x84, 0x30, 0x6e,
+	0x8e, 0x95, 0xcb, 0x1b, 0x08, 0x99, 0xf5, 0x11, 0x06, 0x24, 0xaa, 0x7f, 0x84, 0x81, 0x2c, 0x45,
+	0xdf, 0x44, 0xf8, 0x03, 0x98, 0x4f, 0x78, 0x6a, 0xac, 0x42, 0x36, 0xcf, 0x8c, 0x1b, 0xe6, 0x68,
+	0xa1, 0x48, 0xef, 0x47, 0xb0, 0x90, 0xe1, 0x8f, 0x95, 0x49, 0x33, 0xcc, 0x66, 0x2b, 0x93, 0x66,
+	0x88, 0x86, 0x6e, 0x22, 0xdc, 0x86, 0xb9, 0x98, 0xa2, 0xc5, 0x6a, 0x7f, 0x64, 0xbd, 0xff, 0x1c,
+	0x29, 0x93, 0x62, 0x9d, 0xa5, 0x40, 0x95, 0x58, 0x2b, 0x98, 0x59, 0xe3, 0xe6, 0x58, 0xb9, 0xc8,
+	0x00, 0x81, 0x25, 0x99, 0x19, 0xc4, 0x1b, 0x05, 0xb7, 0xaf, 0x21, 0x1a, 0xd3, 0xb8, 0x5d, 0x42,
+	0x32, 0x32, 0xf3, 0x14, 0x20, 0xe5, 0xde, 0x94, 0x35, 0x35, 0x44, 0x07, 0x2a, 0x6b, 0x2a, 0x4f,
+	0xe0, 0x35, 0x11, 0x3e, 0x80, 0x8b, 0xb9, 0x33, 0x14, 0xfe, 0x97, 0x62, 0xa4, 0xfa, 0x00, 0x69,
+	0x6c, 0x94, 0x11, 0x8d, 0x2c, 0x3d, 0x87, 0x9a, 0x6a, 0xd7, 0xc6, 0x8d, 0x22, 0x1d, 0xea, 0xc3,
+	0x8b, 0xf1, 0xef, 0xd2, 0xf2, 0x91, 0x61, 0x17, 0x56, 0x86, 0x36, 0x55, 0x7c, 0x77, 0x8c, 0x96,
+	0xec, 0x3e, 0x6e, 0xdc, 0x29, 0x27, 0x2c, 0xd6, 0xbf, 0x7e, 0x6c, 0x2d, 0xb3, 0x95, 0x8c, 0xb0,
+	0x36, 0xbc, 0xd7, 0x8d, 0xb0, 0x36, 0xb4, 0x3b, 0x35, 0x11, 0x66, 0xb0, 0xaa, 0xa0, 0x1f, 0xb1,
+	0x0a, 0xa5, 0x62, 0x8e, 0xd4, 0xb8, 0x57, 0x56, 0x3c, 0x4d, 0x7c, 0x99, 0xc8, 0x53, 0x26, 0xbe,
+	0x92, 0x63, 0x54, 0x26, 0xbe, 0x8a, 0x15, 0x0c, 0x57, 0x7c, 0x89, 0x09, 0x53, 0xae, 0xf8, 0x2a,
+	0x8a, 0x4e, 0xb9, 0xe2, 0x2b, 0x48, 0xb5, 0x26, 0xe2, 0x13, 0x36, 0x44, 0x38, 0x29, 0x27, 0xac,
+	0x88, 0x11, 0x53, 0x4e, 0x58, 0x01, 0x87, 0xd5, 0x44, 0xf8, 0x08, 0xf0, 0x30, 0xaf, 0x80, 0x55,
+	0x13, 0x50, 0x48, 0x7d, 0x18, 0x77, 0x4b, 0x4a, 0xa7, 0x21, 0x0e, 0x5d, 0xdf, 0xf1, 0x48, 0x1d,
+	0xf9, 0x42, 0xbf, 0x53, 0x4e, 0x38, 0x5d, 0x77, 0xb3, 0x37, 0x5e, 0xe5, 0xba, 0xab, 0xb8, 0x87,
+	0x2b, 0xd7, 0xdd, 0xe1, 0xab, 0x73, 0x13, 0xdd, 0x9f, 0x7f, 0x36, 0x1b, 0xfd, 0x87, 0xd2, 0xee,
+	0x8c, 0xb8, 0x3e, 0xfc, 0xe7, 0xcf, 0x00, 0x00, 0x00, 0xff, 0xff, 0x25, 0xcf, 0x12, 0x25, 0xbf,
+	0x24, 0x00, 0x00,
 }
 
 // Reference imports to suppress errors if they are not otherwise used.
@@ -3202,6 +3500,8 @@ type DsetClient interface {
 	PolicyDomainCaptures(ctx context.Context, in *PolicyDomainCapturesRequest, opts ...grpc.CallOption) (Dset_PolicyDomainCapturesClient, error)
 	// Retrieve statistics for a policy domain query.
 	PolicyDomainStats(ctx context.Context, in *PolicyDomainStatsRequest, opts ...grpc.CallOption) (*PolicyDomainStatsResult, error)
+	// Retrieve the policy capture log for specific policy URL, in reverse chronological order.
+	PolicyURLCaptures(ctx context.Context, in *PolicyURLCapturesRequest, opts ...grpc.CallOption) (Dset_PolicyURLCapturesClient, error)
 	// Find all redirections in the dataset for a given destination domain query.
 	RedirsByDestination(ctx context.Context, in *RedirsByDestinationRequest, opts ...grpc.CallOption) (Dset_RedirsByDestinationClient, error)
 	// Find all redirections in the dataset for a given source domain query.
@@ -3637,8 +3937,40 @@ func (c *dsetClient) PolicyDomainStats(ctx context.Context, in *PolicyDomainStat
 	return out, nil
 }
 
+func (c *dsetClient) PolicyURLCaptures(ctx context.Context, in *PolicyURLCapturesRequest, opts ...grpc.CallOption) (Dset_PolicyURLCapturesClient, error) {
+	stream, err := c.cc.NewStream(ctx, &_Dset_serviceDesc.Streams[12], "/io.netograph.dset.Dset/PolicyURLCaptures", opts...)
+	if err != nil {
+		return nil, err
+	}
+	x := &dsetPolicyURLCapturesClient{stream}
+	if err := x.ClientStream.SendMsg(in); err != nil {
+		return nil, err
+	}
+	if err := x.ClientStream.CloseSend(); err != nil {
+		return nil, err
+	}
+	return x, nil
+}
+
+type Dset_PolicyURLCapturesClient interface {
+	Recv() (*PolicyURLCapturesResult, error)
+	grpc.ClientStream
+}
+
+type dsetPolicyURLCapturesClient struct {
+	grpc.ClientStream
+}
+
+func (x *dsetPolicyURLCapturesClient) Recv() (*PolicyURLCapturesResult, error) {
+	m := new(PolicyURLCapturesResult)
+	if err := x.ClientStream.RecvMsg(m); err != nil {
+		return nil, err
+	}
+	return m, nil
+}
+
 func (c *dsetClient) RedirsByDestination(ctx context.Context, in *RedirsByDestinationRequest, opts ...grpc.CallOption) (Dset_RedirsByDestinationClient, error) {
-	stream, err := c.cc.NewStream(ctx, &_Dset_serviceDesc.Streams[12], "/io.netograph.dset.Dset/RedirsByDestination", opts...)
+	stream, err := c.cc.NewStream(ctx, &_Dset_serviceDesc.Streams[13], "/io.netograph.dset.Dset/RedirsByDestination", opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -3670,7 +4002,7 @@ func (x *dsetRedirsByDestinationClient) Recv() (*RedirsByDestinationResult, erro
 }
 
 func (c *dsetClient) RedirsBySource(ctx context.Context, in *RedirsBySourceRequest, opts ...grpc.CallOption) (Dset_RedirsBySourceClient, error) {
-	stream, err := c.cc.NewStream(ctx, &_Dset_serviceDesc.Streams[13], "/io.netograph.dset.Dset/RedirsBySource", opts...)
+	stream, err := c.cc.NewStream(ctx, &_Dset_serviceDesc.Streams[14], "/io.netograph.dset.Dset/RedirsBySource", opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -3702,7 +4034,7 @@ func (x *dsetRedirsBySourceClient) Recv() (*RedirsBySourceResult, error) {
 }
 
 func (c *dsetClient) RootLogSearch(ctx context.Context, in *RootLogSearchRequest, opts ...grpc.CallOption) (Dset_RootLogSearchClient, error) {
-	stream, err := c.cc.NewStream(ctx, &_Dset_serviceDesc.Streams[14], "/io.netograph.dset.Dset/RootLogSearch", opts...)
+	stream, err := c.cc.NewStream(ctx, &_Dset_serviceDesc.Streams[15], "/io.netograph.dset.Dset/RootLogSearch", opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -3734,7 +4066,7 @@ func (x *dsetRootLogSearchClient) Recv() (*RootLogSearchResult, error) {
 }
 
 func (c *dsetClient) RootsForSatellite(ctx context.Context, in *RootsForSatelliteRequest, opts ...grpc.CallOption) (Dset_RootsForSatelliteClient, error) {
-	stream, err := c.cc.NewStream(ctx, &_Dset_serviceDesc.Streams[15], "/io.netograph.dset.Dset/RootsForSatellite", opts...)
+	stream, err := c.cc.NewStream(ctx, &_Dset_serviceDesc.Streams[16], "/io.netograph.dset.Dset/RootsForSatellite", opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -3766,7 +4098,7 @@ func (x *dsetRootsForSatelliteClient) Recv() (*RootsForSatelliteResult, error) {
 }
 
 func (c *dsetClient) SatelliteLogSearch(ctx context.Context, in *SatelliteLogSearchRequest, opts ...grpc.CallOption) (Dset_SatelliteLogSearchClient, error) {
-	stream, err := c.cc.NewStream(ctx, &_Dset_serviceDesc.Streams[16], "/io.netograph.dset.Dset/SatelliteLogSearch", opts...)
+	stream, err := c.cc.NewStream(ctx, &_Dset_serviceDesc.Streams[17], "/io.netograph.dset.Dset/SatelliteLogSearch", opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -3798,7 +4130,7 @@ func (x *dsetSatelliteLogSearchClient) Recv() (*SatelliteLogSearchResult, error)
 }
 
 func (c *dsetClient) SatellitesForRoot(ctx context.Context, in *SatellitesForRootRequest, opts ...grpc.CallOption) (Dset_SatellitesForRootClient, error) {
-	stream, err := c.cc.NewStream(ctx, &_Dset_serviceDesc.Streams[17], "/io.netograph.dset.Dset/SatellitesForRoot", opts...)
+	stream, err := c.cc.NewStream(ctx, &_Dset_serviceDesc.Streams[18], "/io.netograph.dset.Dset/SatellitesForRoot", opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -3830,7 +4162,7 @@ func (x *dsetSatellitesForRootClient) Recv() (*SatellitesForRootResult, error) {
 }
 
 func (c *dsetClient) URLLogSearch(ctx context.Context, in *URLLogSearchRequest, opts ...grpc.CallOption) (Dset_URLLogSearchClient, error) {
-	stream, err := c.cc.NewStream(ctx, &_Dset_serviceDesc.Streams[18], "/io.netograph.dset.Dset/URLLogSearch", opts...)
+	stream, err := c.cc.NewStream(ctx, &_Dset_serviceDesc.Streams[19], "/io.netograph.dset.Dset/URLLogSearch", opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -3895,6 +4227,8 @@ type DsetServer interface {
 	PolicyDomainCaptures(*PolicyDomainCapturesRequest, Dset_PolicyDomainCapturesServer) error
 	// Retrieve statistics for a policy domain query.
 	PolicyDomainStats(context.Context, *PolicyDomainStatsRequest) (*PolicyDomainStatsResult, error)
+	// Retrieve the policy capture log for specific policy URL, in reverse chronological order.
+	PolicyURLCaptures(*PolicyURLCapturesRequest, Dset_PolicyURLCapturesServer) error
 	// Find all redirections in the dataset for a given destination domain query.
 	RedirsByDestination(*RedirsByDestinationRequest, Dset_RedirsByDestinationServer) error
 	// Find all redirections in the dataset for a given source domain query.
@@ -3909,6 +4243,80 @@ type DsetServer interface {
 	SatellitesForRoot(*SatellitesForRootRequest, Dset_SatellitesForRootServer) error
 	// Search the dataset log for captures where any root URL matches a given URL query.
 	URLLogSearch(*URLLogSearchRequest, Dset_URLLogSearchServer) error
+}
+
+// UnimplementedDsetServer can be embedded to have forward compatible implementations.
+type UnimplementedDsetServer struct {
+}
+
+func (*UnimplementedDsetServer) SubmitCapture(ctx context.Context, req *SubmitCaptureRequest) (*SubmitCaptureResult, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method SubmitCapture not implemented")
+}
+func (*UnimplementedDsetServer) CaptureInfo(ctx context.Context, req *CaptureInfoRequest) (*CaptureInfoResult, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method CaptureInfo not implemented")
+}
+func (*UnimplementedDsetServer) CaptureLog(req *CaptureLogRequest, srv Dset_CaptureLogServer) error {
+	return status.Errorf(codes.Unimplemented, "method CaptureLog not implemented")
+}
+func (*UnimplementedDsetServer) DomainHistory(req *DomainHistoryRequest, srv Dset_DomainHistoryServer) error {
+	return status.Errorf(codes.Unimplemented, "method DomainHistory not implemented")
+}
+func (*UnimplementedDsetServer) DomainSearch(req *DomainSearchRequest, srv Dset_DomainSearchServer) error {
+	return status.Errorf(codes.Unimplemented, "method DomainSearch not implemented")
+}
+func (*UnimplementedDsetServer) DomainsForIP(req *DomainsForIPRequest, srv Dset_DomainsForIPServer) error {
+	return status.Errorf(codes.Unimplemented, "method DomainsForIP not implemented")
+}
+func (*UnimplementedDsetServer) IPHistory(req *IPHistoryRequest, srv Dset_IPHistoryServer) error {
+	return status.Errorf(codes.Unimplemented, "method IPHistory not implemented")
+}
+func (*UnimplementedDsetServer) IPLogSearch(req *IPLogSearchRequest, srv Dset_IPLogSearchServer) error {
+	return status.Errorf(codes.Unimplemented, "method IPLogSearch not implemented")
+}
+func (*UnimplementedDsetServer) IPSearch(req *IPSearchRequest, srv Dset_IPSearchServer) error {
+	return status.Errorf(codes.Unimplemented, "method IPSearch not implemented")
+}
+func (*UnimplementedDsetServer) IPsForDomain(req *IPsForDomainRequest, srv Dset_IPsForDomainServer) error {
+	return status.Errorf(codes.Unimplemented, "method IPsForDomain not implemented")
+}
+func (*UnimplementedDsetServer) MetaForCapture(req *MetaForCaptureRequest, srv Dset_MetaForCaptureServer) error {
+	return status.Errorf(codes.Unimplemented, "method MetaForCapture not implemented")
+}
+func (*UnimplementedDsetServer) MetaSearch(req *MetaSearchRequest, srv Dset_MetaSearchServer) error {
+	return status.Errorf(codes.Unimplemented, "method MetaSearch not implemented")
+}
+func (*UnimplementedDsetServer) PoliciesForRoot(req *PoliciesForRootRequest, srv Dset_PoliciesForRootServer) error {
+	return status.Errorf(codes.Unimplemented, "method PoliciesForRoot not implemented")
+}
+func (*UnimplementedDsetServer) PolicyDomainCaptures(req *PolicyDomainCapturesRequest, srv Dset_PolicyDomainCapturesServer) error {
+	return status.Errorf(codes.Unimplemented, "method PolicyDomainCaptures not implemented")
+}
+func (*UnimplementedDsetServer) PolicyDomainStats(ctx context.Context, req *PolicyDomainStatsRequest) (*PolicyDomainStatsResult, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method PolicyDomainStats not implemented")
+}
+func (*UnimplementedDsetServer) PolicyURLCaptures(req *PolicyURLCapturesRequest, srv Dset_PolicyURLCapturesServer) error {
+	return status.Errorf(codes.Unimplemented, "method PolicyURLCaptures not implemented")
+}
+func (*UnimplementedDsetServer) RedirsByDestination(req *RedirsByDestinationRequest, srv Dset_RedirsByDestinationServer) error {
+	return status.Errorf(codes.Unimplemented, "method RedirsByDestination not implemented")
+}
+func (*UnimplementedDsetServer) RedirsBySource(req *RedirsBySourceRequest, srv Dset_RedirsBySourceServer) error {
+	return status.Errorf(codes.Unimplemented, "method RedirsBySource not implemented")
+}
+func (*UnimplementedDsetServer) RootLogSearch(req *RootLogSearchRequest, srv Dset_RootLogSearchServer) error {
+	return status.Errorf(codes.Unimplemented, "method RootLogSearch not implemented")
+}
+func (*UnimplementedDsetServer) RootsForSatellite(req *RootsForSatelliteRequest, srv Dset_RootsForSatelliteServer) error {
+	return status.Errorf(codes.Unimplemented, "method RootsForSatellite not implemented")
+}
+func (*UnimplementedDsetServer) SatelliteLogSearch(req *SatelliteLogSearchRequest, srv Dset_SatelliteLogSearchServer) error {
+	return status.Errorf(codes.Unimplemented, "method SatelliteLogSearch not implemented")
+}
+func (*UnimplementedDsetServer) SatellitesForRoot(req *SatellitesForRootRequest, srv Dset_SatellitesForRootServer) error {
+	return status.Errorf(codes.Unimplemented, "method SatellitesForRoot not implemented")
+}
+func (*UnimplementedDsetServer) URLLogSearch(req *URLLogSearchRequest, srv Dset_URLLogSearchServer) error {
+	return status.Errorf(codes.Unimplemented, "method URLLogSearch not implemented")
 }
 
 func RegisterDsetServer(s *grpc.Server, srv DsetServer) {
@@ -4221,6 +4629,27 @@ func _Dset_PolicyDomainStats_Handler(srv interface{}, ctx context.Context, dec f
 	return interceptor(ctx, in, info, handler)
 }
 
+func _Dset_PolicyURLCaptures_Handler(srv interface{}, stream grpc.ServerStream) error {
+	m := new(PolicyURLCapturesRequest)
+	if err := stream.RecvMsg(m); err != nil {
+		return err
+	}
+	return srv.(DsetServer).PolicyURLCaptures(m, &dsetPolicyURLCapturesServer{stream})
+}
+
+type Dset_PolicyURLCapturesServer interface {
+	Send(*PolicyURLCapturesResult) error
+	grpc.ServerStream
+}
+
+type dsetPolicyURLCapturesServer struct {
+	grpc.ServerStream
+}
+
+func (x *dsetPolicyURLCapturesServer) Send(m *PolicyURLCapturesResult) error {
+	return x.ServerStream.SendMsg(m)
+}
+
 func _Dset_RedirsByDestination_Handler(srv interface{}, stream grpc.ServerStream) error {
 	m := new(RedirsByDestinationRequest)
 	if err := stream.RecvMsg(m); err != nil {
@@ -4447,6 +4876,11 @@ var _Dset_serviceDesc = grpc.ServiceDesc{
 			ServerStreams: true,
 		},
 		{
+			StreamName:    "PolicyURLCaptures",
+			Handler:       _Dset_PolicyURLCaptures_Handler,
+			ServerStreams: true,
+		},
+		{
 			StreamName:    "RedirsByDestination",
 			Handler:       _Dset_RedirsByDestination_Handler,
 			ServerStreams: true,
@@ -4483,122 +4917,4 @@ var _Dset_serviceDesc = grpc.ServiceDesc{
 		},
 	},
 	Metadata: "proto/ngapi/dsetapi/dset.proto",
-}
-
-func init() {
-	proto.RegisterFile("proto/ngapi/dsetapi/dset.proto", fileDescriptor_dset_85a1e70af362325e)
-}
-
-var fileDescriptor_dset_85a1e70af362325e = []byte{
-	// 1754 bytes of a gzipped FileDescriptorProto
-	0x1f, 0x8b, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02, 0xff, 0xd4, 0x5a, 0x4d, 0x6f, 0xdb, 0x46,
-	0x1a, 0xc6, 0x88, 0x94, 0x3f, 0x5e, 0xc7, 0x8e, 0x35, 0x56, 0x12, 0x85, 0xd9, 0xf5, 0x7a, 0x99,
-	0x2f, 0x6f, 0x92, 0x95, 0x05, 0x2f, 0xb0, 0xd8, 0x3d, 0xb4, 0x05, 0x92, 0x20, 0xa8, 0x8b, 0x14,
-	0x10, 0xa8, 0xb4, 0x45, 0x82, 0xa2, 0x2d, 0x2d, 0x8d, 0x6d, 0xc2, 0x94, 0x28, 0x73, 0x86, 0x4d,
-	0x1c, 0x20, 0x40, 0x6f, 0x45, 0xd1, 0x43, 0x8e, 0x05, 0x7a, 0xe8, 0x3f, 0xe8, 0xa5, 0xb7, 0xa2,
-	0xe8, 0xb5, 0x3f, 0xa1, 0x97, 0xfe, 0x82, 0xfe, 0x86, 0x5e, 0x8a, 0x19, 0x7e, 0x0e, 0x35, 0x94,
-	0x68, 0x5b, 0x16, 0x9a, 0x93, 0x39, 0x33, 0xef, 0xd7, 0x3c, 0xf3, 0xbe, 0xf3, 0xf1, 0xc8, 0xb0,
-	0x3e, 0xf4, 0x3d, 0xe6, 0x6d, 0x0d, 0xf6, 0xed, 0xa1, 0xb3, 0xd5, 0xa3, 0x84, 0xc5, 0x7f, 0x9b,
-	0x62, 0x00, 0xd7, 0x1c, 0xaf, 0x39, 0x20, 0xcc, 0xdb, 0xf7, 0xed, 0xe1, 0x41, 0x93, 0x0f, 0x18,
-	0xff, 0xd8, 0xf7, 0xbc, 0x7d, 0x97, 0x6c, 0x09, 0x81, 0xdd, 0x60, 0x6f, 0x8b, 0x39, 0x7d, 0x42,
-	0x99, 0xdd, 0x1f, 0x86, 0x3a, 0xe6, 0x77, 0x1a, 0xc0, 0x03, 0x7b, 0xd8, 0x09, 0xfa, 0x7d, 0xdb,
-	0x3f, 0xc6, 0x2b, 0x50, 0x71, 0x7a, 0x0d, 0xb4, 0x81, 0x36, 0x17, 0xad, 0x8a, 0xd3, 0xc3, 0x97,
-	0x61, 0xce, 0xa6, 0x94, 0x30, 0xda, 0xa8, 0x88, 0xbe, 0xa8, 0x85, 0xff, 0x07, 0x55, 0xdf, 0xf3,
-	0x18, 0x6d, 0x68, 0x1b, 0xda, 0xe6, 0xd2, 0xb6, 0xd9, 0x1c, 0x71, 0xdd, 0x4c, 0xad, 0x36, 0x2d,
-	0xcf, 0x63, 0x56, 0xa8, 0x80, 0x9b, 0xa0, 0xf3, 0x18, 0x1a, 0xfa, 0x06, 0xda, 0x5c, 0xda, 0x36,
-	0x9a, 0x61, 0x80, 0xcd, 0x38, 0xc0, 0xe6, 0x93, 0x38, 0x40, 0x4b, 0xc8, 0xe1, 0xff, 0x82, 0x3e,
-	0x74, 0xed, 0x41, 0xa3, 0x2a, 0xe4, 0x27, 0x38, 0x6a, 0xbb, 0xf6, 0xc0, 0x12, 0xf2, 0xf8, 0xff,
-	0x50, 0xa5, 0xcc, 0x66, 0xb4, 0x31, 0x27, 0x14, 0xaf, 0x8f, 0x57, 0xec, 0x70, 0x51, 0x2b, 0xd4,
-	0x30, 0x0c, 0xd0, 0xb9, 0x21, 0x8c, 0x41, 0x0f, 0x7c, 0x97, 0x36, 0xd0, 0x86, 0xb6, 0xb9, 0x68,
-	0x89, 0x6f, 0x3e, 0xc6, 0x67, 0xa3, 0x1c, 0xeb, 0x40, 0x55, 0xd8, 0xc1, 0x75, 0xa8, 0xee, 0xb9,
-	0xde, 0x73, 0x2a, 0x80, 0xac, 0x5a, 0x61, 0x03, 0xaf, 0x03, 0x3c, 0x27, 0xbb, 0xd4, 0xeb, 0x1e,
-	0xc6, 0x78, 0x56, 0xad, 0x4c, 0x0f, 0xd7, 0x3a, 0xf0, 0xa8, 0xc0, 0x54, 0x68, 0x89, 0x86, 0xb9,
-	0x0d, 0x0b, 0xef, 0x13, 0x66, 0xf7, 0x6c, 0x66, 0xe3, 0x55, 0xd0, 0x0e, 0xc9, 0x71, 0xb4, 0x3c,
-	0xfc, 0x93, 0xeb, 0x7c, 0x6e, 0xbb, 0x01, 0x89, 0x96, 0x27, 0x6c, 0x98, 0x6f, 0x03, 0x7e, 0x60,
-	0x0f, 0x59, 0xe0, 0x93, 0x9d, 0xc1, 0x9e, 0x67, 0x91, 0xa3, 0x80, 0x50, 0x86, 0x1b, 0x30, 0xcf,
-	0xad, 0x50, 0xc2, 0x22, 0x0b, 0x71, 0x33, 0x5a, 0xf5, 0x4a, 0xbc, 0xea, 0xa6, 0x05, 0x35, 0x49,
-	0x9f, 0x06, 0x2e, 0xc3, 0x6f, 0x01, 0x74, 0xed, 0x21, 0x0d, 0x01, 0x13, 0x16, 0x96, 0xb6, 0xff,
-	0x3e, 0x16, 0x55, 0x2b, 0xa3, 0x60, 0xfe, 0x84, 0x12, 0xa3, 0x8f, 0xbd, 0xfd, 0xc9, 0x31, 0xd5,
-	0xa1, 0xea, 0x3a, 0x7d, 0x87, 0x89, 0xb0, 0x34, 0x2b, 0x6c, 0xf0, 0x7c, 0xf4, 0x09, 0x0d, 0xfa,
-	0x44, 0x80, 0xb4, 0x68, 0x45, 0x2d, 0xdc, 0x12, 0xab, 0xed, 0xb3, 0x12, 0x69, 0x15, 0x0a, 0xe2,
-	0x7b, 0xa0, 0x91, 0x41, 0x2f, 0x4a, 0xab, 0x71, 0xf2, 0x5c, 0xcc, 0x74, 0x60, 0x35, 0x1b, 0xfc,
-	0x14, 0x00, 0xc9, 0x4c, 0xa5, 0x92, 0x9d, 0x8a, 0xf9, 0x09, 0xd4, 0x1f, 0x7a, 0x7d, 0xdb, 0x19,
-	0xbc, 0xeb, 0x50, 0xe6, 0xf9, 0xc7, 0x93, 0xa1, 0xba, 0x0c, 0x73, 0x3d, 0xa1, 0x11, 0x5b, 0x0a,
-	0x5b, 0x29, 0x84, 0x5a, 0x06, 0x42, 0xf3, 0x09, 0xac, 0xe5, 0xec, 0x4f, 0x63, 0x79, 0x69, 0x6c,
-	0xb5, 0x43, 0x6c, 0xbf, 0x7b, 0x50, 0x6a, 0x7d, 0x8f, 0x02, 0xe2, 0x1f, 0xc7, 0x99, 0x2b, 0x1a,
-	0xea, 0x90, 0x33, 0x50, 0xe9, 0x12, 0x54, 0x5f, 0x21, 0xc0, 0xb2, 0x57, 0x31, 0x95, 0x14, 0x0f,
-	0x24, 0xe1, 0x51, 0x80, 0x38, 0x7e, 0x00, 0xcb, 0xae, 0xcd, 0x08, 0x65, 0xdd, 0x70, 0x89, 0x85,
-	0xf3, 0x89, 0xb3, 0x97, 0x75, 0xcc, 0x7e, 0x0c, 0x00, 0x7d, 0xe4, 0xf9, 0x3b, 0xed, 0x72, 0x45,
-	0x37, 0x4c, 0x8a, 0x6e, 0x78, 0xc2, 0xa9, 0xff, 0x9c, 0x4c, 0x3d, 0xf6, 0x37, 0x76, 0xea, 0x79,
-	0x67, 0xd3, 0x98, 0x32, 0x36, 0xe1, 0x82, 0x4d, 0xa9, 0xd7, 0x75, 0x6c, 0xe6, 0x78, 0x03, 0xda,
-	0xd0, 0xc5, 0x5e, 0x28, 0xf5, 0x65, 0xe2, 0xaf, 0x4a, 0xf1, 0x5b, 0xb0, 0xba, 0xd3, 0x2e, 0x9d,
-	0xe1, 0xa5, 0xb0, 0x32, 0xdb, 0x70, 0x31, 0x63, 0x73, 0x1a, 0x59, 0xed, 0x02, 0xde, 0x69, 0x3f,
-	0xf6, 0xf6, 0xcb, 0x26, 0xf5, 0xd9, 0xd6, 0xf4, 0x25, 0xd4, 0x24, 0x6f, 0xd3, 0xd8, 0x65, 0xf2,
-	0x11, 0x15, 0x6c, 0xa0, 0xe6, 0x2b, 0x58, 0xd9, 0x69, 0x4b, 0x8e, 0x43, 0x4d, 0xa4, 0xd0, 0x3c,
-	0x87, 0xea, 0x79, 0xc5, 0x97, 0xee, 0xb4, 0x28, 0x63, 0xd0, 0xfb, 0x36, 0x3d, 0x8c, 0xce, 0x4d,
-	0xf1, 0x9d, 0x22, 0xaf, 0xab, 0x91, 0x97, 0xb3, 0x91, 0xc2, 0xda, 0x4e, 0x9b, 0x17, 0x52, 0x58,
-	0x52, 0xb3, 0xd9, 0xbd, 0x78, 0x09, 0xcb, 0x5e, 0xdf, 0xac, 0x12, 0xfe, 0x12, 0xc1, 0x25, 0x7e,
-	0x35, 0x79, 0xe4, 0xf9, 0xd1, 0xd9, 0x78, 0xe2, 0x9b, 0xc6, 0xc9, 0x10, 0xe3, 0xfd, 0x43, 0x9f,
-	0xec, 0x39, 0x2f, 0xe2, 0x48, 0xc2, 0x96, 0xf9, 0x1a, 0x41, 0x3d, 0x1f, 0x89, 0xc0, 0x72, 0x0b,
-	0xf4, 0x3e, 0x61, 0x76, 0x54, 0x36, 0xd7, 0x14, 0xd0, 0xc4, 0x77, 0x2b, 0x4b, 0x08, 0x26, 0xb7,
-	0xd3, 0x4a, 0xc9, 0xdb, 0x69, 0x51, 0x39, 0x1d, 0x41, 0x8d, 0x5b, 0x9e, 0xe5, 0x61, 0xf8, 0x2d,
-	0x82, 0xd5, 0xac, 0xcf, 0xd3, 0x01, 0x50, 0x74, 0xc1, 0x92, 0xb7, 0x21, 0xfd, 0xa4, 0x1b, 0xe9,
-	0x4b, 0x30, 0x2c, 0xd2, 0x73, 0x7c, 0x7a, 0xff, 0xf8, 0x21, 0xa1, 0xcc, 0x19, 0x88, 0xdc, 0x9a,
-	0x0d, 0x30, 0x3f, 0x20, 0xb8, 0xaa, 0x74, 0x1e, 0x97, 0x1b, 0xf5, 0x02, 0xbf, 0x4b, 0xe2, 0x72,
-	0x0b, 0x5b, 0x78, 0x03, 0x96, 0x7a, 0xa9, 0x70, 0xe4, 0x3f, 0xdb, 0x35, 0x9d, 0x02, 0x2c, 0x0a,
-	0x3a, 0x80, 0x4b, 0x71, 0xcc, 0x1d, 0x11, 0xd0, 0x6c, 0xb0, 0xfa, 0x1e, 0x41, 0x3d, 0xef, 0xf7,
-	0xaf, 0x0c, 0x13, 0x83, 0x3a, 0x7f, 0x8e, 0x9d, 0xe0, 0x88, 0x9e, 0x06, 0x4a, 0x5f, 0x20, 0x58,
-	0xcb, 0xb9, 0x15, 0x20, 0x61, 0xd0, 0xf9, 0x23, 0x37, 0x72, 0x29, 0xbe, 0x0b, 0x8f, 0x4d, 0xb9,
-	0xa0, 0xb4, 0x93, 0x16, 0xd4, 0x0b, 0x68, 0xf0, 0x08, 0xf8, 0xe9, 0xd1, 0xb1, 0x19, 0x71, 0x5d,
-	0x87, 0xcd, 0x28, 0x45, 0x7e, 0x41, 0x70, 0x45, 0xe1, 0xba, 0x10, 0x80, 0xbf, 0xc1, 0x22, 0x8d,
-	0xc5, 0x22, 0xbf, 0x69, 0xc7, 0x19, 0x61, 0x38, 0xd3, 0xf9, 0xf5, 0x3b, 0x82, 0x7a, 0x27, 0xd8,
-	0xed, 0x3b, 0xac, 0xf4, 0xf1, 0x65, 0xc2, 0x85, 0x81, 0xc7, 0x9c, 0x3d, 0xa7, 0x9b, 0x4d, 0x77,
-	0xa9, 0x2f, 0x61, 0x06, 0xb4, 0x94, 0x19, 0x48, 0xb6, 0x61, 0x5d, 0xb0, 0x25, 0x25, 0xb6, 0xe1,
-	0x75, 0x00, 0x7a, 0xe8, 0x0c, 0x7d, 0xd2, 0x25, 0x03, 0x26, 0xe2, 0xd6, 0xac, 0x4c, 0x0f, 0x77,
-	0xf2, 0xd2, 0x1b, 0x10, 0x41, 0x6e, 0x2c, 0x5a, 0xe2, 0x1b, 0x1b, 0xb0, 0x40, 0x5e, 0x30, 0x32,
-	0xe8, 0x91, 0x5e, 0x63, 0x7e, 0x03, 0x6d, 0x2e, 0x58, 0x49, 0xdb, 0xfc, 0x08, 0xd6, 0x72, 0x53,
-	0x8d, 0xab, 0x3a, 0xa2, 0x77, 0x90, 0x44, 0xef, 0x34, 0x60, 0x9e, 0x3b, 0x1b, 0x92, 0xf0, 0xac,
-	0x5e, 0xb0, 0xe2, 0x66, 0x74, 0x80, 0x6b, 0x09, 0x55, 0x70, 0x0c, 0x57, 0x93, 0x24, 0x98, 0x71,
-	0x15, 0xbe, 0x46, 0xd0, 0x50, 0xf9, 0x16, 0x33, 0x93, 0xb2, 0x0e, 0xe5, 0xb3, 0xee, 0xfc, 0x8a,
-	0x32, 0x09, 0x88, 0x97, 0x87, 0xe0, 0xbd, 0x66, 0x56, 0x94, 0x0a, 0xd7, 0x6f, 0x5e, 0x51, 0x52,
-	0x58, 0xfb, 0xc0, 0x7a, 0x3c, 0xe3, 0x4c, 0x7a, 0x05, 0x58, 0x76, 0x2a, 0x70, 0x5b, 0x05, 0x2d,
-	0xf0, 0xdd, 0x98, 0x6d, 0x0b, 0x7c, 0xf7, 0xbc, 0xd2, 0xe6, 0x57, 0x04, 0x97, 0xdb, 0x9e, 0xeb,
-	0x74, 0x9d, 0x33, 0x67, 0x4d, 0xc2, 0x83, 0x69, 0x27, 0xe4, 0xc1, 0xf4, 0x52, 0x3c, 0x58, 0x8a,
-	0x6b, 0x55, 0x8d, 0xeb, 0x9c, 0x84, 0xeb, 0x37, 0x15, 0xb8, 0x34, 0x32, 0x31, 0x81, 0xed, 0x3a,
-	0x00, 0xcf, 0x43, 0xe9, 0xa1, 0x93, 0xe9, 0x89, 0xb1, 0xaf, 0xa4, 0xd8, 0xc7, 0x37, 0x73, 0xad,
-	0xe4, 0xcd, 0x5c, 0x5c, 0x3b, 0x28, 0xf3, 0xc9, 0x1e, 0xf1, 0xc9, 0xa0, 0x4b, 0xca, 0xdd, 0x59,
-	0x65, 0x1d, 0xfc, 0x0e, 0x2c, 0xf1, 0x8e, 0xf8, 0xe6, 0x52, 0x2d, 0x63, 0x22, 0xab, 0x51, 0x88,
-	0xcc, 0x6f, 0x08, 0xae, 0x09, 0x64, 0x8e, 0xc3, 0xb7, 0x5f, 0xb4, 0x2d, 0xd3, 0xe9, 0xe6, 0xfb,
-	0x39, 0xb3, 0xa2, 0x85, 0xb3, 0xfb, 0x1a, 0x81, 0xa1, 0x9e, 0xdd, 0xd8, 0x17, 0xae, 0x5c, 0x46,
-	0x95, 0xd3, 0x13, 0xaa, 0xf2, 0x5b, 0xec, 0x3d, 0x68, 0x64, 0x83, 0x09, 0xa9, 0xfe, 0xd3, 0xe1,
-	0x6c, 0xfe, 0x81, 0xe0, 0x8a, 0xc2, 0x98, 0x98, 0xd6, 0x0d, 0x58, 0x1e, 0x8a, 0xa1, 0x70, 0x3a,
-	0xe1, 0x99, 0xaa, 0x5b, 0x72, 0x27, 0xbe, 0x07, 0x35, 0x1a, 0xec, 0x86, 0xad, 0x61, 0x54, 0x1b,
-	0xc2, 0x87, 0x6e, 0x8d, 0x0e, 0xf0, 0x33, 0x3d, 0x11, 0xd2, 0x84, 0x50, 0xd2, 0x96, 0x2c, 0x45,
-	0xf9, 0x46, 0xc5, 0x4a, 0x67, 0x2d, 0xc5, 0x03, 0xdc, 0x52, 0x22, 0x54, 0x0d, 0x2d, 0x25, 0x63,
-	0xb7, 0x60, 0x25, 0xfa, 0x8e, 0x43, 0x9f, 0x13, 0x12, 0xb9, 0xde, 0xed, 0x1f, 0x6b, 0xa0, 0x3f,
-	0xe4, 0xe0, 0x7c, 0x06, 0xcb, 0xd2, 0x75, 0x02, 0xdf, 0x56, 0x2c, 0x93, 0xea, 0x6e, 0x65, 0xdc,
-	0x9a, 0x2c, 0x28, 0xc0, 0x7c, 0x06, 0x4b, 0x99, 0x9f, 0x20, 0xf0, 0x4d, 0x75, 0x1a, 0xe4, 0x7e,
-	0xe2, 0x30, 0x6e, 0x4c, 0x12, 0x13, 0xb6, 0x9f, 0x8a, 0x9f, 0xbc, 0x22, 0x32, 0x1f, 0x8f, 0xd1,
-	0x49, 0x7f, 0xa8, 0x30, 0xae, 0x4f, 0x90, 0xe2, 0x86, 0x5b, 0x08, 0xef, 0xc2, 0xb2, 0x44, 0xae,
-	0x2b, 0x81, 0x51, 0xd1, 0xfb, 0x4a, 0x60, 0x14, 0x3c, 0x7d, 0x0b, 0xe1, 0x4f, 0xe1, 0x42, 0x96,
-	0xf4, 0xc6, 0xc5, 0x9a, 0xd2, 0x19, 0x6a, 0xdc, 0x9c, 0x28, 0x97, 0x77, 0x10, 0x52, 0xcb, 0x63,
-	0x1c, 0x48, 0x5c, 0xf7, 0x18, 0x07, 0x59, 0x8e, 0xba, 0x85, 0xf0, 0x87, 0xb0, 0x98, 0x10, 0xb5,
-	0x58, 0x85, 0x6c, 0x9e, 0x1a, 0x36, 0xcc, 0xf1, 0x42, 0x91, 0xdd, 0x8f, 0x61, 0x29, 0x43, 0xa0,
-	0x2a, 0x93, 0x66, 0x94, 0xce, 0x55, 0x26, 0xcd, 0x08, 0x0f, 0xdb, 0x42, 0xb8, 0x03, 0x0b, 0x31,
-	0x47, 0x89, 0xd5, 0xf1, 0xc8, 0x76, 0xff, 0x39, 0x56, 0x26, 0xc5, 0x3a, 0xcb, 0x01, 0x2a, 0xb1,
-	0x56, 0x50, 0x93, 0xc6, 0xcd, 0x89, 0x72, 0x91, 0x03, 0x02, 0x2b, 0x32, 0x35, 0x86, 0x37, 0x0b,
-	0x9e, 0x1f, 0x23, 0x3c, 0x9e, 0x71, 0xbb, 0x84, 0x64, 0xe4, 0xe6, 0x29, 0x40, 0x4a, 0x3e, 0x29,
-	0x6b, 0x6a, 0x84, 0x0f, 0x53, 0xd6, 0x54, 0x9e, 0xc1, 0x6a, 0x21, 0x7c, 0x00, 0x17, 0x73, 0x97,
-	0x08, 0xfc, 0x2f, 0x85, 0xa6, 0xfa, 0x06, 0x65, 0x6c, 0x96, 0x11, 0x8d, 0x3c, 0x3d, 0x87, 0xba,
-	0xea, 0xd8, 0xc2, 0xcd, 0x22, 0x1b, 0xea, 0xd3, 0xdb, 0xf8, 0x77, 0x69, 0xf9, 0xc8, 0xb1, 0x0b,
-	0xb5, 0x91, 0x53, 0x05, 0xdf, 0x9d, 0x60, 0x25, 0x7b, 0x90, 0x19, 0x77, 0xca, 0x09, 0x8b, 0xfd,
-	0x8f, 0xc1, 0x9a, 0x82, 0x0f, 0xc3, 0xaa, 0xa8, 0x8b, 0x49, 0x3b, 0xe3, 0x5e, 0x59, 0xf1, 0x34,
-	0x11, 0x65, 0x66, 0x49, 0x99, 0x88, 0x4a, 0xd2, 0x4b, 0x99, 0x88, 0x2a, 0x9a, 0x2a, 0xdc, 0x81,
-	0x25, 0x6a, 0x46, 0xb9, 0x03, 0xab, 0x38, 0x23, 0xe5, 0x0e, 0xac, 0x60, 0x79, 0x5a, 0x08, 0x0f,
-	0xa0, 0x36, 0xc2, 0x80, 0x28, 0x97, 0xab, 0x88, 0xa2, 0x51, 0x2e, 0x57, 0x01, 0xa9, 0xd2, 0x42,
-	0xf8, 0x08, 0xf0, 0xe8, 0x43, 0x17, 0xab, 0x16, 0xa0, 0xf0, 0x2d, 0x6e, 0xdc, 0x2d, 0x29, 0x9d,
-	0x4e, 0x71, 0xe4, 0x3d, 0x89, 0xc7, 0xda, 0xc8, 0x17, 0xde, 0x9d, 0x72, 0xc2, 0xe9, 0x3e, 0x98,
-	0x7d, 0x82, 0x29, 0xf7, 0x41, 0xc5, 0xc3, 0x50, 0xb9, 0x0f, 0x8e, 0xbe, 0xe5, 0x5a, 0xe8, 0xfe,
-	0xe2, 0xb3, 0xf9, 0xe8, 0x5f, 0x66, 0x76, 0xe7, 0xc4, 0x7d, 0xf6, 0x3f, 0x7f, 0x06, 0x00, 0x00,
-	0xff, 0xff, 0xe8, 0x80, 0xf2, 0x10, 0x50, 0x23, 0x00, 0x00,
 }

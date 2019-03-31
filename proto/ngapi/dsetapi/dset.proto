@@ -439,11 +439,13 @@ message PolicyDomainCapturesRequest {
     int64 limit = 3;
     // The capture log is in reverse chronological order, so the start of the
     // range is the most recent time. If start is zero, it's taken to be the
-    // largest possible time value.
+    // largest possible time value. If a start or end time is specified, the
+    // query must be for an exact domain.
     google.protobuf.Timestamp start = 4;
     // The capture log is in reverse chronological order, so the end of the
     // range is the least recent time. If end is zero, it's taken to be the
-    // smallest possible time value.
+    // smallest possible time value. If a start or end time is specified, the
+    // query must be for an exact domain.
     google.protobuf.Timestamp end = 5;
     // A resumption token, previously returned by an identical query.
     string resume = 6;
@@ -479,6 +481,26 @@ message PolicyDomainStatsResult {
     uint64 captures = 5;
     // Total number of subdomains with policy captures
     uint64 capturedomains = 6;
+}
+
+
+message PolicyURLCapturesRequest {
+    // The name of the dataset to query.
+    string dataset = 1;
+    // A URL query
+    string query = 2;
+    // Limit the number of records that will be returned.
+    int64 limit = 3;
+    // A resumption token, previously returned by an identical query.
+    string resume = 4;
+}
+message PolicyURLCapturesResult {
+    string url = 1;
+    // A resumption token that can be passed to an identical query to resume
+    // results.
+    string resume = 2;
+    // A capture summary for this result.
+    CapSummary capsummary = 3;
 }
 
 
@@ -530,6 +552,9 @@ service Dset {
 
     // Retrieve statistics for a policy domain query.
     rpc PolicyDomainStats(PolicyDomainStatsRequest) returns (PolicyDomainStatsResult);
+
+    // Retrieve the policy capture log for specific policy URL, in reverse chronological order.
+    rpc PolicyURLCaptures(PolicyURLCapturesRequest) returns (stream PolicyURLCapturesResult);
 
     // Find all redirections in the dataset for a given destination domain query.
     rpc RedirsByDestination(RedirsByDestinationRequest) returns (stream RedirsByDestinationResult);
