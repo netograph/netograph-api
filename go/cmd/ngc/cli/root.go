@@ -39,7 +39,7 @@ func init() {
 		metaForCaptureCommand(),
 		metaSearchCommand(),
 		policiesForRootCommand(),
-		policyCaptureLogCommand(),
+		policyDomainCaptures(),
 		policyStatsCommand(),
 		redirsByDestinationCommand(),
 		redirsBySourceCommand(),

@@ -9,13 +9,13 @@ import (
 	"github.com/spf13/viper"
 )
 
-func policyCaptureLogCommand() *cobra.Command {
+func policyDomainCaptures() *cobra.Command {
 	var resume *string
 	var start *string
 	var end *string
 	cmd := &cobra.Command{
-		Use:     "policycapturelog",
-		Aliases: []string{"pcaplog"},
+		Use:     "policydomaincaptures",
+		Aliases: []string{"pdomcaps"},
 		Short:   "Log of policy captures in reverse chronological order",
 		Long: `
 Log of captures in reverse chronological order
