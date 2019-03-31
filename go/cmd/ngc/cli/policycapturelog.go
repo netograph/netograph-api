@@ -1,6 +1,7 @@
 package cli
 
 import (
+	"fmt"
 	"io"
 
 	"github.com/netograph/netograph-api/go/proto/ngapi/dsetapi"
@@ -28,6 +29,12 @@ Times can be specified in the following formats:
 	yyyy/mm/dd
 	yyyy-mm-dd
 		`,
+		Args: func(cmd *cobra.Command, args []string) error {
+			if len(args) < 1 {
+				return fmt.Errorf("Usage: %s", cmd.Use)
+			}
+			return nil
+		},
 		RunE: func(cmd *cobra.Command, args []string) error {
 			c, ctx, err := connectDset()
 			if err != nil {
@@ -48,6 +55,7 @@ Times can be specified in the following formats:
 
 			r, err := c.PolicyDomainCaptures(ctx, &dsetapi.PolicyDomainCapturesRequest{
 				Dataset: viper.GetString("dset"),
+				Query:   args[0],
 				Limit:   limit,
 				Resume:  *resume,
 				Start:   st,
