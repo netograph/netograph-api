@@ -17,26 +17,18 @@ func Output(cmd *cobra.Command, v proto.Message) error {
 	if err != nil {
 		return err
 	}
-	json, err := cmd.Parent().PersistentFlags().GetBool("json")
+	indent := "    "
+	if cjson {
+		indent = ""
+	}
+	m := jsonpb.Marshaler{
+		EmitDefaults: false,
+		Indent:       indent,
+	}
+	s, err := m.MarshalToString(v)
 	if err != nil {
 		return err
 	}
-	if cjson || json {
-		indent := "    "
-		if cjson {
-			indent = ""
-		}
-		m := jsonpb.Marshaler{
-			EmitDefaults: false,
-			Indent:       indent,
-		}
-		s, err := m.MarshalToString(v)
-		if err != nil {
-			return err
-		}
-		fmt.Println(s)
-	} else {
-		fmt.Println(proto.MarshalTextString(v))
-	}
+	fmt.Println(s)
 	return nil
 }

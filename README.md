@@ -36,10 +36,9 @@ You can find rendered documentation for the full API
 
 ## Output formats
 
-By default **ngc** outputs data in an easy-to-read text format. There are two
-other formats available - indented JSON (the `--json` flag) and compact JSON
-(the `--cjson` flag). Compact JSON consists of one record per line with no
-newlines, and so is suitable for programmatic use.
+By default **ngc** outputs data as indented JSON. You can also use the
+`--cjson` flag to output compact JSON, which consists of one record per line
+with no newlines, and so is suitable for programmatic use.
 
 
 ## Examples
