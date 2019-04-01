@@ -1,3 +1,17 @@
+# v0.6: 2 April 2019
+
+- Add an extended flag for capture submission. This results in captures with
+a full screenshot and content snapshot. Only valid for single-URL
+trajectories.
+
+- Change default output format to JSON. This turns out to be more legible in
+most cases than the native protobuf representation.
+
+- Expose our policy database for querying! Add the PoliciesForRoot,
+PolicyDomainCaptures, PolicyStats, and PolicyURLCaptures endpoints. See the
+documentation for more information. These endpoints are still in Beta, and
+may change in future releases.
+
 # v0.5: 24 October 2018
 
 - Add a zone flag to capture submissions. We currently support "eu" and "us"
