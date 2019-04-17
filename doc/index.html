@@ -287,6 +287,14 @@
                 </li>
               
                 <li>
+                  <a href="#io.netograph.dset.CertSearchRequest"><span class="badge">M</span>CertSearchRequest</a>
+                </li>
+              
+                <li>
+                  <a href="#io.netograph.dset.CertSearchResult"><span class="badge">M</span>CertSearchResult</a>
+                </li>
+              
+                <li>
                   <a href="#io.netograph.dset.DomainHistoryRequest"><span class="badge">M</span>DomainHistoryRequest</a>
                 </li>
               
@@ -1678,6 +1686,95 @@ e.g. &#34;$rt.com&#34;. </p></td>
                   <td></td>
                   <td><p> </p></td>
                 </tr>
+              
+                <tr>
+                  <td>resume</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p>A resumption token that can be passed to an identical query to resume
+results. </p></td>
+                </tr>
+              
+                <tr>
+                  <td>cert</td>
+                  <td><a href="#io.netograph.dset.Cert">Cert</a></td>
+                  <td></td>
+                  <td><p>The latest capture relevant to this result. </p></td>
+                </tr>
+              
+                <tr>
+                  <td>time</td>
+                  <td><a href="#google.protobuf.Timestamp">google.protobuf.Timestamp</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+        
+
+        
+      
+        <h3 id="io.netograph.dset.CertSearchRequest">CertSearchRequest</h3>
+        <p></p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>dataset</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p>The name of the dataset to query. </p></td>
+                </tr>
+              
+                <tr>
+                  <td>field</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>text</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>limit</td>
+                  <td><a href="#int64">int64</a></td>
+                  <td></td>
+                  <td><p>Limit the number of records that will be returned. </p></td>
+                </tr>
+              
+                <tr>
+                  <td>resume</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p>A resumption token, previously returned by an identical query. </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+        
+
+        
+      
+        <h3 id="io.netograph.dset.CertSearchResult">CertSearchResult</h3>
+        <p></p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
               
                 <tr>
                   <td>resume</td>
@@ -3643,6 +3740,13 @@ results. </p></td>
                 <td><a href="#io.netograph.dset.CertIPSearchRequest">CertIPSearchRequest</a></td>
                 <td><a href="#io.netograph.dset.CertIPSearchResult">CertIPSearchResult</a> stream</td>
                 <td><p>Retrieve certificates for a specified IP query.</p></td>
+              </tr>
+            
+              <tr>
+                <td>CertSearch</td>
+                <td><a href="#io.netograph.dset.CertSearchRequest">CertSearchRequest</a></td>
+                <td><a href="#io.netograph.dset.CertSearchResult">CertSearchResult</a> stream</td>
+                <td><p>Retrieve certificates based on a field query.</p></td>
               </tr>
             
               <tr>

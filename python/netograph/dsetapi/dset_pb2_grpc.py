@@ -44,6 +44,11 @@ class DsetStub(object):
         request_serializer=dsetapi_dot_dset__pb2.CertIPSearchRequest.SerializeToString,
         response_deserializer=dsetapi_dot_dset__pb2.CertIPSearchResult.FromString,
         )
+    self.CertSearch = channel.unary_stream(
+        '/io.netograph.dset.Dset/CertSearch',
+        request_serializer=dsetapi_dot_dset__pb2.CertSearchRequest.SerializeToString,
+        response_deserializer=dsetapi_dot_dset__pb2.CertSearchResult.FromString,
+        )
     self.DomainHistory = channel.unary_stream(
         '/io.netograph.dset.Dset/DomainHistory',
         request_serializer=dsetapi_dot_dset__pb2.DomainHistoryRequest.SerializeToString,
@@ -187,6 +192,13 @@ class DsetServicer(object):
 
   def CertIPSearch(self, request, context):
     """Retrieve certificates for a specified IP query.
+    """
+    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+    context.set_details('Method not implemented!')
+    raise NotImplementedError('Method not implemented!')
+
+  def CertSearch(self, request, context):
+    """Retrieve certificates based on a field query.
     """
     context.set_code(grpc.StatusCode.UNIMPLEMENTED)
     context.set_details('Method not implemented!')
@@ -366,6 +378,11 @@ def add_DsetServicer_to_server(servicer, server):
           servicer.CertIPSearch,
           request_deserializer=dsetapi_dot_dset__pb2.CertIPSearchRequest.FromString,
           response_serializer=dsetapi_dot_dset__pb2.CertIPSearchResult.SerializeToString,
+      ),
+      'CertSearch': grpc.unary_stream_rpc_method_handler(
+          servicer.CertSearch,
+          request_deserializer=dsetapi_dot_dset__pb2.CertSearchRequest.FromString,
+          response_serializer=dsetapi_dot_dset__pb2.CertSearchResult.SerializeToString,
       ),
       'DomainHistory': grpc.unary_stream_rpc_method_handler(
           servicer.DomainHistory,

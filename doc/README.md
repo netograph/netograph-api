@@ -31,6 +31,8 @@
     - [CertDomainStatsResult](#io.netograph.dset.CertDomainStatsResult)
     - [CertIPSearchRequest](#io.netograph.dset.CertIPSearchRequest)
     - [CertIPSearchResult](#io.netograph.dset.CertIPSearchResult)
+    - [CertSearchRequest](#io.netograph.dset.CertSearchRequest)
+    - [CertSearchResult](#io.netograph.dset.CertSearchResult)
     - [DomainHistoryRequest](#io.netograph.dset.DomainHistoryRequest)
     - [DomainHistoryResult](#io.netograph.dset.DomainHistoryResult)
     - [DomainSearchRequest](#io.netograph.dset.DomainSearchRequest)
@@ -582,6 +584,42 @@ final resting URL.
 | ----- | ---- | ----- | ----------- |
 | ip | [string](#string) |  |  |
 | domain | [string](#string) |  |  |
+| resume | [string](#string) |  | A resumption token that can be passed to an identical query to resume results. |
+| cert | [Cert](#io.netograph.dset.Cert) |  | The latest capture relevant to this result. |
+| time | [google.protobuf.Timestamp](#google.protobuf.Timestamp) |  |  |
+
+
+
+
+
+
+<a name="io.netograph.dset.CertSearchRequest"></a>
+
+### CertSearchRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| dataset | [string](#string) |  | The name of the dataset to query. |
+| field | [string](#string) |  |  |
+| text | [string](#string) |  |  |
+| limit | [int64](#int64) |  | Limit the number of records that will be returned. |
+| resume | [string](#string) |  | A resumption token, previously returned by an identical query. |
+
+
+
+
+
+
+<a name="io.netograph.dset.CertSearchResult"></a>
+
+### CertSearchResult
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
 | resume | [string](#string) |  | A resumption token that can be passed to an identical query to resume results. |
 | cert | [Cert](#io.netograph.dset.Cert) |  | The latest capture relevant to this result. |
 | time | [google.protobuf.Timestamp](#google.protobuf.Timestamp) |  |  |
@@ -1378,6 +1416,7 @@ Methods that operate on an individual dataset, either public or private.
 | CertDomainSearch | [CertDomainSearchRequest](#io.netograph.dset.CertDomainSearchRequest) | [CertDomainSearchResult](#io.netograph.dset.CertDomainSearchResult) stream | Retrieve certificates for a specified domain query. |
 | CertDomainStats | [CertDomainStatsRequest](#io.netograph.dset.CertDomainStatsRequest) | [CertDomainStatsResult](#io.netograph.dset.CertDomainStatsResult) | Retrieve certificate statistics for a specified domain query. |
 | CertIPSearch | [CertIPSearchRequest](#io.netograph.dset.CertIPSearchRequest) | [CertIPSearchResult](#io.netograph.dset.CertIPSearchResult) stream | Retrieve certificates for a specified IP query. |
+| CertSearch | [CertSearchRequest](#io.netograph.dset.CertSearchRequest) | [CertSearchResult](#io.netograph.dset.CertSearchResult) stream | Retrieve certificates based on a field query. |
 | DomainHistory | [DomainHistoryRequest](#io.netograph.dset.DomainHistoryRequest) | [DomainHistoryResult](#io.netograph.dset.DomainHistoryResult) stream | Retrieve the capture history for a specified domain. The length of this history is capped at ~100. |
 | DomainSearch | [DomainSearchRequest](#io.netograph.dset.DomainSearchRequest) | [DomainSearchResult](#io.netograph.dset.DomainSearchResult) stream | Retrieve the capture log for a specified domain in a dataset. |
 | DomainsForIP | [DomainsForIPRequest](#io.netograph.dset.DomainsForIPRequest) | [DomainsForIPResult](#io.netograph.dset.DomainsForIPResult) stream | Find all domains in the dataset associated with a given IP address. |

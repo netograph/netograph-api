@@ -27,6 +27,7 @@ func init() {
 	RootCmd.AddCommand(
 		captureInfoCommand(),
 		captureLogCommand(),
+		certSearchCommand(),
 		certStatsCommand(),
 		certDomainSearchCommand(),
 		certIPSearchCommand(),

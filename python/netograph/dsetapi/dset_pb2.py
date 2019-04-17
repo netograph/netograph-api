@@ -20,7 +20,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='io.netograph.dset',
   syntax='proto3',
   serialized_options=_b('Z\007dsetapi'),
-  serialized_pb=_b('\n\x12\x64setapi/dset.proto\x12\x11io.netograph.dset\x1a\x1fgoogle/protobuf/timestamp.proto\"\xff\t\n\x04\x43\x65rt\x12\x16\n\x0e\x61uthoritykeyid\x18\x01 \x01(\t\x12\x42\n\x10\x62\x61sicconstraints\x18\x02 \x01(\x0b\x32(.io.netograph.dset.Cert.BasicConstraints\x12\x1d\n\x15\x63rldistributionpoints\x18\x03 \x03(\t\x12\x10\n\x08\x64nsnames\x18\x04 \x03(\t\x12\x16\n\x0e\x65mailaddresses\x18\x05 \x03(\t\x12\x18\n\x10\x65xtendedkeyusage\x18\x06 \x03(\t\x12\x35\n\nextensions\x18\x07 \x03(\x0b\x32!.io.netograph.dset.Cert.Extension\x12?\n\x0c\x66ingerprints\x18\x08 \x03(\x0b\x32).io.netograph.dset.Cert.FingerprintsEntry\x12\x13\n\x0bipaddresses\x18\t \x03(\t\x12\x39\n\x06issuer\x18\n \x01(\x0b\x32).io.netograph.dset.Cert.DistinguishedName\x12\x16\n\x0eissuingcerturl\x18\x0b \x03(\t\x12\x10\n\x08keyusage\x18\x0c \x03(\t\x12,\n\x08notafter\x18\r \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12-\n\tnotbefore\x18\x0e \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x12\n\nocspserver\x18\x0f \x03(\t\x12\x1b\n\x13permitteddnsdomains\x18\x10 \x03(\t\x12#\n\x1bpermitteddnsdomainscritical\x18\x11 \x01(\x08\x12\x39\n\tpublickey\x18\x12 \x03(\x0b\x32&.io.netograph.dset.Cert.PublickeyEntry\x12\x1a\n\x12publickeyalgorithm\x18\x13 \x01(\t\x12\x14\n\x0cserialnumber\x18\x14 \x01(\t\x12\x1a\n\x12signaturealgorithm\x18\x15 \x01(\t\x12:\n\x07subject\x18\x16 \x01(\x0b\x32).io.netograph.dset.Cert.DistinguishedName\x12\x14\n\x0csubjectkeyid\x18\x17 \x01(\t\x12\x0f\n\x07version\x18\x18 \x01(\x03\x1a\x34\n\x10\x42\x61sicConstraints\x12\x0c\n\x04isca\x18\x01 \x01(\x08\x12\x12\n\nmaxpathlen\x18\x02 \x01(\x03\x1a\xcf\x01\n\x11\x44istinguishedName\x12\x12\n\ncommonname\x18\x01 \x01(\t\x12\x0f\n\x07\x63ountry\x18\x02 \x03(\t\x12\x10\n\x08locality\x18\x03 \x03(\t\x12\x14\n\x0corganization\x18\x04 \x03(\t\x12\x1a\n\x12organizationalunit\x18\x05 \x03(\t\x12\x12\n\npostalcode\x18\x06 \x03(\t\x12\x10\n\x08province\x18\x07 \x03(\t\x12\x14\n\x0cserialnumber\x18\x08 \x01(\t\x12\x15\n\rstreetaddress\x18\t \x03(\t\x1a\x38\n\tExtension\x12\x10\n\x08\x63ritical\x18\x01 \x01(\x08\x12\x0b\n\x03oid\x18\x02 \x01(\t\x12\x0c\n\x04name\x18\x03 \x01(\t\x1a\x33\n\x11\x46ingerprintsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\x1a\x30\n\x0ePublickeyEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\xe4\x02\n\nCapSummary\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0e\n\x06\x61ssets\x18\x02 \x01(\t\x12\x31\n\x05roots\x18\x03 \x03(\x0b\x32\".io.netograph.dset.CapSummary.Root\x12(\n\x04time\x18\x04 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x30\n\x04plan\x18\x05 \x01(\x0b\x32\".io.netograph.dset.CapSummary.Plan\x12\x32\n\x05stats\x18\x06 \x01(\x0b\x32#.io.netograph.dset.CapSummary.Stats\x1a&\n\x04Plan\x12\x0c\n\x04urls\x18\x01 \x03(\t\x12\x10\n\x08\x65xtended\x18\x02 \x01(\x08\x1a\x14\n\x04Root\x12\x0c\n\x04urls\x18\x01 \x03(\t\x1a\x39\n\x05Stats\x12\r\n\x05\x66lows\x18\x01 \x01(\x05\x12\x12\n\nwebsockets\x18\x02 \x01(\x05\x12\r\n\x05hosts\x18\x03 \x01(\x05\"&\n\x08Metadata\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t\"1\n\x12\x43\x61ptureInfoRequest\x12\x0f\n\x07\x64\x61taset\x18\x01 \x01(\t\x12\n\n\x02id\x18\x02 \x01(\t\"F\n\x11\x43\x61ptureInfoResult\x12\x31\n\ncapsummary\x18\x01 \x01(\x0b\x32\x1d.io.netograph.dset.CapSummary\"1\n\x12\x43\x61ptureTextRequest\x12\x0f\n\x07\x64\x61taset\x18\x01 \x01(\t\x12\n\n\x02id\x18\x02 \x01(\t\"\xa3\x04\n\x11\x43\x61ptureTextResult\x12\x38\n\x05pages\x18\x01 \x03(\x0b\x32).io.netograph.dset.CaptureTextResult.Page\x12:\n\x06groups\x18\x02 \x03(\x0b\x32*.io.netograph.dset.CaptureTextResult.Group\x1a?\n\tRectangle\x12\t\n\x01x\x18\x01 \x01(\x02\x12\t\n\x01y\x18\x02 \x01(\x02\x12\x0c\n\x04with\x18\x03 \x01(\x02\x12\x0e\n\x06height\x18\x04 \x01(\x02\x1as\n\x08TextNode\x12\n\n\x02id\x18\x01 \x01(\x03\x12\r\n\x05nodes\x18\x02 \x03(\x03\x12>\n\x06\x62ounds\x18\x03 \x01(\x0b\x32..io.netograph.dset.CaptureTextResult.Rectangle\x12\x0c\n\x04text\x18\x04 \x01(\t\x1aT\n\x08\x44ocument\x12\x0b\n\x03url\x18\x01 \x01(\t\x12;\n\x04text\x18\x02 \x03(\x0b\x32-.io.netograph.dset.CaptureTextResult.TextNode\x1aH\n\x04Page\x12@\n\tdocuments\x18\x01 \x03(\x0b\x32-.io.netograph.dset.CaptureTextResult.Document\x1a\x42\n\x05Group\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x0c\n\x04page\x18\x02 \x01(\x03\x12\x10\n\x08\x64ocument\x18\x03 \x01(\x03\x12\x0b\n\x03ids\x18\x04 \x03(\x03\"\x97\x01\n\x11\x43\x61ptureLogRequest\x12\x0f\n\x07\x64\x61taset\x18\x01 \x01(\t\x12\r\n\x05limit\x18\x02 \x01(\x03\x12\x0e\n\x06resume\x18\x03 \x01(\t\x12)\n\x05start\x18\x04 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\'\n\x03\x65nd\x18\x05 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\"U\n\x10\x43\x61ptureLogResult\x12\x31\n\ncapsummary\x18\x01 \x01(\x0b\x32\x1d.io.netograph.dset.CapSummary\x12\x0e\n\x06resume\x18\x02 \x01(\t\"X\n\x17\x43\x65rtDomainSearchRequest\x12\x0f\n\x07\x64\x61taset\x18\x01 \x01(\t\x12\r\n\x05query\x18\x02 \x01(\t\x12\r\n\x05limit\x18\x03 \x01(\x03\x12\x0e\n\x06resume\x18\x04 \x01(\t\"\x98\x01\n\x16\x43\x65rtDomainSearchResult\x12\x0e\n\x06\x64omain\x18\x01 \x01(\t\x12\x0e\n\x06resume\x18\x02 \x01(\t\x12%\n\x04\x63\x65rt\x18\x03 \x01(\x0b\x32\x17.io.netograph.dset.Cert\x12\r\n\x05\x63hain\x18\x04 \x03(\t\x12(\n\x04time\x18\x05 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\"8\n\x16\x43\x65rtDomainStatsRequest\x12\x0f\n\x07\x64\x61taset\x18\x01 \x01(\t\x12\r\n\x05query\x18\x02 \x01(\t\"J\n\x15\x43\x65rtDomainStatsResult\x12\x0f\n\x07\x64omains\x18\x01 \x01(\x04\x12\r\n\x05\x63\x65rts\x18\x02 \x01(\x04\x12\x11\n\tcertshere\x18\x03 \x01(\x04\"_\n\x13\x43\x65rtIPSearchRequest\x12\x0f\n\x07\x64\x61taset\x18\x01 \x01(\t\x12\n\n\x02ip\x18\x02 \x01(\t\x12\x0c\n\x04mask\x18\x03 \x01(\x05\x12\r\n\x05limit\x18\x04 \x01(\x03\x12\x0e\n\x06resume\x18\x05 \x01(\t\"\x91\x01\n\x12\x43\x65rtIPSearchResult\x12\n\n\x02ip\x18\x01 \x01(\t\x12\x0e\n\x06\x64omain\x18\x02 \x01(\t\x12\x0e\n\x06resume\x18\x03 \x01(\t\x12%\n\x04\x63\x65rt\x18\x04 \x01(\x0b\x32\x17.io.netograph.dset.Cert\x12(\n\x04time\x18\x05 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\"F\n\x14\x44omainHistoryRequest\x12\x0f\n\x07\x64\x61taset\x18\x01 \x01(\t\x12\x0e\n\x06\x64omain\x18\x02 \x01(\t\x12\r\n\x05limit\x18\x03 \x01(\x03\"H\n\x13\x44omainHistoryResult\x12\x31\n\ncapsummary\x18\x01 \x01(\x0b\x32\x1d.io.netograph.dset.CapSummary\"T\n\x13\x44omainSearchRequest\x12\x0f\n\x07\x64\x61taset\x18\x01 \x01(\t\x12\r\n\x05query\x18\x02 \x01(\t\x12\r\n\x05limit\x18\x03 \x01(\x03\x12\x0e\n\x06resume\x18\x04 \x01(\t\"j\n\x12\x44omainSearchResult\x12\x0e\n\x06\x64omain\x18\x01 \x01(\t\x12\x0e\n\x06resume\x18\x02 \x01(\t\x12\x34\n\rlatestcapture\x18\x03 \x01(\x0b\x32\x1d.io.netograph.dset.CapSummary\"Q\n\x13\x44omainsForIPRequest\x12\x0f\n\x07\x64\x61taset\x18\x01 \x01(\t\x12\n\n\x02ip\x18\x02 \x01(\t\x12\r\n\x05limit\x18\x03 \x01(\x03\x12\x0e\n\x06resume\x18\x04 \x01(\t\"\x8c\x01\n\x12\x44omainsForIPResult\x12\x0e\n\x06\x64omain\x18\x01 \x01(\t\x12\n\n\x02ip\x18\x02 \x01(\t\x12\x34\n\rlatestcapture\x18\x03 \x01(\x0b\x32\x1d.io.netograph.dset.CapSummary\x12\x14\n\x0c\x61ssociations\x18\x04 \x03(\t\x12\x0e\n\x06resume\x18\x05 \x01(\t\">\n\x10IPHistoryRequest\x12\x0f\n\x07\x64\x61taset\x18\x01 \x01(\t\x12\n\n\x02ip\x18\x02 \x01(\t\x12\r\n\x05limit\x18\x03 \x01(\x03\"D\n\x0fIPHistoryResult\x12\x31\n\ncapsummary\x18\x01 \x01(\x0b\x32\x1d.io.netograph.dset.CapSummary\"P\n\x12IPLogSearchRequest\x12\x0f\n\x07\x64\x61taset\x18\x01 \x01(\t\x12\n\n\x02ip\x18\x02 \x01(\t\x12\r\n\x05limit\x18\x03 \x01(\x03\x12\x0e\n\x06resume\x18\x04 \x01(\t\"b\n\x11IPLogSearchResult\x12\x31\n\ncapsummary\x18\x01 \x01(\x0b\x32\x1d.io.netograph.dset.CapSummary\x12\n\n\x02ip\x18\x02 \x01(\t\x12\x0e\n\x06resume\x18\x03 \x01(\t\"b\n\x0eIPSearchResult\x12\n\n\x02ip\x18\x01 \x01(\t\x12\x0e\n\x06resume\x18\x02 \x01(\t\x12\x34\n\rlatestcapture\x18\x03 \x01(\x0b\x32\x1d.io.netograph.dset.CapSummary\"[\n\x0fIPSearchRequest\x12\x0f\n\x07\x64\x61taset\x18\x01 \x01(\t\x12\n\n\x02ip\x18\x02 \x01(\t\x12\x0c\n\x04mask\x18\x03 \x01(\x05\x12\r\n\x05limit\x18\x04 \x01(\x03\x12\x0e\n\x06resume\x18\x05 \x01(\t\"T\n\x13IPsForDomainRequest\x12\x0f\n\x07\x64\x61taset\x18\x01 \x01(\t\x12\r\n\x05query\x18\x02 \x01(\t\x12\r\n\x05limit\x18\x03 \x01(\x03\x12\x0e\n\x06resume\x18\x04 \x01(\t\"\x8c\x01\n\x12IPsForDomainResult\x12\x0e\n\x06\x64omain\x18\x01 \x01(\t\x12\n\n\x02ip\x18\x02 \x01(\t\x12\x34\n\rlatestcapture\x18\x03 \x01(\x0b\x32\x1d.io.netograph.dset.CapSummary\x12\x14\n\x0c\x61ssociations\x18\x04 \x03(\t\x12\x0e\n\x06resume\x18\x05 \x01(\t\"c\n\x15MetaForCaptureRequest\x12\x0f\n\x07\x64\x61taset\x18\x01 \x01(\t\x12\n\n\x02id\x18\x02 \x01(\t\x12\r\n\x05limit\x18\x03 \x01(\x03\x12\x0e\n\x06resume\x18\x04 \x01(\t\x12\x0e\n\x06prefix\x18\x05 \x01(\t\"{\n\x14MetaForCaptureResult\x12)\n\x04meta\x18\x01 \x01(\x0b\x32\x1b.io.netograph.dset.Metadata\x12(\n\x04time\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x0e\n\x06resume\x18\x03 \x01(\t\"R\n\x11MetaSearchRequest\x12\x0f\n\x07\x64\x61taset\x18\x01 \x01(\t\x12\r\n\x05query\x18\x02 \x01(\t\x12\r\n\x05limit\x18\x03 \x01(\x03\x12\x0e\n\x06resume\x18\x04 \x01(\t\"\x80\x01\n\x10MetaSearchResult\x12)\n\x04meta\x18\x01 \x01(\x0b\x32\x1b.io.netograph.dset.Metadata\x12\x0e\n\x06resume\x18\x03 \x01(\t\x12\x31\n\ncapsummary\x18\x04 \x01(\x0b\x32\x1d.io.netograph.dset.CapSummary\"[\n\x1aRedirsByDestinationRequest\x12\x0f\n\x07\x64\x61taset\x18\x01 \x01(\t\x12\r\n\x05query\x18\x02 \x01(\t\x12\r\n\x05limit\x18\x03 \x01(\x03\x12\x0e\n\x06resume\x18\x04 \x01(\t\"\x86\x01\n\x19RedirsByDestinationResult\x12\x0e\n\x06source\x18\x01 \x01(\t\x12\x13\n\x0b\x64\x65stination\x18\x02 \x01(\t\x12\x34\n\rlatestcapture\x18\x03 \x01(\x0b\x32\x1d.io.netograph.dset.CapSummary\x12\x0e\n\x06resume\x18\x04 \x01(\t\"V\n\x15RedirsBySourceRequest\x12\x0f\n\x07\x64\x61taset\x18\x01 \x01(\t\x12\r\n\x05query\x18\x02 \x01(\t\x12\r\n\x05limit\x18\x03 \x01(\x03\x12\x0e\n\x06resume\x18\x04 \x01(\t\"\x81\x01\n\x14RedirsBySourceResult\x12\x0e\n\x06source\x18\x01 \x01(\t\x12\x13\n\x0b\x64\x65stination\x18\x02 \x01(\t\x12\x34\n\rlatestcapture\x18\x03 \x01(\x0b\x32\x1d.io.netograph.dset.CapSummary\x12\x0e\n\x06resume\x18\x04 \x01(\t\"U\n\x14RootLogSearchRequest\x12\x0f\n\x07\x64\x61taset\x18\x01 \x01(\t\x12\r\n\x05query\x18\x02 \x01(\t\x12\r\n\x05limit\x18\x03 \x01(\x03\x12\x0e\n\x06resume\x18\x04 \x01(\t\"f\n\x13RootLogSearchResult\x12\x0c\n\x04root\x18\x01 \x01(\t\x12\x0e\n\x06resume\x18\x02 \x01(\t\x12\x31\n\ncapsummary\x18\x03 \x01(\x0b\x32\x1d.io.netograph.dset.CapSummary\"Y\n\x18RootsForSatelliteRequest\x12\x0f\n\x07\x64\x61taset\x18\x01 \x01(\t\x12\r\n\x05query\x18\x02 \x01(\t\x12\r\n\x05limit\x18\x03 \x01(\x03\x12\x0e\n\x06resume\x18\x04 \x01(\t\"\x93\x01\n\x17RootsForSatelliteResult\x12\x0c\n\x04root\x18\x01 \x01(\t\x12\x11\n\tsatellite\x18\x02 \x01(\t\x12\x31\n\ncapsummary\x18\x03 \x01(\x0b\x32\x1d.io.netograph.dset.CapSummary\x12\x14\n\x0c\x61ssociations\x18\x04 \x03(\t\x12\x0e\n\x06resume\x18\x05 \x01(\t\"\xaa\x01\n\x14SubmitCaptureRequest\x12\x0f\n\x07\x64\x61taset\x18\x01 \x01(\t\x12\x14\n\x0cnotification\x18\x02 \x01(\t\x12\x0c\n\x04urls\x18\x03 \x03(\t\x12)\n\x04meta\x18\x04 \x03(\x0b\x32\x1b.io.netograph.dset.Metadata\x12\x12\n\nskiprecent\x18\x05 \x01(\x03\x12\x0c\n\x04zone\x18\x06 \x01(\t\x12\x10\n\x08\x65xtended\x18\x07 \x01(\x08\"B\n\x13SubmitCaptureResult\x12\x0e\n\x06\x61ssets\x18\x01 \x01(\t\x12\x0f\n\x07skipped\x18\x02 \x01(\x08\x12\n\n\x02id\x18\x03 \x01(\t\"Z\n\x19SatelliteLogSearchRequest\x12\x0f\n\x07\x64\x61taset\x18\x01 \x01(\t\x12\r\n\x05query\x18\x02 \x01(\t\x12\r\n\x05limit\x18\x03 \x01(\x03\x12\x0e\n\x06resume\x18\x04 \x01(\t\"p\n\x18SatelliteLogSearchResult\x12\x11\n\tsatellite\x18\x01 \x01(\t\x12\x0e\n\x06resume\x18\x02 \x01(\t\x12\x31\n\ncapsummary\x18\x03 \x01(\x0b\x32\x1d.io.netograph.dset.CapSummary\"Y\n\x18SatellitesForRootRequest\x12\x0f\n\x07\x64\x61taset\x18\x01 \x01(\t\x12\r\n\x05query\x18\x02 \x01(\t\x12\r\n\x05limit\x18\x03 \x01(\x03\x12\x0e\n\x06resume\x18\x04 \x01(\t\"\x93\x01\n\x17SatellitesForRootResult\x12\x0c\n\x04root\x18\x01 \x01(\t\x12\x11\n\tsatellite\x18\x02 \x01(\t\x12\x31\n\ncapsummary\x18\x03 \x01(\x0b\x32\x1d.io.netograph.dset.CapSummary\x12\x14\n\x0c\x61ssociations\x18\x04 \x03(\t\x12\x0e\n\x06resume\x18\x05 \x01(\t\"T\n\x13URLLogSearchRequest\x12\x0f\n\x07\x64\x61taset\x18\x01 \x01(\t\x12\r\n\x05query\x18\x02 \x01(\t\x12\r\n\x05limit\x18\x03 \x01(\x03\x12\x0e\n\x06resume\x18\x04 \x01(\t\"d\n\x12URLLogSearchResult\x12\x0b\n\x03url\x18\x01 \x01(\t\x12\x0e\n\x06resume\x18\x02 \x01(\t\x12\x31\n\ncapsummary\x18\x03 \x01(\x0b\x32\x1d.io.netograph.dset.CapSummary\"\xab\x01\n\x16PoliciesForRootRequest\x12\x0f\n\x07\x64\x61taset\x18\x01 \x01(\t\x12\r\n\x05query\x18\x02 \x01(\t\x12)\n\x05start\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\'\n\x03\x65nd\x18\x04 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\r\n\x05limit\x18\x05 \x01(\x03\x12\x0e\n\x06resume\x18\x06 \x01(\t\"\xdc\x01\n\x15PoliciesForRootResult\x12\x12\n\nrootdomain\x18\x01 \x01(\t\x12\x0b\n\x03url\x18\x02 \x01(\t\x12(\n\x04time\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x34\n\rlastreference\x18\x04 \x01(\x0b\x32\x1d.io.netograph.dset.CapSummary\x12\x32\n\x0blastcapture\x18\x05 \x01(\x0b\x32\x1d.io.netograph.dset.CapSummary\x12\x0e\n\x06resume\x18\x06 \x01(\t\"\xb0\x01\n\x1bPolicyDomainCapturesRequest\x12\x0f\n\x07\x64\x61taset\x18\x01 \x01(\t\x12\r\n\x05query\x18\x02 \x01(\t\x12\r\n\x05limit\x18\x03 \x01(\x03\x12)\n\x05start\x18\x04 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\'\n\x03\x65nd\x18\x05 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x0e\n\x06resume\x18\x06 \x01(\t\"o\n\x1aPolicyDomainCapturesResult\x12\x0e\n\x06\x64omain\x18\x01 \x01(\t\x12\x31\n\ncapsummary\x18\x02 \x01(\x0b\x32\x1d.io.netograph.dset.CapSummary\x12\x0e\n\x06resume\x18\x03 \x01(\t\":\n\x18PolicyDomainStatsRequest\x12\x0f\n\x07\x64\x61taset\x18\x01 \x01(\t\x12\r\n\x05query\x18\x02 \x01(\t\"\xa2\x01\n\x17PolicyDomainStatsResult\x12\x15\n\rpolicydomains\x18\x01 \x01(\x04\x12\x19\n\x11subdomainpolicies\x18\x02 \x01(\x04\x12\x10\n\x08policies\x18\x03 \x01(\x04\x12\x19\n\x11subdomaincaptures\x18\x04 \x01(\x04\x12\x10\n\x08\x63\x61ptures\x18\x05 \x01(\x04\x12\x16\n\x0e\x63\x61pturedomains\x18\x06 \x01(\x04\"Y\n\x18PolicyURLCapturesRequest\x12\x0f\n\x07\x64\x61taset\x18\x01 \x01(\t\x12\r\n\x05query\x18\x02 \x01(\t\x12\r\n\x05limit\x18\x03 \x01(\x03\x12\x0e\n\x06resume\x18\x04 \x01(\t\"i\n\x17PolicyURLCapturesResult\x12\x0b\n\x03url\x18\x01 \x01(\t\x12\x0e\n\x06resume\x18\x02 \x01(\t\x12\x31\n\ncapsummary\x18\x03 \x01(\x0b\x32\x1d.io.netograph.dset.CapSummary2\xdf\x14\n\x04\x44set\x12`\n\rSubmitCapture\x12\'.io.netograph.dset.SubmitCaptureRequest\x1a&.io.netograph.dset.SubmitCaptureResult\x12Z\n\x0b\x43\x61ptureInfo\x12%.io.netograph.dset.CaptureInfoRequest\x1a$.io.netograph.dset.CaptureInfoResult\x12Y\n\nCaptureLog\x12$.io.netograph.dset.CaptureLogRequest\x1a#.io.netograph.dset.CaptureLogResult0\x01\x12k\n\x10\x43\x65rtDomainSearch\x12*.io.netograph.dset.CertDomainSearchRequest\x1a).io.netograph.dset.CertDomainSearchResult0\x01\x12\x66\n\x0f\x43\x65rtDomainStats\x12).io.netograph.dset.CertDomainStatsRequest\x1a(.io.netograph.dset.CertDomainStatsResult\x12_\n\x0c\x43\x65rtIPSearch\x12&.io.netograph.dset.CertIPSearchRequest\x1a%.io.netograph.dset.CertIPSearchResult0\x01\x12\x62\n\rDomainHistory\x12\'.io.netograph.dset.DomainHistoryRequest\x1a&.io.netograph.dset.DomainHistoryResult0\x01\x12_\n\x0c\x44omainSearch\x12&.io.netograph.dset.DomainSearchRequest\x1a%.io.netograph.dset.DomainSearchResult0\x01\x12_\n\x0c\x44omainsForIP\x12&.io.netograph.dset.DomainsForIPRequest\x1a%.io.netograph.dset.DomainsForIPResult0\x01\x12V\n\tIPHistory\x12#.io.netograph.dset.IPHistoryRequest\x1a\".io.netograph.dset.IPHistoryResult0\x01\x12\\\n\x0bIPLogSearch\x12%.io.netograph.dset.IPLogSearchRequest\x1a$.io.netograph.dset.IPLogSearchResult0\x01\x12S\n\x08IPSearch\x12\".io.netograph.dset.IPSearchRequest\x1a!.io.netograph.dset.IPSearchResult0\x01\x12_\n\x0cIPsForDomain\x12&.io.netograph.dset.IPsForDomainRequest\x1a%.io.netograph.dset.IPsForDomainResult0\x01\x12\x65\n\x0eMetaForCapture\x12(.io.netograph.dset.MetaForCaptureRequest\x1a\'.io.netograph.dset.MetaForCaptureResult0\x01\x12Y\n\nMetaSearch\x12$.io.netograph.dset.MetaSearchRequest\x1a#.io.netograph.dset.MetaSearchResult0\x01\x12h\n\x0fPoliciesForRoot\x12).io.netograph.dset.PoliciesForRootRequest\x1a(.io.netograph.dset.PoliciesForRootResult0\x01\x12w\n\x14PolicyDomainCaptures\x12..io.netograph.dset.PolicyDomainCapturesRequest\x1a-.io.netograph.dset.PolicyDomainCapturesResult0\x01\x12l\n\x11PolicyDomainStats\x12+.io.netograph.dset.PolicyDomainStatsRequest\x1a*.io.netograph.dset.PolicyDomainStatsResult\x12n\n\x11PolicyURLCaptures\x12+.io.netograph.dset.PolicyURLCapturesRequest\x1a*.io.netograph.dset.PolicyURLCapturesResult0\x01\x12t\n\x13RedirsByDestination\x12-.io.netograph.dset.RedirsByDestinationRequest\x1a,.io.netograph.dset.RedirsByDestinationResult0\x01\x12\x65\n\x0eRedirsBySource\x12(.io.netograph.dset.RedirsBySourceRequest\x1a\'.io.netograph.dset.RedirsBySourceResult0\x01\x12\x62\n\rRootLogSearch\x12\'.io.netograph.dset.RootLogSearchRequest\x1a&.io.netograph.dset.RootLogSearchResult0\x01\x12n\n\x11RootsForSatellite\x12+.io.netograph.dset.RootsForSatelliteRequest\x1a*.io.netograph.dset.RootsForSatelliteResult0\x01\x12q\n\x12SatelliteLogSearch\x12,.io.netograph.dset.SatelliteLogSearchRequest\x1a+.io.netograph.dset.SatelliteLogSearchResult0\x01\x12n\n\x11SatellitesForRoot\x12+.io.netograph.dset.SatellitesForRootRequest\x1a*.io.netograph.dset.SatellitesForRootResult0\x01\x12_\n\x0cURLLogSearch\x12&.io.netograph.dset.URLLogSearchRequest\x1a%.io.netograph.dset.URLLogSearchResult0\x01\x42\tZ\x07\x64setapib\x06proto3')
+  serialized_pb=_b('\n\x12\x64setapi/dset.proto\x12\x11io.netograph.dset\x1a\x1fgoogle/protobuf/timestamp.proto\"\xff\t\n\x04\x43\x65rt\x12\x16\n\x0e\x61uthoritykeyid\x18\x01 \x01(\t\x12\x42\n\x10\x62\x61sicconstraints\x18\x02 \x01(\x0b\x32(.io.netograph.dset.Cert.BasicConstraints\x12\x1d\n\x15\x63rldistributionpoints\x18\x03 \x03(\t\x12\x10\n\x08\x64nsnames\x18\x04 \x03(\t\x12\x16\n\x0e\x65mailaddresses\x18\x05 \x03(\t\x12\x18\n\x10\x65xtendedkeyusage\x18\x06 \x03(\t\x12\x35\n\nextensions\x18\x07 \x03(\x0b\x32!.io.netograph.dset.Cert.Extension\x12?\n\x0c\x66ingerprints\x18\x08 \x03(\x0b\x32).io.netograph.dset.Cert.FingerprintsEntry\x12\x13\n\x0bipaddresses\x18\t \x03(\t\x12\x39\n\x06issuer\x18\n \x01(\x0b\x32).io.netograph.dset.Cert.DistinguishedName\x12\x16\n\x0eissuingcerturl\x18\x0b \x03(\t\x12\x10\n\x08keyusage\x18\x0c \x03(\t\x12,\n\x08notafter\x18\r \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12-\n\tnotbefore\x18\x0e \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x12\n\nocspserver\x18\x0f \x03(\t\x12\x1b\n\x13permitteddnsdomains\x18\x10 \x03(\t\x12#\n\x1bpermitteddnsdomainscritical\x18\x11 \x01(\x08\x12\x39\n\tpublickey\x18\x12 \x03(\x0b\x32&.io.netograph.dset.Cert.PublickeyEntry\x12\x1a\n\x12publickeyalgorithm\x18\x13 \x01(\t\x12\x14\n\x0cserialnumber\x18\x14 \x01(\t\x12\x1a\n\x12signaturealgorithm\x18\x15 \x01(\t\x12:\n\x07subject\x18\x16 \x01(\x0b\x32).io.netograph.dset.Cert.DistinguishedName\x12\x14\n\x0csubjectkeyid\x18\x17 \x01(\t\x12\x0f\n\x07version\x18\x18 \x01(\x03\x1a\x34\n\x10\x42\x61sicConstraints\x12\x0c\n\x04isca\x18\x01 \x01(\x08\x12\x12\n\nmaxpathlen\x18\x02 \x01(\x03\x1a\xcf\x01\n\x11\x44istinguishedName\x12\x12\n\ncommonname\x18\x01 \x01(\t\x12\x0f\n\x07\x63ountry\x18\x02 \x03(\t\x12\x10\n\x08locality\x18\x03 \x03(\t\x12\x14\n\x0corganization\x18\x04 \x03(\t\x12\x1a\n\x12organizationalunit\x18\x05 \x03(\t\x12\x12\n\npostalcode\x18\x06 \x03(\t\x12\x10\n\x08province\x18\x07 \x03(\t\x12\x14\n\x0cserialnumber\x18\x08 \x01(\t\x12\x15\n\rstreetaddress\x18\t \x03(\t\x1a\x38\n\tExtension\x12\x10\n\x08\x63ritical\x18\x01 \x01(\x08\x12\x0b\n\x03oid\x18\x02 \x01(\t\x12\x0c\n\x04name\x18\x03 \x01(\t\x1a\x33\n\x11\x46ingerprintsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\x1a\x30\n\x0ePublickeyEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\xe4\x02\n\nCapSummary\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0e\n\x06\x61ssets\x18\x02 \x01(\t\x12\x31\n\x05roots\x18\x03 \x03(\x0b\x32\".io.netograph.dset.CapSummary.Root\x12(\n\x04time\x18\x04 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x30\n\x04plan\x18\x05 \x01(\x0b\x32\".io.netograph.dset.CapSummary.Plan\x12\x32\n\x05stats\x18\x06 \x01(\x0b\x32#.io.netograph.dset.CapSummary.Stats\x1a&\n\x04Plan\x12\x0c\n\x04urls\x18\x01 \x03(\t\x12\x10\n\x08\x65xtended\x18\x02 \x01(\x08\x1a\x14\n\x04Root\x12\x0c\n\x04urls\x18\x01 \x03(\t\x1a\x39\n\x05Stats\x12\r\n\x05\x66lows\x18\x01 \x01(\x05\x12\x12\n\nwebsockets\x18\x02 \x01(\x05\x12\r\n\x05hosts\x18\x03 \x01(\x05\"&\n\x08Metadata\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t\"1\n\x12\x43\x61ptureInfoRequest\x12\x0f\n\x07\x64\x61taset\x18\x01 \x01(\t\x12\n\n\x02id\x18\x02 \x01(\t\"F\n\x11\x43\x61ptureInfoResult\x12\x31\n\ncapsummary\x18\x01 \x01(\x0b\x32\x1d.io.netograph.dset.CapSummary\"1\n\x12\x43\x61ptureTextRequest\x12\x0f\n\x07\x64\x61taset\x18\x01 \x01(\t\x12\n\n\x02id\x18\x02 \x01(\t\"\xa3\x04\n\x11\x43\x61ptureTextResult\x12\x38\n\x05pages\x18\x01 \x03(\x0b\x32).io.netograph.dset.CaptureTextResult.Page\x12:\n\x06groups\x18\x02 \x03(\x0b\x32*.io.netograph.dset.CaptureTextResult.Group\x1a?\n\tRectangle\x12\t\n\x01x\x18\x01 \x01(\x02\x12\t\n\x01y\x18\x02 \x01(\x02\x12\x0c\n\x04with\x18\x03 \x01(\x02\x12\x0e\n\x06height\x18\x04 \x01(\x02\x1as\n\x08TextNode\x12\n\n\x02id\x18\x01 \x01(\x03\x12\r\n\x05nodes\x18\x02 \x03(\x03\x12>\n\x06\x62ounds\x18\x03 \x01(\x0b\x32..io.netograph.dset.CaptureTextResult.Rectangle\x12\x0c\n\x04text\x18\x04 \x01(\t\x1aT\n\x08\x44ocument\x12\x0b\n\x03url\x18\x01 \x01(\t\x12;\n\x04text\x18\x02 \x03(\x0b\x32-.io.netograph.dset.CaptureTextResult.TextNode\x1aH\n\x04Page\x12@\n\tdocuments\x18\x01 \x03(\x0b\x32-.io.netograph.dset.CaptureTextResult.Document\x1a\x42\n\x05Group\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x0c\n\x04page\x18\x02 \x01(\x03\x12\x10\n\x08\x64ocument\x18\x03 \x01(\x03\x12\x0b\n\x03ids\x18\x04 \x03(\x03\"\x97\x01\n\x11\x43\x61ptureLogRequest\x12\x0f\n\x07\x64\x61taset\x18\x01 \x01(\t\x12\r\n\x05limit\x18\x02 \x01(\x03\x12\x0e\n\x06resume\x18\x03 \x01(\t\x12)\n\x05start\x18\x04 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\'\n\x03\x65nd\x18\x05 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\"U\n\x10\x43\x61ptureLogResult\x12\x31\n\ncapsummary\x18\x01 \x01(\x0b\x32\x1d.io.netograph.dset.CapSummary\x12\x0e\n\x06resume\x18\x02 \x01(\t\"X\n\x17\x43\x65rtDomainSearchRequest\x12\x0f\n\x07\x64\x61taset\x18\x01 \x01(\t\x12\r\n\x05query\x18\x02 \x01(\t\x12\r\n\x05limit\x18\x03 \x01(\x03\x12\x0e\n\x06resume\x18\x04 \x01(\t\"\x98\x01\n\x16\x43\x65rtDomainSearchResult\x12\x0e\n\x06\x64omain\x18\x01 \x01(\t\x12\x0e\n\x06resume\x18\x02 \x01(\t\x12%\n\x04\x63\x65rt\x18\x03 \x01(\x0b\x32\x17.io.netograph.dset.Cert\x12\r\n\x05\x63hain\x18\x04 \x03(\t\x12(\n\x04time\x18\x05 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\"8\n\x16\x43\x65rtDomainStatsRequest\x12\x0f\n\x07\x64\x61taset\x18\x01 \x01(\t\x12\r\n\x05query\x18\x02 \x01(\t\"J\n\x15\x43\x65rtDomainStatsResult\x12\x0f\n\x07\x64omains\x18\x01 \x01(\x04\x12\r\n\x05\x63\x65rts\x18\x02 \x01(\x04\x12\x11\n\tcertshere\x18\x03 \x01(\x04\"_\n\x13\x43\x65rtIPSearchRequest\x12\x0f\n\x07\x64\x61taset\x18\x01 \x01(\t\x12\n\n\x02ip\x18\x02 \x01(\t\x12\x0c\n\x04mask\x18\x03 \x01(\x05\x12\r\n\x05limit\x18\x04 \x01(\x03\x12\x0e\n\x06resume\x18\x05 \x01(\t\"\x91\x01\n\x12\x43\x65rtIPSearchResult\x12\n\n\x02ip\x18\x01 \x01(\t\x12\x0e\n\x06\x64omain\x18\x02 \x01(\t\x12\x0e\n\x06resume\x18\x03 \x01(\t\x12%\n\x04\x63\x65rt\x18\x04 \x01(\x0b\x32\x17.io.netograph.dset.Cert\x12(\n\x04time\x18\x05 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\"`\n\x11\x43\x65rtSearchRequest\x12\x0f\n\x07\x64\x61taset\x18\x01 \x01(\t\x12\r\n\x05\x66ield\x18\x02 \x01(\t\x12\x0c\n\x04text\x18\x03 \x01(\t\x12\r\n\x05limit\x18\x04 \x01(\x03\x12\x0e\n\x06resume\x18\x05 \x01(\t\"s\n\x10\x43\x65rtSearchResult\x12\x0e\n\x06resume\x18\x01 \x01(\t\x12%\n\x04\x63\x65rt\x18\x02 \x01(\x0b\x32\x17.io.netograph.dset.Cert\x12(\n\x04time\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\"F\n\x14\x44omainHistoryRequest\x12\x0f\n\x07\x64\x61taset\x18\x01 \x01(\t\x12\x0e\n\x06\x64omain\x18\x02 \x01(\t\x12\r\n\x05limit\x18\x03 \x01(\x03\"H\n\x13\x44omainHistoryResult\x12\x31\n\ncapsummary\x18\x01 \x01(\x0b\x32\x1d.io.netograph.dset.CapSummary\"T\n\x13\x44omainSearchRequest\x12\x0f\n\x07\x64\x61taset\x18\x01 \x01(\t\x12\r\n\x05query\x18\x02 \x01(\t\x12\r\n\x05limit\x18\x03 \x01(\x03\x12\x0e\n\x06resume\x18\x04 \x01(\t\"j\n\x12\x44omainSearchResult\x12\x0e\n\x06\x64omain\x18\x01 \x01(\t\x12\x0e\n\x06resume\x18\x02 \x01(\t\x12\x34\n\rlatestcapture\x18\x03 \x01(\x0b\x32\x1d.io.netograph.dset.CapSummary\"Q\n\x13\x44omainsForIPRequest\x12\x0f\n\x07\x64\x61taset\x18\x01 \x01(\t\x12\n\n\x02ip\x18\x02 \x01(\t\x12\r\n\x05limit\x18\x03 \x01(\x03\x12\x0e\n\x06resume\x18\x04 \x01(\t\"\x8c\x01\n\x12\x44omainsForIPResult\x12\x0e\n\x06\x64omain\x18\x01 \x01(\t\x12\n\n\x02ip\x18\x02 \x01(\t\x12\x34\n\rlatestcapture\x18\x03 \x01(\x0b\x32\x1d.io.netograph.dset.CapSummary\x12\x14\n\x0c\x61ssociations\x18\x04 \x03(\t\x12\x0e\n\x06resume\x18\x05 \x01(\t\">\n\x10IPHistoryRequest\x12\x0f\n\x07\x64\x61taset\x18\x01 \x01(\t\x12\n\n\x02ip\x18\x02 \x01(\t\x12\r\n\x05limit\x18\x03 \x01(\x03\"D\n\x0fIPHistoryResult\x12\x31\n\ncapsummary\x18\x01 \x01(\x0b\x32\x1d.io.netograph.dset.CapSummary\"P\n\x12IPLogSearchRequest\x12\x0f\n\x07\x64\x61taset\x18\x01 \x01(\t\x12\n\n\x02ip\x18\x02 \x01(\t\x12\r\n\x05limit\x18\x03 \x01(\x03\x12\x0e\n\x06resume\x18\x04 \x01(\t\"b\n\x11IPLogSearchResult\x12\x31\n\ncapsummary\x18\x01 \x01(\x0b\x32\x1d.io.netograph.dset.CapSummary\x12\n\n\x02ip\x18\x02 \x01(\t\x12\x0e\n\x06resume\x18\x03 \x01(\t\"b\n\x0eIPSearchResult\x12\n\n\x02ip\x18\x01 \x01(\t\x12\x0e\n\x06resume\x18\x02 \x01(\t\x12\x34\n\rlatestcapture\x18\x03 \x01(\x0b\x32\x1d.io.netograph.dset.CapSummary\"[\n\x0fIPSearchRequest\x12\x0f\n\x07\x64\x61taset\x18\x01 \x01(\t\x12\n\n\x02ip\x18\x02 \x01(\t\x12\x0c\n\x04mask\x18\x03 \x01(\x05\x12\r\n\x05limit\x18\x04 \x01(\x03\x12\x0e\n\x06resume\x18\x05 \x01(\t\"T\n\x13IPsForDomainRequest\x12\x0f\n\x07\x64\x61taset\x18\x01 \x01(\t\x12\r\n\x05query\x18\x02 \x01(\t\x12\r\n\x05limit\x18\x03 \x01(\x03\x12\x0e\n\x06resume\x18\x04 \x01(\t\"\x8c\x01\n\x12IPsForDomainResult\x12\x0e\n\x06\x64omain\x18\x01 \x01(\t\x12\n\n\x02ip\x18\x02 \x01(\t\x12\x34\n\rlatestcapture\x18\x03 \x01(\x0b\x32\x1d.io.netograph.dset.CapSummary\x12\x14\n\x0c\x61ssociations\x18\x04 \x03(\t\x12\x0e\n\x06resume\x18\x05 \x01(\t\"c\n\x15MetaForCaptureRequest\x12\x0f\n\x07\x64\x61taset\x18\x01 \x01(\t\x12\n\n\x02id\x18\x02 \x01(\t\x12\r\n\x05limit\x18\x03 \x01(\x03\x12\x0e\n\x06resume\x18\x04 \x01(\t\x12\x0e\n\x06prefix\x18\x05 \x01(\t\"{\n\x14MetaForCaptureResult\x12)\n\x04meta\x18\x01 \x01(\x0b\x32\x1b.io.netograph.dset.Metadata\x12(\n\x04time\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x0e\n\x06resume\x18\x03 \x01(\t\"R\n\x11MetaSearchRequest\x12\x0f\n\x07\x64\x61taset\x18\x01 \x01(\t\x12\r\n\x05query\x18\x02 \x01(\t\x12\r\n\x05limit\x18\x03 \x01(\x03\x12\x0e\n\x06resume\x18\x04 \x01(\t\"\x80\x01\n\x10MetaSearchResult\x12)\n\x04meta\x18\x01 \x01(\x0b\x32\x1b.io.netograph.dset.Metadata\x12\x0e\n\x06resume\x18\x03 \x01(\t\x12\x31\n\ncapsummary\x18\x04 \x01(\x0b\x32\x1d.io.netograph.dset.CapSummary\"[\n\x1aRedirsByDestinationRequest\x12\x0f\n\x07\x64\x61taset\x18\x01 \x01(\t\x12\r\n\x05query\x18\x02 \x01(\t\x12\r\n\x05limit\x18\x03 \x01(\x03\x12\x0e\n\x06resume\x18\x04 \x01(\t\"\x86\x01\n\x19RedirsByDestinationResult\x12\x0e\n\x06source\x18\x01 \x01(\t\x12\x13\n\x0b\x64\x65stination\x18\x02 \x01(\t\x12\x34\n\rlatestcapture\x18\x03 \x01(\x0b\x32\x1d.io.netograph.dset.CapSummary\x12\x0e\n\x06resume\x18\x04 \x01(\t\"V\n\x15RedirsBySourceRequest\x12\x0f\n\x07\x64\x61taset\x18\x01 \x01(\t\x12\r\n\x05query\x18\x02 \x01(\t\x12\r\n\x05limit\x18\x03 \x01(\x03\x12\x0e\n\x06resume\x18\x04 \x01(\t\"\x81\x01\n\x14RedirsBySourceResult\x12\x0e\n\x06source\x18\x01 \x01(\t\x12\x13\n\x0b\x64\x65stination\x18\x02 \x01(\t\x12\x34\n\rlatestcapture\x18\x03 \x01(\x0b\x32\x1d.io.netograph.dset.CapSummary\x12\x0e\n\x06resume\x18\x04 \x01(\t\"U\n\x14RootLogSearchRequest\x12\x0f\n\x07\x64\x61taset\x18\x01 \x01(\t\x12\r\n\x05query\x18\x02 \x01(\t\x12\r\n\x05limit\x18\x03 \x01(\x03\x12\x0e\n\x06resume\x18\x04 \x01(\t\"f\n\x13RootLogSearchResult\x12\x0c\n\x04root\x18\x01 \x01(\t\x12\x0e\n\x06resume\x18\x02 \x01(\t\x12\x31\n\ncapsummary\x18\x03 \x01(\x0b\x32\x1d.io.netograph.dset.CapSummary\"Y\n\x18RootsForSatelliteRequest\x12\x0f\n\x07\x64\x61taset\x18\x01 \x01(\t\x12\r\n\x05query\x18\x02 \x01(\t\x12\r\n\x05limit\x18\x03 \x01(\x03\x12\x0e\n\x06resume\x18\x04 \x01(\t\"\x93\x01\n\x17RootsForSatelliteResult\x12\x0c\n\x04root\x18\x01 \x01(\t\x12\x11\n\tsatellite\x18\x02 \x01(\t\x12\x31\n\ncapsummary\x18\x03 \x01(\x0b\x32\x1d.io.netograph.dset.CapSummary\x12\x14\n\x0c\x61ssociations\x18\x04 \x03(\t\x12\x0e\n\x06resume\x18\x05 \x01(\t\"\xaa\x01\n\x14SubmitCaptureRequest\x12\x0f\n\x07\x64\x61taset\x18\x01 \x01(\t\x12\x14\n\x0cnotification\x18\x02 \x01(\t\x12\x0c\n\x04urls\x18\x03 \x03(\t\x12)\n\x04meta\x18\x04 \x03(\x0b\x32\x1b.io.netograph.dset.Metadata\x12\x12\n\nskiprecent\x18\x05 \x01(\x03\x12\x0c\n\x04zone\x18\x06 \x01(\t\x12\x10\n\x08\x65xtended\x18\x07 \x01(\x08\"B\n\x13SubmitCaptureResult\x12\x0e\n\x06\x61ssets\x18\x01 \x01(\t\x12\x0f\n\x07skipped\x18\x02 \x01(\x08\x12\n\n\x02id\x18\x03 \x01(\t\"Z\n\x19SatelliteLogSearchRequest\x12\x0f\n\x07\x64\x61taset\x18\x01 \x01(\t\x12\r\n\x05query\x18\x02 \x01(\t\x12\r\n\x05limit\x18\x03 \x01(\x03\x12\x0e\n\x06resume\x18\x04 \x01(\t\"p\n\x18SatelliteLogSearchResult\x12\x11\n\tsatellite\x18\x01 \x01(\t\x12\x0e\n\x06resume\x18\x02 \x01(\t\x12\x31\n\ncapsummary\x18\x03 \x01(\x0b\x32\x1d.io.netograph.dset.CapSummary\"Y\n\x18SatellitesForRootRequest\x12\x0f\n\x07\x64\x61taset\x18\x01 \x01(\t\x12\r\n\x05query\x18\x02 \x01(\t\x12\r\n\x05limit\x18\x03 \x01(\x03\x12\x0e\n\x06resume\x18\x04 \x01(\t\"\x93\x01\n\x17SatellitesForRootResult\x12\x0c\n\x04root\x18\x01 \x01(\t\x12\x11\n\tsatellite\x18\x02 \x01(\t\x12\x31\n\ncapsummary\x18\x03 \x01(\x0b\x32\x1d.io.netograph.dset.CapSummary\x12\x14\n\x0c\x61ssociations\x18\x04 \x03(\t\x12\x0e\n\x06resume\x18\x05 \x01(\t\"T\n\x13URLLogSearchRequest\x12\x0f\n\x07\x64\x61taset\x18\x01 \x01(\t\x12\r\n\x05query\x18\x02 \x01(\t\x12\r\n\x05limit\x18\x03 \x01(\x03\x12\x0e\n\x06resume\x18\x04 \x01(\t\"d\n\x12URLLogSearchResult\x12\x0b\n\x03url\x18\x01 \x01(\t\x12\x0e\n\x06resume\x18\x02 \x01(\t\x12\x31\n\ncapsummary\x18\x03 \x01(\x0b\x32\x1d.io.netograph.dset.CapSummary\"\xab\x01\n\x16PoliciesForRootRequest\x12\x0f\n\x07\x64\x61taset\x18\x01 \x01(\t\x12\r\n\x05query\x18\x02 \x01(\t\x12)\n\x05start\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\'\n\x03\x65nd\x18\x04 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\r\n\x05limit\x18\x05 \x01(\x03\x12\x0e\n\x06resume\x18\x06 \x01(\t\"\xdc\x01\n\x15PoliciesForRootResult\x12\x12\n\nrootdomain\x18\x01 \x01(\t\x12\x0b\n\x03url\x18\x02 \x01(\t\x12(\n\x04time\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x34\n\rlastreference\x18\x04 \x01(\x0b\x32\x1d.io.netograph.dset.CapSummary\x12\x32\n\x0blastcapture\x18\x05 \x01(\x0b\x32\x1d.io.netograph.dset.CapSummary\x12\x0e\n\x06resume\x18\x06 \x01(\t\"\xb0\x01\n\x1bPolicyDomainCapturesRequest\x12\x0f\n\x07\x64\x61taset\x18\x01 \x01(\t\x12\r\n\x05query\x18\x02 \x01(\t\x12\r\n\x05limit\x18\x03 \x01(\x03\x12)\n\x05start\x18\x04 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\'\n\x03\x65nd\x18\x05 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x0e\n\x06resume\x18\x06 \x01(\t\"o\n\x1aPolicyDomainCapturesResult\x12\x0e\n\x06\x64omain\x18\x01 \x01(\t\x12\x31\n\ncapsummary\x18\x02 \x01(\x0b\x32\x1d.io.netograph.dset.CapSummary\x12\x0e\n\x06resume\x18\x03 \x01(\t\":\n\x18PolicyDomainStatsRequest\x12\x0f\n\x07\x64\x61taset\x18\x01 \x01(\t\x12\r\n\x05query\x18\x02 \x01(\t\"\xa2\x01\n\x17PolicyDomainStatsResult\x12\x15\n\rpolicydomains\x18\x01 \x01(\x04\x12\x19\n\x11subdomainpolicies\x18\x02 \x01(\x04\x12\x10\n\x08policies\x18\x03 \x01(\x04\x12\x19\n\x11subdomaincaptures\x18\x04 \x01(\x04\x12\x10\n\x08\x63\x61ptures\x18\x05 \x01(\x04\x12\x16\n\x0e\x63\x61pturedomains\x18\x06 \x01(\x04\"Y\n\x18PolicyURLCapturesRequest\x12\x0f\n\x07\x64\x61taset\x18\x01 \x01(\t\x12\r\n\x05query\x18\x02 \x01(\t\x12\r\n\x05limit\x18\x03 \x01(\x03\x12\x0e\n\x06resume\x18\x04 \x01(\t\"i\n\x17PolicyURLCapturesResult\x12\x0b\n\x03url\x18\x01 \x01(\t\x12\x0e\n\x06resume\x18\x02 \x01(\t\x12\x31\n\ncapsummary\x18\x03 \x01(\x0b\x32\x1d.io.netograph.dset.CapSummary2\xba\x15\n\x04\x44set\x12`\n\rSubmitCapture\x12\'.io.netograph.dset.SubmitCaptureRequest\x1a&.io.netograph.dset.SubmitCaptureResult\x12Z\n\x0b\x43\x61ptureInfo\x12%.io.netograph.dset.CaptureInfoRequest\x1a$.io.netograph.dset.CaptureInfoResult\x12Y\n\nCaptureLog\x12$.io.netograph.dset.CaptureLogRequest\x1a#.io.netograph.dset.CaptureLogResult0\x01\x12k\n\x10\x43\x65rtDomainSearch\x12*.io.netograph.dset.CertDomainSearchRequest\x1a).io.netograph.dset.CertDomainSearchResult0\x01\x12\x66\n\x0f\x43\x65rtDomainStats\x12).io.netograph.dset.CertDomainStatsRequest\x1a(.io.netograph.dset.CertDomainStatsResult\x12_\n\x0c\x43\x65rtIPSearch\x12&.io.netograph.dset.CertIPSearchRequest\x1a%.io.netograph.dset.CertIPSearchResult0\x01\x12Y\n\nCertSearch\x12$.io.netograph.dset.CertSearchRequest\x1a#.io.netograph.dset.CertSearchResult0\x01\x12\x62\n\rDomainHistory\x12\'.io.netograph.dset.DomainHistoryRequest\x1a&.io.netograph.dset.DomainHistoryResult0\x01\x12_\n\x0c\x44omainSearch\x12&.io.netograph.dset.DomainSearchRequest\x1a%.io.netograph.dset.DomainSearchResult0\x01\x12_\n\x0c\x44omainsForIP\x12&.io.netograph.dset.DomainsForIPRequest\x1a%.io.netograph.dset.DomainsForIPResult0\x01\x12V\n\tIPHistory\x12#.io.netograph.dset.IPHistoryRequest\x1a\".io.netograph.dset.IPHistoryResult0\x01\x12\\\n\x0bIPLogSearch\x12%.io.netograph.dset.IPLogSearchRequest\x1a$.io.netograph.dset.IPLogSearchResult0\x01\x12S\n\x08IPSearch\x12\".io.netograph.dset.IPSearchRequest\x1a!.io.netograph.dset.IPSearchResult0\x01\x12_\n\x0cIPsForDomain\x12&.io.netograph.dset.IPsForDomainRequest\x1a%.io.netograph.dset.IPsForDomainResult0\x01\x12\x65\n\x0eMetaForCapture\x12(.io.netograph.dset.MetaForCaptureRequest\x1a\'.io.netograph.dset.MetaForCaptureResult0\x01\x12Y\n\nMetaSearch\x12$.io.netograph.dset.MetaSearchRequest\x1a#.io.netograph.dset.MetaSearchResult0\x01\x12h\n\x0fPoliciesForRoot\x12).io.netograph.dset.PoliciesForRootRequest\x1a(.io.netograph.dset.PoliciesForRootResult0\x01\x12w\n\x14PolicyDomainCaptures\x12..io.netograph.dset.PolicyDomainCapturesRequest\x1a-.io.netograph.dset.PolicyDomainCapturesResult0\x01\x12l\n\x11PolicyDomainStats\x12+.io.netograph.dset.PolicyDomainStatsRequest\x1a*.io.netograph.dset.PolicyDomainStatsResult\x12n\n\x11PolicyURLCaptures\x12+.io.netograph.dset.PolicyURLCapturesRequest\x1a*.io.netograph.dset.PolicyURLCapturesResult0\x01\x12t\n\x13RedirsByDestination\x12-.io.netograph.dset.RedirsByDestinationRequest\x1a,.io.netograph.dset.RedirsByDestinationResult0\x01\x12\x65\n\x0eRedirsBySource\x12(.io.netograph.dset.RedirsBySourceRequest\x1a\'.io.netograph.dset.RedirsBySourceResult0\x01\x12\x62\n\rRootLogSearch\x12\'.io.netograph.dset.RootLogSearchRequest\x1a&.io.netograph.dset.RootLogSearchResult0\x01\x12n\n\x11RootsForSatellite\x12+.io.netograph.dset.RootsForSatelliteRequest\x1a*.io.netograph.dset.RootsForSatelliteResult0\x01\x12q\n\x12SatelliteLogSearch\x12,.io.netograph.dset.SatelliteLogSearchRequest\x1a+.io.netograph.dset.SatelliteLogSearchResult0\x01\x12n\n\x11SatellitesForRoot\x12+.io.netograph.dset.SatellitesForRootRequest\x1a*.io.netograph.dset.SatellitesForRootResult0\x01\x12_\n\x0cURLLogSearch\x12&.io.netograph.dset.URLLogSearchRequest\x1a%.io.netograph.dset.URLLogSearchResult0\x01\x42\tZ\x07\x64setapib\x06proto3')
   ,
   dependencies=[google_dot_protobuf_dot_timestamp__pb2.DESCRIPTOR,])
 
@@ -1449,6 +1449,110 @@ _CERTIPSEARCHRESULT = _descriptor.Descriptor(
 )
 
 
+_CERTSEARCHREQUEST = _descriptor.Descriptor(
+  name='CertSearchRequest',
+  full_name='io.netograph.dset.CertSearchRequest',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='dataset', full_name='io.netograph.dset.CertSearchRequest.dataset', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='field', full_name='io.netograph.dset.CertSearchRequest.field', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='text', full_name='io.netograph.dset.CertSearchRequest.text', index=2,
+      number=3, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='limit', full_name='io.netograph.dset.CertSearchRequest.limit', index=3,
+      number=4, type=3, cpp_type=2, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='resume', full_name='io.netograph.dset.CertSearchRequest.resume', index=4,
+      number=5, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=3344,
+  serialized_end=3440,
+)
+
+
+_CERTSEARCHRESULT = _descriptor.Descriptor(
+  name='CertSearchResult',
+  full_name='io.netograph.dset.CertSearchResult',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='resume', full_name='io.netograph.dset.CertSearchResult.resume', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='cert', full_name='io.netograph.dset.CertSearchResult.cert', index=1,
+      number=2, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='time', full_name='io.netograph.dset.CertSearchResult.time', index=2,
+      number=3, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=3442,
+  serialized_end=3557,
+)
+
+
 _DOMAINHISTORYREQUEST = _descriptor.Descriptor(
   name='DomainHistoryRequest',
   full_name='io.netograph.dset.DomainHistoryRequest',
@@ -1489,8 +1593,8 @@ _DOMAINHISTORYREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3344,
-  serialized_end=3414,
+  serialized_start=3559,
+  serialized_end=3629,
 )
 
 
@@ -1520,8 +1624,8 @@ _DOMAINHISTORYRESULT = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3416,
-  serialized_end=3488,
+  serialized_start=3631,
+  serialized_end=3703,
 )
 
 
@@ -1572,8 +1676,8 @@ _DOMAINSEARCHREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3490,
-  serialized_end=3574,
+  serialized_start=3705,
+  serialized_end=3789,
 )
 
 
@@ -1617,8 +1721,8 @@ _DOMAINSEARCHRESULT = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3576,
-  serialized_end=3682,
+  serialized_start=3791,
+  serialized_end=3897,
 )
 
 
@@ -1669,8 +1773,8 @@ _DOMAINSFORIPREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3684,
-  serialized_end=3765,
+  serialized_start=3899,
+  serialized_end=3980,
 )
 
 
@@ -1728,8 +1832,8 @@ _DOMAINSFORIPRESULT = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3768,
-  serialized_end=3908,
+  serialized_start=3983,
+  serialized_end=4123,
 )
 
 
@@ -1773,8 +1877,8 @@ _IPHISTORYREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3910,
-  serialized_end=3972,
+  serialized_start=4125,
+  serialized_end=4187,
 )
 
 
@@ -1804,8 +1908,8 @@ _IPHISTORYRESULT = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3974,
-  serialized_end=4042,
+  serialized_start=4189,
+  serialized_end=4257,
 )
 
 
@@ -1856,8 +1960,8 @@ _IPLOGSEARCHREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4044,
-  serialized_end=4124,
+  serialized_start=4259,
+  serialized_end=4339,
 )
 
 
@@ -1901,8 +2005,8 @@ _IPLOGSEARCHRESULT = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4126,
-  serialized_end=4224,
+  serialized_start=4341,
+  serialized_end=4439,
 )
 
 
@@ -1946,8 +2050,8 @@ _IPSEARCHRESULT = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4226,
-  serialized_end=4324,
+  serialized_start=4441,
+  serialized_end=4539,
 )
 
 
@@ -2005,8 +2109,8 @@ _IPSEARCHREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4326,
-  serialized_end=4417,
+  serialized_start=4541,
+  serialized_end=4632,
 )
 
 
@@ -2057,8 +2161,8 @@ _IPSFORDOMAINREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4419,
-  serialized_end=4503,
+  serialized_start=4634,
+  serialized_end=4718,
 )
 
 
@@ -2116,8 +2220,8 @@ _IPSFORDOMAINRESULT = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4506,
-  serialized_end=4646,
+  serialized_start=4721,
+  serialized_end=4861,
 )
 
 
@@ -2175,8 +2279,8 @@ _METAFORCAPTUREREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4648,
-  serialized_end=4747,
+  serialized_start=4863,
+  serialized_end=4962,
 )
 
 
@@ -2220,8 +2324,8 @@ _METAFORCAPTURERESULT = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4749,
-  serialized_end=4872,
+  serialized_start=4964,
+  serialized_end=5087,
 )
 
 
@@ -2272,8 +2376,8 @@ _METASEARCHREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4874,
-  serialized_end=4956,
+  serialized_start=5089,
+  serialized_end=5171,
 )
 
 
@@ -2317,8 +2421,8 @@ _METASEARCHRESULT = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4959,
-  serialized_end=5087,
+  serialized_start=5174,
+  serialized_end=5302,
 )
 
 
@@ -2369,8 +2473,8 @@ _REDIRSBYDESTINATIONREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=5089,
-  serialized_end=5180,
+  serialized_start=5304,
+  serialized_end=5395,
 )
 
 
@@ -2421,8 +2525,8 @@ _REDIRSBYDESTINATIONRESULT = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=5183,
-  serialized_end=5317,
+  serialized_start=5398,
+  serialized_end=5532,
 )
 
 
@@ -2473,8 +2577,8 @@ _REDIRSBYSOURCEREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=5319,
-  serialized_end=5405,
+  serialized_start=5534,
+  serialized_end=5620,
 )
 
 
@@ -2525,8 +2629,8 @@ _REDIRSBYSOURCERESULT = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=5408,
-  serialized_end=5537,
+  serialized_start=5623,
+  serialized_end=5752,
 )
 
 
@@ -2577,8 +2681,8 @@ _ROOTLOGSEARCHREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=5539,
-  serialized_end=5624,
+  serialized_start=5754,
+  serialized_end=5839,
 )
 
 
@@ -2622,8 +2726,8 @@ _ROOTLOGSEARCHRESULT = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=5626,
-  serialized_end=5728,
+  serialized_start=5841,
+  serialized_end=5943,
 )
 
 
@@ -2674,8 +2778,8 @@ _ROOTSFORSATELLITEREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=5730,
-  serialized_end=5819,
+  serialized_start=5945,
+  serialized_end=6034,
 )
 
 
@@ -2733,8 +2837,8 @@ _ROOTSFORSATELLITERESULT = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=5822,
-  serialized_end=5969,
+  serialized_start=6037,
+  serialized_end=6184,
 )
 
 
@@ -2806,8 +2910,8 @@ _SUBMITCAPTUREREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=5972,
-  serialized_end=6142,
+  serialized_start=6187,
+  serialized_end=6357,
 )
 
 
@@ -2851,8 +2955,8 @@ _SUBMITCAPTURERESULT = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=6144,
-  serialized_end=6210,
+  serialized_start=6359,
+  serialized_end=6425,
 )
 
 
@@ -2903,8 +3007,8 @@ _SATELLITELOGSEARCHREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=6212,
-  serialized_end=6302,
+  serialized_start=6427,
+  serialized_end=6517,
 )
 
 
@@ -2948,8 +3052,8 @@ _SATELLITELOGSEARCHRESULT = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=6304,
-  serialized_end=6416,
+  serialized_start=6519,
+  serialized_end=6631,
 )
 
 
@@ -3000,8 +3104,8 @@ _SATELLITESFORROOTREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=6418,
-  serialized_end=6507,
+  serialized_start=6633,
+  serialized_end=6722,
 )
 
 
@@ -3059,8 +3163,8 @@ _SATELLITESFORROOTRESULT = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=6510,
-  serialized_end=6657,
+  serialized_start=6725,
+  serialized_end=6872,
 )
 
 
@@ -3111,8 +3215,8 @@ _URLLOGSEARCHREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=6659,
-  serialized_end=6743,
+  serialized_start=6874,
+  serialized_end=6958,
 )
 
 
@@ -3156,8 +3260,8 @@ _URLLOGSEARCHRESULT = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=6745,
-  serialized_end=6845,
+  serialized_start=6960,
+  serialized_end=7060,
 )
 
 
@@ -3222,8 +3326,8 @@ _POLICIESFORROOTREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=6848,
-  serialized_end=7019,
+  serialized_start=7063,
+  serialized_end=7234,
 )
 
 
@@ -3288,8 +3392,8 @@ _POLICIESFORROOTRESULT = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=7022,
-  serialized_end=7242,
+  serialized_start=7237,
+  serialized_end=7457,
 )
 
 
@@ -3354,8 +3458,8 @@ _POLICYDOMAINCAPTURESREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=7245,
-  serialized_end=7421,
+  serialized_start=7460,
+  serialized_end=7636,
 )
 
 
@@ -3399,8 +3503,8 @@ _POLICYDOMAINCAPTURESRESULT = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=7423,
-  serialized_end=7534,
+  serialized_start=7638,
+  serialized_end=7749,
 )
 
 
@@ -3437,8 +3541,8 @@ _POLICYDOMAINSTATSREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=7536,
-  serialized_end=7594,
+  serialized_start=7751,
+  serialized_end=7809,
 )
 
 
@@ -3503,8 +3607,8 @@ _POLICYDOMAINSTATSRESULT = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=7597,
-  serialized_end=7759,
+  serialized_start=7812,
+  serialized_end=7974,
 )
 
 
@@ -3555,8 +3659,8 @@ _POLICYURLCAPTURESREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=7761,
-  serialized_end=7850,
+  serialized_start=7976,
+  serialized_end=8065,
 )
 
 
@@ -3600,8 +3704,8 @@ _POLICYURLCAPTURESRESULT = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=7852,
-  serialized_end=7957,
+  serialized_start=8067,
+  serialized_end=8172,
 )
 
 _CERT_BASICCONSTRAINTS.containing_type = _CERT
@@ -3642,6 +3746,8 @@ _CERTDOMAINSEARCHRESULT.fields_by_name['cert'].message_type = _CERT
 _CERTDOMAINSEARCHRESULT.fields_by_name['time'].message_type = google_dot_protobuf_dot_timestamp__pb2._TIMESTAMP
 _CERTIPSEARCHRESULT.fields_by_name['cert'].message_type = _CERT
 _CERTIPSEARCHRESULT.fields_by_name['time'].message_type = google_dot_protobuf_dot_timestamp__pb2._TIMESTAMP
+_CERTSEARCHRESULT.fields_by_name['cert'].message_type = _CERT
+_CERTSEARCHRESULT.fields_by_name['time'].message_type = google_dot_protobuf_dot_timestamp__pb2._TIMESTAMP
 _DOMAINHISTORYRESULT.fields_by_name['capsummary'].message_type = _CAPSUMMARY
 _DOMAINSEARCHRESULT.fields_by_name['latestcapture'].message_type = _CAPSUMMARY
 _DOMAINSFORIPRESULT.fields_by_name['latestcapture'].message_type = _CAPSUMMARY
@@ -3685,6 +3791,8 @@ DESCRIPTOR.message_types_by_name['CertDomainStatsRequest'] = _CERTDOMAINSTATSREQ
 DESCRIPTOR.message_types_by_name['CertDomainStatsResult'] = _CERTDOMAINSTATSRESULT
 DESCRIPTOR.message_types_by_name['CertIPSearchRequest'] = _CERTIPSEARCHREQUEST
 DESCRIPTOR.message_types_by_name['CertIPSearchResult'] = _CERTIPSEARCHRESULT
+DESCRIPTOR.message_types_by_name['CertSearchRequest'] = _CERTSEARCHREQUEST
+DESCRIPTOR.message_types_by_name['CertSearchResult'] = _CERTSEARCHRESULT
 DESCRIPTOR.message_types_by_name['DomainHistoryRequest'] = _DOMAINHISTORYREQUEST
 DESCRIPTOR.message_types_by_name['DomainHistoryResult'] = _DOMAINHISTORYRESULT
 DESCRIPTOR.message_types_by_name['DomainSearchRequest'] = _DOMAINSEARCHREQUEST
@@ -3937,6 +4045,20 @@ CertIPSearchResult = _reflection.GeneratedProtocolMessageType('CertIPSearchResul
   # @@protoc_insertion_point(class_scope:io.netograph.dset.CertIPSearchResult)
   ))
 _sym_db.RegisterMessage(CertIPSearchResult)
+
+CertSearchRequest = _reflection.GeneratedProtocolMessageType('CertSearchRequest', (_message.Message,), dict(
+  DESCRIPTOR = _CERTSEARCHREQUEST,
+  __module__ = 'dsetapi.dset_pb2'
+  # @@protoc_insertion_point(class_scope:io.netograph.dset.CertSearchRequest)
+  ))
+_sym_db.RegisterMessage(CertSearchRequest)
+
+CertSearchResult = _reflection.GeneratedProtocolMessageType('CertSearchResult', (_message.Message,), dict(
+  DESCRIPTOR = _CERTSEARCHRESULT,
+  __module__ = 'dsetapi.dset_pb2'
+  # @@protoc_insertion_point(class_scope:io.netograph.dset.CertSearchResult)
+  ))
+_sym_db.RegisterMessage(CertSearchResult)
 
 DomainHistoryRequest = _reflection.GeneratedProtocolMessageType('DomainHistoryRequest', (_message.Message,), dict(
   DESCRIPTOR = _DOMAINHISTORYREQUEST,
@@ -4243,8 +4365,8 @@ _DSET = _descriptor.ServiceDescriptor(
   file=DESCRIPTOR,
   index=0,
   serialized_options=None,
-  serialized_start=7960,
-  serialized_end=10615,
+  serialized_start=8175,
+  serialized_end=10921,
   methods=[
   _descriptor.MethodDescriptor(
     name='SubmitCapture',
@@ -4301,9 +4423,18 @@ _DSET = _descriptor.ServiceDescriptor(
     serialized_options=None,
   ),
   _descriptor.MethodDescriptor(
+    name='CertSearch',
+    full_name='io.netograph.dset.Dset.CertSearch',
+    index=6,
+    containing_service=None,
+    input_type=_CERTSEARCHREQUEST,
+    output_type=_CERTSEARCHRESULT,
+    serialized_options=None,
+  ),
+  _descriptor.MethodDescriptor(
     name='DomainHistory',
     full_name='io.netograph.dset.Dset.DomainHistory',
-    index=6,
+    index=7,
     containing_service=None,
     input_type=_DOMAINHISTORYREQUEST,
     output_type=_DOMAINHISTORYRESULT,
@@ -4312,7 +4443,7 @@ _DSET = _descriptor.ServiceDescriptor(
   _descriptor.MethodDescriptor(
     name='DomainSearch',
     full_name='io.netograph.dset.Dset.DomainSearch',
-    index=7,
+    index=8,
     containing_service=None,
     input_type=_DOMAINSEARCHREQUEST,
     output_type=_DOMAINSEARCHRESULT,
@@ -4321,7 +4452,7 @@ _DSET = _descriptor.ServiceDescriptor(
   _descriptor.MethodDescriptor(
     name='DomainsForIP',
     full_name='io.netograph.dset.Dset.DomainsForIP',
-    index=8,
+    index=9,
     containing_service=None,
     input_type=_DOMAINSFORIPREQUEST,
     output_type=_DOMAINSFORIPRESULT,
@@ -4330,7 +4461,7 @@ _DSET = _descriptor.ServiceDescriptor(
   _descriptor.MethodDescriptor(
     name='IPHistory',
     full_name='io.netograph.dset.Dset.IPHistory',
-    index=9,
+    index=10,
     containing_service=None,
     input_type=_IPHISTORYREQUEST,
     output_type=_IPHISTORYRESULT,
@@ -4339,7 +4470,7 @@ _DSET = _descriptor.ServiceDescriptor(
   _descriptor.MethodDescriptor(
     name='IPLogSearch',
     full_name='io.netograph.dset.Dset.IPLogSearch',
-    index=10,
+    index=11,
     containing_service=None,
     input_type=_IPLOGSEARCHREQUEST,
     output_type=_IPLOGSEARCHRESULT,
@@ -4348,7 +4479,7 @@ _DSET = _descriptor.ServiceDescriptor(
   _descriptor.MethodDescriptor(
     name='IPSearch',
     full_name='io.netograph.dset.Dset.IPSearch',
-    index=11,
+    index=12,
     containing_service=None,
     input_type=_IPSEARCHREQUEST,
     output_type=_IPSEARCHRESULT,
@@ -4357,7 +4488,7 @@ _DSET = _descriptor.ServiceDescriptor(
   _descriptor.MethodDescriptor(
     name='IPsForDomain',
     full_name='io.netograph.dset.Dset.IPsForDomain',
-    index=12,
+    index=13,
     containing_service=None,
     input_type=_IPSFORDOMAINREQUEST,
     output_type=_IPSFORDOMAINRESULT,
@@ -4366,7 +4497,7 @@ _DSET = _descriptor.ServiceDescriptor(
   _descriptor.MethodDescriptor(
     name='MetaForCapture',
     full_name='io.netograph.dset.Dset.MetaForCapture',
-    index=13,
+    index=14,
     containing_service=None,
     input_type=_METAFORCAPTUREREQUEST,
     output_type=_METAFORCAPTURERESULT,
@@ -4375,7 +4506,7 @@ _DSET = _descriptor.ServiceDescriptor(
   _descriptor.MethodDescriptor(
     name='MetaSearch',
     full_name='io.netograph.dset.Dset.MetaSearch',
-    index=14,
+    index=15,
     containing_service=None,
     input_type=_METASEARCHREQUEST,
     output_type=_METASEARCHRESULT,
@@ -4384,7 +4515,7 @@ _DSET = _descriptor.ServiceDescriptor(
   _descriptor.MethodDescriptor(
     name='PoliciesForRoot',
     full_name='io.netograph.dset.Dset.PoliciesForRoot',
-    index=15,
+    index=16,
     containing_service=None,
     input_type=_POLICIESFORROOTREQUEST,
     output_type=_POLICIESFORROOTRESULT,
@@ -4393,7 +4524,7 @@ _DSET = _descriptor.ServiceDescriptor(
   _descriptor.MethodDescriptor(
     name='PolicyDomainCaptures',
     full_name='io.netograph.dset.Dset.PolicyDomainCaptures',
-    index=16,
+    index=17,
     containing_service=None,
     input_type=_POLICYDOMAINCAPTURESREQUEST,
     output_type=_POLICYDOMAINCAPTURESRESULT,
@@ -4402,7 +4533,7 @@ _DSET = _descriptor.ServiceDescriptor(
   _descriptor.MethodDescriptor(
     name='PolicyDomainStats',
     full_name='io.netograph.dset.Dset.PolicyDomainStats',
-    index=17,
+    index=18,
     containing_service=None,
     input_type=_POLICYDOMAINSTATSREQUEST,
     output_type=_POLICYDOMAINSTATSRESULT,
@@ -4411,7 +4542,7 @@ _DSET = _descriptor.ServiceDescriptor(
   _descriptor.MethodDescriptor(
     name='PolicyURLCaptures',
     full_name='io.netograph.dset.Dset.PolicyURLCaptures',
-    index=18,
+    index=19,
     containing_service=None,
     input_type=_POLICYURLCAPTURESREQUEST,
     output_type=_POLICYURLCAPTURESRESULT,
@@ -4420,7 +4551,7 @@ _DSET = _descriptor.ServiceDescriptor(
   _descriptor.MethodDescriptor(
     name='RedirsByDestination',
     full_name='io.netograph.dset.Dset.RedirsByDestination',
-    index=19,
+    index=20,
     containing_service=None,
     input_type=_REDIRSBYDESTINATIONREQUEST,
     output_type=_REDIRSBYDESTINATIONRESULT,
@@ -4429,7 +4560,7 @@ _DSET = _descriptor.ServiceDescriptor(
   _descriptor.MethodDescriptor(
     name='RedirsBySource',
     full_name='io.netograph.dset.Dset.RedirsBySource',
-    index=20,
+    index=21,
     containing_service=None,
     input_type=_REDIRSBYSOURCEREQUEST,
     output_type=_REDIRSBYSOURCERESULT,
@@ -4438,7 +4569,7 @@ _DSET = _descriptor.ServiceDescriptor(
   _descriptor.MethodDescriptor(
     name='RootLogSearch',
     full_name='io.netograph.dset.Dset.RootLogSearch',
-    index=21,
+    index=22,
     containing_service=None,
     input_type=_ROOTLOGSEARCHREQUEST,
     output_type=_ROOTLOGSEARCHRESULT,
@@ -4447,7 +4578,7 @@ _DSET = _descriptor.ServiceDescriptor(
   _descriptor.MethodDescriptor(
     name='RootsForSatellite',
     full_name='io.netograph.dset.Dset.RootsForSatellite',
-    index=22,
+    index=23,
     containing_service=None,
     input_type=_ROOTSFORSATELLITEREQUEST,
     output_type=_ROOTSFORSATELLITERESULT,
@@ -4456,7 +4587,7 @@ _DSET = _descriptor.ServiceDescriptor(
   _descriptor.MethodDescriptor(
     name='SatelliteLogSearch',
     full_name='io.netograph.dset.Dset.SatelliteLogSearch',
-    index=23,
+    index=24,
     containing_service=None,
     input_type=_SATELLITELOGSEARCHREQUEST,
     output_type=_SATELLITELOGSEARCHRESULT,
@@ -4465,7 +4596,7 @@ _DSET = _descriptor.ServiceDescriptor(
   _descriptor.MethodDescriptor(
     name='SatellitesForRoot',
     full_name='io.netograph.dset.Dset.SatellitesForRoot',
-    index=24,
+    index=25,
     containing_service=None,
     input_type=_SATELLITESFORROOTREQUEST,
     output_type=_SATELLITESFORROOTRESULT,
@@ -4474,7 +4605,7 @@ _DSET = _descriptor.ServiceDescriptor(
   _descriptor.MethodDescriptor(
     name='URLLogSearch',
     full_name='io.netograph.dset.Dset.URLLogSearch',
-    index=25,
+    index=26,
     containing_service=None,
     input_type=_URLLOGSEARCHREQUEST,
     output_type=_URLLOGSEARCHRESULT,

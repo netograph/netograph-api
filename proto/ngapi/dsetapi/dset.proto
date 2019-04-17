@@ -252,6 +252,24 @@ message CertIPSearchResult {
     google.protobuf.Timestamp time = 5;
 }
 
+message CertSearchRequest {
+    // The name of the dataset to query.
+    string dataset = 1;
+    string field = 2;
+    string text = 3;
+    // Limit the number of records that will be returned.
+    int64 limit = 4;
+    // A resumption token, previously returned by an identical query.
+    string resume = 5;
+}
+message CertSearchResult {
+    // A resumption token that can be passed to an identical query to resume
+    // results.
+    string resume = 1;
+    // The latest capture relevant to this result.
+    Cert cert = 2;
+    google.protobuf.Timestamp time = 3;
+}
 
 message DomainHistoryRequest {
     // The name of the dataset to query.
@@ -691,6 +709,9 @@ service Dset {
 
     // Retrieve certificates for a specified IP query.
     rpc CertIPSearch(CertIPSearchRequest) returns (stream CertIPSearchResult);
+
+    // Retrieve certificates based on a field query.
+    rpc CertSearch(CertSearchRequest) returns (stream CertSearchResult);
 
     // Retrieve the capture history for a specified domain. The
     // length of this history is capped at ~100.
