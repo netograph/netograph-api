@@ -213,6 +213,23 @@ message CertDomainSearchResult {
     google.protobuf.Timestamp time = 5;
 }
 
+message CertDomainStatsRequest {
+    // The name of the dataset to query.
+    string dataset = 1;
+    // A domain query. This is a domain prefix, which will return results for
+    // all relevant subdomains. To search for an exact domain, prefix with "$" -
+    // e.g. "$rt.com".
+    string query = 2;
+}
+message CertDomainStatsResult {
+    // Number of matching subdomains
+    uint64 domains = 1;
+    // Number of certificates at all matching subdomains
+    uint64 certs = 2;
+    // Number of certificates at this exact domain
+    uint64 certshere = 3;
+}
+
 
 message CertIPSearchRequest {
     // The name of the dataset to query.
@@ -668,6 +685,9 @@ service Dset {
 
     // Retrieve certificates for a specified domain query.
     rpc CertDomainSearch(CertDomainSearchRequest) returns (stream CertDomainSearchResult);
+
+    // Retrieve certificate statistics for a specified domain query.
+    rpc CertDomainStats(CertDomainStatsRequest) returns (CertDomainStatsResult);
 
     // Retrieve certificates for a specified IP query.
     rpc CertIPSearch(CertIPSearchRequest) returns (stream CertIPSearchResult);

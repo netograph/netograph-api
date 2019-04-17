@@ -271,6 +271,14 @@
                 </li>
               
                 <li>
+                  <a href="#io.netograph.dset.CertDomainStatsRequest"><span class="badge">M</span>CertDomainStatsRequest</a>
+                </li>
+              
+                <li>
+                  <a href="#io.netograph.dset.CertDomainStatsResult"><span class="badge">M</span>CertDomainStatsResult</a>
+                </li>
+              
+                <li>
                   <a href="#io.netograph.dset.CertIPSearchRequest"><span class="badge">M</span>CertIPSearchRequest</a>
                 </li>
               
@@ -1519,6 +1527,75 @@ results. </p></td>
                   <td><a href="#google.protobuf.Timestamp">google.protobuf.Timestamp</a></td>
                   <td></td>
                   <td><p> </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+        
+
+        
+      
+        <h3 id="io.netograph.dset.CertDomainStatsRequest">CertDomainStatsRequest</h3>
+        <p></p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>dataset</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p>The name of the dataset to query. </p></td>
+                </tr>
+              
+                <tr>
+                  <td>query</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p>A domain query. This is a domain prefix, which will return results for
+all relevant subdomains. To search for an exact domain, prefix with &#34;$&#34; -
+e.g. &#34;$rt.com&#34;. </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+        
+
+        
+      
+        <h3 id="io.netograph.dset.CertDomainStatsResult">CertDomainStatsResult</h3>
+        <p></p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>domains</td>
+                  <td><a href="#uint64">uint64</a></td>
+                  <td></td>
+                  <td><p>Number of matching subdomains </p></td>
+                </tr>
+              
+                <tr>
+                  <td>certs</td>
+                  <td><a href="#uint64">uint64</a></td>
+                  <td></td>
+                  <td><p>Number of certificates at all matching subdomains </p></td>
+                </tr>
+              
+                <tr>
+                  <td>certshere</td>
+                  <td><a href="#uint64">uint64</a></td>
+                  <td></td>
+                  <td><p>Number of certificates at this exact domain </p></td>
                 </tr>
               
             </tbody>
@@ -3552,6 +3629,13 @@ results. </p></td>
                 <td><a href="#io.netograph.dset.CertDomainSearchRequest">CertDomainSearchRequest</a></td>
                 <td><a href="#io.netograph.dset.CertDomainSearchResult">CertDomainSearchResult</a> stream</td>
                 <td><p>Retrieve certificates for a specified domain query.</p></td>
+              </tr>
+            
+              <tr>
+                <td>CertDomainStats</td>
+                <td><a href="#io.netograph.dset.CertDomainStatsRequest">CertDomainStatsRequest</a></td>
+                <td><a href="#io.netograph.dset.CertDomainStatsResult">CertDomainStatsResult</a></td>
+                <td><p>Retrieve certificate statistics for a specified domain query.</p></td>
               </tr>
             
               <tr>
