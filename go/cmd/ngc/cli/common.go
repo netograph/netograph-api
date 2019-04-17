@@ -13,6 +13,7 @@ import (
 
 var coreAssets = []string{
 	"starmap.json",
+	"contents.json",
 	"details.json",
 	"starmap.jpg",
 }

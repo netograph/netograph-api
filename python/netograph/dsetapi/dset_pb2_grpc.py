@@ -29,6 +29,11 @@ class DsetStub(object):
         request_serializer=dsetapi_dot_dset__pb2.CaptureLogRequest.SerializeToString,
         response_deserializer=dsetapi_dot_dset__pb2.CaptureLogResult.FromString,
         )
+    self.CertDomainSearch = channel.unary_stream(
+        '/io.netograph.dset.Dset/CertDomainSearch',
+        request_serializer=dsetapi_dot_dset__pb2.CertDomainSearchRequest.SerializeToString,
+        response_deserializer=dsetapi_dot_dset__pb2.CertDomainSearchResult.FromString,
+        )
     self.DomainHistory = channel.unary_stream(
         '/io.netograph.dset.Dset/DomainHistory',
         request_serializer=dsetapi_dot_dset__pb2.DomainHistoryRequest.SerializeToString,
@@ -156,8 +161,15 @@ class DsetServicer(object):
     context.set_details('Method not implemented!')
     raise NotImplementedError('Method not implemented!')
 
+  def CertDomainSearch(self, request, context):
+    """Retrieve certificates for a specified domain query.
+    """
+    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+    context.set_details('Method not implemented!')
+    raise NotImplementedError('Method not implemented!')
+
   def DomainHistory(self, request, context):
-    """Retrieve the capture history for a specified domain in a dataset. The
+    """Retrieve the capture history for a specified domain. The
     length of this history is capped at ~100.
     """
     context.set_code(grpc.StatusCode.UNIMPLEMENTED)
@@ -315,6 +327,11 @@ def add_DsetServicer_to_server(servicer, server):
           servicer.CaptureLog,
           request_deserializer=dsetapi_dot_dset__pb2.CaptureLogRequest.FromString,
           response_serializer=dsetapi_dot_dset__pb2.CaptureLogResult.SerializeToString,
+      ),
+      'CertDomainSearch': grpc.unary_stream_rpc_method_handler(
+          servicer.CertDomainSearch,
+          request_deserializer=dsetapi_dot_dset__pb2.CertDomainSearchRequest.FromString,
+          response_serializer=dsetapi_dot_dset__pb2.CertDomainSearchResult.SerializeToString,
       ),
       'DomainHistory': grpc.unary_stream_rpc_method_handler(
           servicer.DomainHistory,

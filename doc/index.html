@@ -4,7 +4,7 @@
   <head>
     <title>Protocol Documentation</title>
     <meta charset="UTF-8">
-    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Ubuntu:400,700,400italic"/>
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Ubuntu:400,700,400italic"/>
     <style>
       body {
         width: 60em;
@@ -208,6 +208,66 @@
               
                 <li>
                   <a href="#io.netograph.dset.CaptureLogResult"><span class="badge">M</span>CaptureLogResult</a>
+                </li>
+              
+                <li>
+                  <a href="#io.netograph.dset.CaptureTextRequest"><span class="badge">M</span>CaptureTextRequest</a>
+                </li>
+              
+                <li>
+                  <a href="#io.netograph.dset.CaptureTextResult"><span class="badge">M</span>CaptureTextResult</a>
+                </li>
+              
+                <li>
+                  <a href="#io.netograph.dset.CaptureTextResult.Document"><span class="badge">M</span>CaptureTextResult.Document</a>
+                </li>
+              
+                <li>
+                  <a href="#io.netograph.dset.CaptureTextResult.Group"><span class="badge">M</span>CaptureTextResult.Group</a>
+                </li>
+              
+                <li>
+                  <a href="#io.netograph.dset.CaptureTextResult.Page"><span class="badge">M</span>CaptureTextResult.Page</a>
+                </li>
+              
+                <li>
+                  <a href="#io.netograph.dset.CaptureTextResult.Rectangle"><span class="badge">M</span>CaptureTextResult.Rectangle</a>
+                </li>
+              
+                <li>
+                  <a href="#io.netograph.dset.CaptureTextResult.TextNode"><span class="badge">M</span>CaptureTextResult.TextNode</a>
+                </li>
+              
+                <li>
+                  <a href="#io.netograph.dset.Cert"><span class="badge">M</span>Cert</a>
+                </li>
+              
+                <li>
+                  <a href="#io.netograph.dset.Cert.BasicConstraints"><span class="badge">M</span>Cert.BasicConstraints</a>
+                </li>
+              
+                <li>
+                  <a href="#io.netograph.dset.Cert.DistinguishedName"><span class="badge">M</span>Cert.DistinguishedName</a>
+                </li>
+              
+                <li>
+                  <a href="#io.netograph.dset.Cert.Extension"><span class="badge">M</span>Cert.Extension</a>
+                </li>
+              
+                <li>
+                  <a href="#io.netograph.dset.Cert.FingerprintsEntry"><span class="badge">M</span>Cert.FingerprintsEntry</a>
+                </li>
+              
+                <li>
+                  <a href="#io.netograph.dset.Cert.PublickeyEntry"><span class="badge">M</span>Cert.PublickeyEntry</a>
+                </li>
+              
+                <li>
+                  <a href="#io.netograph.dset.CertDomainSearchRequest"><span class="badge">M</span>CertDomainSearchRequest</a>
+                </li>
+              
+                <li>
+                  <a href="#io.netograph.dset.CertDomainSearchResult"><span class="badge">M</span>CertDomainSearchResult</a>
                 </li>
               
                 <li>
@@ -514,6 +574,13 @@
                   <td><p>URLs submitted for capture. </p></td>
                 </tr>
               
+                <tr>
+                  <td>extended</td>
+                  <td><a href="#bool">bool</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
             </tbody>
           </table>
         
@@ -711,6 +778,739 @@ smallest possible time value. </p></td>
                   <td></td>
                   <td><p>A resumption token that can be passed to an identical query to resume
 results. </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+        
+
+        
+      
+        <h3 id="io.netograph.dset.CaptureTextRequest">CaptureTextRequest</h3>
+        <p></p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>dataset</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p>The name of the dataset to query. </p></td>
+                </tr>
+              
+                <tr>
+                  <td>id</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p>The unique ID of the capture. </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+        
+
+        
+      
+        <h3 id="io.netograph.dset.CaptureTextResult">CaptureTextResult</h3>
+        <p></p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>pages</td>
+                  <td><a href="#io.netograph.dset.CaptureTextResult.Page">CaptureTextResult.Page</a></td>
+                  <td>repeated</td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>groups</td>
+                  <td><a href="#io.netograph.dset.CaptureTextResult.Group">CaptureTextResult.Group</a></td>
+                  <td>repeated</td>
+                  <td><p> </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+        
+
+        
+      
+        <h3 id="io.netograph.dset.CaptureTextResult.Document">CaptureTextResult.Document</h3>
+        <p></p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>url</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p>The root URL for this document. </p></td>
+                </tr>
+              
+                <tr>
+                  <td>text</td>
+                  <td><a href="#io.netograph.dset.CaptureTextResult.TextNode">CaptureTextResult.TextNode</a></td>
+                  <td>repeated</td>
+                  <td><p>Amalgamated text nodes in this document. </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+        
+
+        
+      
+        <h3 id="io.netograph.dset.CaptureTextResult.Group">CaptureTextResult.Group</h3>
+        <p></p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>name</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p>The name of this group. </p></td>
+                </tr>
+              
+                <tr>
+                  <td>page</td>
+                  <td><a href="#int64">int64</a></td>
+                  <td></td>
+                  <td><p>The offset of the page this group applies to </p></td>
+                </tr>
+              
+                <tr>
+                  <td>document</td>
+                  <td><a href="#int64">int64</a></td>
+                  <td></td>
+                  <td><p>The offset of the document within the page. </p></td>
+                </tr>
+              
+                <tr>
+                  <td>ids</td>
+                  <td><a href="#int64">int64</a></td>
+                  <td>repeated</td>
+                  <td><p>A list of node IDs within the page included in this group. </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+        
+
+        
+      
+        <h3 id="io.netograph.dset.CaptureTextResult.Page">CaptureTextResult.Page</h3>
+        <p></p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>documents</td>
+                  <td><a href="#io.netograph.dset.CaptureTextResult.Document">CaptureTextResult.Document</a></td>
+                  <td>repeated</td>
+                  <td><p>Documents within a page include the root frame and any iframes. </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+        
+
+        
+      
+        <h3 id="io.netograph.dset.CaptureTextResult.Rectangle">CaptureTextResult.Rectangle</h3>
+        <p></p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>x</td>
+                  <td><a href="#float">float</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>y</td>
+                  <td><a href="#float">float</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>with</td>
+                  <td><a href="#float">float</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>height</td>
+                  <td><a href="#float">float</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+        
+
+        
+      
+        <h3 id="io.netograph.dset.CaptureTextResult.TextNode">CaptureTextResult.TextNode</h3>
+        <p></p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>id</td>
+                  <td><a href="#int64">int64</a></td>
+                  <td></td>
+                  <td><p>A unique ID for this text node. </p></td>
+                </tr>
+              
+                <tr>
+                  <td>nodes</td>
+                  <td><a href="#int64">int64</a></td>
+                  <td>repeated</td>
+                  <td><p>The underlying content nodes included in this text node. </p></td>
+                </tr>
+              
+                <tr>
+                  <td>bounds</td>
+                  <td><a href="#io.netograph.dset.CaptureTextResult.Rectangle">CaptureTextResult.Rectangle</a></td>
+                  <td></td>
+                  <td><p>The pixel bounds for this text node. </p></td>
+                </tr>
+              
+                <tr>
+                  <td>text</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p>The assembled text. </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+        
+
+        
+      
+        <h3 id="io.netograph.dset.Cert">Cert</h3>
+        <p></p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>authoritykeyid</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>basicconstraints</td>
+                  <td><a href="#io.netograph.dset.Cert.BasicConstraints">Cert.BasicConstraints</a></td>
+                  <td></td>
+                  <td><p>Basic Constraints extension </p></td>
+                </tr>
+              
+                <tr>
+                  <td>crldistributionpoints</td>
+                  <td><a href="#string">string</a></td>
+                  <td>repeated</td>
+                  <td><p>CRL Distribution Points extension </p></td>
+                </tr>
+              
+                <tr>
+                  <td>dnsnames</td>
+                  <td><a href="#string">string</a></td>
+                  <td>repeated</td>
+                  <td><p>Subject Alternate Names extension </p></td>
+                </tr>
+              
+                <tr>
+                  <td>emailaddresses</td>
+                  <td><a href="#string">string</a></td>
+                  <td>repeated</td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>extendedkeyusage</td>
+                  <td><a href="#string">string</a></td>
+                  <td>repeated</td>
+                  <td><p>ExtendedKeyUsage extension </p></td>
+                </tr>
+              
+                <tr>
+                  <td>extensions</td>
+                  <td><a href="#io.netograph.dset.Cert.Extension">Cert.Extension</a></td>
+                  <td>repeated</td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>fingerprints</td>
+                  <td><a href="#io.netograph.dset.Cert.FingerprintsEntry">Cert.FingerprintsEntry</a></td>
+                  <td>repeated</td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>ipaddresses</td>
+                  <td><a href="#string">string</a></td>
+                  <td>repeated</td>
+                  <td><p>Subject Alternate Names extension </p></td>
+                </tr>
+              
+                <tr>
+                  <td>issuer</td>
+                  <td><a href="#io.netograph.dset.Cert.DistinguishedName">Cert.DistinguishedName</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>issuingcerturl</td>
+                  <td><a href="#string">string</a></td>
+                  <td>repeated</td>
+                  <td><p>RFC 5280, 4.2.2.1 (Authority Information Access </p></td>
+                </tr>
+              
+                <tr>
+                  <td>keyusage</td>
+                  <td><a href="#string">string</a></td>
+                  <td>repeated</td>
+                  <td><p>Key Usage extension </p></td>
+                </tr>
+              
+                <tr>
+                  <td>notafter</td>
+                  <td><a href="#google.protobuf.Timestamp">google.protobuf.Timestamp</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>notbefore</td>
+                  <td><a href="#google.protobuf.Timestamp">google.protobuf.Timestamp</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>ocspserver</td>
+                  <td><a href="#string">string</a></td>
+                  <td>repeated</td>
+                  <td><p>RFC 5280, 4.2.2.1 (Authority Information Access </p></td>
+                </tr>
+              
+                <tr>
+                  <td>permitteddnsdomains</td>
+                  <td><a href="#string">string</a></td>
+                  <td>repeated</td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>permitteddnsdomainscritical</td>
+                  <td><a href="#bool">bool</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>publickey</td>
+                  <td><a href="#io.netograph.dset.Cert.PublickeyEntry">Cert.PublickeyEntry</a></td>
+                  <td>repeated</td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>publickeyalgorithm</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>serialnumber</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>signaturealgorithm</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>subject</td>
+                  <td><a href="#io.netograph.dset.Cert.DistinguishedName">Cert.DistinguishedName</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>subjectkeyid</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>version</td>
+                  <td><a href="#int64">int64</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+        
+
+        
+      
+        <h3 id="io.netograph.dset.Cert.BasicConstraints">Cert.BasicConstraints</h3>
+        <p></p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>isca</td>
+                  <td><a href="#bool">bool</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>maxpathlen</td>
+                  <td><a href="#int64">int64</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+        
+
+        
+      
+        <h3 id="io.netograph.dset.Cert.DistinguishedName">Cert.DistinguishedName</h3>
+        <p></p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>commonname</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>country</td>
+                  <td><a href="#string">string</a></td>
+                  <td>repeated</td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>locality</td>
+                  <td><a href="#string">string</a></td>
+                  <td>repeated</td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>organization</td>
+                  <td><a href="#string">string</a></td>
+                  <td>repeated</td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>organizationalunit</td>
+                  <td><a href="#string">string</a></td>
+                  <td>repeated</td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>postalcode</td>
+                  <td><a href="#string">string</a></td>
+                  <td>repeated</td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>province</td>
+                  <td><a href="#string">string</a></td>
+                  <td>repeated</td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>serialnumber</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>streetaddress</td>
+                  <td><a href="#string">string</a></td>
+                  <td>repeated</td>
+                  <td><p> </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+        
+
+        
+      
+        <h3 id="io.netograph.dset.Cert.Extension">Cert.Extension</h3>
+        <p></p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>critical</td>
+                  <td><a href="#bool">bool</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>oid</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>name</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+        
+
+        
+      
+        <h3 id="io.netograph.dset.Cert.FingerprintsEntry">Cert.FingerprintsEntry</h3>
+        <p></p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>key</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>value</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+        
+
+        
+      
+        <h3 id="io.netograph.dset.Cert.PublickeyEntry">Cert.PublickeyEntry</h3>
+        <p></p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>key</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>value</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+        
+
+        
+      
+        <h3 id="io.netograph.dset.CertDomainSearchRequest">CertDomainSearchRequest</h3>
+        <p></p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>dataset</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p>The name of the dataset to query. </p></td>
+                </tr>
+              
+                <tr>
+                  <td>query</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p>A domain query. This is a domain prefix, which will return results for
+all relevant subdomains. To search for an exact domain, prefix with &#34;$&#34; -
+e.g. &#34;$rt.com&#34;. </p></td>
+                </tr>
+              
+                <tr>
+                  <td>limit</td>
+                  <td><a href="#int64">int64</a></td>
+                  <td></td>
+                  <td><p>Limit the number of records that will be returned. </p></td>
+                </tr>
+              
+                <tr>
+                  <td>resume</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p>A resumption token, previously returned by an identical query. </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+        
+
+        
+      
+        <h3 id="io.netograph.dset.CertDomainSearchResult">CertDomainSearchResult</h3>
+        <p></p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>domain</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>resume</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p>A resumption token that can be passed to an identical query to resume
+results. </p></td>
+                </tr>
+              
+                <tr>
+                  <td>cert</td>
+                  <td><a href="#io.netograph.dset.Cert">Cert</a></td>
+                  <td></td>
+                  <td><p>A matching certificate. </p></td>
+                </tr>
+              
+                <tr>
+                  <td>chain</td>
+                  <td><a href="#string">string</a></td>
+                  <td>repeated</td>
+                  <td><p>Fingerprints for certificates in the chain. </p></td>
+                </tr>
+              
+                <tr>
+                  <td>time</td>
+                  <td><a href="#google.protobuf.Timestamp">google.protobuf.Timestamp</a></td>
+                  <td></td>
+                  <td><p> </p></td>
                 </tr>
               
             </tbody>
@@ -2632,36 +3432,43 @@ results. </p></td>
               <tr>
                 <td>CaptureLog</td>
                 <td><a href="#io.netograph.dset.CaptureLogRequest">CaptureLogRequest</a></td>
-                <td><a href="#io.netograph.dset.CaptureLogResult">CaptureLogResult</a></td>
+                <td><a href="#io.netograph.dset.CaptureLogResult">CaptureLogResult</a> stream</td>
                 <td><p>Retrieve the capture log for a dataset, in reverse chronological order.</p></td>
+              </tr>
+            
+              <tr>
+                <td>CertDomainSearch</td>
+                <td><a href="#io.netograph.dset.CertDomainSearchRequest">CertDomainSearchRequest</a></td>
+                <td><a href="#io.netograph.dset.CertDomainSearchResult">CertDomainSearchResult</a> stream</td>
+                <td><p>Retrieve certificates for a specified domain query.</p></td>
               </tr>
             
               <tr>
                 <td>DomainHistory</td>
                 <td><a href="#io.netograph.dset.DomainHistoryRequest">DomainHistoryRequest</a></td>
-                <td><a href="#io.netograph.dset.DomainHistoryResult">DomainHistoryResult</a></td>
-                <td><p>Retrieve the capture history for a specified domain in a dataset. The
+                <td><a href="#io.netograph.dset.DomainHistoryResult">DomainHistoryResult</a> stream</td>
+                <td><p>Retrieve the capture history for a specified domain. The
 length of this history is capped at ~100.</p></td>
               </tr>
             
               <tr>
                 <td>DomainSearch</td>
                 <td><a href="#io.netograph.dset.DomainSearchRequest">DomainSearchRequest</a></td>
-                <td><a href="#io.netograph.dset.DomainSearchResult">DomainSearchResult</a></td>
+                <td><a href="#io.netograph.dset.DomainSearchResult">DomainSearchResult</a> stream</td>
                 <td><p>Retrieve the capture log for a specified domain in a dataset.</p></td>
               </tr>
             
               <tr>
                 <td>DomainsForIP</td>
                 <td><a href="#io.netograph.dset.DomainsForIPRequest">DomainsForIPRequest</a></td>
-                <td><a href="#io.netograph.dset.DomainsForIPResult">DomainsForIPResult</a></td>
+                <td><a href="#io.netograph.dset.DomainsForIPResult">DomainsForIPResult</a> stream</td>
                 <td><p>Find all domains in the dataset associated with a given IP address.</p></td>
               </tr>
             
               <tr>
                 <td>IPHistory</td>
                 <td><a href="#io.netograph.dset.IPHistoryRequest">IPHistoryRequest</a></td>
-                <td><a href="#io.netograph.dset.IPHistoryResult">IPHistoryResult</a></td>
+                <td><a href="#io.netograph.dset.IPHistoryResult">IPHistoryResult</a> stream</td>
                 <td><p>Retrieve the capture history for a specified IP in a dataset. The
 length of this history is capped at ~100.</p></td>
               </tr>
@@ -2669,49 +3476,49 @@ length of this history is capped at ~100.</p></td>
               <tr>
                 <td>IPLogSearch</td>
                 <td><a href="#io.netograph.dset.IPLogSearchRequest">IPLogSearchRequest</a></td>
-                <td><a href="#io.netograph.dset.IPLogSearchResult">IPLogSearchResult</a></td>
+                <td><a href="#io.netograph.dset.IPLogSearchResult">IPLogSearchResult</a> stream</td>
                 <td><p>Search the dataset log for captures that contain a given IP.</p></td>
               </tr>
             
               <tr>
                 <td>IPSearch</td>
                 <td><a href="#io.netograph.dset.IPSearchRequest">IPSearchRequest</a></td>
-                <td><a href="#io.netograph.dset.IPSearchResult">IPSearchResult</a></td>
+                <td><a href="#io.netograph.dset.IPSearchResult">IPSearchResult</a> stream</td>
                 <td><p>Find all IPs in the dataset that match an address and integer netmask.</p></td>
               </tr>
             
               <tr>
                 <td>IPsForDomain</td>
                 <td><a href="#io.netograph.dset.IPsForDomainRequest">IPsForDomainRequest</a></td>
-                <td><a href="#io.netograph.dset.IPsForDomainResult">IPsForDomainResult</a></td>
+                <td><a href="#io.netograph.dset.IPsForDomainResult">IPsForDomainResult</a> stream</td>
                 <td><p>Find all IPs in a dataset associated with a given domain.</p></td>
               </tr>
             
               <tr>
                 <td>MetaForCapture</td>
                 <td><a href="#io.netograph.dset.MetaForCaptureRequest">MetaForCaptureRequest</a></td>
-                <td><a href="#io.netograph.dset.MetaForCaptureResult">MetaForCaptureResult</a></td>
+                <td><a href="#io.netograph.dset.MetaForCaptureResult">MetaForCaptureResult</a> stream</td>
                 <td><p>Get metadata associated with a specified capture within a dataset.</p></td>
               </tr>
             
               <tr>
                 <td>MetaSearch</td>
                 <td><a href="#io.netograph.dset.MetaSearchRequest">MetaSearchRequest</a></td>
-                <td><a href="#io.netograph.dset.MetaSearchResult">MetaSearchResult</a></td>
+                <td><a href="#io.netograph.dset.MetaSearchResult">MetaSearchResult</a> stream</td>
                 <td><p>Search the dataset log for captures matching a metadata query.</p></td>
               </tr>
             
               <tr>
                 <td>PoliciesForRoot</td>
                 <td><a href="#io.netograph.dset.PoliciesForRootRequest">PoliciesForRootRequest</a></td>
-                <td><a href="#io.netograph.dset.PoliciesForRootResult">PoliciesForRootResult</a></td>
+                <td><a href="#io.netograph.dset.PoliciesForRootResult">PoliciesForRootResult</a> stream</td>
                 <td><p>Find all policies for a specified domain query.</p></td>
               </tr>
             
               <tr>
                 <td>PolicyDomainCaptures</td>
                 <td><a href="#io.netograph.dset.PolicyDomainCapturesRequest">PolicyDomainCapturesRequest</a></td>
-                <td><a href="#io.netograph.dset.PolicyDomainCapturesResult">PolicyDomainCapturesResult</a></td>
+                <td><a href="#io.netograph.dset.PolicyDomainCapturesResult">PolicyDomainCapturesResult</a> stream</td>
                 <td><p>Retrieve the policy capture log for a domain query, in reverse chronological order.</p></td>
               </tr>
             
@@ -2725,56 +3532,56 @@ length of this history is capped at ~100.</p></td>
               <tr>
                 <td>PolicyURLCaptures</td>
                 <td><a href="#io.netograph.dset.PolicyURLCapturesRequest">PolicyURLCapturesRequest</a></td>
-                <td><a href="#io.netograph.dset.PolicyURLCapturesResult">PolicyURLCapturesResult</a></td>
+                <td><a href="#io.netograph.dset.PolicyURLCapturesResult">PolicyURLCapturesResult</a> stream</td>
                 <td><p>Retrieve the policy capture log for specific policy URL, in reverse chronological order.</p></td>
               </tr>
             
               <tr>
                 <td>RedirsByDestination</td>
                 <td><a href="#io.netograph.dset.RedirsByDestinationRequest">RedirsByDestinationRequest</a></td>
-                <td><a href="#io.netograph.dset.RedirsByDestinationResult">RedirsByDestinationResult</a></td>
+                <td><a href="#io.netograph.dset.RedirsByDestinationResult">RedirsByDestinationResult</a> stream</td>
                 <td><p>Find all redirections in the dataset for a given destination domain query.</p></td>
               </tr>
             
               <tr>
                 <td>RedirsBySource</td>
                 <td><a href="#io.netograph.dset.RedirsBySourceRequest">RedirsBySourceRequest</a></td>
-                <td><a href="#io.netograph.dset.RedirsBySourceResult">RedirsBySourceResult</a></td>
+                <td><a href="#io.netograph.dset.RedirsBySourceResult">RedirsBySourceResult</a> stream</td>
                 <td><p>Find all redirections in the dataset for a given source domain query.</p></td>
               </tr>
             
               <tr>
                 <td>RootLogSearch</td>
                 <td><a href="#io.netograph.dset.RootLogSearchRequest">RootLogSearchRequest</a></td>
-                <td><a href="#io.netograph.dset.RootLogSearchResult">RootLogSearchResult</a></td>
+                <td><a href="#io.netograph.dset.RootLogSearchResult">RootLogSearchResult</a> stream</td>
                 <td><p>Search the dataset log for captures where any root domain matches a given query.</p></td>
               </tr>
             
               <tr>
                 <td>RootsForSatellite</td>
                 <td><a href="#io.netograph.dset.RootsForSatelliteRequest">RootsForSatelliteRequest</a></td>
-                <td><a href="#io.netograph.dset.RootsForSatelliteResult">RootsForSatelliteResult</a></td>
+                <td><a href="#io.netograph.dset.RootsForSatelliteResult">RootsForSatelliteResult</a> stream</td>
                 <td><p>Find all roots in a dataset that are associated with a given satellite query.</p></td>
               </tr>
             
               <tr>
                 <td>SatelliteLogSearch</td>
                 <td><a href="#io.netograph.dset.SatelliteLogSearchRequest">SatelliteLogSearchRequest</a></td>
-                <td><a href="#io.netograph.dset.SatelliteLogSearchResult">SatelliteLogSearchResult</a></td>
+                <td><a href="#io.netograph.dset.SatelliteLogSearchResult">SatelliteLogSearchResult</a> stream</td>
                 <td><p>Search the dataset log for captures where any satellite domain matches a given query.</p></td>
               </tr>
             
               <tr>
                 <td>SatellitesForRoot</td>
                 <td><a href="#io.netograph.dset.SatellitesForRootRequest">SatellitesForRootRequest</a></td>
-                <td><a href="#io.netograph.dset.SatellitesForRootResult">SatellitesForRootResult</a></td>
+                <td><a href="#io.netograph.dset.SatellitesForRootResult">SatellitesForRootResult</a> stream</td>
                 <td><p>Find all satellites in the dataset that are associated with a given root query.</p></td>
               </tr>
             
               <tr>
                 <td>URLLogSearch</td>
                 <td><a href="#io.netograph.dset.URLLogSearchRequest">URLLogSearchRequest</a></td>
-                <td><a href="#io.netograph.dset.URLLogSearchResult">URLLogSearchResult</a></td>
+                <td><a href="#io.netograph.dset.URLLogSearchResult">URLLogSearchResult</a> stream</td>
                 <td><p>Search the dataset log for captures where any root URL matches a given URL query.</p></td>
               </tr>
             
@@ -2985,7 +3792,7 @@ hours before being deleted.</p></td>
               <tr>
                 <td>Datasets</td>
                 <td><a href="#io.netograph.user.DatasetsRequest">DatasetsRequest</a></td>
-                <td><a href="#io.netograph.user.Dataset">Dataset</a></td>
+                <td><a href="#io.netograph.user.Dataset">Dataset</a> stream</td>
                 <td><p>List all datasets to which the authorizing account has access. This
 includes public datasets, which will be marked readonly.</p></td>
               </tr>

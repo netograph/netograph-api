@@ -4,12 +4,70 @@ import "google/protobuf/timestamp.proto";
 package io.netograph.dset;
 option go_package = "dsetapi";
 
+
+message Cert {
+    message BasicConstraints {
+        bool isca = 1;
+        int64 maxpathlen = 2;
+    }
+    message DistinguishedName {
+        string commonname = 1;
+        repeated string country = 2;
+        repeated string locality = 3;
+        repeated string organization = 4;
+        repeated string organizationalunit = 5;
+        repeated string postalcode = 6;
+        repeated string province = 7;
+        string serialnumber = 8;
+        repeated string streetaddress = 9;
+    }
+    message Extension {
+        bool critical = 1;
+        string oid = 2;
+        string name = 3;
+    }
+    string authoritykeyid = 1;
+    // Basic Constraints extension
+    BasicConstraints basicconstraints = 2;
+    // CRL Distribution Points extension
+    repeated string crldistributionpoints = 3;
+    // Subject Alternate Names extension
+    repeated string dnsnames = 4;
+    repeated string emailaddresses = 5;
+    // ExtendedKeyUsage extension
+    repeated string extendedkeyusage = 6;
+    repeated Extension extensions = 7;
+    map<string, string> fingerprints = 8;
+    // Subject Alternate Names extension
+    repeated string ipaddresses = 9;
+    DistinguishedName issuer = 10;
+    // RFC 5280, 4.2.2.1 (Authority Information Access
+    repeated string issuingcerturl = 11;
+    // Key Usage extension
+    repeated string keyusage = 12;
+    google.protobuf.Timestamp notafter = 13;
+    google.protobuf.Timestamp notbefore = 14;
+    // RFC 5280, 4.2.2.1 (Authority Information Access
+    repeated string ocspserver = 15;
+    repeated string permitteddnsdomains = 16;
+    bool permitteddnsdomainscritical = 17;
+    map<string, string> publickey = 18;
+    string publickeyalgorithm = 19;
+    string serialnumber = 20;
+    string signaturealgorithm = 21;
+    DistinguishedName subject = 22;
+    string subjectkeyid = 23;
+    int64 version = 24;
+}
+
+
 // A capture summary - this is the data that you will receive for any query that
 // returns captures.
 message CapSummary {
     message Plan {
         // URLs submitted for capture.
         repeated string urls = 1;
+        bool extended = 2;
     }
 
     // Roots that resulted from loading a URL in the submitted plan. You can
@@ -60,6 +118,53 @@ message CaptureInfoResult {
     CapSummary capsummary = 1;
 }
 
+message CaptureTextRequest {
+    // The name of the dataset to query.
+    string dataset = 1;
+    // The unique ID of the capture.
+    string id = 2;
+}
+message CaptureTextResult {
+    message Rectangle {
+        float x = 1;
+        float y = 2;
+        float with = 3;
+        float height = 4;
+    }
+    message TextNode {
+        // A unique ID for this text node.
+        int64 id = 1;
+        // The underlying content nodes included in this text node.
+        repeated int64 nodes = 2;
+        // The pixel bounds for this text node.
+        Rectangle bounds = 3;
+        // The assembled text.
+        string text = 4;
+    }
+    message Document {
+        // The root URL for this document.
+        string url = 1;
+        // Amalgamated text nodes in this document.
+        repeated TextNode text = 2;
+    }
+    message Page {
+        // Documents within a page include the root frame and any iframes.
+        repeated Document documents = 1;
+    }
+    message Group {
+        // The name of this group.
+        string name = 1;
+        // The offset of the page this group applies to
+        int64 page = 2;
+        // The offset of the document within the page.
+        int64 document = 3;
+        // A list of node IDs within the page included in this group.
+        repeated int64 ids = 4;
+    }
+    repeated Page pages = 1;
+    repeated Group groups = 2;
+}
+
 message CaptureLogRequest {
     // The name of the dataset to query.
     string dataset = 1;
@@ -84,6 +189,29 @@ message CaptureLogResult {
     string resume = 2;
 }
 
+message CertDomainSearchRequest {
+    // The name of the dataset to query.
+    string dataset = 1;
+    // A domain query. This is a domain prefix, which will return results for
+    // all relevant subdomains. To search for an exact domain, prefix with "$" -
+    // e.g. "$rt.com".
+    string query = 2;
+    // Limit the number of records that will be returned.
+    int64 limit = 3;
+    // A resumption token, previously returned by an identical query.
+    string resume = 4;
+}
+message CertDomainSearchResult {
+    string domain = 1;
+    // A resumption token that can be passed to an identical query to resume
+    // results.
+    string resume = 2;
+    // A matching certificate.
+    Cert cert = 3;
+    // Fingerprints for certificates in the chain.
+    repeated string chain = 4;
+    google.protobuf.Timestamp time = 5;
+}
 
 message DomainHistoryRequest {
     // The name of the dataset to query.
@@ -515,7 +643,10 @@ service Dset {
     // Retrieve the capture log for a dataset, in reverse chronological order.
     rpc CaptureLog(CaptureLogRequest) returns (stream CaptureLogResult);
 
-    // Retrieve the capture history for a specified domain in a dataset. The
+    // Retrieve certificates for a specified domain query.
+    rpc CertDomainSearch(CertDomainSearchRequest) returns (stream CertDomainSearchResult);
+
+    // Retrieve the capture history for a specified domain. The
     // length of this history is capped at ~100.
     rpc DomainHistory(DomainHistoryRequest) returns (stream DomainHistoryResult);
 
