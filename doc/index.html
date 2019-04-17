@@ -271,6 +271,14 @@
                 </li>
               
                 <li>
+                  <a href="#io.netograph.dset.CertIPSearchRequest"><span class="badge">M</span>CertIPSearchRequest</a>
+                </li>
+              
+                <li>
+                  <a href="#io.netograph.dset.CertIPSearchResult"><span class="badge">M</span>CertIPSearchResult</a>
+                </li>
+              
+                <li>
                   <a href="#io.netograph.dset.DomainHistoryRequest"><span class="badge">M</span>DomainHistoryRequest</a>
                 </li>
               
@@ -1504,6 +1512,109 @@ results. </p></td>
                   <td><a href="#string">string</a></td>
                   <td>repeated</td>
                   <td><p>Fingerprints for certificates in the chain. </p></td>
+                </tr>
+              
+                <tr>
+                  <td>time</td>
+                  <td><a href="#google.protobuf.Timestamp">google.protobuf.Timestamp</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+        
+
+        
+      
+        <h3 id="io.netograph.dset.CertIPSearchRequest">CertIPSearchRequest</h3>
+        <p></p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>dataset</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p>The name of the dataset to query. </p></td>
+                </tr>
+              
+                <tr>
+                  <td>ip</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>mask</td>
+                  <td><a href="#int32">int32</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>limit</td>
+                  <td><a href="#int64">int64</a></td>
+                  <td></td>
+                  <td><p>Limit the number of records that will be returned. </p></td>
+                </tr>
+              
+                <tr>
+                  <td>resume</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p>A resumption token, previously returned by an identical query. </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+        
+
+        
+      
+        <h3 id="io.netograph.dset.CertIPSearchResult">CertIPSearchResult</h3>
+        <p></p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>ip</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>domain</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>resume</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p>A resumption token that can be passed to an identical query to resume
+results. </p></td>
+                </tr>
+              
+                <tr>
+                  <td>cert</td>
+                  <td><a href="#io.netograph.dset.Cert">Cert</a></td>
+                  <td></td>
+                  <td><p>The latest capture relevant to this result. </p></td>
                 </tr>
               
                 <tr>
@@ -3441,6 +3552,13 @@ results. </p></td>
                 <td><a href="#io.netograph.dset.CertDomainSearchRequest">CertDomainSearchRequest</a></td>
                 <td><a href="#io.netograph.dset.CertDomainSearchResult">CertDomainSearchResult</a> stream</td>
                 <td><p>Retrieve certificates for a specified domain query.</p></td>
+              </tr>
+            
+              <tr>
+                <td>CertIPSearch</td>
+                <td><a href="#io.netograph.dset.CertIPSearchRequest">CertIPSearchRequest</a></td>
+                <td><a href="#io.netograph.dset.CertIPSearchResult">CertIPSearchResult</a> stream</td>
+                <td><p>Retrieve certificates for a specified IP query.</p></td>
               </tr>
             
               <tr>

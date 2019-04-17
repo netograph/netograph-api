@@ -28,6 +28,7 @@ func init() {
 		captureInfoCommand(),
 		captureLogCommand(),
 		certDomainSearchCommand(),
+		certIPSearchCommand(),
 		datasetsCommand(),
 		domainHistoryCommand(),
 		domainSearchCommand(),
