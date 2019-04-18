@@ -25,6 +25,7 @@ func tempDownloadCommand() *cobra.Command {
 		RunE: func(cmd *cobra.Command, args []string) error {
 			outdir := args[0]
 			url := args[1]
+			skip := 0
 			for i := 1; i < len(args); i++ {
 				if _, err := os.Stat(outdir); os.IsNotExist(err) {
 					err := os.MkdirAll(outdir, 0700)
@@ -35,22 +36,32 @@ func tempDownloadCommand() *cobra.Command {
 					return err
 				}
 				for _, a := range coreAssets {
-					downloadProgress(
+					err := downloadProgress(
 						path.Join(outdir, a),
 						fmt.Sprintf("%s/%s", url, a),
 						*quiet,
 					)
+					if err != nil {
+						skip++
+					}
 				}
 			}
 			data, err := ioutil.ReadFile(path.Join(outdir, "starmap.json"))
 			if err != nil {
 				return err
 			}
+			if len(data) == 0 {
+				return fmt.Errorf("Could not download - perhaps the capture is still pending?")
+			}
 
 			cnt := 0
-			jsonparser.ArrayEach(data, func(value []byte, dataType jsonparser.ValueType, offset int, err error) {
-				cnt++
-			}, "plan", "urls")
+			jsonparser.ArrayEach(
+				data,
+				func(value []byte, dataType jsonparser.ValueType, offset int, err error) {
+					cnt++
+				},
+				"plan", "urls",
+			)
 
 			for i := 0; i < cnt; i++ {
 				screenshot := fmt.Sprintf("screenshot%.3d.jpg", i)

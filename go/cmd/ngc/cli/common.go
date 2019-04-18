@@ -59,21 +59,12 @@ func downloadProgress(filepath string, url string, quiet bool) error {
 	if len(parts) > 0 {
 		name = parts[len(parts)-1]
 	}
-
 	s := spinner.New(spinner.CharSets[9], 100*time.Millisecond)
+	defer s.Stop()
 	if !quiet {
-		s.FinalMSG = " "
 		s.Suffix = fmt.Sprintf("\t%s  ", name)
 		s.Color("green")
 		s.Start()
 	}
-	err := downloadFile(filepath, url)
-	if !quiet {
-		s.Stop()
-		fmt.Println()
-	}
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "error: %s", err)
-	}
-	return err
+	return downloadFile(filepath, url)
 }

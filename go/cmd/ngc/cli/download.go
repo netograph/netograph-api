@@ -40,7 +40,6 @@ func downloadCommand() *cobra.Command {
 				if !*quiet {
 					fmt.Printf("Fetching %s...\n", id)
 					s.Suffix = fmt.Sprintf("\tfetching metadata")
-					s.FinalMSG = "   "
 					s.Color("green")
 					s.Start()
 				}
@@ -53,7 +52,6 @@ func downloadCommand() *cobra.Command {
 				)
 				if !*quiet {
 					s.Stop()
-					fmt.Println()
 				}
 				if err != nil {
 					return err
@@ -75,6 +73,7 @@ func downloadCommand() *cobra.Command {
 					screenshot := fmt.Sprintf("screenshot%.3d.jpg", i)
 					ca = append(ca, screenshot)
 				}
+				cnt := 0
 				for _, a := range ca {
 					err := downloadProgress(
 						path.Join(outdir, a),
@@ -82,8 +81,11 @@ func downloadCommand() *cobra.Command {
 						*quiet,
 					)
 					if err != nil {
-						return err
+						cnt++
 					}
+				}
+				if cnt > 0 && !*quiet {
+					fmt.Printf("Skipped %d files\n", cnt)
 				}
 			}
 			return nil
