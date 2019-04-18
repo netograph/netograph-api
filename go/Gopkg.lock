@@ -120,23 +120,23 @@
   version = "v1.1.2"
 
 [[projects]]
-  digest = "1:95741de3af260a92cc5c7f3f3061e85273f5a81b5db20d4bd68da74bd521675e"
+  digest = "1:e0f50a07c0def90588d69f77178712c6fdc67eb6576365f551cce98b44b501bf"
   name = "github.com/pelletier/go-toml"
   packages = ["."]
   pruneopts = "UT"
-  revision = "c01d1270ff3e442a8a57cddc1c92dc1138598194"
-  version = "v1.2.0"
+  revision = "63909f0a90ab0f36909e8e044e46ace10cf13ba2"
+  version = "v1.3.0"
 
 [[projects]]
-  digest = "1:3e39bafd6c2f4bf3c76c3bfd16a2e09e016510ad5db90dc02b88e2f565d6d595"
+  digest = "1:bb495ec276ab82d3dd08504bbc0594a65de8c3b22c6f2aaa92d05b73fbf3a82e"
   name = "github.com/spf13/afero"
   packages = [
     ".",
     "mem",
   ]
   pruneopts = "UT"
-  revision = "f4711e4db9e9a1d3887343acb72b2bbfc2f686f5"
-  version = "v1.2.1"
+  revision = "588a75ec4f32903aa5e39a2619ba6a4631e28424"
+  version = "v1.2.2"
 
 [[projects]]
   digest = "1:08d65904057412fc0270fc4812a1c90c594186819243160dc779a402d4b6d0bc"
@@ -180,10 +180,25 @@
 
 [[projects]]
   branch = "master"
-  digest = "1:4512c74e2c934a151fa9246cdc565d29611f53295bfb05e7a6275e80ee540a0c"
+  digest = "1:ddfe0a54e5f9b29536a6d7b2defa376f2cb2b6e4234d676d7ff214d5b097cb50"
+  name = "github.com/tidwall/pretty"
+  packages = ["."]
+  pruneopts = "UT"
+  revision = "1166b9ac2b65e46a43d8618d30d1554f4652d49b"
+
+[[projects]]
+  branch = "master"
+  digest = "1:bbe51412d9915d64ffaa96b51d409e070665efc5194fcf145c4a27d4133107a4"
+  name = "golang.org/x/crypto"
+  packages = ["ssh/terminal"]
+  pruneopts = "UT"
+  revision = "f416ebab96af27ca70b6e5c23d6a0747530da626"
+
+[[projects]]
+  branch = "master"
+  digest = "1:e275b703ab8e3a4f8cd62893c888867a411f4854436b7d4f3ebf3e9180424847"
   name = "golang.org/x/net"
   packages = [
-    "context",
     "http/httpguts",
     "http2",
     "http2/hpack",
@@ -192,15 +207,18 @@
     "trace",
   ]
   pruneopts = "UT"
-  revision = "e3b2ff56ed879efa686c9d09ed74f9bfe42f1a1d"
+  revision = "1da14a5a36f220ea3f03470682b737b1dfd5de22"
 
 [[projects]]
   branch = "master"
-  digest = "1:5637b3b43405643229e55140bb3049dfa7d73957ba9ecfccc31cdadbfbe0b1f9"
+  digest = "1:32a91fdcb8f4ae0b2376129fe0091963fa1bbf42d4c1826ad41f7b6410f385c0"
   name = "golang.org/x/sys"
-  packages = ["unix"]
+  packages = [
+    "unix",
+    "windows",
+  ]
   pruneopts = "UT"
-  revision = "f49334f85ddcf0f08d7fb6dd7363e9e6d6b777eb"
+  revision = "12500544f89f9420afe9529ba8940bf72d294972"
 
 [[projects]]
   digest = "1:a2ab62866c75542dd18d2b069fec854577a20211d7c0ea6ae746072a1dccdd18"
@@ -231,10 +249,10 @@
   name = "google.golang.org/genproto"
   packages = ["googleapis/rpc/status"]
   pruneopts = "UT"
-  revision = "e79c0c59cdb5e117ef82a6f885294df3d74065d5"
+  revision = "d1146b9035b912113a38af3b138eb2af567b2c67"
 
 [[projects]]
-  digest = "1:c00eb80d7b152379c3e94c38d82b29deca98b1d0f53e4e20362589b7fcbffa07"
+  digest = "1:31d87f39886fb38a2b6c097ff3b9f985d6960772170d64a68246f7790e955746"
   name = "google.golang.org/grpc"
   packages = [
     ".",
@@ -251,6 +269,7 @@
     "grpclog",
     "internal",
     "internal/backoff",
+    "internal/balancerload",
     "internal/binarylog",
     "internal/channelz",
     "internal/envconfig",
@@ -270,8 +289,8 @@
     "tap",
   ]
   pruneopts = "UT"
-  revision = "3507fb8e1a5ad030303c106fef3a47c9fdad16ad"
-  version = "v1.19.1"
+  revision = "236199dd5f8031d698fb64091194aecd1c3895b2"
+  version = "v1.20.0"
 
 [[projects]]
   digest = "1:4d2e5a73dc1500038e504a8d78b986630e3626dc027bc030ba5c75da257cdb96"
@@ -294,10 +313,13 @@
     "github.com/golang/protobuf/ptypes/timestamp",
     "github.com/spf13/cobra",
     "github.com/spf13/viper",
-    "golang.org/x/net/context",
+    "github.com/tidwall/pretty",
+    "golang.org/x/crypto/ssh/terminal",
     "google.golang.org/grpc",
+    "google.golang.org/grpc/codes",
     "google.golang.org/grpc/credentials",
     "google.golang.org/grpc/metadata",
+    "google.golang.org/grpc/status",
   ]
   solver-name = "gps-cdcl"
   solver-version = 1

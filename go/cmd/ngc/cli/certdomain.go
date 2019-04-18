@@ -13,7 +13,7 @@ func certDomainCommand() *cobra.Command {
 	var resume *string
 	cmd := &cobra.Command{
 		Use:     "certdomain query",
-		Aliases: []string{"cdoms"},
+		Aliases: []string{"cdom"},
 		Short:   "Certifcates matching a domain query",
 		Args: func(cmd *cobra.Command, args []string) error {
 			if len(args) < 1 {

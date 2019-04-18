@@ -73,9 +73,9 @@ func init() {
 		`Compact JSON output format - one record per line, suitable for programmatic use`,
 	)
 	RootCmd.PersistentFlags().Bool(
-		"json",
+		"color",
 		false,
-		`Indented JSON output format`,
+		`Force colourised output even if we're not connected to the terminal`,
 	)
 	RootCmd.PersistentFlags().Int64P(
 		"limit", "n", 100,
