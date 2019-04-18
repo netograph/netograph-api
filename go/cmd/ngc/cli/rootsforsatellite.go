@@ -14,7 +14,7 @@ func rootsForSatelliteCommand() *cobra.Command {
 	cmd := &cobra.Command{
 		Use:     "rootsforsatellite query",
 		Aliases: []string{"rootforsat"},
-		Short:   "Retrieve all roots for a given satellite domain query",
+		Short:   "Roots for a satellite domain query",
 		Args: func(cmd *cobra.Command, args []string) error {
 			if len(args) < 1 {
 				return fmt.Errorf("Usage: %s", cmd.Use)

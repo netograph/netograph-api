@@ -14,7 +14,7 @@ func ipLogSearchCommand() *cobra.Command {
 	cmd := &cobra.Command{
 		Use:     "iplogsearch query",
 		Aliases: []string{"iplogs"},
-		Short:   "Search the log for captures that match a given IP",
+		Short:   "Captures that match a given IP",
 		Args: func(cmd *cobra.Command, args []string) error {
 			if len(args) < 1 {
 				return fmt.Errorf("Usage: %s", cmd.Use)

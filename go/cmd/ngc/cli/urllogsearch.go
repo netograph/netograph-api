@@ -14,7 +14,7 @@ func urlLogSearchCommand() *cobra.Command {
 	cmd := &cobra.Command{
 		Use:     "urllogsearch query",
 		Aliases: []string{"urllog"},
-		Short:   "Search the log for captures where any root URL matches a URL query",
+		Short:   "Captures where any root URL matches a URL query",
 		Args: func(cmd *cobra.Command, args []string) error {
 			if len(args) < 1 {
 				return fmt.Errorf("Usage: %s", cmd.Use)

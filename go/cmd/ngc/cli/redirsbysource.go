@@ -14,7 +14,7 @@ func redirsBySourceCommand() *cobra.Command {
 	cmd := &cobra.Command{
 		Use:     "redirsbysource address",
 		Aliases: []string{"rsrc"},
-		Short:   "Retrieve redirections from a given source domain query",
+		Short:   "Redirections matching a domain query on source",
 		Args: func(cmd *cobra.Command, args []string) error {
 			if len(args) != 1 {
 				return fmt.Errorf("Usage: %s", cmd.Use)

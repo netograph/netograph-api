@@ -12,7 +12,7 @@ func certStatsCommand() *cobra.Command {
 	cmd := &cobra.Command{
 		Use:     "certstats query",
 		Aliases: []string{"cstats"},
-		Short:   "Retrieve certificate statistics for a domain query",
+		Short:   "Certificate statistics for a domain query",
 		Args: func(cmd *cobra.Command, args []string) error {
 			if len(args) < 1 {
 				return fmt.Errorf("Usage: %s", cmd.Use)

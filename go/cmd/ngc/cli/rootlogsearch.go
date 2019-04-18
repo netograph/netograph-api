@@ -14,7 +14,7 @@ func rootLogSearchCommand() *cobra.Command {
 	cmd := &cobra.Command{
 		Use:     "rootlogsearch query",
 		Aliases: []string{"rootlog"},
-		Short:   "Search the log for captures where any root domain matches a query",
+		Short:   "Captures where any root domain matches a query",
 		Args: func(cmd *cobra.Command, args []string) error {
 			if len(args) < 1 {
 				return fmt.Errorf("Usage: %s", cmd.Use)

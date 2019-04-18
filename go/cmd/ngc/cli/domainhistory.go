@@ -13,7 +13,7 @@ func domainHistoryCommand() *cobra.Command {
 	cmd := &cobra.Command{
 		Use:     "domainhistory address",
 		Aliases: []string{"domhist"},
-		Short:   "Retrieve the capture history for an domain",
+		Short:   "Capture history for an domain",
 		Args: func(cmd *cobra.Command, args []string) error {
 			if len(args) != 1 {
 				return fmt.Errorf("Usage: %s", cmd.Use)

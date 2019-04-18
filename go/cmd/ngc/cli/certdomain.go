@@ -3,31 +3,21 @@ package cli
 import (
 	"fmt"
 	"io"
-	"strconv"
 
 	"github.com/netograph/netograph-api/go/proto/ngapi/dsetapi"
 	"github.com/spf13/cobra"
 	"github.com/spf13/viper"
 )
 
-func certIPSearchCommand() *cobra.Command {
+func certDomainCommand() *cobra.Command {
 	var resume *string
 	cmd := &cobra.Command{
-		Use:     "certip address [mask]",
-		Aliases: []string{"cips"},
-		Short:   "Find certificates associated with an IP addresses query",
+		Use:     "certdomain query",
+		Aliases: []string{"cdoms"},
+		Short:   "Certifcates matching a domain query",
 		Args: func(cmd *cobra.Command, args []string) error {
-			if len(args) < 1 || len(args) > 2 {
+			if len(args) < 1 {
 				return fmt.Errorf("Usage: %s", cmd.Use)
-			}
-			if len(args) == 2 {
-				n, err := strconv.Atoi(args[1])
-				if err != nil {
-					return err
-				}
-				if n < 0 || n > 32 {
-					return fmt.Errorf("Netmask must be 0-32")
-				}
 			}
 			return nil
 		},
@@ -36,24 +26,14 @@ func certIPSearchCommand() *cobra.Command {
 			if err != nil {
 				return err
 			}
-			n := 32
-			if len(args) == 2 {
-				var err error
-				n, err = strconv.Atoi(args[1])
-				if err != nil {
-					return err
-				}
-			}
-
 			limit, err := cmd.Parent().PersistentFlags().GetInt64("limit")
 			if err != nil {
 				return err
 			}
 
-			r, err := c.CertIPSearch(ctx, &dsetapi.CertIPSearchRequest{
+			r, err := c.CertDomainSearch(ctx, &dsetapi.CertDomainSearchRequest{
 				Dataset: viper.GetString("dset"),
-				Ip:      args[0],
-				Mask:    int32(n),
+				Query:   args[0],
 				Limit:   limit,
 				Resume:  *resume,
 			})

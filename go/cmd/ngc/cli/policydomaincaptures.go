@@ -16,7 +16,7 @@ func policyDomainCaptures() *cobra.Command {
 	cmd := &cobra.Command{
 		Use:     "policydomaincaptures",
 		Aliases: []string{"pdomcaps"},
-		Short:   "Log of policy captures in reverse chronological order",
+		Short:   "Policy captures matching a domain query",
 		Long: `
 Log of captures in reverse chronological order
 

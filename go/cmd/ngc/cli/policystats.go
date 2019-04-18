@@ -12,7 +12,7 @@ func policyStatsCommand() *cobra.Command {
 	cmd := &cobra.Command{
 		Use:     "policystats query",
 		Aliases: []string{"pstats"},
-		Short:   "Retrieve policy statistics for a domain query",
+		Short:   "Policy statistics for a domain query",
 		Args: func(cmd *cobra.Command, args []string) error {
 			if len(args) < 1 {
 				return fmt.Errorf("Usage: %s", cmd.Use)

@@ -14,7 +14,7 @@ func policyURLCapturesCommand() *cobra.Command {
 	cmd := &cobra.Command{
 		Use:     "policyurlcaptures query",
 		Aliases: []string{"polyurl"},
-		Short:   "Search the policy caapture log for captures that match a URL query",
+		Short:   "Policy captures matching a URL query",
 		Args: func(cmd *cobra.Command, args []string) error {
 			if len(args) < 1 {
 				return fmt.Errorf("Usage: %s", cmd.Use)

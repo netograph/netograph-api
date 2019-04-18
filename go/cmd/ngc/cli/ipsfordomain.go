@@ -14,7 +14,7 @@ func ipsForDomainCommand() *cobra.Command {
 	cmd := &cobra.Command{
 		Use:     "ipsfordomain address",
 		Aliases: []string{"ipdom"},
-		Short:   "Retrieve IP addresses associated with a domain query",
+		Short:   "IP addresses matching a domain query",
 		Args: func(cmd *cobra.Command, args []string) error {
 			if len(args) != 1 {
 				return fmt.Errorf("Usage: %s", cmd.Use)

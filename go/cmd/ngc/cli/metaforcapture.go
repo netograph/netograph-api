@@ -14,7 +14,7 @@ func metaForCaptureCommand() *cobra.Command {
 	cmd := &cobra.Command{
 		Use:     "metaforcapture id",
 		Aliases: []string{"metac"},
-		Short:   "Get the metadata for a given capture ID.",
+		Short:   "Metadata for a given capture ID",
 		Args: func(cmd *cobra.Command, args []string) error {
 			if len(args) < 1 {
 				return fmt.Errorf("Usage: %s", cmd.Use)

@@ -13,7 +13,7 @@ func ipHistoryCommand() *cobra.Command {
 	cmd := &cobra.Command{
 		Use:     "iphistory address",
 		Aliases: []string{"iphist"},
-		Short:   "Retrieve the capture history for an IP",
+		Short:   "Capture history for an IP address",
 		Args: func(cmd *cobra.Command, args []string) error {
 			if len(args) != 1 {
 				return fmt.Errorf("Usage: %s", cmd.Use)

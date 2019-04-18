@@ -14,7 +14,7 @@ func ipSearchCommand() *cobra.Command {
 	var resume *string
 	cmd := &cobra.Command{
 		Use:   "ipsearch address [mask]",
-		Short: "Find IPs matching a netmask and address",
+		Short: "IP addresses matching a netmask and address",
 		Args: func(cmd *cobra.Command, args []string) error {
 			if len(args) < 1 || len(args) > 2 {
 				return fmt.Errorf("Usage: %s", cmd.Use)

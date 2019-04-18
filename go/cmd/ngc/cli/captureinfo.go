@@ -12,7 +12,7 @@ func captureInfoCommand() *cobra.Command {
 	cmd := &cobra.Command{
 		Use:     "captureinfo id",
 		Aliases: []string{"cap"},
-		Short:   "Retrieve summary info for a specified capture",
+		Short:   "Info for a specified capture",
 		Args: func(cmd *cobra.Command, args []string) error {
 			if len(args) != 1 {
 				return fmt.Errorf("Usage: %s", cmd.Use)

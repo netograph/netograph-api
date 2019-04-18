@@ -14,7 +14,7 @@ func policiesForRootCommand() *cobra.Command {
 	cmd := &cobra.Command{
 		Use:     "policiesforroot query",
 		Aliases: []string{"pols"},
-		Short:   "Retrieve all policies for a given domain query",
+		Short:   "Policies matching a domain query",
 		Args: func(cmd *cobra.Command, args []string) error {
 			if len(args) < 1 {
 				return fmt.Errorf("Usage: %s", cmd.Use)

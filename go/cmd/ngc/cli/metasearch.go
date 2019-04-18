@@ -14,7 +14,7 @@ func metaSearchCommand() *cobra.Command {
 	cmd := &cobra.Command{
 		Use:     "metasearch query",
 		Aliases: []string{"metas"},
-		Short:   "Search the log for captures matching a metadata query.",
+		Short:   "Captures matching a metadata query",
 		Args: func(cmd *cobra.Command, args []string) error {
 			if len(args) < 1 {
 				return fmt.Errorf("Usage: %s", cmd.Use)
