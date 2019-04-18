@@ -13,8 +13,9 @@ import (
 func certIPSearchCommand() *cobra.Command {
 	var resume *string
 	cmd := &cobra.Command{
-		Use:   "certipsearch address [mask]",
-		Short: "Find certificates associated with an IP addresses query",
+		Use:     "certip address [mask]",
+		Aliases: []string{"cips"},
+		Short:   "Find certificates associated with an IP addresses query",
 		Args: func(cmd *cobra.Command, args []string) error {
 			if len(args) < 1 || len(args) > 2 {
 				return fmt.Errorf("Usage: %s", cmd.Use)

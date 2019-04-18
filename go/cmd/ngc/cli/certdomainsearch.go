@@ -12,7 +12,7 @@ import (
 func certDomainSearchCommand() *cobra.Command {
 	var resume *string
 	cmd := &cobra.Command{
-		Use:     "certdomainsearch query",
+		Use:     "certdomain query",
 		Aliases: []string{"cdoms"},
 		Short:   "Find certifcates matching a domain query",
 		Args: func(cmd *cobra.Command, args []string) error {
