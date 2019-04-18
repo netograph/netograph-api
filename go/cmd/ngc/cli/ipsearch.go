@@ -44,6 +44,11 @@ func ipSearchCommand() *cobra.Command {
 				}
 			}
 
+			ip, err := resolveIP(args[0])
+			if err != nil {
+				return err
+			}
+
 			limit, err := cmd.Parent().PersistentFlags().GetInt64("limit")
 			if err != nil {
 				return err
@@ -51,7 +56,7 @@ func ipSearchCommand() *cobra.Command {
 
 			r, err := c.IPSearch(ctx, &dsetapi.IPSearchRequest{
 				Dataset: viper.GetString("dset"),
-				Ip:      args[0],
+				Ip:      ip,
 				Mask:    int32(n),
 				Limit:   limit,
 				Resume:  *resume,

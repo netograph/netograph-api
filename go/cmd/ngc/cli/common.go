@@ -3,6 +3,7 @@ package cli
 import (
 	"fmt"
 	"io"
+	"net"
 	"net/http"
 	"os"
 	"strings"
@@ -16,6 +17,19 @@ var coreAssets = []string{
 	"contents.json",
 	"details.json",
 	"starmap.jpg",
+}
+
+func resolveIP(ip string) (string, error) {
+	ips, err := net.LookupIP(ip)
+	if err != nil {
+		return "", err
+	}
+	for _, ip := range ips {
+		if ip.To4() != nil {
+			return ip.String(), err
+		}
+	}
+	return "", fmt.Errorf("Could not resolve address: %s", ip)
 }
 
 func downloadFile(filepath string, url string) (err error) {

@@ -45,6 +45,11 @@ func certIPCommand() *cobra.Command {
 				}
 			}
 
+			ip, err := resolveIP(args[0])
+			if err != nil {
+				return err
+			}
+
 			limit, err := cmd.Parent().PersistentFlags().GetInt64("limit")
 			if err != nil {
 				return err
@@ -52,7 +57,7 @@ func certIPCommand() *cobra.Command {
 
 			r, err := c.CertIPSearch(ctx, &dsetapi.CertIPSearchRequest{
 				Dataset: viper.GetString("dset"),
-				Ip:      args[0],
+				Ip:      ip,
 				Mask:    int32(n),
 				Limit:   limit,
 				Resume:  *resume,
