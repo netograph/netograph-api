@@ -35,6 +35,7 @@ func init() {
 		domainHistoryCommand(),
 		domainidLogCommand(),
 		domainidsForDomain(),
+		domainidRelated(),
 		domainidTagSearch(),
 		domainSearchCommand(),
 		domainsForIPCommand(),
