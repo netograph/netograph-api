@@ -59,6 +59,11 @@ class DsetStub(object):
         request_serializer=dsetapi_dot_dset__pb2.DomainIDLogRequest.SerializeToString,
         response_deserializer=dsetapi_dot_dset__pb2.DomainIDLogResult.FromString,
         )
+    self.DomainIDsForDomain = channel.unary_stream(
+        '/io.netograph.dset.Dset/DomainIDsForDomain',
+        request_serializer=dsetapi_dot_dset__pb2.DomainIDsForDomainRequest.SerializeToString,
+        response_deserializer=dsetapi_dot_dset__pb2.DomainIDsForDomainResult.FromString,
+        )
     self.DomainSearch = channel.unary_stream(
         '/io.netograph.dset.Dset/DomainSearch',
         request_serializer=dsetapi_dot_dset__pb2.DomainSearchRequest.SerializeToString,
@@ -219,6 +224,13 @@ class DsetServicer(object):
 
   def DomainIDLog(self, request, context):
     """Retrieve the log of domain IDs added to the dataset, in reverse chronological order.
+    """
+    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+    context.set_details('Method not implemented!')
+    raise NotImplementedError('Method not implemented!')
+
+  def DomainIDsForDomain(self, request, context):
+    """Search the domain ID registry for records matching a domain, restricted to an optional key.
     """
     context.set_code(grpc.StatusCode.UNIMPLEMENTED)
     context.set_details('Method not implemented!')
@@ -405,6 +417,11 @@ def add_DsetServicer_to_server(servicer, server):
           servicer.DomainIDLog,
           request_deserializer=dsetapi_dot_dset__pb2.DomainIDLogRequest.FromString,
           response_serializer=dsetapi_dot_dset__pb2.DomainIDLogResult.SerializeToString,
+      ),
+      'DomainIDsForDomain': grpc.unary_stream_rpc_method_handler(
+          servicer.DomainIDsForDomain,
+          request_deserializer=dsetapi_dot_dset__pb2.DomainIDsForDomainRequest.FromString,
+          response_serializer=dsetapi_dot_dset__pb2.DomainIDsForDomainResult.SerializeToString,
       ),
       'DomainSearch': grpc.unary_stream_rpc_method_handler(
           servicer.DomainSearch,

@@ -37,6 +37,8 @@
     - [DomainHistoryResult](#io.netograph.dset.DomainHistoryResult)
     - [DomainIDLogRequest](#io.netograph.dset.DomainIDLogRequest)
     - [DomainIDLogResult](#io.netograph.dset.DomainIDLogResult)
+    - [DomainIDsForDomainRequest](#io.netograph.dset.DomainIDsForDomainRequest)
+    - [DomainIDsForDomainResult](#io.netograph.dset.DomainIDsForDomainResult)
     - [DomainSearchRequest](#io.netograph.dset.DomainSearchRequest)
     - [DomainSearchResult](#io.netograph.dset.DomainSearchResult)
     - [DomainsForIPRequest](#io.netograph.dset.DomainsForIPRequest)
@@ -686,6 +688,45 @@ final resting URL.
 <a name="io.netograph.dset.DomainIDLogResult"></a>
 
 ### DomainIDLogResult
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| domain | [string](#string) |  |  |
+| key | [string](#string) |  |  |
+| value | [string](#string) |  |  |
+| time | [google.protobuf.Timestamp](#google.protobuf.Timestamp) |  |  |
+| resume | [string](#string) |  | A resumption token that can be passed to an identical query to resume results. |
+
+
+
+
+
+
+<a name="io.netograph.dset.DomainIDsForDomainRequest"></a>
+
+### DomainIDsForDomainRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| dataset | [string](#string) |  | The name of the dataset to query. |
+| exact | [bool](#bool) |  | If exact is true, the log for exact domains is returned. Otherwise, the log for TLD&#43;1 (Top-Level Domain plus One) is returned. |
+| domain | [string](#string) |  | The domain to search for. This will be truncated to the TLD&#43;1 if exact is true. |
+| key | [string](#string) |  | Restrict the results to a given key. Optional. |
+| limit | [int64](#int64) |  | Limit the number of records that will be returned. |
+| resume | [string](#string) |  | A resumption token, previously returned by an identical query. |
+
+
+
+
+
+
+<a name="io.netograph.dset.DomainIDsForDomainResult"></a>
+
+### DomainIDsForDomainResult
 
 
 
@@ -1460,6 +1501,7 @@ Methods that operate on an individual dataset, either public or private.
 | CertSearch | [CertSearchRequest](#io.netograph.dset.CertSearchRequest) | [CertSearchResult](#io.netograph.dset.CertSearchResult) stream | Retrieve certificates based on a field query. |
 | DomainHistory | [DomainHistoryRequest](#io.netograph.dset.DomainHistoryRequest) | [DomainHistoryResult](#io.netograph.dset.DomainHistoryResult) stream | Retrieve the capture history for a specified domain. The length of this history is capped at ~100. |
 | DomainIDLog | [DomainIDLogRequest](#io.netograph.dset.DomainIDLogRequest) | [DomainIDLogResult](#io.netograph.dset.DomainIDLogResult) stream | Retrieve the log of domain IDs added to the dataset, in reverse chronological order. |
+| DomainIDsForDomain | [DomainIDsForDomainRequest](#io.netograph.dset.DomainIDsForDomainRequest) | [DomainIDsForDomainResult](#io.netograph.dset.DomainIDsForDomainResult) stream | Search the domain ID registry for records matching a domain, restricted to an optional key. |
 | DomainSearch | [DomainSearchRequest](#io.netograph.dset.DomainSearchRequest) | [DomainSearchResult](#io.netograph.dset.DomainSearchResult) stream | Retrieve the capture log for a specified domain in a dataset. |
 | DomainsForIP | [DomainsForIPRequest](#io.netograph.dset.DomainsForIPRequest) | [DomainsForIPResult](#io.netograph.dset.DomainsForIPResult) stream | Find all domains in the dataset associated with a given IP address. |
 | IPHistory | [IPHistoryRequest](#io.netograph.dset.IPHistoryRequest) | [IPHistoryResult](#io.netograph.dset.IPHistoryResult) stream | Retrieve the capture history for a specified IP in a dataset. The length of this history is capped at ~100. |

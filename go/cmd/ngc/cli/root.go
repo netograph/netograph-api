@@ -34,6 +34,7 @@ func init() {
 		datasetsCommand(),
 		domainHistoryCommand(),
 		domainidLogCommand(),
+		domainidsForDomain(),
 		domainSearchCommand(),
 		domainsForIPCommand(),
 		downloadCommand(),

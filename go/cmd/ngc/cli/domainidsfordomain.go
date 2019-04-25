@@ -1,6 +1,7 @@
 package cli
 
 import (
+	"fmt"
 	"io"
 
 	"github.com/netograph/netograph-api/go/proto/ngapi/dsetapi"
@@ -8,27 +9,19 @@ import (
 	"github.com/spf13/viper"
 )
 
-func domainidLogCommand() *cobra.Command {
+func domainidsForDomain() *cobra.Command {
 	var resume *string
-	var start *string
-	var end *string
 	var exact *bool
 	cmd := &cobra.Command{
-		Use:     "domainidlog",
-		Aliases: []string{"didlog"},
-		Short:   "Domain ID entries in reverse chronological order",
-		Long: `
-Log of domain ID entries in reverse chronological order
-
-Since the order is reverse chronological, the start time is the most recent
-time in the range, and the end time is the least recent time in the range.
-
-Times can be specified in the following formats:
-
-	2006-01-02T15:04:05Z07:00 (RFC3339)
-	yyyy/mm/dd
-	yyyy-mm-dd
-		`,
+		Use:     "domainidsfordomain domain [key]",
+		Aliases: []string{"diddom"},
+		Short:   "DomainID entries for a domain, optionally limited by key",
+		Args: func(cmd *cobra.Command, args []string) error {
+			if len(args) != 1 && len(args) != 2 {
+				return fmt.Errorf("Usage: %s", cmd.Use)
+			}
+			return nil
+		},
 		RunE: func(cmd *cobra.Command, args []string) error {
 			c, ctx, err := connectDset()
 			if err != nil {
@@ -38,21 +31,18 @@ Times can be specified in the following formats:
 			if err != nil {
 				return err
 			}
-			st, err := parseTime(*start)
-			if err != nil {
-				return err
-			}
-			et, err := parseTime(*end)
-			if err != nil {
-				return err
+
+			key := ""
+			if len(args) == 2 {
+				key = args[1]
 			}
 
-			r, err := c.DomainIDLog(ctx, &dsetapi.DomainIDLogRequest{
+			r, err := c.DomainIDsForDomain(ctx, &dsetapi.DomainIDsForDomainRequest{
 				Dataset: viper.GetString("dset"),
 				Limit:   limit,
+				Domain:  args[0],
+				Key:     key,
 				Resume:  *resume,
-				Start:   st,
-				End:     et,
 				Exact:   *exact,
 			})
 			if err != nil {
@@ -71,8 +61,6 @@ Times can be specified in the following formats:
 		},
 	}
 	resume = cmd.Flags().StringP("resume", "r", "", "Resume retrieval from a specified token")
-	start = cmd.Flags().StringP("start", "s", "", "Start time (most recent time in the range)")
-	end = cmd.Flags().StringP("end", "e", "", "End time (least recent time in the range)")
 	exact = cmd.Flags().BoolP("exact", "x", false, "Return exact domain results, instead of TLD+1")
 	return cmd
 }
