@@ -33,6 +33,7 @@ func init() {
 		certIPCommand(),
 		datasetsCommand(),
 		domainHistoryCommand(),
+		domainidLogCommand(),
 		domainSearchCommand(),
 		domainsForIPCommand(),
 		downloadCommand(),

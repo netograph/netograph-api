@@ -8,16 +8,17 @@ import (
 	"github.com/spf13/viper"
 )
 
-func captureLogCommand() *cobra.Command {
+func domainidLogCommand() *cobra.Command {
 	var resume *string
 	var start *string
 	var end *string
+	var exact *bool
 	cmd := &cobra.Command{
-		Use:     "capturelog",
-		Aliases: []string{"caplog"},
-		Short:   "Captures in reverse chronological order",
+		Use:     "domainidlog",
+		Aliases: []string{"didlog"},
+		Short:   "Device ID entries in reverse chronological order",
 		Long: `
-Log of captures in reverse chronological order
+Log of domain ID entries in reverse chronological order
 
 Since the order is reverse chronological, the start time is the most recent
 time in the range, and the end time is the least recent time in the range.
@@ -46,12 +47,13 @@ Times can be specified in the following formats:
 				return err
 			}
 
-			r, err := c.CaptureLog(ctx, &dsetapi.CaptureLogRequest{
+			r, err := c.DomainIDLog(ctx, &dsetapi.DomainIDLogRequest{
 				Dataset: viper.GetString("dset"),
 				Limit:   limit,
 				Resume:  *resume,
 				Start:   st,
 				End:     et,
+				Exact:   *exact,
 			})
 			if err != nil {
 				return err
@@ -71,5 +73,6 @@ Times can be specified in the following formats:
 	resume = cmd.Flags().StringP("resume", "r", "", "Resume retrieval from a specified token")
 	start = cmd.Flags().StringP("start", "s", "", "Start time (most recent time in the range)")
 	end = cmd.Flags().StringP("end", "e", "", "End time (least recent time in the range)")
+	exact = cmd.Flags().BoolP("exact", "x", false, "Return exact domain results, instead of TLD+1")
 	return cmd
 }

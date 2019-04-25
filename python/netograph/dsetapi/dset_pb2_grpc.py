@@ -54,6 +54,11 @@ class DsetStub(object):
         request_serializer=dsetapi_dot_dset__pb2.DomainHistoryRequest.SerializeToString,
         response_deserializer=dsetapi_dot_dset__pb2.DomainHistoryResult.FromString,
         )
+    self.DomainIDLog = channel.unary_stream(
+        '/io.netograph.dset.Dset/DomainIDLog',
+        request_serializer=dsetapi_dot_dset__pb2.DomainIDLogRequest.SerializeToString,
+        response_deserializer=dsetapi_dot_dset__pb2.DomainIDLogResult.FromString,
+        )
     self.DomainSearch = channel.unary_stream(
         '/io.netograph.dset.Dset/DomainSearch',
         request_serializer=dsetapi_dot_dset__pb2.DomainSearchRequest.SerializeToString,
@@ -207,6 +212,13 @@ class DsetServicer(object):
   def DomainHistory(self, request, context):
     """Retrieve the capture history for a specified domain. The
     length of this history is capped at ~100.
+    """
+    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+    context.set_details('Method not implemented!')
+    raise NotImplementedError('Method not implemented!')
+
+  def DomainIDLog(self, request, context):
+    """Retrieve the log of domain IDs added to the dataset, in reverse chronological order.
     """
     context.set_code(grpc.StatusCode.UNIMPLEMENTED)
     context.set_details('Method not implemented!')
@@ -388,6 +400,11 @@ def add_DsetServicer_to_server(servicer, server):
           servicer.DomainHistory,
           request_deserializer=dsetapi_dot_dset__pb2.DomainHistoryRequest.FromString,
           response_serializer=dsetapi_dot_dset__pb2.DomainHistoryResult.SerializeToString,
+      ),
+      'DomainIDLog': grpc.unary_stream_rpc_method_handler(
+          servicer.DomainIDLog,
+          request_deserializer=dsetapi_dot_dset__pb2.DomainIDLogRequest.FromString,
+          response_serializer=dsetapi_dot_dset__pb2.DomainIDLogResult.SerializeToString,
       ),
       'DomainSearch': grpc.unary_stream_rpc_method_handler(
           servicer.DomainSearch,

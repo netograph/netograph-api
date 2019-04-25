@@ -283,6 +283,37 @@ message DomainHistoryResult {
     CapSummary capsummary = 1;
 }
 
+
+message DomainIDLogRequest {
+    // The name of the dataset to query.
+    string dataset = 1;
+    // If exact is true, the log for exact domains is returned. Otherwise, the
+    // log for TLD+1 (Top-Level Domain plus One) is returned.
+    bool exact = 2;
+    // The log is in reverse chronological order, so the start of the
+    // range is the most recent time. If start is zero, it's taken to be the
+    // largest possible time value.
+    google.protobuf.Timestamp start = 3;
+    // The log is in reverse chronological order, so the end of the
+    // range is the least recent time. If end is zero, it's taken to be the
+    // smallest possible time value.
+    google.protobuf.Timestamp end = 4;
+    // Limit the number of records that will be returned.
+    int64 limit = 5;
+    // A resumption token, previously returned by an identical query.
+    string resume = 6;
+}
+message DomainIDLogResult {
+    string domain = 1;
+    string key = 2;
+    string  value = 3;
+    google.protobuf.Timestamp time = 4;
+    // A resumption token that can be passed to an identical query to resume
+    // results.
+    string resume = 5;
+}
+
+
 message DomainSearchRequest {
     // The name of the dataset to query.
     string dataset = 1;
@@ -716,6 +747,9 @@ service Dset {
     // Retrieve the capture history for a specified domain. The
     // length of this history is capped at ~100.
     rpc DomainHistory(DomainHistoryRequest) returns (stream DomainHistoryResult);
+
+    // Retrieve the log of domain IDs added to the dataset, in reverse chronological order.
+    rpc DomainIDLog(DomainIDLogRequest) returns (stream DomainIDLogResult);
 
     // Retrieve the capture log for a specified domain in a dataset.
     rpc DomainSearch(DomainSearchRequest) returns (stream DomainSearchResult);

@@ -303,6 +303,14 @@
                 </li>
               
                 <li>
+                  <a href="#io.netograph.dset.DomainIDLogRequest"><span class="badge">M</span>DomainIDLogRequest</a>
+                </li>
+              
+                <li>
+                  <a href="#io.netograph.dset.DomainIDLogResult"><span class="badge">M</span>DomainIDLogResult</a>
+                </li>
+              
+                <li>
                   <a href="#io.netograph.dset.DomainSearchRequest"><span class="badge">M</span>DomainSearchRequest</a>
                 </li>
               
@@ -1856,6 +1864,121 @@ results. </p></td>
                   <td><a href="#io.netograph.dset.CapSummary">CapSummary</a></td>
                   <td></td>
                   <td><p>A capture summary for this result. </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+        
+
+        
+      
+        <h3 id="io.netograph.dset.DomainIDLogRequest">DomainIDLogRequest</h3>
+        <p></p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>dataset</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p>The name of the dataset to query. </p></td>
+                </tr>
+              
+                <tr>
+                  <td>exact</td>
+                  <td><a href="#bool">bool</a></td>
+                  <td></td>
+                  <td><p>If exact is true, the log for exact domains is returned. Otherwise, the
+log for TLD&#43;1 (Top-Level Domain plus One) is returned. </p></td>
+                </tr>
+              
+                <tr>
+                  <td>start</td>
+                  <td><a href="#google.protobuf.Timestamp">google.protobuf.Timestamp</a></td>
+                  <td></td>
+                  <td><p>The log is in reverse chronological order, so the start of the
+range is the most recent time. If start is zero, it&#39;s taken to be the
+largest possible time value. </p></td>
+                </tr>
+              
+                <tr>
+                  <td>end</td>
+                  <td><a href="#google.protobuf.Timestamp">google.protobuf.Timestamp</a></td>
+                  <td></td>
+                  <td><p>The log is in reverse chronological order, so the end of the
+range is the least recent time. If end is zero, it&#39;s taken to be the
+smallest possible time value. </p></td>
+                </tr>
+              
+                <tr>
+                  <td>limit</td>
+                  <td><a href="#int64">int64</a></td>
+                  <td></td>
+                  <td><p>Limit the number of records that will be returned. </p></td>
+                </tr>
+              
+                <tr>
+                  <td>resume</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p>A resumption token, previously returned by an identical query. </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+        
+
+        
+      
+        <h3 id="io.netograph.dset.DomainIDLogResult">DomainIDLogResult</h3>
+        <p></p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>domain</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>key</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>value</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>time</td>
+                  <td><a href="#google.protobuf.Timestamp">google.protobuf.Timestamp</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>resume</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p>A resumption token that can be passed to an identical query to resume
+results. </p></td>
                 </tr>
               
             </tbody>
@@ -3755,6 +3878,13 @@ results. </p></td>
                 <td><a href="#io.netograph.dset.DomainHistoryResult">DomainHistoryResult</a> stream</td>
                 <td><p>Retrieve the capture history for a specified domain. The
 length of this history is capped at ~100.</p></td>
+              </tr>
+            
+              <tr>
+                <td>DomainIDLog</td>
+                <td><a href="#io.netograph.dset.DomainIDLogRequest">DomainIDLogRequest</a></td>
+                <td><a href="#io.netograph.dset.DomainIDLogResult">DomainIDLogResult</a> stream</td>
+                <td><p>Retrieve the log of domain IDs added to the dataset, in reverse chronological order.</p></td>
               </tr>
             
               <tr>

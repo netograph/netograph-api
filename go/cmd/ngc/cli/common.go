@@ -10,6 +10,8 @@ import (
 	"time"
 
 	"github.com/briandowns/spinner"
+	"github.com/golang/protobuf/ptypes"
+	"github.com/golang/protobuf/ptypes/timestamp"
 )
 
 var coreAssets = []string{
@@ -67,4 +69,33 @@ func downloadProgress(filepath string, url string, quiet bool) error {
 		s.Start()
 	}
 	return downloadFile(filepath, url)
+}
+
+var timeFormats = []string{
+	time.RFC3339,
+	"2006-01-02",
+	"2006/01/02",
+}
+
+func parseTime(s string) (*timestamp.Timestamp, error) {
+	if s == "" {
+		return &timestamp.Timestamp{}, nil
+	}
+
+	loc, err := time.LoadLocation("UTC")
+	if err != nil {
+		return nil, err
+	}
+
+	var t time.Time
+	for _, f := range timeFormats {
+		t, err = time.ParseInLocation(f, s, loc)
+		if err == nil {
+			break
+		}
+	}
+	if err != nil {
+		return nil, fmt.Errorf("could not parse date specification: %s", s)
+	}
+	return ptypes.TimestampProto(t)
 }
