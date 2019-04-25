@@ -311,6 +311,14 @@
                 </li>
               
                 <li>
+                  <a href="#io.netograph.dset.DomainIDTagSearchRequest"><span class="badge">M</span>DomainIDTagSearchRequest</a>
+                </li>
+              
+                <li>
+                  <a href="#io.netograph.dset.DomainIDTagSearchResult"><span class="badge">M</span>DomainIDTagSearchResult</a>
+                </li>
+              
+                <li>
                   <a href="#io.netograph.dset.DomainIDsForDomainRequest"><span class="badge">M</span>DomainIDsForDomainRequest</a>
                 </li>
               
@@ -1944,6 +1952,117 @@ smallest possible time value. </p></td>
         
       
         <h3 id="io.netograph.dset.DomainIDLogResult">DomainIDLogResult</h3>
+        <p></p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>domain</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>key</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>value</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>time</td>
+                  <td><a href="#google.protobuf.Timestamp">google.protobuf.Timestamp</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>resume</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p>A resumption token that can be passed to an identical query to resume
+results. </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+        
+
+        
+      
+        <h3 id="io.netograph.dset.DomainIDTagSearchRequest">DomainIDTagSearchRequest</h3>
+        <p></p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>dataset</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p>The name of the dataset to query. </p></td>
+                </tr>
+              
+                <tr>
+                  <td>exact</td>
+                  <td><a href="#bool">bool</a></td>
+                  <td></td>
+                  <td><p>If exact is true, the log for exact domains is returned. Otherwise, the
+log for TLD&#43;1 (Top-Level Domain plus One) is returned. </p></td>
+                </tr>
+              
+                <tr>
+                  <td>key</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p>The key to search for. </p></td>
+                </tr>
+              
+                <tr>
+                  <td>value</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p>Restrict the results to a given value. Optional. </p></td>
+                </tr>
+              
+                <tr>
+                  <td>limit</td>
+                  <td><a href="#int64">int64</a></td>
+                  <td></td>
+                  <td><p>Limit the number of records that will be returned. </p></td>
+                </tr>
+              
+                <tr>
+                  <td>resume</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p>A resumption token, previously returned by an identical query. </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+        
+
+        
+      
+        <h3 id="io.netograph.dset.DomainIDTagSearchResult">DomainIDTagSearchResult</h3>
         <p></p>
 
         
@@ -4011,6 +4130,13 @@ length of this history is capped at ~100.</p></td>
                 <td><a href="#io.netograph.dset.DomainIDsForDomainRequest">DomainIDsForDomainRequest</a></td>
                 <td><a href="#io.netograph.dset.DomainIDsForDomainResult">DomainIDsForDomainResult</a> stream</td>
                 <td><p>Search the domain ID registry for records matching a domain, restricted to an optional key.</p></td>
+              </tr>
+            
+              <tr>
+                <td>DomainIDTagSearch</td>
+                <td><a href="#io.netograph.dset.DomainIDTagSearchRequest">DomainIDTagSearchRequest</a></td>
+                <td><a href="#io.netograph.dset.DomainIDTagSearchResult">DomainIDTagSearchResult</a> stream</td>
+                <td><p>Search the domain ID registry domains matching tag key, with an optional value.</p></td>
               </tr>
             
               <tr>
