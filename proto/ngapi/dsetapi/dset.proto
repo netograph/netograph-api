@@ -284,84 +284,84 @@ message DomainHistoryResult {
 }
 
 
-message DomainIDLogRequest {
+message DomainIDCaptureTagsRequest {
     // The name of the dataset to query.
     string dataset = 1;
-    // If exact is true, the log for exact domains is returned. Otherwise, the
-    // log for TLD+1 (Top-Level Domain plus One) is returned.
-    bool exact = 2;
-    // The log is in reverse chronological order, so the start of the
-    // range is the most recent time. If start is zero, it's taken to be the
-    // largest possible time value.
-    google.protobuf.Timestamp start = 3;
-    // The log is in reverse chronological order, so the end of the
-    // range is the least recent time. If end is zero, it's taken to be the
-    // smallest possible time value.
-    google.protobuf.Timestamp end = 4;
+    // The capture ID to retrieve.
+    string captureid = 3;
     // Limit the number of records that will be returned.
-    int64 limit = 5;
+    int64 limit = 4;
     // A resumption token, previously returned by an identical query.
-    string resume = 6;
+    string resume = 5;
 }
-message DomainIDLogResult {
+message DomainIDCaptureTagsResult {
     string domain = 1;
     string key = 2;
     string  value = 3;
-    google.protobuf.Timestamp time = 4;
     // A resumption token that can be passed to an identical query to resume
     // results.
     string resume = 5;
 }
 
-message DomainIDsForDomainRequest {
+message DomainIDDomainSearchRequest {
     // The name of the dataset to query.
     string dataset = 1;
-    // If exact is true, the log for exact domains is returned. Otherwise, the
-    // log for TLD+1 (Top-Level Domain plus One) is returned.
-    bool exact = 2;
-    // The domain to search for. This will be truncated to the TLD+1 if exact is true.
+    // If true, the log for the base domain is returned. Otherwise, the
+    // result for the exact domain is returned.
+    bool basedomain = 2;
+    // The domain to search for.
     string domain = 3;
     // Restrict the results to a given key. Optional.
     string key = 4;
+    // Restrict the results to a given value. Only valid if key is passed. Optional.
+    string value = 5;
     // Limit the number of records that will be returned.
-    int64 limit = 5;
+    int64 limit = 6;
     // A resumption token, previously returned by an identical query.
-    string resume = 6;
+    string resume = 7;
 }
-message DomainIDsForDomainResult {
+message DomainIDDomainSearchResult {
     string domain = 1;
     string key = 2;
     string  value = 3;
-    google.protobuf.Timestamp time = 4;
+    // The most recent capture where this tag was observed.
+    CapSummary latestcapture = 4;
+    // The first capture where this tag was observed.
+    CapSummary firstcapture = 5;
     // A resumption token that can be passed to an identical query to resume
     // results.
-    string resume = 5;
+    string resume = 6;
 }
 
 
 message DomainIDTagSearchRequest {
     // The name of the dataset to query.
     string dataset = 1;
-    // If exact is true, the log for exact domains is returned. Otherwise, the
-    // log for TLD+1 (Top-Level Domain plus One) is returned.
-    bool exact = 2;
+    // If true, the log for the base domain is returned. Otherwise, the
+    // result for the exact domain is returned.
+    bool basedomain = 2;
     // The key to search for.
     string key = 3;
     // Restrict the results to a given value. Optional.
     string value = 4;
+    // Restrict the result to a given domain. Only valid if value is passed.
+    string domain = 5;
     // Limit the number of records that will be returned.
-    int64 limit = 5;
+    int64 limit = 6;
     // A resumption token, previously returned by an identical query.
-    string resume = 6;
+    string resume = 7;
 }
 message DomainIDTagSearchResult {
     string domain = 1;
     string key = 2;
     string  value = 3;
-    google.protobuf.Timestamp time = 4;
+    // The most recent capture where this tag was observed.
+    CapSummary latestcapture = 4;
+    // The first capture where this tag was observed.
+    CapSummary firstcapture = 5;
     // A resumption token that can be passed to an identical query to resume
     // results.
-    string resume = 5;
+    string resume = 6;
 }
 
 
@@ -390,10 +390,12 @@ message DomainsForIPRequest {
     // The name of the dataset to query.
     string dataset = 1;
     string ip = 2;
+    int32 mask = 3;
+
     // Limit the number of records that will be returned.
-    int64 limit = 3;
+    int64 limit = 4;
     // A resumption token, previously returned by an identical query.
-    string resume = 4;
+    string resume = 5;
 }
 message DomainsForIPResult {
     string domain = 1;
@@ -422,10 +424,11 @@ message IPLogSearchRequest {
     // The name of the dataset to query.
     string dataset = 1;
     string ip = 2;
+    int32 mask = 3;
     // Limit the number of records that will be returned.
-    int64 limit = 3;
+    int64 limit = 4;
     // A resumption token, previously returned by an identical query.
-    string resume = 4;
+    string resume = 5;
 }
 message IPLogSearchResult {
     // A capture summary for this result.
@@ -799,14 +802,18 @@ service Dset {
     // length of this history is capped at ~100.
     rpc DomainHistory(DomainHistoryRequest) returns (stream DomainHistoryResult);
 
-    // Retrieve the log of domain IDs added to the dataset, in reverse chronological order.
-    rpc DomainIDLog(DomainIDLogRequest) returns (stream DomainIDLogResult);
-
     // Search the domain ID registry for records matching a domain, restricted to an optional key.
-    rpc DomainIDsForDomain(DomainIDsForDomainRequest) returns (stream DomainIDsForDomainResult);
+    rpc DomainIDDomainSearch(DomainIDDomainSearchRequest) returns (
+        stream DomainIDDomainSearchResult
+    );
 
     // Search the domain ID registry domains matching tag key, with an optional value.
     rpc DomainIDTagSearch(DomainIDTagSearchRequest) returns (stream DomainIDTagSearchResult);
+
+    // Search the domain ID registry domains matching tag key, with an optional value.
+    rpc DomainIDCaptureTags(DomainIDCaptureTagsRequest) returns (
+        stream DomainIDCaptureTagsResult
+    );
 
     // Retrieve the capture log for a specified domain in a dataset.
     rpc DomainSearch(DomainSearchRequest) returns (stream DomainSearchResult);

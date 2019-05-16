@@ -11,11 +11,11 @@ import (
 
 func domainidTagSearch() *cobra.Command {
 	var resume *string
-	var exact *bool
+	var basedomain *bool
 	cmd := &cobra.Command{
-		Use:     "domainidtagsearch key [value]",
+		Use:     "domidtag key [value]",
 		Aliases: []string{"didtag"},
-		Short:   "DomainID entries for a tag key, optionally limited by value",
+		Short:   "DomainID entries for a tag key, optionally limited by value and domain",
 		Args: func(cmd *cobra.Command, args []string) error {
 			if len(args) != 1 && len(args) != 2 {
 				return fmt.Errorf("Usage: %s", cmd.Use)
@@ -38,12 +38,12 @@ func domainidTagSearch() *cobra.Command {
 			}
 
 			r, err := c.DomainIDTagSearch(ctx, &dsetapi.DomainIDTagSearchRequest{
-				Dataset: viper.GetString("dset"),
-				Limit:   limit,
-				Key:     args[0],
-				Value:   value,
-				Resume:  *resume,
-				Exact:   *exact,
+				Dataset:    viper.GetString("dset"),
+				Limit:      limit,
+				Key:        args[0],
+				Value:      value,
+				Resume:     *resume,
+				Basedomain: *basedomain,
 			})
 			if err != nil {
 				return err
@@ -61,6 +61,9 @@ func domainidTagSearch() *cobra.Command {
 		},
 	}
 	resume = cmd.Flags().StringP("resume", "r", "", "Resume retrieval from a specified token")
-	exact = cmd.Flags().BoolP("exact", "x", false, "Return exact domain results, instead of TLD+1")
+	basedomain = cmd.Flags().BoolP(
+		"basedomain", "b", false,
+		"Return results for the base domain, rather than the exact domain",
+	)
 	return cmd
 }

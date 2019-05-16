@@ -11,9 +11,9 @@ import (
 
 func domainidRelated() *cobra.Command {
 	var resume *string
-	var exact *bool
+	var basedomain *bool
 	cmd := &cobra.Command{
-		Use:     "domainidrelated domain",
+		Use:     "domidrelated domain",
 		Aliases: []string{"didrelated"},
 		Short:   "Finds domains related through matching domain IDs",
 		Args: func(cmd *cobra.Command, args []string) error {
@@ -37,18 +37,18 @@ func domainidRelated() *cobra.Command {
 				key = args[1]
 			}
 
-			r, err := c.DomainIDsForDomain(ctx, &dsetapi.DomainIDsForDomainRequest{
-				Dataset: viper.GetString("dset"),
-				Limit:   limit,
-				Domain:  args[0],
-				Key:     key,
-				Resume:  *resume,
-				Exact:   *exact,
+			r, err := c.DomainIDDomainSearch(ctx, &dsetapi.DomainIDDomainSearchRequest{
+				Dataset:    viper.GetString("dset"),
+				Limit:      limit,
+				Domain:     args[0],
+				Key:        key,
+				Resume:     *resume,
+				Basedomain: *basedomain,
 			})
 			if err != nil {
 				return err
 			}
-			ids := []*dsetapi.DomainIDsForDomainResult{}
+			ids := []*dsetapi.DomainIDDomainSearchResult{}
 			for {
 				if v, err := r.Recv(); err != nil {
 					if err == io.EOF {
@@ -61,11 +61,11 @@ func domainidRelated() *cobra.Command {
 			}
 			for _, id := range ids {
 				r, err := c.DomainIDTagSearch(ctx, &dsetapi.DomainIDTagSearchRequest{
-					Dataset: viper.GetString("dset"),
-					Limit:   limit,
-					Key:     id.Key,
-					Value:   id.Value,
-					Exact:   *exact,
+					Dataset:    viper.GetString("dset"),
+					Limit:      limit,
+					Key:        id.Key,
+					Value:      id.Value,
+					Basedomain: *basedomain,
 				})
 				if err != nil {
 					return err
@@ -90,6 +90,9 @@ func domainidRelated() *cobra.Command {
 		},
 	}
 	resume = cmd.Flags().StringP("resume", "r", "", "Resume retrieval from a specified token")
-	exact = cmd.Flags().BoolP("exact", "x", false, "Return exact domain results, instead of TLD+1")
+	basedomain = cmd.Flags().BoolP(
+		"basedomain", "b", false,
+		"Return results for the base domain, rather than the exact domain",
+	)
 	return cmd
 }

@@ -54,20 +54,20 @@ class DsetStub(object):
         request_serializer=dsetapi_dot_dset__pb2.DomainHistoryRequest.SerializeToString,
         response_deserializer=dsetapi_dot_dset__pb2.DomainHistoryResult.FromString,
         )
-    self.DomainIDLog = channel.unary_stream(
-        '/io.netograph.dset.Dset/DomainIDLog',
-        request_serializer=dsetapi_dot_dset__pb2.DomainIDLogRequest.SerializeToString,
-        response_deserializer=dsetapi_dot_dset__pb2.DomainIDLogResult.FromString,
-        )
-    self.DomainIDsForDomain = channel.unary_stream(
-        '/io.netograph.dset.Dset/DomainIDsForDomain',
-        request_serializer=dsetapi_dot_dset__pb2.DomainIDsForDomainRequest.SerializeToString,
-        response_deserializer=dsetapi_dot_dset__pb2.DomainIDsForDomainResult.FromString,
+    self.DomainIDDomainSearch = channel.unary_stream(
+        '/io.netograph.dset.Dset/DomainIDDomainSearch',
+        request_serializer=dsetapi_dot_dset__pb2.DomainIDDomainSearchRequest.SerializeToString,
+        response_deserializer=dsetapi_dot_dset__pb2.DomainIDDomainSearchResult.FromString,
         )
     self.DomainIDTagSearch = channel.unary_stream(
         '/io.netograph.dset.Dset/DomainIDTagSearch',
         request_serializer=dsetapi_dot_dset__pb2.DomainIDTagSearchRequest.SerializeToString,
         response_deserializer=dsetapi_dot_dset__pb2.DomainIDTagSearchResult.FromString,
+        )
+    self.DomainIDCaptureTags = channel.unary_stream(
+        '/io.netograph.dset.Dset/DomainIDCaptureTags',
+        request_serializer=dsetapi_dot_dset__pb2.DomainIDCaptureTagsRequest.SerializeToString,
+        response_deserializer=dsetapi_dot_dset__pb2.DomainIDCaptureTagsResult.FromString,
         )
     self.DomainSearch = channel.unary_stream(
         '/io.netograph.dset.Dset/DomainSearch',
@@ -227,14 +227,7 @@ class DsetServicer(object):
     context.set_details('Method not implemented!')
     raise NotImplementedError('Method not implemented!')
 
-  def DomainIDLog(self, request, context):
-    """Retrieve the log of domain IDs added to the dataset, in reverse chronological order.
-    """
-    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-    context.set_details('Method not implemented!')
-    raise NotImplementedError('Method not implemented!')
-
-  def DomainIDsForDomain(self, request, context):
+  def DomainIDDomainSearch(self, request, context):
     """Search the domain ID registry for records matching a domain, restricted to an optional key.
     """
     context.set_code(grpc.StatusCode.UNIMPLEMENTED)
@@ -242,6 +235,13 @@ class DsetServicer(object):
     raise NotImplementedError('Method not implemented!')
 
   def DomainIDTagSearch(self, request, context):
+    """Search the domain ID registry domains matching tag key, with an optional value.
+    """
+    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+    context.set_details('Method not implemented!')
+    raise NotImplementedError('Method not implemented!')
+
+  def DomainIDCaptureTags(self, request, context):
     """Search the domain ID registry domains matching tag key, with an optional value.
     """
     context.set_code(grpc.StatusCode.UNIMPLEMENTED)
@@ -425,20 +425,20 @@ def add_DsetServicer_to_server(servicer, server):
           request_deserializer=dsetapi_dot_dset__pb2.DomainHistoryRequest.FromString,
           response_serializer=dsetapi_dot_dset__pb2.DomainHistoryResult.SerializeToString,
       ),
-      'DomainIDLog': grpc.unary_stream_rpc_method_handler(
-          servicer.DomainIDLog,
-          request_deserializer=dsetapi_dot_dset__pb2.DomainIDLogRequest.FromString,
-          response_serializer=dsetapi_dot_dset__pb2.DomainIDLogResult.SerializeToString,
-      ),
-      'DomainIDsForDomain': grpc.unary_stream_rpc_method_handler(
-          servicer.DomainIDsForDomain,
-          request_deserializer=dsetapi_dot_dset__pb2.DomainIDsForDomainRequest.FromString,
-          response_serializer=dsetapi_dot_dset__pb2.DomainIDsForDomainResult.SerializeToString,
+      'DomainIDDomainSearch': grpc.unary_stream_rpc_method_handler(
+          servicer.DomainIDDomainSearch,
+          request_deserializer=dsetapi_dot_dset__pb2.DomainIDDomainSearchRequest.FromString,
+          response_serializer=dsetapi_dot_dset__pb2.DomainIDDomainSearchResult.SerializeToString,
       ),
       'DomainIDTagSearch': grpc.unary_stream_rpc_method_handler(
           servicer.DomainIDTagSearch,
           request_deserializer=dsetapi_dot_dset__pb2.DomainIDTagSearchRequest.FromString,
           response_serializer=dsetapi_dot_dset__pb2.DomainIDTagSearchResult.SerializeToString,
+      ),
+      'DomainIDCaptureTags': grpc.unary_stream_rpc_method_handler(
+          servicer.DomainIDCaptureTags,
+          request_deserializer=dsetapi_dot_dset__pb2.DomainIDCaptureTagsRequest.FromString,
+          response_serializer=dsetapi_dot_dset__pb2.DomainIDCaptureTagsResult.SerializeToString,
       ),
       'DomainSearch': grpc.unary_stream_rpc_method_handler(
           servicer.DomainSearch,

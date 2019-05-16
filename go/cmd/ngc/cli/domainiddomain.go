@@ -9,15 +9,15 @@ import (
 	"github.com/spf13/viper"
 )
 
-func domainidsForDomain() *cobra.Command {
+func domainidDomainSearch() *cobra.Command {
 	var resume *string
-	var exact *bool
+	var basedomain *bool
 	cmd := &cobra.Command{
-		Use:     "domainidsfordomain domain [key]",
+		Use:     "domiddomain domain [key] [value]",
 		Aliases: []string{"diddom"},
-		Short:   "DomainID entries for a domain, optionally limited by key",
+		Short:   "DomainID entries for a domain, optionally limited by key and value",
 		Args: func(cmd *cobra.Command, args []string) error {
-			if len(args) != 1 && len(args) != 2 {
+			if len(args) != 1 && len(args) != 2 && len(args) != 3 {
 				return fmt.Errorf("Usage: %s", cmd.Use)
 			}
 			return nil
@@ -37,13 +37,19 @@ func domainidsForDomain() *cobra.Command {
 				key = args[1]
 			}
 
-			r, err := c.DomainIDsForDomain(ctx, &dsetapi.DomainIDsForDomainRequest{
-				Dataset: viper.GetString("dset"),
-				Limit:   limit,
-				Domain:  args[0],
-				Key:     key,
-				Resume:  *resume,
-				Exact:   *exact,
+			value := ""
+			if len(args) == 3 {
+				value = args[2]
+			}
+
+			r, err := c.DomainIDDomainSearch(ctx, &dsetapi.DomainIDDomainSearchRequest{
+				Dataset:    viper.GetString("dset"),
+				Limit:      limit,
+				Domain:     args[0],
+				Key:        key,
+				Value:      value,
+				Resume:     *resume,
+				Basedomain: *basedomain,
 			})
 			if err != nil {
 				return err
@@ -61,6 +67,9 @@ func domainidsForDomain() *cobra.Command {
 		},
 	}
 	resume = cmd.Flags().StringP("resume", "r", "", "Resume retrieval from a specified token")
-	exact = cmd.Flags().BoolP("exact", "x", false, "Return exact domain results, instead of TLD+1")
+	basedomain = cmd.Flags().BoolP(
+		"basedomain", "b", false,
+		"Return results for the base domain, rather than the exact domain",
+	)
 	return cmd
 }
