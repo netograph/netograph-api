@@ -13,5 +13,6 @@ var ToolRootCmd = &cobra.Command{
 func init() {
 	ToolRootCmd.AddCommand(
 		domainidRelated(),
+		discoverIPsCommand(),
 	)
 }
