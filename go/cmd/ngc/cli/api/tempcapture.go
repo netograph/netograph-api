@@ -25,7 +25,7 @@ func tempCaptureCommand() *cobra.Command {
 			return nil
 		},
 		RunE: func(cmd *cobra.Command, args []string) error {
-			c, ctx, err := connectUser()
+			c, ctx, err := utils.ConnectUser()
 			if err != nil {
 				return err
 			}

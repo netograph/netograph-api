@@ -7,6 +7,7 @@ import (
 	"time"
 
 	"github.com/briandowns/spinner"
+	"github.com/netograph/netograph-api/go/cmd/ngc/cli/utils"
 	"github.com/netograph/netograph-api/go/proto/ngapi/dsetapi"
 	"github.com/spf13/cobra"
 	"github.com/spf13/viper"
@@ -26,7 +27,7 @@ func downloadCommand() *cobra.Command {
 			return nil
 		},
 		RunE: func(cmd *cobra.Command, args []string) error {
-			c, ctx, err := connectDset()
+			c, ctx, err := utils.ConnectDset()
 			if err != nil {
 				return err
 			}

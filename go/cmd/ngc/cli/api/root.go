@@ -21,7 +21,6 @@ func init() {
 		datasetsCommand(),
 		domainHistoryCommand(),
 		domainidDomainSearch(),
-		domainidRelated(),
 		domainidTagSearch(),
 		domainSearchCommand(),
 		domainsForIPCommand(),

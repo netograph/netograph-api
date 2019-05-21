@@ -1,4 +1,4 @@
-package api
+package utils
 
 import (
 	"context"
@@ -14,7 +14,7 @@ import (
 	"google.golang.org/grpc/metadata"
 )
 
-func connect() (*grpc.ClientConn, context.Context, error) {
+func Connect() (*grpc.ClientConn, context.Context, error) {
 	tlsconf := &tls.Config{
 		ServerName: "grpc.netograph.io",
 	}
@@ -39,16 +39,16 @@ func connect() (*grpc.ClientConn, context.Context, error) {
 	return conn, ctx, nil
 }
 
-func connectUser() (userapi.UserClient, context.Context, error) {
-	conn, ctx, err := connect()
+func ConnectUser() (userapi.UserClient, context.Context, error) {
+	conn, ctx, err := Connect()
 	if err != nil {
 		return nil, nil, err
 	}
 	return userapi.NewUserClient(conn), ctx, nil
 }
 
-func connectDset() (dsetapi.DsetClient, context.Context, error) {
-	conn, ctx, err := connect()
+func ConnectDset() (dsetapi.DsetClient, context.Context, error) {
+	conn, ctx, err := Connect()
 	if err != nil {
 		return nil, nil, err
 	}

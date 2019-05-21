@@ -48,7 +48,7 @@ func certSearchCommand() *cobra.Command {
 			return nil
 		},
 		RunE: func(cmd *cobra.Command, args []string) error {
-			c, ctx, err := connectDset()
+			c, ctx, err := utils.ConnectDset()
 			if err != nil {
 				return err
 			}
