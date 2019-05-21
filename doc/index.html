@@ -271,14 +271,6 @@
                 </li>
               
                 <li>
-                  <a href="#io.netograph.dset.CertDomainStatsRequest"><span class="badge">M</span>CertDomainStatsRequest</a>
-                </li>
-              
-                <li>
-                  <a href="#io.netograph.dset.CertDomainStatsResult"><span class="badge">M</span>CertDomainStatsResult</a>
-                </li>
-              
-                <li>
                   <a href="#io.netograph.dset.CertIPSearchRequest"><span class="badge">M</span>CertIPSearchRequest</a>
                 </li>
               
@@ -292,6 +284,14 @@
               
                 <li>
                   <a href="#io.netograph.dset.CertSearchResult"><span class="badge">M</span>CertSearchResult</a>
+                </li>
+              
+                <li>
+                  <a href="#io.netograph.dset.CertValidNamesSearchRequest"><span class="badge">M</span>CertValidNamesSearchRequest</a>
+                </li>
+              
+                <li>
+                  <a href="#io.netograph.dset.CertValidNamesSearchResult"><span class="badge">M</span>CertValidNamesSearchResult</a>
                 </li>
               
                 <li>
@@ -1496,6 +1496,14 @@ e.g. &#34;$rt.com&#34;. </p></td>
                 </tr>
               
                 <tr>
+                  <td>basedomain</td>
+                  <td><a href="#bool">bool</a></td>
+                  <td></td>
+                  <td><p>If true, results for the base domain is returned. Otherwise, the
+result for the exact domain is returned. </p></td>
+                </tr>
+              
+                <tr>
                   <td>limit</td>
                   <td><a href="#int64">int64</a></td>
                   <td></td>
@@ -1555,79 +1563,17 @@ results. </p></td>
                 </tr>
               
                 <tr>
-                  <td>time</td>
-                  <td><a href="#google.protobuf.Timestamp">google.protobuf.Timestamp</a></td>
+                  <td>latestcapture</td>
+                  <td><a href="#io.netograph.dset.CapSummary">CapSummary</a></td>
                   <td></td>
-                  <td><p> </p></td>
-                </tr>
-              
-            </tbody>
-          </table>
-        
-
-        
-      
-        <h3 id="io.netograph.dset.CertDomainStatsRequest">CertDomainStatsRequest</h3>
-        <p></p>
-
-        
-          <table class="field-table">
-            <thead>
-              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
-            </thead>
-            <tbody>
-              
-                <tr>
-                  <td>dataset</td>
-                  <td><a href="#string">string</a></td>
-                  <td></td>
-                  <td><p>The name of the dataset to query. </p></td>
+                  <td><p>The most recent capture where this cert was observed. </p></td>
                 </tr>
               
                 <tr>
-                  <td>query</td>
-                  <td><a href="#string">string</a></td>
+                  <td>firstcapture</td>
+                  <td><a href="#io.netograph.dset.CapSummary">CapSummary</a></td>
                   <td></td>
-                  <td><p>A domain query. This is a domain prefix, which will return results for
-all relevant subdomains. To search for an exact domain, prefix with &#34;$&#34; -
-e.g. &#34;$rt.com&#34;. </p></td>
-                </tr>
-              
-            </tbody>
-          </table>
-        
-
-        
-      
-        <h3 id="io.netograph.dset.CertDomainStatsResult">CertDomainStatsResult</h3>
-        <p></p>
-
-        
-          <table class="field-table">
-            <thead>
-              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
-            </thead>
-            <tbody>
-              
-                <tr>
-                  <td>domains</td>
-                  <td><a href="#uint64">uint64</a></td>
-                  <td></td>
-                  <td><p>Number of matching subdomains </p></td>
-                </tr>
-              
-                <tr>
-                  <td>certs</td>
-                  <td><a href="#uint64">uint64</a></td>
-                  <td></td>
-                  <td><p>Number of certificates at all matching subdomains </p></td>
-                </tr>
-              
-                <tr>
-                  <td>certshere</td>
-                  <td><a href="#uint64">uint64</a></td>
-                  <td></td>
-                  <td><p>Number of certificates at this exact domain </p></td>
+                  <td><p>The first capture where this cert was observed. </p></td>
                 </tr>
               
             </tbody>
@@ -1705,18 +1651,17 @@ e.g. &#34;$rt.com&#34;. </p></td>
                 </tr>
               
                 <tr>
-                  <td>domain</td>
-                  <td><a href="#string">string</a></td>
+                  <td>latestcapture</td>
+                  <td><a href="#io.netograph.dset.CapSummary">CapSummary</a></td>
                   <td></td>
-                  <td><p> </p></td>
+                  <td><p>The most recent capture where this tag was observed. </p></td>
                 </tr>
               
                 <tr>
-                  <td>resume</td>
-                  <td><a href="#string">string</a></td>
+                  <td>firstcapture</td>
+                  <td><a href="#io.netograph.dset.CapSummary">CapSummary</a></td>
                   <td></td>
-                  <td><p>A resumption token that can be passed to an identical query to resume
-results. </p></td>
+                  <td><p>The first capture where this tag was observed. </p></td>
                 </tr>
               
                 <tr>
@@ -1727,10 +1672,11 @@ results. </p></td>
                 </tr>
               
                 <tr>
-                  <td>time</td>
-                  <td><a href="#google.protobuf.Timestamp">google.protobuf.Timestamp</a></td>
+                  <td>resume</td>
+                  <td><a href="#string">string</a></td>
                   <td></td>
-                  <td><p> </p></td>
+                  <td><p>A resumption token that can be passed to an identical query to resume
+results. </p></td>
                 </tr>
               
             </tbody>
@@ -1820,6 +1766,98 @@ results. </p></td>
                   <td><a href="#google.protobuf.Timestamp">google.protobuf.Timestamp</a></td>
                   <td></td>
                   <td><p> </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+        
+
+        
+      
+        <h3 id="io.netograph.dset.CertValidNamesSearchRequest">CertValidNamesSearchRequest</h3>
+        <p></p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>dataset</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p>The name of the dataset to query. </p></td>
+                </tr>
+              
+                <tr>
+                  <td>query</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p>A domain query. This is a domain prefix, which will return results for
+all relevant subdomains. To search for an exact domain, prefix with &#34;$&#34; -
+e.g. &#34;$rt.com&#34;. Wildcard notation is permitted to match wildcard valid
+names - e.g. &#34;*.google.com&#34;. </p></td>
+                </tr>
+              
+                <tr>
+                  <td>limit</td>
+                  <td><a href="#int64">int64</a></td>
+                  <td></td>
+                  <td><p>Limit the number of records that will be returned. </p></td>
+                </tr>
+              
+                <tr>
+                  <td>resume</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p>A resumption token, previously returned by an identical query. </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+        
+
+        
+      
+        <h3 id="io.netograph.dset.CertValidNamesSearchResult">CertValidNamesSearchResult</h3>
+        <p></p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>domain</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>cert</td>
+                  <td><a href="#io.netograph.dset.Cert">Cert</a></td>
+                  <td></td>
+                  <td><p>A matching certificate. </p></td>
+                </tr>
+              
+                <tr>
+                  <td>chain</td>
+                  <td><a href="#string">string</a></td>
+                  <td>repeated</td>
+                  <td><p>Fingerprints for certificates in the chain. </p></td>
+                </tr>
+              
+                <tr>
+                  <td>resume</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p>A resumption token that can be passed to an identical query to resume
+results. </p></td>
                 </tr>
               
             </tbody>
@@ -4102,14 +4140,7 @@ results. </p></td>
                 <td>CertDomainSearch</td>
                 <td><a href="#io.netograph.dset.CertDomainSearchRequest">CertDomainSearchRequest</a></td>
                 <td><a href="#io.netograph.dset.CertDomainSearchResult">CertDomainSearchResult</a> stream</td>
-                <td><p>Retrieve certificates for a specified domain query.</p></td>
-              </tr>
-            
-              <tr>
-                <td>CertDomainStats</td>
-                <td><a href="#io.netograph.dset.CertDomainStatsRequest">CertDomainStatsRequest</a></td>
-                <td><a href="#io.netograph.dset.CertDomainStatsResult">CertDomainStatsResult</a></td>
-                <td><p>Retrieve certificate statistics for a specified domain query.</p></td>
+                <td><p>Retrieve certificates that by the domain on which they were observed.</p></td>
               </tr>
             
               <tr>
@@ -4124,6 +4155,13 @@ results. </p></td>
                 <td><a href="#io.netograph.dset.CertSearchRequest">CertSearchRequest</a></td>
                 <td><a href="#io.netograph.dset.CertSearchResult">CertSearchResult</a> stream</td>
                 <td><p>Retrieve certificates based on a field query.</p></td>
+              </tr>
+            
+              <tr>
+                <td>CertValidNamesSearch</td>
+                <td><a href="#io.netograph.dset.CertValidNamesSearchRequest">CertValidNamesSearchRequest</a></td>
+                <td><a href="#io.netograph.dset.CertValidNamesSearchResult">CertValidNamesSearchResult</a> stream</td>
+                <td><p>Retrieve certificates based on a query over valid domain names. This includes the certificate common name, and all Subject Alternate Name fields.</p></td>
               </tr>
             
               <tr>

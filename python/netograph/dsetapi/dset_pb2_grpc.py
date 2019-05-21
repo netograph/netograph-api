@@ -34,11 +34,6 @@ class DsetStub(object):
         request_serializer=dsetapi_dot_dset__pb2.CertDomainSearchRequest.SerializeToString,
         response_deserializer=dsetapi_dot_dset__pb2.CertDomainSearchResult.FromString,
         )
-    self.CertDomainStats = channel.unary_unary(
-        '/io.netograph.dset.Dset/CertDomainStats',
-        request_serializer=dsetapi_dot_dset__pb2.CertDomainStatsRequest.SerializeToString,
-        response_deserializer=dsetapi_dot_dset__pb2.CertDomainStatsResult.FromString,
-        )
     self.CertIPSearch = channel.unary_stream(
         '/io.netograph.dset.Dset/CertIPSearch',
         request_serializer=dsetapi_dot_dset__pb2.CertIPSearchRequest.SerializeToString,
@@ -48,6 +43,11 @@ class DsetStub(object):
         '/io.netograph.dset.Dset/CertSearch',
         request_serializer=dsetapi_dot_dset__pb2.CertSearchRequest.SerializeToString,
         response_deserializer=dsetapi_dot_dset__pb2.CertSearchResult.FromString,
+        )
+    self.CertValidNamesSearch = channel.unary_stream(
+        '/io.netograph.dset.Dset/CertValidNamesSearch',
+        request_serializer=dsetapi_dot_dset__pb2.CertValidNamesSearchRequest.SerializeToString,
+        response_deserializer=dsetapi_dot_dset__pb2.CertValidNamesSearchResult.FromString,
         )
     self.DomainHistory = channel.unary_stream(
         '/io.netograph.dset.Dset/DomainHistory',
@@ -192,14 +192,7 @@ class DsetServicer(object):
     raise NotImplementedError('Method not implemented!')
 
   def CertDomainSearch(self, request, context):
-    """Retrieve certificates for a specified domain query.
-    """
-    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-    context.set_details('Method not implemented!')
-    raise NotImplementedError('Method not implemented!')
-
-  def CertDomainStats(self, request, context):
-    """Retrieve certificate statistics for a specified domain query.
+    """Retrieve certificates that by the domain on which they were observed.
     """
     context.set_code(grpc.StatusCode.UNIMPLEMENTED)
     context.set_details('Method not implemented!')
@@ -214,6 +207,13 @@ class DsetServicer(object):
 
   def CertSearch(self, request, context):
     """Retrieve certificates based on a field query.
+    """
+    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+    context.set_details('Method not implemented!')
+    raise NotImplementedError('Method not implemented!')
+
+  def CertValidNamesSearch(self, request, context):
+    """Retrieve certificates based on a query over valid domain names. This includes the certificate common name, and all Subject Alternate Name fields.
     """
     context.set_code(grpc.StatusCode.UNIMPLEMENTED)
     context.set_details('Method not implemented!')
@@ -405,11 +405,6 @@ def add_DsetServicer_to_server(servicer, server):
           request_deserializer=dsetapi_dot_dset__pb2.CertDomainSearchRequest.FromString,
           response_serializer=dsetapi_dot_dset__pb2.CertDomainSearchResult.SerializeToString,
       ),
-      'CertDomainStats': grpc.unary_unary_rpc_method_handler(
-          servicer.CertDomainStats,
-          request_deserializer=dsetapi_dot_dset__pb2.CertDomainStatsRequest.FromString,
-          response_serializer=dsetapi_dot_dset__pb2.CertDomainStatsResult.SerializeToString,
-      ),
       'CertIPSearch': grpc.unary_stream_rpc_method_handler(
           servicer.CertIPSearch,
           request_deserializer=dsetapi_dot_dset__pb2.CertIPSearchRequest.FromString,
@@ -419,6 +414,11 @@ def add_DsetServicer_to_server(servicer, server):
           servicer.CertSearch,
           request_deserializer=dsetapi_dot_dset__pb2.CertSearchRequest.FromString,
           response_serializer=dsetapi_dot_dset__pb2.CertSearchResult.SerializeToString,
+      ),
+      'CertValidNamesSearch': grpc.unary_stream_rpc_method_handler(
+          servicer.CertValidNamesSearch,
+          request_deserializer=dsetapi_dot_dset__pb2.CertValidNamesSearchRequest.FromString,
+          response_serializer=dsetapi_dot_dset__pb2.CertValidNamesSearchResult.SerializeToString,
       ),
       'DomainHistory': grpc.unary_stream_rpc_method_handler(
           servicer.DomainHistory,

@@ -27,12 +27,12 @@
     - [Cert.PublickeyEntry](#io.netograph.dset.Cert.PublickeyEntry)
     - [CertDomainSearchRequest](#io.netograph.dset.CertDomainSearchRequest)
     - [CertDomainSearchResult](#io.netograph.dset.CertDomainSearchResult)
-    - [CertDomainStatsRequest](#io.netograph.dset.CertDomainStatsRequest)
-    - [CertDomainStatsResult](#io.netograph.dset.CertDomainStatsResult)
     - [CertIPSearchRequest](#io.netograph.dset.CertIPSearchRequest)
     - [CertIPSearchResult](#io.netograph.dset.CertIPSearchResult)
     - [CertSearchRequest](#io.netograph.dset.CertSearchRequest)
     - [CertSearchResult](#io.netograph.dset.CertSearchResult)
+    - [CertValidNamesSearchRequest](#io.netograph.dset.CertValidNamesSearchRequest)
+    - [CertValidNamesSearchResult](#io.netograph.dset.CertValidNamesSearchResult)
     - [DomainHistoryRequest](#io.netograph.dset.DomainHistoryRequest)
     - [DomainHistoryResult](#io.netograph.dset.DomainHistoryResult)
     - [DomainIDCaptureTagsRequest](#io.netograph.dset.DomainIDCaptureTagsRequest)
@@ -501,6 +501,7 @@ final resting URL.
 | ----- | ---- | ----- | ----------- |
 | dataset | [string](#string) |  | The name of the dataset to query. |
 | query | [string](#string) |  | A domain query. This is a domain prefix, which will return results for all relevant subdomains. To search for an exact domain, prefix with &#34;$&#34; - e.g. &#34;$rt.com&#34;. |
+| basedomain | [bool](#bool) |  | If true, results for the base domain is returned. Otherwise, the result for the exact domain is returned. |
 | limit | [int64](#int64) |  | Limit the number of records that will be returned. |
 | resume | [string](#string) |  | A resumption token, previously returned by an identical query. |
 
@@ -521,40 +522,8 @@ final resting URL.
 | resume | [string](#string) |  | A resumption token that can be passed to an identical query to resume results. |
 | cert | [Cert](#io.netograph.dset.Cert) |  | A matching certificate. |
 | chain | [string](#string) | repeated | Fingerprints for certificates in the chain. |
-| time | [google.protobuf.Timestamp](#google.protobuf.Timestamp) |  |  |
-
-
-
-
-
-
-<a name="io.netograph.dset.CertDomainStatsRequest"></a>
-
-### CertDomainStatsRequest
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| dataset | [string](#string) |  | The name of the dataset to query. |
-| query | [string](#string) |  | A domain query. This is a domain prefix, which will return results for all relevant subdomains. To search for an exact domain, prefix with &#34;$&#34; - e.g. &#34;$rt.com&#34;. |
-
-
-
-
-
-
-<a name="io.netograph.dset.CertDomainStatsResult"></a>
-
-### CertDomainStatsResult
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| domains | [uint64](#uint64) |  | Number of matching subdomains |
-| certs | [uint64](#uint64) |  | Number of certificates at all matching subdomains |
-| certshere | [uint64](#uint64) |  | Number of certificates at this exact domain |
+| latestcapture | [CapSummary](#io.netograph.dset.CapSummary) |  | The most recent capture where this cert was observed. |
+| firstcapture | [CapSummary](#io.netograph.dset.CapSummary) |  | The first capture where this cert was observed. |
 
 
 
@@ -589,10 +558,10 @@ final resting URL.
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | ip | [string](#string) |  |  |
-| domain | [string](#string) |  |  |
-| resume | [string](#string) |  | A resumption token that can be passed to an identical query to resume results. |
+| latestcapture | [CapSummary](#io.netograph.dset.CapSummary) |  | The most recent capture where this tag was observed. |
+| firstcapture | [CapSummary](#io.netograph.dset.CapSummary) |  | The first capture where this tag was observed. |
 | cert | [Cert](#io.netograph.dset.Cert) |  | The latest capture relevant to this result. |
-| time | [google.protobuf.Timestamp](#google.protobuf.Timestamp) |  |  |
+| resume | [string](#string) |  | A resumption token that can be passed to an identical query to resume results. |
 
 
 
@@ -629,6 +598,42 @@ final resting URL.
 | resume | [string](#string) |  | A resumption token that can be passed to an identical query to resume results. |
 | cert | [Cert](#io.netograph.dset.Cert) |  | The latest capture relevant to this result. |
 | time | [google.protobuf.Timestamp](#google.protobuf.Timestamp) |  |  |
+
+
+
+
+
+
+<a name="io.netograph.dset.CertValidNamesSearchRequest"></a>
+
+### CertValidNamesSearchRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| dataset | [string](#string) |  | The name of the dataset to query. |
+| query | [string](#string) |  | A domain query. This is a domain prefix, which will return results for all relevant subdomains. To search for an exact domain, prefix with &#34;$&#34; - e.g. &#34;$rt.com&#34;. Wildcard notation is permitted to match wildcard valid names - e.g. &#34;*.google.com&#34;. |
+| limit | [int64](#int64) |  | Limit the number of records that will be returned. |
+| resume | [string](#string) |  | A resumption token, previously returned by an identical query. |
+
+
+
+
+
+
+<a name="io.netograph.dset.CertValidNamesSearchResult"></a>
+
+### CertValidNamesSearchResult
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| domain | [string](#string) |  |  |
+| cert | [Cert](#io.netograph.dset.Cert) |  | A matching certificate. |
+| chain | [string](#string) | repeated | Fingerprints for certificates in the chain. |
+| resume | [string](#string) |  | A resumption token that can be passed to an identical query to resume results. |
 
 
 
@@ -1539,10 +1544,10 @@ Methods that operate on an individual dataset, either public or private.
 | SubmitCapture | [SubmitCaptureRequest](#io.netograph.dset.SubmitCaptureRequest) | [SubmitCaptureResult](#io.netograph.dset.SubmitCaptureResult) | Submit a capture request to a dataset. |
 | CaptureInfo | [CaptureInfoRequest](#io.netograph.dset.CaptureInfoRequest) | [CaptureInfoResult](#io.netograph.dset.CaptureInfoResult) | Retrieve info for a specified capture by ID within a dataset. |
 | CaptureLog | [CaptureLogRequest](#io.netograph.dset.CaptureLogRequest) | [CaptureLogResult](#io.netograph.dset.CaptureLogResult) stream | Retrieve the capture log for a dataset, in reverse chronological order. |
-| CertDomainSearch | [CertDomainSearchRequest](#io.netograph.dset.CertDomainSearchRequest) | [CertDomainSearchResult](#io.netograph.dset.CertDomainSearchResult) stream | Retrieve certificates for a specified domain query. |
-| CertDomainStats | [CertDomainStatsRequest](#io.netograph.dset.CertDomainStatsRequest) | [CertDomainStatsResult](#io.netograph.dset.CertDomainStatsResult) | Retrieve certificate statistics for a specified domain query. |
+| CertDomainSearch | [CertDomainSearchRequest](#io.netograph.dset.CertDomainSearchRequest) | [CertDomainSearchResult](#io.netograph.dset.CertDomainSearchResult) stream | Retrieve certificates that by the domain on which they were observed. |
 | CertIPSearch | [CertIPSearchRequest](#io.netograph.dset.CertIPSearchRequest) | [CertIPSearchResult](#io.netograph.dset.CertIPSearchResult) stream | Retrieve certificates for a specified IP query. |
 | CertSearch | [CertSearchRequest](#io.netograph.dset.CertSearchRequest) | [CertSearchResult](#io.netograph.dset.CertSearchResult) stream | Retrieve certificates based on a field query. |
+| CertValidNamesSearch | [CertValidNamesSearchRequest](#io.netograph.dset.CertValidNamesSearchRequest) | [CertValidNamesSearchResult](#io.netograph.dset.CertValidNamesSearchResult) stream | Retrieve certificates based on a query over valid domain names. This includes the certificate common name, and all Subject Alternate Name fields. |
 | DomainHistory | [DomainHistoryRequest](#io.netograph.dset.DomainHistoryRequest) | [DomainHistoryResult](#io.netograph.dset.DomainHistoryResult) stream | Retrieve the capture history for a specified domain. The length of this history is capped at ~100. |
 | DomainIDDomainSearch | [DomainIDDomainSearchRequest](#io.netograph.dset.DomainIDDomainSearchRequest) | [DomainIDDomainSearchResult](#io.netograph.dset.DomainIDDomainSearchResult) stream | Search the domain ID registry for records matching a domain, restricted to an optional key. |
 | DomainIDTagSearch | [DomainIDTagSearchRequest](#io.netograph.dset.DomainIDTagSearchRequest) | [DomainIDTagSearchResult](#io.netograph.dset.DomainIDTagSearchResult) stream | Search the domain ID registry domains matching tag key, with an optional value. |
