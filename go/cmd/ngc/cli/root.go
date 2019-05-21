@@ -3,6 +3,7 @@ package cli
 import (
 	"fmt"
 
+	"github.com/netograph/netograph-api/go/cmd/ngc/cli/api"
 	"github.com/spf13/cobra"
 	"github.com/spf13/viper"
 )
@@ -25,40 +26,7 @@ var versionCommand = &cobra.Command{
 
 func init() {
 	RootCmd.AddCommand(
-		captureInfoCommand(),
-		captureLogCommand(),
-		certSearchCommand(),
-		certDomainCommand(),
-		certIPCommand(),
-		certValidNamesCommand(),
-		datasetsCommand(),
-		domainHistoryCommand(),
-		domainidDomainSearch(),
-		domainidRelated(),
-		domainidTagSearch(),
-		domainSearchCommand(),
-		domainsForIPCommand(),
-		downloadCommand(),
-		ipSearchCommand(),
-		ipsForDomainCommand(),
-		ipHistoryCommand(),
-		ipLogSearchCommand(),
-		metaForCaptureCommand(),
-		metaSearchCommand(),
-		policiesForRootCommand(),
-		policyDomainCaptures(),
-		policyStatsCommand(),
-		policyURLCapturesCommand(),
-		redirsByDestinationCommand(),
-		redirsBySourceCommand(),
-		rootLogSearchCommand(),
-		rootsForSatelliteCommand(),
-		satelliteLogSearchCommand(),
-		satellitesForRootCommand(),
-		submitCaptureCommand(),
-		tempCaptureCommand(),
-		tempDownloadCommand(),
-		urlLogSearchCommand(),
+		api.APIRootCmd,
 		versionCommand,
 	)
 	viper.AutomaticEnv()
