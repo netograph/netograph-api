@@ -47,11 +47,13 @@ func fetchCertNames(
 			}
 			return nil, err
 		} else {
-			for _, i := range v.Cert.Dnsnames {
-				if i[0] == '*' {
-					i = i[2:]
+			if !v.Cert.Analysis.Isshared {
+				for _, i := range v.Cert.Dnsnames {
+					if i[0] == '*' {
+						i = i[2:]
+					}
+					names[i] = true
 				}
-				names[i] = true
 			}
 		}
 	}

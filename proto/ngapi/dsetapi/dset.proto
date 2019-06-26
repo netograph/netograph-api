@@ -6,6 +6,12 @@ option go_package = "dsetapi";
 
 
 message Cert {
+    // Analysis annotations for this certificate
+    message Analysis {
+        // Is this certificate likely to be shared with other
+        // organizations? This is common with CDNs.
+        bool isshared = 1;
+    }
     message BasicConstraints {
         bool isca = 1;
         int64 maxpathlen = 2;
@@ -58,6 +64,7 @@ message Cert {
     DistinguishedName subject = 22;
     string subjectkeyid = 23;
     int64 version = 24;
+    Analysis analysis = 25;
 }
 
 
@@ -627,6 +634,8 @@ message SubmitCaptureRequest {
     string zone = 6;
     // Extended capture includes full-page screenshot and page content formats
     bool extended = 7;
+    // Skip capture if we've seen the domain for this URL within a specified number of seconds
+    int64 skiprecentdomain = 8;
 }
 message SubmitCaptureResult {
     // A URL under which capture assets may be found

@@ -20,6 +20,7 @@
     - [CaptureTextResult.Rectangle](#io.netograph.dset.CaptureTextResult.Rectangle)
     - [CaptureTextResult.TextNode](#io.netograph.dset.CaptureTextResult.TextNode)
     - [Cert](#io.netograph.dset.Cert)
+    - [Cert.Analysis](#io.netograph.dset.Cert.Analysis)
     - [Cert.BasicConstraints](#io.netograph.dset.Cert.BasicConstraints)
     - [Cert.DistinguishedName](#io.netograph.dset.Cert.DistinguishedName)
     - [Cert.Extension](#io.netograph.dset.Cert.Extension)
@@ -397,6 +398,22 @@ final resting URL.
 | subject | [Cert.DistinguishedName](#io.netograph.dset.Cert.DistinguishedName) |  |  |
 | subjectkeyid | [string](#string) |  |  |
 | version | [int64](#int64) |  |  |
+| analysis | [Cert.Analysis](#io.netograph.dset.Cert.Analysis) |  |  |
+
+
+
+
+
+
+<a name="io.netograph.dset.Cert.Analysis"></a>
+
+### Cert.Analysis
+Analysis annotations for this certificate
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| isshared | [bool](#bool) |  | Is this certificate likely to be shared with other organizations? This is common with CDNs. |
 
 
 
@@ -1470,6 +1487,7 @@ Metadata is arbitrary information associated with a capture.
 | skiprecent | [int64](#int64) |  | Skip capture if we&#39;ve seen this exact URL within a specified number of seconds |
 | zone | [string](#string) |  | Capture zone - &#34;us&#34; or &#34;eu&#34;. If unspecified, we choose based on availability. |
 | extended | [bool](#bool) |  | Extended capture includes full-page screenshot and page content formats |
+| skiprecentdomain | [int64](#int64) |  | Skip capture if we&#39;ve seen the domain for this URL within a specified number of seconds |
 
 
 
