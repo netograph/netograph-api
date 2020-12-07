@@ -12,6 +12,7 @@ var APIRootCmd = &cobra.Command{
 
 func init() {
 	APIRootCmd.AddCommand(
+		captureCommand(),
 		captureInfoCommand(),
 		captureLogCommand(),
 		certSearchCommand(),
