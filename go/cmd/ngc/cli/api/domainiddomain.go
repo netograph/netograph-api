@@ -1,7 +1,6 @@
 package api
 
 import (
-	"fmt"
 	"io"
 
 	"github.com/netograph/netograph-api/go/cmd/ngc/cli/utils"
@@ -17,12 +16,7 @@ func domainidDomainSearch() *cobra.Command {
 		Use:     "domiddomain domain [key] [value]",
 		Aliases: []string{"diddom"},
 		Short:   "DomainID entries for a domain, optionally limited by key and value",
-		Args: func(cmd *cobra.Command, args []string) error {
-			if len(args) != 1 && len(args) != 2 && len(args) != 3 {
-				return fmt.Errorf("Usage: %s", cmd.Use)
-			}
-			return nil
-		},
+		Args:    cobra.RangeArgs(1, 3),
 		RunE: func(cmd *cobra.Command, args []string) error {
 			c, ctx, err := utils.ConnectDset()
 			if err != nil {

@@ -1,7 +1,6 @@
 package api
 
 import (
-	"fmt"
 	"io"
 
 	"github.com/netograph/netograph-api/go/cmd/ngc/cli/utils"
@@ -15,12 +14,7 @@ func ipHistoryCommand() *cobra.Command {
 		Use:     "iphistory address",
 		Aliases: []string{"iphist"},
 		Short:   "Capture history for an IP address",
-		Args: func(cmd *cobra.Command, args []string) error {
-			if len(args) != 1 {
-				return fmt.Errorf("Usage: %s", cmd.Use)
-			}
-			return nil
-		},
+		Args:    cobra.ExactArgs(1),
 		RunE: func(cmd *cobra.Command, args []string) error {
 			c, ctx, err := utils.ConnectDset()
 			if err != nil {

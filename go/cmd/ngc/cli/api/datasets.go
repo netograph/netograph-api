@@ -12,6 +12,7 @@ func datasetsCommand() *cobra.Command {
 	cmd := &cobra.Command{
 		Use:     "datasets",
 		Aliases: []string{"dsets"},
+		Args:    cobra.NoArgs,
 		Short:   "List all available datasets",
 		RunE: func(cmd *cobra.Command, args []string) error {
 			c, ctx, err := utils.ConnectUser()

@@ -100,12 +100,7 @@ func discoverIPsCommand() *cobra.Command {
 		Use:     "discoverips domain",
 		Aliases: []string{"discips"},
 		Short:   "Uses certificate data to discover IPs owned by an entity",
-		Args: func(cmd *cobra.Command, args []string) error {
-			if len(args) < 1 {
-				return fmt.Errorf("Usage: %s", cmd.Use)
-			}
-			return nil
-		},
+		Args:    cobra.ExactArgs(1),
 		RunE: func(cmd *cobra.Command, args []string) error {
 			c, ctx, err := utils.ConnectDset()
 			if err != nil {

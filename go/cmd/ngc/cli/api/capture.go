@@ -18,12 +18,7 @@ func captureCommand() *cobra.Command {
 	cmd := &cobra.Command{
 		Use:   "capture url [url...]",
 		Short: "Bulk request captures. Assets expire in 24 hours",
-		Args: func(cmd *cobra.Command, args []string) error {
-			if len(args) < 1 {
-				return fmt.Errorf("Usage: %s", cmd.Use)
-			}
-			return nil
-		},
+		Args:  cobra.MinimumNArgs(1),
 		RunE: func(cmd *cobra.Command, args []string) error {
 			c, ctx, err := utils.ConnectUser()
 			if err != nil {

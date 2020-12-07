@@ -1,7 +1,6 @@
 package api
 
 import (
-	"fmt"
 	"io"
 
 	"github.com/netograph/netograph-api/go/cmd/ngc/cli/utils"
@@ -15,7 +14,7 @@ func policyDomainCaptures() *cobra.Command {
 	var start *string
 	var end *string
 	cmd := &cobra.Command{
-		Use:     "policydomaincaptures",
+		Use:     "policydomaincaptures query",
 		Aliases: []string{"pdomcaps"},
 		Short:   "Policy captures matching a domain query",
 		Long: `
@@ -30,12 +29,7 @@ Times can be specified in the following formats:
 	yyyy/mm/dd
 	yyyy-mm-dd
 		`,
-		Args: func(cmd *cobra.Command, args []string) error {
-			if len(args) < 1 {
-				return fmt.Errorf("Usage: %s", cmd.Use)
-			}
-			return nil
-		},
+		Args: cobra.ExactArgs(1),
 		RunE: func(cmd *cobra.Command, args []string) error {
 			c, ctx, err := utils.ConnectDset()
 			if err != nil {

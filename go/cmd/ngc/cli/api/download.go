@@ -20,12 +20,7 @@ func downloadCommand() *cobra.Command {
 		Use:     "download path id [id...]",
 		Aliases: []string{"get"},
 		Short:   "Retrieve all assets for a capture to a directory",
-		Args: func(cmd *cobra.Command, args []string) error {
-			if len(args) < 2 {
-				return fmt.Errorf("Usage: %s", cmd.Use)
-			}
-			return nil
-		},
+		Args:    cobra.MinimumNArgs(2),
 		RunE: func(cmd *cobra.Command, args []string) error {
 			c, ctx, err := utils.ConnectDset()
 			if err != nil {

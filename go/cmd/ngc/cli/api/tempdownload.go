@@ -16,12 +16,7 @@ func tempDownloadCommand() *cobra.Command {
 		Use:     "tempdownload path url",
 		Aliases: []string{"tget"},
 		Short:   "Retrieve all assets of a temporary capture given the capture base URL",
-		Args: func(cmd *cobra.Command, args []string) error {
-			if len(args) != 2 {
-				return fmt.Errorf("Usage: %s", cmd.Use)
-			}
-			return nil
-		},
+		Args:    cobra.ExactArgs(2),
 		RunE: func(cmd *cobra.Command, args []string) error {
 			outdir := args[0]
 			url := args[1]

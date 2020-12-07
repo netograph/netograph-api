@@ -16,6 +16,7 @@ func captureLogCommand() *cobra.Command {
 	cmd := &cobra.Command{
 		Use:     "capturelog",
 		Aliases: []string{"caplog"},
+		Args:    cobra.NoArgs,
 		Short:   "Captures in reverse chronological order",
 		Long: `
 Log of captures in reverse chronological order

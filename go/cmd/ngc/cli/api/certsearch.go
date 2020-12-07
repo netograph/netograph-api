@@ -34,7 +34,7 @@ func certSearchCommand() *cobra.Command {
 		Aliases: []string{"csearch"},
 		Short:   "Certificates matching a text query",
 		Args: func(cmd *cobra.Command, args []string) error {
-			if len(args) < 2 {
+			if len(args) != 2 {
 				return fmt.Errorf("Usage: %s", cmd.Use)
 			}
 			if _, ok := validFields[args[0]]; !ok {
