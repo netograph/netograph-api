@@ -1,8 +1,10 @@
 package api
 
 import (
+	"bufio"
 	"fmt"
 	"io"
+	"os"
 	"strings"
 
 	"github.com/netograph/netograph-api/go/cmd/ngc/cli/utils"
@@ -10,20 +12,44 @@ import (
 	"github.com/spf13/cobra"
 )
 
+// readLines reads a whole file into memory
+// and returns a slice of its lines.
+func readLines(path string) ([]string, error) {
+	file, err := os.Open(path)
+	if err != nil {
+		return nil, err
+	}
+	defer file.Close()
+
+	var lines []string
+	scanner := bufio.NewScanner(file)
+	for scanner.Scan() {
+		lines = append(lines, scanner.Text())
+	}
+	return lines, scanner.Err()
+}
+
 func captureCommand() *cobra.Command {
 	var notification *string
 	var meta *[]string
 	var zone *string
 	var extended *bool
 	cmd := &cobra.Command{
-		Use:   "capture url [url...]",
-		Short: "Bulk request captures. Assets expire in 24 hours",
-		Args:  cobra.MinimumNArgs(1),
+		Use:   "capture urls_filepath",
+		Short: "Bulk request captures by urls from file (1 url per line). Assets expire in 24 hours",
+		Args:  cobra.ExactArgs(1),
 		RunE: func(cmd *cobra.Command, args []string) error {
+			urlsFile, err := os.Open(args[0])
+			if err != nil {
+				return err
+			}
+			defer urlsFile.Close()
+
 			c, ctx, err := utils.ConnectUser()
 			if err != nil {
 				return err
 			}
+
 			ms := make([]*userapi.Metadata, len(*meta))
 			for i, v := range *meta {
 				vals := strings.SplitN(v, "=", 2)
@@ -35,19 +61,26 @@ func captureCommand() *cobra.Command {
 					Value: vals[1],
 				}
 			}
-			for i, v := range args {
-				args[i] = strings.TrimSpace(v)
-			}
 
-			caps := make([]*userapi.Capture, len(args))
-			for i, arg := range args {
-				caps[i] = &userapi.Capture{
-					Urls:         []string{arg},
+			var caps []*userapi.Capture
+			scanner := bufio.NewScanner(urlsFile)
+			for scanner.Scan() {
+				url := strings.TrimSpace(scanner.Text())
+				if url == "" {
+					continue
+				}
+				cap := &userapi.Capture{
+					Urls:         []string{url},
 					Notification: *notification,
 					Meta:         ms,
 					Zone:         *zone,
 					Extended:     *extended,
 				}
+				caps = append(caps, cap)
+			}
+
+			if err := scanner.Err(); err != nil {
+				fmt.Printf("Error while reading from file: %s", err)
 			}
 
 			capreq := userapi.CaptureRequest{Captures: caps}
