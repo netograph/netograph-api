@@ -48,6 +48,7 @@ func captureCommand() *cobra.Command {
 			var caps []*userapi.Capture
 			scanner := bufio.NewScanner(urlsFile)
 			for scanner.Scan() {
+				// Max size of one line is 65536 bytes
 				url := strings.TrimSpace(scanner.Text())
 				if url == "" {
 					continue

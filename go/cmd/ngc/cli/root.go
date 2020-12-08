@@ -4,7 +4,6 @@ import (
 	"fmt"
 
 	"github.com/netograph/netograph-api/go/cmd/ngc/cli/api"
-	"github.com/netograph/netograph-api/go/cmd/ngc/cli/tool"
 	"github.com/spf13/cobra"
 	"github.com/spf13/viper"
 )
@@ -28,7 +27,8 @@ var versionCommand = &cobra.Command{
 func init() {
 	RootCmd.AddCommand(
 		api.APIRootCmd,
-		tool.ToolRootCmd,
+		domainidRelated(),
+		discoverIPsCommand(),
 		versionCommand,
 	)
 	viper.AutomaticEnv()
