@@ -4,6 +4,8 @@ import "google/protobuf/timestamp.proto";
 package io.netograph.user;
 option go_package = "userapi";
 
+import "google/api/annotations.proto";
+
 // Metadata is arbitrary information associated with a capture.
 message Metadata {
     // The key for this metadata pair. Keys do not have to be unique.
@@ -41,16 +43,52 @@ message TempCaptureResult {
     string id = 3;
 }
 
+message Capture {
+    string notification = 1;
+    repeated string urls = 2;
+    repeated Metadata meta = 3;
+    string zone = 4;
+    // Extended capture includes full-page screenshot and page content formats
+    bool extended = 5;
+}
+
+message CaptureResult {
+    string assets = 1;
+    string id = 3;
+}
+
+message CaptureRequest {
+    repeated Capture captures = 1;
+}
+
 // Methods that operate at the level of the user account.
 service User {
     // Request a temporary capture. Temporary captures are not stored in a
     // dataset, and the capture assets will be available for download for 24
     // hours before being deleted.
-    rpc TempCapture (TempCaptureRequest) returns (TempCaptureResult);
+    rpc TempCapture (TempCaptureRequest) returns (TempCaptureResult) {
+        option (google.api.http) = {
+            post: "/user/tempcapture"
+            body: "*"
+        };
+    };
+
+    // Bulk request captures. The capture assets will be available for download
+    // for 24 hours before being deleted.
+    rpc Capture (CaptureRequest) returns (stream CaptureResult) {
+        option (google.api.http) = {
+            post: "/user/capture"
+            body: "*"
+        };
+    };
 
     // List all datasets to which the authorizing account has access. This
     // includes public datasets, which will be marked readonly.
-    rpc Datasets (DatasetsRequest) returns (stream Dataset);
+    rpc Datasets (DatasetsRequest) returns (stream Dataset) {
+        option (google.api.http) = {
+            get: "/user/datasets"
+        };
+    };
 }
 
 
