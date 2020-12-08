@@ -4,8 +4,6 @@ import "google/protobuf/timestamp.proto";
 package io.netograph.dset;
 option go_package = "dsetapi";
 
-import "google/api/annotations.proto";
-
 message Cert {
     // Analysis annotations for this certificate
     message Analysis {
@@ -808,223 +806,100 @@ message PolicyURLCapturesResult {
 // Methods that operate on an individual dataset, either public or private.
 service Dset {
     // Submit a capture request to a dataset.
-    rpc SubmitCapture (SubmitCaptureRequest) returns (SubmitCaptureResult) {
-        option (google.api.http) = {
-            post: "/dset/submitcapture"
-            body: "*"
-        };
-    };
+    rpc SubmitCapture (SubmitCaptureRequest) returns (SubmitCaptureResult);
 
     // Retrieve info for a specified capture by ID within a dataset.
-    rpc CaptureInfo(CaptureInfoRequest) returns (CaptureInfoResult) {
-        option (google.api.http) = {
-            get: "/dset/captureinfo/{dataset}/{id}"
-        };
-    };
+    rpc CaptureInfo(CaptureInfoRequest) returns (CaptureInfoResult);
 
     // Retrieve the capture log for a dataset, in reverse chronological order.
-    rpc CaptureLog(CaptureLogRequest) returns (stream CaptureLogResult) {
-        option (google.api.http) = {
-            get: "/dset/capturelog"
-        };
-    };
+    rpc CaptureLog(CaptureLogRequest) returns (stream CaptureLogResult);
 
     // Retrieve certificates that by the domain on which they were observed.
-    rpc CertDomainSearch(CertDomainSearchRequest) returns (stream CertDomainSearchResult) {
-        option (google.api.http) = {
-            get: "/dset/certdomainsearch"
-        };
-    };
+    rpc CertDomainSearch(CertDomainSearchRequest) returns (stream CertDomainSearchResult);
 
     // Retrieve certificates for a specified IP query.
-    rpc CertIPSearch(CertIPSearchRequest) returns (stream CertIPSearchResult) {
-        option (google.api.http) = {
-            get: "/dset/certipsearch"
-        };
-    };
+    rpc CertIPSearch(CertIPSearchRequest) returns (stream CertIPSearchResult);
 
     // Retrieve certificates based on a field query.
-    rpc CertSearch(CertSearchRequest) returns (stream CertSearchResult)  {
-        option (google.api.http) = {
-            get: "/dset/certsearch"
-        };
-    };
+    rpc CertSearch(CertSearchRequest) returns (stream CertSearchResult);
 
     // Retrieve certificates based on a query over valid domain names. This includes the certificate common name, and all Subject Alternate Name fields.
     rpc CertValidNamesSearch(CertValidNamesSearchRequest) returns (
         stream CertValidNamesSearchResult
-    ) {
-        option (google.api.http) = {
-            get: "/dset/certvalidnamessearch"
-        };
-    };
+    );
 
     // Retrieve the capture history for a specified domain. The
     // length of this history is capped at ~100.
-    rpc DomainHistory(DomainHistoryRequest) returns (stream DomainHistoryResult) {
-        option (google.api.http) = {
-            get: "/dset/domainhistory"
-        };
-    };
+    rpc DomainHistory(DomainHistoryRequest) returns (stream DomainHistoryResult);
 
     // Search the domain ID registry for records matching a domain, restricted to an optional key.
     rpc DomainIDDomainSearch(DomainIDDomainSearchRequest) returns (
         stream DomainIDDomainSearchResult
-    ) {
-        option (google.api.http) = {
-            get: "/dset/domainiddomainsearch"
-        };
-    };
+    );
 
     // Search the domain ID registry domains matching tag key, with an optional value.
-    rpc DomainIDTagSearch(DomainIDTagSearchRequest) returns (stream DomainIDTagSearchResult) {
-        option (google.api.http) = {
-            get: "/dset/domainidtagsearch"
-        };
-    };
+    rpc DomainIDTagSearch(DomainIDTagSearchRequest) returns (stream DomainIDTagSearchResult);
 
     // Search the domain ID registry domains matching tag key, with an optional value.
     rpc DomainIDCaptureTags(DomainIDCaptureTagsRequest) returns (
         stream DomainIDCaptureTagsResult
-    ) {
-        option (google.api.http) = {
-            get: "/dset/domainidcapturetags"
-        };
-    };
+    );
 
     // Retrieve the capture log for a specified domain in a dataset.
-    rpc DomainSearch(DomainSearchRequest) returns (stream DomainSearchResult) {
-        option (google.api.http) = {
-            get: "/dset/domainsearch"
-        };
-    };
+    rpc DomainSearch(DomainSearchRequest) returns (stream DomainSearchResult);
 
     // Find all domains in the dataset associated with a given IP address.
-    rpc DomainsForIP(DomainsForIPRequest) returns (stream DomainsForIPResult) {
-        option (google.api.http) = {
-            get: "/dset/domainsforip"
-        };
-    };
+    rpc DomainsForIP(DomainsForIPRequest) returns (stream DomainsForIPResult);
 
     // Retrieve the capture history for a specified IP in a dataset. The
     // length of this history is capped at ~100.
-    rpc IPHistory(IPHistoryRequest) returns (stream IPHistoryResult) {
-        option (google.api.http) = {
-            get: "/dset/iphistory"
-        };
-    };
+    rpc IPHistory(IPHistoryRequest) returns (stream IPHistoryResult);
 
     // Search the dataset log for captures that contain a given IP.
-    rpc IPLogSearch(IPLogSearchRequest) returns (stream IPLogSearchResult) {
-        option (google.api.http) = {
-            get: "/dset/iplogsearch"
-        };
-    };
+    rpc IPLogSearch(IPLogSearchRequest) returns (stream IPLogSearchResult);
 
     // Find all IPs in the dataset that match an address and integer netmask.
-    rpc IPSearch(IPSearchRequest) returns (stream IPSearchResult) {
-        option (google.api.http) = {
-            get: "/dset/ipsearch"
-        };
-    };
+    rpc IPSearch(IPSearchRequest) returns (stream IPSearchResult);
 
     // Find all IPs in a dataset associated with a given domain.
-    rpc IPsForDomain(IPsForDomainRequest) returns (stream IPsForDomainResult) {
-        option (google.api.http) = {
-            get: "/dset/ipsfordomain"
-        };
-    };
+    rpc IPsForDomain(IPsForDomainRequest) returns (stream IPsForDomainResult);
 
     // Get metadata associated with a specified capture within a dataset.
-    rpc MetaForCapture(MetaForCaptureRequest) returns (stream MetaForCaptureResult) {
-        option (google.api.http) = {
-            get: "/dset/metaforcapture"
-        };
-    };
+    rpc MetaForCapture(MetaForCaptureRequest) returns (stream MetaForCaptureResult);
 
     // Search the dataset log for captures matching a metadata query.
-    rpc MetaSearch(MetaSearchRequest) returns (stream MetaSearchResult) {
-        option (google.api.http) = {
-            get: "/dset/metasearch"
-        };
-    };
+    rpc MetaSearch(MetaSearchRequest) returns (stream MetaSearchResult);
 
     // Find all policies for a specified domain query.
-    rpc PoliciesForRoot(PoliciesForRootRequest) returns (stream PoliciesForRootResult) {
-        option (google.api.http) = {
-            get: "/dset/metasearch"
-        };
-    };
+    rpc PoliciesForRoot(PoliciesForRootRequest) returns (stream PoliciesForRootResult);
 
     // Retrieve the policy capture log for a domain query, in reverse chronological order.
-    rpc PolicyDomainCaptures(PolicyDomainCapturesRequest) returns (stream PolicyDomainCapturesResult) {
-        option (google.api.http) = {
-            get: "/dset/policydomaincaptures"
-        };
-    };
+    rpc PolicyDomainCaptures(PolicyDomainCapturesRequest) returns (stream PolicyDomainCapturesResult);
 
     // Retrieve statistics for a policy domain query.
-    rpc PolicyDomainStats(PolicyDomainStatsRequest) returns (PolicyDomainStatsResult) {
-        option (google.api.http) = {
-            get: "/dset/policydomainstats"
-        };
-    };
+    rpc PolicyDomainStats(PolicyDomainStatsRequest) returns (PolicyDomainStatsResult);
 
     // Retrieve the policy capture log for specific policy URL, in reverse chronological order.
-    rpc PolicyURLCaptures(PolicyURLCapturesRequest) returns (stream PolicyURLCapturesResult) {
-        option (google.api.http) = {
-            get: "/dset/policydomaincaptures"
-        };
-    };
+    rpc PolicyURLCaptures(PolicyURLCapturesRequest) returns (stream PolicyURLCapturesResult);
 
     // Find all redirections in the dataset for a given destination domain query.
-    rpc RedirsByDestination(RedirsByDestinationRequest) returns (stream RedirsByDestinationResult) {
-        option (google.api.http) = {
-            get: "/dset/redirsbydestination"
-        }; 
-    };
+    rpc RedirsByDestination(RedirsByDestinationRequest) returns (stream RedirsByDestinationResult);
 
     // Find all redirections in the dataset for a given source domain query.
-    rpc RedirsBySource(RedirsBySourceRequest) returns (stream RedirsBySourceResult) {
-        option (google.api.http) = {
-            get: "/dset/redirsbysource"
-        }; 
-    };
+    rpc RedirsBySource(RedirsBySourceRequest) returns (stream RedirsBySourceResult);
 
     // Search the dataset log for captures where any root domain matches a given query.
-    rpc RootLogSearch(RootLogSearchRequest) returns (stream RootLogSearchResult) {
-        option (google.api.http) = {
-            get: "/dset/rootlogsearch"
-        }; 
-    };
+    rpc RootLogSearch(RootLogSearchRequest) returns (stream RootLogSearchResult);
 
     // Find all roots in a dataset that are associated with a given satellite query.
-    rpc RootsForSatellite(RootsForSatelliteRequest) returns (stream RootsForSatelliteResult) {
-        option (google.api.http) = {
-            get: "/dset/rootsforsatellite"
-        }; 
-    };
+    rpc RootsForSatellite(RootsForSatelliteRequest) returns (stream RootsForSatelliteResult);
 
     // Search the dataset log for captures where any satellite domain matches a given query.
-    rpc SatelliteLogSearch(SatelliteLogSearchRequest) returns (stream SatelliteLogSearchResult) {
-        option (google.api.http) = {
-            get: "/dset/satellitelogsearch"
-        }; 
-    };
+    rpc SatelliteLogSearch(SatelliteLogSearchRequest) returns (stream SatelliteLogSearchResult);
 
     // Find all satellites in the dataset that are associated with a given root query.
-    rpc SatellitesForRoot(SatellitesForRootRequest) returns (stream SatellitesForRootResult) {
-        option (google.api.http) = {
-            get: "/dset/satellitesforroot"
-        }; 
-    };
+    rpc SatellitesForRoot(SatellitesForRootRequest) returns (stream SatellitesForRootResult);
 
     // Search the dataset log for captures where any root URL matches a given URL query.
-    rpc URLLogSearch(URLLogSearchRequest) returns (stream URLLogSearchResult) {
-        option (google.api.http) = {
-            get: "/dset/urllogsearch"
-        }; 
-    };
+    rpc URLLogSearch(URLLogSearchRequest) returns (stream URLLogSearchResult);
 }
-
-
