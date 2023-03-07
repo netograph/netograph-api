@@ -4,7 +4,7 @@ go 1.13
 
 require (
 	github.com/briandowns/spinner v0.0.0-20190319032542-ac46072a5a91
-	github.com/buger/jsonparser v0.0.0-20181115193947-bf1c66bbce23
+	github.com/buger/jsonparser v1.1.1
 	github.com/fatih/color v1.7.0 // indirect
 	github.com/gogo/protobuf v1.2.1
 	github.com/golang/protobuf v1.3.1
